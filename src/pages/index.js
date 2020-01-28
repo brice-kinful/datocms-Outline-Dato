@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import axios from "axios";
 import Layout from "../components/layout";
+import Preloader from "../components/blocks/preloader";
 import Headline from "../components/blocks/headline";
 import HomeScroller from "../components/blocks/home-scroller";
 import HomeCapabilities from "../components/blocks/home-capabilities";
@@ -49,10 +50,6 @@ class IndexPage extends Component {
       });
       return photos;
     };
-    console
-      .log
-      // fetchInstagramPhotos("https://www.instagram.com/we.are.outline/")
-      ();
   }
 
   render() {
@@ -60,9 +57,13 @@ class IndexPage extends Component {
     const headline = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeadline";
     });
+    const heroImages = data.datoCmsHome.hero.filter(item => {
+      return item.__typename === "DatoCmsHeroImage";
+    });
     return (
       <Layout>
         <div id="home">
+          <Preloader images={heroImages[0]} />
           <div className="flex align-center justify-center" id="feature">
             <Headline content={headline[0]} />
           </div>

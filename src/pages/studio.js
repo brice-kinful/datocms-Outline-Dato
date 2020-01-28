@@ -11,7 +11,7 @@ const StudioPage = ({ data }) => {
   const hero = data.datoCmsStudioPage.aboutHero[0];
   const capabilities = data.datoCmsStudioPage.aboutCapabilities[0];
   const team = data.datoCmsStudioPage.team;
-  console.log(team);
+  //   console.log(team);
   return (
     <Layout>
       <div id="studio">

@@ -14,7 +14,7 @@ const WorkPage = ({ data }) => {
     percentPosition: true
   };
   const masonry = data.datoCmsWorkPage.workMosaicImages;
-  console.log(masonry);
+  //   console.log(masonry);
   return (
     <Layout>
       <div id="work">

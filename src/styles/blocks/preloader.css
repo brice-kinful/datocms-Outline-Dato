@@ -1,0 +1,26 @@
+#preload h1 {
+  color: white;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preload {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 99999;
+  transition: transform 0.3s;
+}
+
+#preload .gatsby-image-wrapper {
+  /* padding: 50%; */
+  height: 100vh;
+}
+
+#preload.shift {
+  transform: translateX(-100%);
+}

@@ -1,0 +1,70 @@
+#studio {
+    padding: 400px 0;
+}
+
+#studio>* {
+    padding-bottom: 200px;
+}
+
+#studio>*:last-child {
+    padding-bottom: 0;
+}
+
+#studio h1 {
+    top: 275px;
+}
+
+#studio .title {
+    line-height: 45px;
+}
+
+#studio .three-fourths> :last-child {
+    margin: 0;
+}
+
+#studio .large p {
+    font-size: 48px;
+    line-height: 69px;
+}
+
+#studio .hero .gatsby-image-wrapper {
+    margin-bottom: 15%;
+}
+
+#studio .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+}
+
+#studio .text li {
+    list-style: none;
+    font-size: 32px;
+    line-height: 58px;
+}
+
+#studio .team .gatsby-image-wrapper {
+    margin-bottom: 15px;
+}
+
+#studio .team p {
+    font-size: 16px;
+    margin: 0;
+}
+
+#studio .cta p {
+    font-size: 50px;
+    line-height: 69px;
+}
+
+#studio .cta a {
+    font-size: 16px;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+    line-height: 24px;
+    margin-left: 20px;
+    position: relative;
+    top: -15px;
+}

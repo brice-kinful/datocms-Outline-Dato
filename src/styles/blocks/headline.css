@@ -1,0 +1,21 @@
+.headline {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.headline .wrapper {
+    max-width: 1200px;
+}
+
+.headline p {
+    font-size: 48px;
+    line-height: 69px;
+}
+
+.headline a {
+    font-size: 20px;
+    line-height: 24px;
+    position: relative;
+    top: -15px;
+    margin-left: 20px;
+}

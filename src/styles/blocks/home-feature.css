@@ -1,0 +1,166 @@
+/* feature */
+#feature {
+    background: #ffffff;
+    color: hsl(0, 0%, 0%);
+    /* transition: all 300ms linear; */
+
+}
+
+#home #feature {
+    height: 100vh;
+    min-height: 650px;
+    padding: 0;
+}
+
+
+#feature .slick-prev,
+#feature .slick-next {
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    transform: none;
+    opacity: 0;
+    z-index: 1;
+}
+
+#feature .slick-next {
+    right: 0;
+    cursor: url(/swiper-right.svg) 0 0, default;
+}
+
+#feature .slick-prev {
+    left: 0;
+    cursor: url(/swiper-left.svg) 0 0, default;
+}
+
+#feature .slick-slide .double-image.flex {
+    display: flex !important;
+}
+
+#feature .slick-slide .double-image.flex img {
+    width: 50%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#feature .slick-slide .full-image img {
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+#feature .feature-logo-wrapper {
+    width: calc(100% - 120px);
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#feature svg.feature-logo {
+    display: block;
+    z-index: 9999;
+    transform: scale(1);
+    transform-origin: 0 100%;
+    /* transition-timing-function: ease; */
+}
+
+#home .giant-logo-wrapper {
+    width: calc(100% - 120px);
+    margin: auto;
+}
+
+#home .giant-logo {
+    margin-top: -9999px;
+    position: relative;
+    top: -50px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    /* feature */
+    #feature .text span {
+        font-size: 80px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    /* feature */
+    #feature .text span {
+        font-size: 50px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #feature svg.feature-logo {
+        transform: none !important;
+    }
+
+    #feature .text {
+        flex-direction: column;
+    }
+
+    #feature .Typewriter {
+        padding-left: 0;
+        padding-top: 5px;
+        min-height: 55px;
+    }
+
+    #feature .text span {
+        font-size: 50px;
+    }
+
+    #feature .scroll {
+        bottom: 40px;
+        right: 50%;
+        margin-right: -20px;
+    }
+
+    #home .giant-logo-wrapper {
+        width: calc(100% - 60px);
+    }
+
+    /* #home .giant-logo {
+        top: -135px;
+    } */
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    #home #feature,
+    #home #feature .slick-prev,
+    #home #feature .slick-next,
+    #home #feature .slick-slide .full-image img,
+    #home #feature .slick-slide .double-image.flex img {
+        height: 100vh;
+    }
+
+    #home #feature+div {
+        margin-top: 94vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    /* feature */
+    #feature .scroll .vertical-text {
+        display: none;
+    }
+
+    #feature .scroll {
+        bottom: 30px;
+    }
+
+    /* #home .giant-logo {
+        top: -90px;
+    } */
+
+
+}

@@ -1,0 +1,14 @@
+.content {
+    padding: 100px 0;
+}
+
+.content .title {
+    font-size: 20px;
+    line-height: 33px;
+}
+
+.content li {
+    font-size: 32px;
+    line-height: 58px;
+    list-style: none;
+}

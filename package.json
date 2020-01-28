@@ -4,21 +4,39 @@
   "version": "1.0.0",
   "author": "Stefano Verna <s.verna@datocms.com>",
   "dependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "axios": "^0.19.2",
     "dotenv": "^8.1.0",
+    "emailjs-com": "^2.4.1",
+    "formik": "^2.1.2",
     "gatsby": "^2.15.30",
     "gatsby-image": "^2.2.24",
+    "gatsby-plugin-gtag": "^1.0.12",
     "gatsby-plugin-react-helmet": "^3.1.10",
+    "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.17",
+    "gatsby-plugin-sitemap": "^2.2.26",
+    "gatsby-plugin-transition-link": "^1.17.7",
     "gatsby-source-datocms": "^2.1.18",
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-transformer-remark": "^2.6.27",
+    "gsap": "^3.1.1",
+    "html-react-parser": "^0.10.0",
+    "lodash": "^4.17.15",
     "node-sass": "^4.11.0",
     "react": "^16.10.2",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.10.2",
+    "react-draggable": "^4.2.0",
+    "react-fetch-hook": "^1.7.1",
     "react-helmet": "^5.2.0",
+    "react-inlinesvg": "^1.2.0",
     "react-masonry-component": "^6.2.1",
+    "react-sizeme": "^2.6.12",
     "react-slick": "^0.25.2",
-    "slick-carousel": "^1.8.1"
+    "semantic-ui-react": "^0.88.2",
+    "slick-carousel": "^1.8.1",
+    "yup": "^0.28.0"
   },
   "keywords": [
     "gatsby"
@@ -27,7 +45,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "devDependencies": {

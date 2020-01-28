@@ -1,0 +1,25 @@
+#work {
+    padding: 200px 0;
+}
+
+#work>* {
+    padding-bottom: 200px;
+}
+
+#work>*:last-child {
+    padding-bottom: 0;
+}
+
+#work h1 {
+    position: fixed;
+    top: 275px;
+}
+
+.masonry-grid-sizer,
+.masonry-grid-item {
+    width: 20%;
+}
+
+.masonry-grid-item {
+    padding: 18px;
+}

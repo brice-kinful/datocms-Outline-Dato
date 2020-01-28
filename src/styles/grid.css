@@ -1,0 +1,47 @@
+.flex.grid .grid-item {
+    padding: 25px
+}
+
+@supports (display: -ms-grid) or (display: grid) {
+    .flex.grid {
+        display: -ms-grid;
+        display: grid;
+    }
+
+
+    .flex.grid.two {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .flex.grid.three {
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+    .flex.grid.four {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+    .flex.grid.five {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
+    .flex.grid.six {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
+    .flex.grid .grid-item {
+        width: initial !important;
+        padding: 0 !important;
+    }
+
+}

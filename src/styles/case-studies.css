@@ -1,0 +1,49 @@
+#case-studies {
+    padding: 200px 0;
+}
+
+#case-studies h1 {
+    position: fixed;
+    top: 275px;
+}
+
+#case-studies .flex.grid {
+    grid-gap: 15%;
+}
+
+#case-studies .wrapper>* {
+    padding-bottom: 7.5%;
+}
+
+#case-studies .wrapper>*:last-child {
+    padding-bottom: 0;
+}
+
+#case-studies .block.up {
+    padding-top: 100px;
+}
+
+#case-studies .grid-item.up {
+    margin-top: -100px;
+}
+
+#case-studies .grid-item.down {
+    margin-top: 100px;
+}
+
+#case-studies .gatsby-image-wrapper {
+    margin-bottom: 40px;
+}
+
+#case-studies span {
+    font-size: 32px;
+    line-height: 46px;
+}
+
+#case-studies span a {
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 20px;
+    position: relative;
+    top: -7px;
+}

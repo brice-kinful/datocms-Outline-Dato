@@ -1,0 +1,242 @@
+/* scroller */
+
+#scroller {
+    /* overflow: scroll; */
+    overflow: hidden;
+    position: relative;
+    height: 745px;
+    margin-bottom: 25%;
+    z-index: 1;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(250px);
+    /* height: 100%; */
+    z-index: 9;
+    font-size: 18vw;
+    pointer-events: none;
+    cursor: url(/swiper.svg) 0 0, default;
+}
+
+#scroller ul {
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /* overflow: scroll; */
+    height: 100%;
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    /* width: 3960px; */
+    list-style: none;
+    /* transition: .3s ease-in-out;
+    -webkit-animation: marquee 30s linear infinite;
+    animation: marquee 30s linear infinite; */
+    cursor: url(/cursor.svg) 0 0, default;
+}
+
+#scroller span.flex.react-draggable.react-draggable-dragged {
+    cursor: url(/cursor.svg) 0 0, default;
+    transition: 0.75s ease-out;
+}
+
+#scroller ul img {
+    pointer-events: none;
+}
+
+/* @keyframes marquee {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+} */
+
+@-moz-keyframes marquee {
+    0% {
+        -moz-transform: translateX(0%);
+    }
+
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        -moz-transform: translateX(0%);
+        /* Firefox bug fix */
+        -webkit-transform: translateX(0%);
+        /* Firefox bug fix */
+        transform: translateX(0%);
+    }
+
+    100% {
+        -moz-transform: translateX(-100%);
+        /* Firefox bug fix */
+        -webkit-transform: translateX(-100%);
+        /* Firefox bug fix */
+        transform: translateX(-100%);
+    }
+}
+
+#scroller ul:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+#scroller ul span {
+    display: inline-flex;
+    align-items: center;
+}
+
+#scroller li {
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: top;
+    flex-basis: 455px;
+    width: 455px;
+    transition: 0.35s;
+    cursor: url(/swiper.svg) 0 0, default;
+
+}
+
+#scroller .slide .title {
+    display: block;
+    margin-top: 15px;
+    line-height: 1.6;
+    font-size: 14px;
+    white-space: nowrap;
+    position: relative;
+}
+
+#scroller .slide a.title {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    cursor: url(/cursor-blur.png), pointer;
+    /* transition: .3s; */
+}
+
+#scroller .slide a.title span {
+    display: inline-block;
+    position: relative;
+}
+
+#scroller .slide a.title span:after {
+    content: "-";
+    display: inline-block;
+    position: absolute;
+    color: transparent;
+    background: url(/swiper-right.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 8px;
+    width: 35px;
+    right: -45px;
+    top: 8px;
+    transform: scaleX(0) translateX(-25px);
+    transform-origin: left;
+    opacity: 0;
+    transition: opacity .35s, transform .25s;
+}
+
+#scroller .slide a.title:hover {
+    /* -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    filter: alpha(opacity=50); */
+}
+
+#scroller .slide a.title:hover span:after {
+    opacity: 1;
+    transform: scaleX(1) translateX(0);
+}
+
+@media screen and (min-width: 1200px) {
+    #home h1 {
+        font-size: 221px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    /* #scroller li.sink:hover {
+        transform: translateY(9px);
+    }
+
+    #scroller li.float:hover {
+        transform: translateY(-9px) scale(0.97);
+    }
+
+    #scroller li.rotate:hover {
+        transform: scale(1.01) translateY(-9px);
+    } */
+}
+
+@media screen and (max-width: 768px) {
+    #home h1 {
+        position: static;
+        transform: none;
+        cursor: url(/cursor.svg) 0 0, default;
+        padding-bottom: 50px;
+    }
+
+    #scroller {
+        height: auto;
+        margin-bottom: 80px;
+        padding: 0 30px;
+        overflow: visible;
+    }
+
+    #scroller span.flex.react-draggable.react-draggable-dragged,
+    #scroller ul {
+        cursor: url(/cursor.svg) 0 0, default;
+    }
+
+    #scroller ul {
+        display: block;
+        position: static;
+        width: auto;
+        animation: none;
+    }
+
+    #scroller ul span {
+        display: block;
+    }
+
+    #scroller .slide {
+        margin: 0 auto 40px;
+        padding: 0;
+        width: 100%;
+        max-width: 455px;
+    }
+}

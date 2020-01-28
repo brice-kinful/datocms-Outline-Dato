@@ -68,8 +68,8 @@ class Navigation extends Component {
           {isMenuOpen && (
             <div id="nav">
               <div className={`wrapper`}>
-                <div className={`title styrene_medium uppercase`}>
-                  <ul>
+                <div className={``}>
+                  <ul className="flex">
                     {menuItems.map(item => {
                       const name = item.menuItemText;
                       const url = item.menuItemPage.slug;

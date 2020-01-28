@@ -12,7 +12,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-transition-link`,
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-datocms`,
       options: {

@@ -31,6 +31,8 @@
     "react-draggable": "^4.2.0",
     "react-fetch-hook": "^1.7.1",
     "react-helmet": "^5.2.0",
+    "react-image-lightbox": "^5.1.1",
+    "react-images": "^1.1.0-beta.3",
     "react-inlinesvg": "^1.2.0",
     "react-masonry-component": "^6.2.1",
     "react-sizeme": "^2.6.12",

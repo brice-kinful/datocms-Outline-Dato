@@ -17,7 +17,7 @@
 #contact .main p {
   font-size: 50px;
   line-height: 69px;
-  padding-bottom: 150px;
+  padding-bottom: 75px;
 }
 
 #contact .main a {
@@ -29,9 +29,17 @@
   border-bottom: 1px solid;
 }
 
-#contact .main .bottom p {
+#contact .main .bottom .one-half > a {
+  margin-bottom: 50px;
+  display: inline-block;
+}
+
+#contact .main .bottom p,
+#contact .main .bottom a {
   font-size: 20px;
   line-height: 33px;
+  padding: 0;
+  margin: 0;
 }
 
 #contact .main .bottom a {

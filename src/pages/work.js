@@ -1,45 +1,126 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link, graphql } from "gatsby";
 import Masonry from "react-masonry-component";
 import Img from "gatsby-image";
+import Lightbox from "react-image-lightbox";
 import Layout from "../components/layout";
 
+import "react-image-lightbox/style.css";
 import "../styles/work.css";
 
-const WorkPage = ({ data }) => {
-  const masonryOptions = {
-    transitionDuration: "0.3s",
-    itemSelector: ".masonry-grid-item",
-    columnWidth: ".masonry-grid-sizer",
-    percentPosition: true
-  };
-  const masonry = data.datoCmsWorkPage.workMosaicImages;
-  //   console.log(masonry);
-  return (
-    <Layout>
-      <div id="work">
-        <div className="wrapper">
-          <h1 className="big centertext">Our Work</h1>
-          <Masonry
-            options={masonryOptions} // default {}
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-          >
-            <div className="masonry-grid-sizer"></div>
-            {masonry.map(item => {
-              return (
-                <div className="masonry-grid-item">
-                  {/* <img src={item.url} /> */}
-                  <Img fluid={item.fluid} />
-                </div>
-              );
-            })}
-          </Masonry>
+const captions = [
+  "Cat in the snow",
+  "",
+  <p>
+    .. not in the&nbsp;
+    <em>mood</em>
+    &nbsp;for games right now
+    <br />
+    ...
+    <br />
+    ...
+    <br />
+    ...
+    <br />
+    ...
+    <br />
+    ...
+    <br />
+    ...
+    <br />
+    C&#39;mon. Seriously.
+  </p>,
+  ""
+];
+
+class WorkPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      photoIndex: 0,
+      images: [],
+      isOpen: false
+    };
+  }
+
+  componentDidMount() {
+    const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
+    this.setState(prevState => ({
+      images: [...prevState.images, mosaicImages]
+    }));
+  }
+
+  render() {
+    const { photoIndex, isOpen, images } = this.state;
+    const lightboxImages = images[0];
+    const masonryImages = this.props.data.datoCmsWorkPage.workMosaicImages;
+    const masonryOptions = {
+      transitionDuration: "0.3s",
+      itemSelector: ".masonry-grid-item",
+      columnWidth: ".masonry-grid-sizer",
+      percentPosition: true
+    };
+    console.log(lightboxImages);
+
+    return (
+      <Layout>
+        <div id="work">
+          <div className="wrapper">
+            <h1 className="big centertext">Our Work</h1>
+
+            {isOpen && (
+              <Lightbox
+                mainSrc={lightboxImages[photoIndex].url}
+                nextSrc={
+                  lightboxImages[(photoIndex + 1) % lightboxImages.length]
+                }
+                imageCaption={lightboxImages[photoIndex]?.imageCaption}
+                prevSrc={
+                  lightboxImages[
+                    (photoIndex + lightboxImages.length - 1) %
+                      lightboxImages.length
+                  ]
+                }
+                onCloseRequest={() => this.setState({ isOpen: false })}
+                onMovePrevRequest={() =>
+                  this.setState({
+                    photoIndex:
+                      (photoIndex + lightboxImages.length - 1) %
+                      lightboxImages.length
+                  })
+                }
+                onMoveNextRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + 1) % lightboxImages.length
+                  })
+                }
+              />
+            )}
+            <Masonry
+              options={masonryOptions}
+              disableImagesLoaded={false}
+              updateOnEachImageLoad={true}
+            >
+              <div className="masonry-grid-sizer"></div>
+              {masonryImages.map((item, index) => {
+                return (
+                  <div
+                    className="masonry-grid-item"
+                    onClick={() =>
+                      this.setState({ isOpen: true, photoIndex: index })
+                    }
+                  >
+                    <Img fluid={item.fluid} key={index} />
+                  </div>
+                );
+              })}
+            </Masonry>
+          </div>
         </div>
-      </div>
-    </Layout>
-  );
-};
+      </Layout>
+    );
+  }
+}
 
 export default WorkPage;
 
@@ -52,6 +133,8 @@ export const query = graphql`
       title
       slug
       workMosaicImages {
+        imageCaption: title
+        url
         fluid(maxWidth: 400, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid
         }

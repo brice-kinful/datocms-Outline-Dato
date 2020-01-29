@@ -300,6 +300,10 @@ p.large {
     align-items: center;
 }
 
+.align-end {
+    align-items: flex-end;
+}
+
 .justify-center {
     justify-content: center;
 }
@@ -328,6 +332,10 @@ p.large {
 
 .wrapper.x_skinny {
     max-width: 860px;
+}
+
+.wrapper.xx_skinny {
+    max-width: 600px;
 }
 
 /* vertical text */

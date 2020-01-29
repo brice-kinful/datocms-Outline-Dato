@@ -1,0 +1,271 @@
+#pre-project-interview {
+    padding: 200px 0;
+    height: 100vh;
+}
+
+#pre-project-interview>* {
+    padding-bottom: 200px;
+}
+
+#pre-project-interview>*:last-child {
+    padding-bottom: 0;
+}
+
+#pre-project-interview p {
+    font-size: 32px;
+    line-height: 46px;
+}
+
+#pre-project-interview .step {
+    transition: opacity .3s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden
+}
+
+#pre-project-interview .step.active {
+    opacity: 1;
+    height: auto
+}
+
+#pre-project-interview fieldset {
+    border: none;
+    position: relative;
+    z-index: 99999
+}
+
+#pre-project-interview .steps,
+#pre-project-interview legend {
+    display: none
+}
+
+#pre-project-interview label {
+    display: block;
+    white-space: nowrap;
+    /* font-family: Styrene A Web, sans-serif; */
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: .06em
+}
+
+#pre-project-interview label.error {
+    font-size: 10px;
+    color: #ff3d29;
+    letter-spacing: 0;
+    line-height: 1 !important;
+    position: absolute
+}
+
+#pre-project-interview .field {
+    margin-bottom: 30px;
+    position: relative
+}
+
+input.required+span {
+    font-size: 10px;
+    color: #ff3d29;
+    position: absolute;
+    bottom: -20px;
+    left: 25%
+}
+
+#pre-project-interview .field .col {
+    width: 100%
+}
+
+#pre-project-interview .field .col.four {
+    width: 75%
+}
+
+#pre-project-interview .field label.error {
+    margin: 5px 0 0;
+    bottom: -12px;
+    right: 0;
+    left: auto !important;
+    top: auto !important;
+    line-height: 1 !important
+}
+
+#pre-project-interview .field.clearfix label {
+    line-height: 46px
+}
+
+#pre-project-interview .field input[type=email],
+#pre-project-interview .field input[type=tel],
+#pre-project-interview .field input[type=text] {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 18px;
+    height: 46px;
+    text-indent: 5px;
+    font-family: inherit;
+}
+
+#pre-project-interview .field input[type=text]::placeholder,
+#pre-project-interview .field input[type=tel]::placeholder,
+#pre-project-interview .field input[type=email]::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1;
+    /* Firefox */
+}
+
+#pre-project-interview .field input[type=text]::-ms-input-placeholder,
+#pre-project-interview .field input[type=tel]::-ms-input-placeholder,
+#pre-project-interview .field input[type=email]::-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: black;
+}
+
+#pre-project-interview .field input[type=text]::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: black;
+}
+
+#pre-project-interview .field textarea {
+    width: 100%;
+    height: 165px;
+    margin-top: 20px;
+    resize: none;
+    font-size: 18px;
+    font-family: inherit;
+}
+
+#pre-project-interview .field.clearfix input[type=text],
+#pre-project-interview .field.clearfix textarea {
+    margin-top: 0
+}
+
+#pre-project-interview .field input[type=email]:focus,
+#pre-project-interview .field input[type=tel]:focus,
+#pre-project-interview .field input[type=text]:focus,
+#pre-project-interview .field textarea:focus {
+    background: #fff
+}
+
+#pre-project-interview .checks,
+#pre-project-interview .radios {
+    position: relative
+}
+
+#pre-project-interview .checks .field,
+#pre-project-interview .radios .field {
+    margin-left: 34px
+}
+
+#pre-project-interview .check,
+#pre-project-interview .radio {
+    display: block;
+    position: relative;
+    padding: 5px 0 0 34px;
+    /* font-family: Styrene A Web, sans-serif; */
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: .06em
+}
+
+#pre-project-interview .check {
+    margin-bottom: 40px;
+    white-space: nowrap
+}
+
+#pre-project-interview .checks label.error,
+#pre-project-interview .radios label.error {
+    top: -15px;
+    left: 0
+}
+
+#pre-project-interview .check input[type=checkbox],
+#pre-project-interview .radio input[type=radio] {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0
+}
+
+#pre-project-interview .check input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    z-index: 9;
+    cursor: pointer
+}
+
+#pre-project-interview .check label.special,
+#pre-project-interview .radio label.special {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    background: 0 0
+}
+
+#pre-project-interview .check input[type=checkbox]+label.special,
+#pre-project-interview .radio input[type=radio]+label.special {
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    line-height: 17px;
+    cursor: pointer;
+    border: 1px solid #000
+}
+
+#pre-project-interview .radio input[type=radio]+label.special {
+    border-radius: 50%
+}
+
+#pre-project-interview .check input[type=checkbox]:checked+label.special,
+#pre-project-interview .radio input[type=radio]:checked+label.special {
+    background: #000
+}
+
+#pre-project-interview input[type=submit]:hover {
+    border-color: transparent
+}
+
+#pre-project-interview .slider {
+    margin-bottom: 70px;
+    padding-top: 50px;
+    position: relative
+}
+
+#pre-project-interview .slider .display {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 24px
+}
+
+#pre-project-interview .btn,
+#pre-project-interview input[type=submit] {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    background: #000;
+    border: none;
+    white-space: nowrap;
+    /* font-family: Styrene A Web, sans-serif; */
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: #fff;
+    line-height: 60px;
+    transition: all .2s linear
+}
+
+#pre-project-interview .btn:hover,
+#pre-project-interview input[type=submit]:hover {
+    background: #fff;
+    color: #000
+}
+
+#pre-project-interview .btn:disabled {
+    opacity: .3;
+    pointer-events: none
+}

@@ -46,7 +46,8 @@ class HomeScroller extends Component {
                           <img src={project.thumbnail.url} />
                         </AniLink>
                         <AniLink
-                          to={`/project/${project.slug}`}
+                          to={`/case-studies/${project.slug}`}
+                          fade
                           className={`title`}
                         >
                           {project.title}
@@ -64,7 +65,8 @@ class HomeScroller extends Component {
                           <img src={project.thumbnail.url} />
                         </AniLink>
                         <AniLink
-                          to={`/project/${project.slug}`}
+                          to={`/case-studies/${project.slug}`}
+                          fade
                           className={`title`}
                         >
                           {project.title}

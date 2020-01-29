@@ -8,9 +8,11 @@ import "../styles/case-study.css";
 
 export default ({ data }) => (
   <Layout>
-    <div className="wrapper">
-      <HelmetDatoCms seo={data.datoCmsCaseStudy.seoMetaTags} />
-      <h1>{data.datoCmsCaseStudy.title}</h1>
+    <div id="case-study">
+      <div className="wrapper centertext">
+        <HelmetDatoCms seo={data.datoCmsCaseStudy.seoMetaTags} />
+        <h1>{data.datoCmsCaseStudy.title}</h1>
+      </div>
     </div>
   </Layout>
 );

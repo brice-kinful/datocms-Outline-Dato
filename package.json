@@ -50,7 +50,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "rm -r ./.cache && gatsby build",
+    "build": "gatsby build",
     "dev": "rm -r ./.cache && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },

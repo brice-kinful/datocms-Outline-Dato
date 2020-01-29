@@ -60,8 +60,8 @@ const TemplateWrapper = ({ children }) => {
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
           />
-          <Navigation menuItems={data.datoCmsMainMenu.menuItems} />
           {children}
+          <Navigation menuItems={data.datoCmsMainMenu.menuItems} />
         </>
       )}
     />

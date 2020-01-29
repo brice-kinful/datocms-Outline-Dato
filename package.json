@@ -35,8 +35,11 @@
     "react-images": "^1.1.0-beta.3",
     "react-inlinesvg": "^1.2.0",
     "react-masonry-component": "^6.2.1",
+    "react-measure": "^2.3.0",
+    "react-resize-detector": "^4.2.1",
     "react-sizeme": "^2.6.12",
     "react-slick": "^0.25.2",
+    "react-spring": "^8.0.27",
     "semantic-ui-react": "^0.88.2",
     "slick-carousel": "^1.8.1",
     "yup": "^0.28.0"

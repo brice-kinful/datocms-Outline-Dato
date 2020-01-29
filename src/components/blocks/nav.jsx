@@ -43,7 +43,7 @@ class Navigation extends Component {
     const isMenuOpen = this.state.isMenuOpen;
     const { menuItems } = this.props;
     return (
-      <>
+      <div id="nav-container">
         <ReactCSSTransitionGroup
           //transitioned in css with .logo-enter.logo-enter-active
           // and .logo-leave.logo-leave-active
@@ -102,7 +102,7 @@ class Navigation extends Component {
             <div className={`label`}>Menu</div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

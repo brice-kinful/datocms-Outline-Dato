@@ -6,7 +6,7 @@ import "../../styles/blocks/headline.css";
 
 const Headline = props => {
   const { content } = props;
-  console.log(content);
+  //   console.log(content);
   return (
     <div className={`headline`}>
       <div className={`wrapper`}>

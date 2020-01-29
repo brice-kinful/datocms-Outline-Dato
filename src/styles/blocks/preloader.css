@@ -1,26 +1,95 @@
 #preload h1 {
-  color: white;
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    color: white;
+    position: fixed;
+    font-size: 221px;
+    z-index: 999;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #preload {
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  z-index: 99999;
-  transition: transform 0.3s;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 999999999;
 }
 
 #preload .gatsby-image-wrapper {
-  /* padding: 50%; */
-  height: 100vh;
+    /* padding: 50%; */
+    top: 0;
+    position: fixed !important;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    animation-name: hide-me;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
 }
 
-#preload.shift {
-  transform: translateX(-100%);
+#preload.go {
+    animation-name: fade-out;
+    animation-duration: 4500ms;
+    animation-delay: 500;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    66% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    80% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes hide-me {
+    0% {
+        z-index: 9;
+    }
+
+    100% {
+        z-index: -1;
+    }
+}
+
+#preload .images .gatsby-image-wrapper:nth-child(1) {
+    z-index: 2;
+    animation: none;
+}
+
+#preload .images .gatsby-image-wrapper:nth-child(2n) {
+    z-index: 3;
+    animation-delay: 1700ms;
+}
+
+#preload .images .gatsby-image-wrapper:nth-child(3n) {
+    z-index: 4;
+    animation-delay: 1300ms;
+}
+
+#preload .images .gatsby-image-wrapper:nth-child(4n) {
+    z-index: 5;
+    animation-delay: 900ms;
+}
+
+#preload .images .gatsby-image-wrapper:nth-child(5n) {
+    z-index: 6;
+    animation-delay: 500ms;
 }

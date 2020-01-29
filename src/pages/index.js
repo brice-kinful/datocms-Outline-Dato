@@ -24,7 +24,7 @@ class IndexPage extends Component {
     axios
       .get(`https://www.instagram.com/shareoursuzylowcountry/?__a=1`)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         // const data = res.data.graphql.user.edge_owner_to_timeline_media.edges;
         // this.setState(prevState => ({
         //   grams: [...prevState.grams, data]
@@ -62,8 +62,8 @@ class IndexPage extends Component {
     });
     return (
       <Layout>
-        <div id="home">
-          <Preloader images={heroImages[0]} />
+        <Preloader images={heroImages[0]} />
+        <div id="home" className="go">
           <div className="flex align-center justify-center" id="feature">
             <Headline content={headline[0]} />
           </div>
@@ -88,7 +88,7 @@ export const query = graphql`
               maxWidth: 2400
               imgixParams: { fm: "jpg", auto: "compress" }
             ) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
         }

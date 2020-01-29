@@ -1,103 +1,82 @@
 import React, { Component } from "react";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { SizeMe } from "react-sizeme";
-import Draggable from "react-draggable";
-import sample from "lodash/sample";
-import Img from "gatsby-image";
-
+// import { SizeMe } from "react-sizeme";
+import Measure from "react-measure";
 import "../../styles/blocks/scroller.css";
 
 class HomeScroller extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: "",
-      projectWidth: "",
-      hovers: ["sink", "float", "rotate"]
+      dimensions: {
+        width: 2000
+      }
     };
-    this.elementRef = React.createRef();
   }
 
-  handleWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth });
-  };
+  handleWindowSizeChange = () => {};
 
-  componentDidMount() {
-    window.addEventListener("resize", this.handleWindowSizeChange);
-    const bcr = this.elementRef.current.getBoundingClientRect();
-    this.setState({
-      projectWidth: bcr.width * 0.75,
-      width: window.innerWidth
-    });
-  }
+  componentDidMount() {}
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleWindowSizeChange);
-  }
+  componentWillUnmount() {}
 
   render() {
     const { projects } = this.props;
-
-    const { width } = this.state;
-    const isMobile = width <= 768;
+    const scrollerWidth = this.state.dimensions.width;
 
     return (
       <div id="scroller">
         <h1 className="centertext">Case Studies</h1>
-        <div className={`styrene_regular`}>
-          <ul className={`flex`}>
-            {isMobile ? (
-              <span className={`flex`} ref={this.elementRef}>
-                {projects.map(project => {
-                  return (
-                    <li
-                      className={`slide ${sample(this.state.hovers)}`}
-                      key={project.slug}
-                    >
-                      <img src={project.thumbnail.url} />
-                      {/* <Img fluid={project.thumbnail.fluid} /> */}
-                      <AniLink
-                        fade
-                        to={`/case-studies/${project.slug}`}
-                        className={`title`}
-                      >
-                        <span>{project.title}</span>
-                      </AniLink>
-                    </li>
-                  );
-                })}
-              </span>
-            ) : (
-              <Draggable
-                axis="x"
-                bounds={{ left: -(this.state.projectWidth - 455), right: 100 }}
-                scale={0.55}
-              >
-                <span className={`flex`} ref={this.elementRef}>
+
+        <Measure
+          bounds
+          onResize={contentRect => {
+            this.setState({ dimensions: contentRect.bounds });
+          }}
+        >
+          {({ measureRef }) => {
+            // console.log(this.state.dimensions);
+            return (
+              <ul className={`flex`} style={{ width: scrollerWidth }}>
+                <span className={`flex`} ref={measureRef}>
                   {projects.map(project => {
-                    // console.log(project);
                     return (
-                      <li
-                        className={`slide ${sample(this.state.hovers)}`}
-                        key={project.slug}
-                      >
-                        <img src={project.thumbnail.url} />
-                        {/* <Img fluid={project.thumbnail.fluid} /> */}
+                      <li className={`slide`} key={project.slug}>
+                        <AniLink to={`/project/${project.slug}`}>
+                          <img src={project.thumbnail.url} />
+                        </AniLink>
                         <AniLink
-                          fade
-                          to={`/case-studies/${project.slug}`}
+                          to={`/project/${project.slug}`}
                           className={`title`}
                         >
-                          <span>{project.title}</span>
+                          {project.title}
                         </AniLink>
                       </li>
                     );
                   })}
                 </span>
-              </Draggable>
-            )}
-          </ul>
-        </div>
+
+                <span className={`flex`}>
+                  {projects.map(project => {
+                    return (
+                      <li className={`slide`} key={`${project.slug}-x2`}>
+                        <AniLink to={`/project/${project.slug}`}>
+                          <img src={project.thumbnail.url} />
+                        </AniLink>
+                        <AniLink
+                          to={`/project/${project.slug}`}
+                          className={`title`}
+                        >
+                          {project.title}
+                        </AniLink>
+                      </li>
+                    );
+                  })}
+                </span>
+              </ul>
+            );
+          }}
+        </Measure>
       </div>
     );
   }

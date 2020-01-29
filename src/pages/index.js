@@ -21,35 +21,22 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(`https://www.instagram.com/shareoursuzylowcountry/?__a=1`)
-      .then(res => {
-        // console.log(res);
-        // const data = res.data.graphql.user.edge_owner_to_timeline_media.edges;
-        // this.setState(prevState => ({
-        //   grams: [...prevState.grams, data]
-        // }));
-      });
     const instagramRegExp = new RegExp(
-      /<script type="text\/javascript">window\._sharedData = (.*)<\/script>/
+      /<script type="text\/javascript">window\._sharedData = (.*);<\/script>/
     );
+
     const fetchInstagramPhotos = async accountUrl => {
       const response = await axios.get(accountUrl);
       const json = JSON.parse(response.data.match(instagramRegExp)[1]);
       const edges = json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(
         0,
-        8
+        5
       );
-      const photos = edges.map(({ node }) => {
-        return {
-          url: `https://www.instagram.com/p/${node.shortcode}/`,
-          thumbnailUrl: node.thumbnail_src,
-          displayUrl: node.display_url,
-          caption: node.edge_media_to_caption.edges[0].node.text
-        };
-      });
-      return photos;
+      this.setState(prevState => ({
+        grams: [...prevState.grams, edges]
+      }));
     };
+    fetchInstagramPhotos("https://www.instagram.com/we.are.outline/");
   }
 
   render() {
@@ -69,7 +56,7 @@ class IndexPage extends Component {
           </div>
           <HomeScroller projects={data.datoCmsHome.scrollerCaseStudies} />
           <HomeCapabilities content={data.datoCmsHome.capabilities} />
-          <Instagram />
+          <Instagram grams={this.state.grams[0]} />
         </div>
       </Layout>
     );

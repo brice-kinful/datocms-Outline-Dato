@@ -3,10 +3,7 @@ import "../../styles/blocks/instagram.css";
 import axios from "axios";
 
 const Instagram = props => {
-  // console.log(props)
-
-  //   const { grams } = props;
-
+  const { grams } = props;
   return (
     <div id="instagram" className={`standard`}>
       <div className={`wrapper skinny`}>
@@ -14,34 +11,22 @@ const Instagram = props => {
           <p>Instagram</p>
           <p>@we.are.outline</p>
         </div>
-
-        {/* Feed */}
         <div className="flex grid">
-          <a href={`#`} className="col">
-            <div className={`inner`}>
-              <img src={`https://via.placeholder.com/500x500`} />
-            </div>
-          </a>
-          <a href={`#`} className="col">
-            <div className={`inner`}>
-              <img src={`https://via.placeholder.com/500x500`} />
-            </div>
-          </a>
-          <a href={`#`} className="col">
-            <div className={`inner`}>
-              <img src={`https://via.placeholder.com/500x500`} />
-            </div>
-          </a>
-          <a href={`#`} className="col">
-            <div className={`inner`}>
-              <img src={`https://via.placeholder.com/500x500`} />
-            </div>
-          </a>
-          <a href={`#`} className="col">
-            <div className={`inner`}>
-              <img src={`https://via.placeholder.com/500x500`} />
-            </div>
-          </a>
+          {/* Feed */}
+          {grams?.map(({ node }) => {
+            return (
+              <a
+                href={`https://www.instagram.com/p/${node.shortcode}`}
+                className="col"
+                key={node.id}
+                target="_blank"
+              >
+                <div className={`inner`}>
+                  <img src={node.thumbnail_src} />
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>

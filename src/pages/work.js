@@ -89,7 +89,7 @@ class WorkPage extends Component {
       percentPosition: true
     };
     const { isHeadlineVisible } = this.state;
-    console.log(lightboxImages);
+    // console.log(lightboxImages);
 
     return (
       <Layout>

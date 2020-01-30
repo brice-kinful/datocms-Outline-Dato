@@ -8,29 +8,19 @@ import Layout from "../components/layout";
 import "react-image-lightbox/style.css";
 import "../styles/work.css";
 
-const captions = [
-  "Cat in the snow",
-  "",
-  <p>
-    .. not in the&nbsp;
-    <em>mood</em>
-    &nbsp;for games right now
-    <br />
-    ...
-    <br />
-    ...
-    <br />
-    ...
-    <br />
-    ...
-    <br />
-    ...
-    <br />
-    ...
-    <br />
-    C&#39;mon. Seriously.
-  </p>,
-  ""
+const titles = [
+  <span>
+    <a href="#">Caption 1</a>
+  </span>,
+  <span>
+    <a href="#">Menu design for Le Farfalle</a>
+  </span>,
+  <span>
+    <a href="#">Caption 3</a>
+  </span>,
+  <span>
+    <a href="#">Caption 4</a>
+  </span>
 ];
 
 class WorkPage extends Component {
@@ -107,7 +97,7 @@ class WorkPage extends Component {
                 nextSrc={
                   lightboxImages[(photoIndex + 1) % lightboxImages.length]
                 }
-                imageCaption={lightboxImages[photoIndex]?.imageCaption}
+                imageTitle={titles[photoIndex]}
                 prevSrc={
                   lightboxImages[
                     (photoIndex + lightboxImages.length - 1) %

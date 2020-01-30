@@ -46,3 +46,13 @@
 .ril__toolbar {
     background-color: white;
 }
+
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+}

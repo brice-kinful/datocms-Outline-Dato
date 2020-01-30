@@ -86,11 +86,6 @@ class CaseStudiesPage extends Component {
     return (
       <Layout>
         <div className="page" id="case-studies">
-          {/* <h1
-            className={`big centertext ${isHeadlineVisible ? "visible" : ""}`}
-          >
-            Case Studies
-          </h1> */}
           <div
             className={`wrapper skinny title-container  ${
               isHeadlineVisible ? "visible" : ""

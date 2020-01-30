@@ -13,7 +13,7 @@ class StudioPage extends Component {
     this.state = {
       isHeadlineVisible: true,
       isMouseIdle: false,
-      prevScrollpos: window.pageYOffset
+      prevScrollpos: ""
     };
   }
 

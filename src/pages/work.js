@@ -41,7 +41,7 @@ class WorkPage extends Component {
       images: [],
       isOpen: false,
       isHeadlineVisible: true,
-      prevScrollpos: window.pageYOffset
+      prevScrollpos: ""
     };
   }
 

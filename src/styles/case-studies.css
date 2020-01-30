@@ -23,6 +23,10 @@
     grid-gap: 15%;
 }
 
+#case-studies .flex.grid.two {
+    align-items: center;
+}
+
 #case-studies .wrapper>* {
     padding-bottom: 7.5%;
 }

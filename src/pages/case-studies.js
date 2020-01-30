@@ -13,7 +13,7 @@ class CaseStudiesPage extends Component {
     this.state = {
       isHeadlineVisible: true,
       isMouseIdle: false,
-      prevScrollpos: window.pageYOffset
+      prevScrollpos: ""
     };
   }
 
@@ -22,6 +22,7 @@ class CaseStudiesPage extends Component {
     const { prevScrollpos } = this.state;
     const currentScrollPos = window.pageYOffset;
     let mouseScrollTimeout;
+    console.log(currentScrollPos);
     this.setState({
       prevScrollpos: currentScrollPos,
       isHeadlineVisible: true
@@ -45,7 +46,7 @@ class CaseStudiesPage extends Component {
 
   handleMouseMove = () => {
     const { prevScrollpos, isMouseIdle } = this.state;
-    const currentScrollPos = window.pageYOffset;
+    const currentScrollPos = prevScrollpos;
     let mouseMoveTimeout;
     clearTimeout(mouseMoveTimeout);
     mouseMoveTimeout = setTimeout(this.mouseStopped, 1000);
@@ -69,6 +70,7 @@ class CaseStudiesPage extends Component {
   };
 
   componentDidMount() {
+    this.setState({ prevScrollpos: window.pageYOffset });
     window.addEventListener("scroll", this.handleScroll);
     // window.addEventListener("mousemove", this.handleMouseMove);
   }
@@ -103,13 +105,13 @@ class CaseStudiesPage extends Component {
                         >
                           <Img fluid={block.leftProjectImage.fluid} />
                           <span>
-                            {block.leftProject.excerpt}
+                            {block.leftProject?.excerpt}
                             <AniLink
                               fade
-                              to={`/case-studies/${block.leftProject.slug}`}
+                              to={`/case-studies/${block.leftProject?.slug}`}
                               className="textlink"
                             >
-                              {block.leftProject.title}
+                              {block.leftProject?.title}
                             </AniLink>
                           </span>
                         </div>
@@ -118,13 +120,13 @@ class CaseStudiesPage extends Component {
                         >
                           <Img fluid={block.rightProjectImage.fluid} />
                           <span>
-                            {block.rightProject.excerpt}
+                            {block.rightProject?.excerpt}
                             <AniLink
                               fade
-                              to={`/case-studies/${block.rightProject.slug}`}
+                              to={`/case-studies/${block.rightProject?.slug}`}
                               className="textlink"
                             >
-                              {block.rightProject.title}
+                              {block.rightProject?.title}
                             </AniLink>
                           </span>
                         </div>
@@ -140,15 +142,15 @@ class CaseStudiesPage extends Component {
                         }`}
                       >
                         <div className="">
-                          <Img fluid={block.projectImage.fluid} />
+                          <Img fluid={block.projectImage?.fluid} />
                           <span>
-                            {block.project.excerpt}
+                            {block.project?.excerpt}
                             <AniLink
                               fade
-                              to={`/case-studies/${block.project.slug}`}
+                              to={`/case-studies/${block.project?.slug}`}
                               className="textlink"
                             >
-                              {block.project.title}
+                              {block.project?.title}
                             </AniLink>
                           </span>
                         </div>

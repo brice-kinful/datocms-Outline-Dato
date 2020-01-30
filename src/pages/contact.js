@@ -12,7 +12,7 @@ const ContactPage = ({ data }) => {
   console.log(contact);
   return (
     <Layout>
-      <div id="contact">
+      <div className="page" id="contact">
         <div className="main flex wrapper skinny">
           <div className="three-fourths text">
             {parse(contact.headline)}

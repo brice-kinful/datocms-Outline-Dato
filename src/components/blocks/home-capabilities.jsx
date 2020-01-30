@@ -20,7 +20,7 @@ const HomeCapabilities = props => {
   //   console.log(wordsLeft);
   return (
     <div id={`home-capabilities`}>
-      <div className={`wrapper`}>
+      <div className={`wrapper skinny`}>
         <Img fluid={featuredImage[0].image.fluid} />
         <div className="content flex">
           <div className="one-third title">{words[0].title}</div>

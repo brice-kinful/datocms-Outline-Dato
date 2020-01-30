@@ -5,7 +5,11 @@ import Layout from "../components/layout";
 
 const JobsPage = ({ data }) => (
   <Layout>
-    <h1>Jobs</h1>
+    <div className="page">
+      <div className="wrapper centertext">
+        <h1>Jobs</h1>
+      </div>
+    </div>
   </Layout>
 );
 

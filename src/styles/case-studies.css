@@ -1,10 +1,22 @@
 #case-studies {
     padding: 200px 0;
+    overflow: hidden;
+    position: relative;
 }
 
 #case-studies h1 {
     position: fixed;
-    top: 275px;
+    top: 50%;
+    left: 0;
+    height: auto;
+    transform: translateY(-50%);
+    transition: opacity .75s;
+    opacity: 0;
+    font-size: calc(23vw - 120px);
+}
+
+#case-studies h1.visible {
+    opacity: 1;
 }
 
 #case-studies .flex.grid {
@@ -46,4 +58,10 @@
     margin-left: 20px;
     position: relative;
     top: -7px;
+}
+
+@media screen and (min-width: 1400px) {
+    #case-studies h1 {
+        font-size: 200px;
+    }
 }

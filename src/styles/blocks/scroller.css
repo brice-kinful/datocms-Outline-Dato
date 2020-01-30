@@ -26,7 +26,7 @@
   transform: translateY(7vw);
   /* height: 100%; */
   z-index: 9;
-  font-size: 18vw;
+  font-size: calc(25vw - 200px);
   pointer-events: none;
   /* cursor: url(/swiper.svg) 0 0, default; */
 }
@@ -159,5 +159,12 @@
     padding: 0;
     width: 100%;
     max-width: 455px;
+  }
+}
+
+
+@media screen and (min-width: 1300px) {
+  #scroller h1 {
+    font-size: 200px;
   }
 }

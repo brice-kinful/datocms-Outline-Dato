@@ -4,12 +4,15 @@ import axios from "axios";
 
 const Instagram = props => {
   const { grams } = props;
+  //   console.log(grams);
   return (
     <div id="instagram" className={`standard`}>
-      <div className={`wrapper skinny`}>
+      <div className={`wrapper`}>
         <div className="flex space-between">
           <p>Instagram</p>
-          <p>@we.are.outline</p>
+          <a href="https://www.instagram.com/we.are.outline" target="_blank">
+            @we.are.outline
+          </a>
         </div>
         <div className="flex grid">
           {/* Feed */}

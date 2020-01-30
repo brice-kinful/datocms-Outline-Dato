@@ -10,7 +10,8 @@
   margin-bottom: 60px;
 }
 
-#instagram p {
+#instagram p,
+#instagram a {
   font-size: 16px;
 }
 
@@ -42,7 +43,7 @@
 
 @supports ((display: -ms-grid) or (display: grid)) {
   #instagram .wrapper {
-    max-width: 1560px;
+    max-width: 1680px;
   }
 
   #instagram .flex.grid {
@@ -60,6 +61,7 @@
 }
 
 @media screen and (max-width: 1024px) {
+
   /* instagram */
   #instagram {
     /* padding: 80px 0; */
@@ -88,6 +90,7 @@
 }
 
 @media screen and (max-width: 480px) {
+
   /* instagram */
   #instagram {
     padding: 80px 0;
@@ -98,5 +101,4 @@
   }
 }
 
-@media screen and (max-height: 768px) {
-}
+@media screen and (max-height: 768px) {}

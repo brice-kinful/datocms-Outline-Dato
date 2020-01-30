@@ -9,7 +9,7 @@ const Headline = props => {
   //   console.log(content);
   return (
     <div className={`headline`}>
-      <div className={`wrapper`}>
+      <div className={`wrapper skinny`}>
         <p>
           {content.text}
           <AniLink

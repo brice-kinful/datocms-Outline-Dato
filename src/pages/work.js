@@ -39,15 +39,43 @@ class WorkPage extends Component {
     this.state = {
       photoIndex: 0,
       images: [],
-      isOpen: false
+      isOpen: false,
+      isHeadlineVisible: true,
+      prevScrollpos: window.pageYOffset
     };
   }
 
+  // scroll
+  handleScroll = () => {
+    const { prevScrollpos } = this.state;
+    const currentScrollPos = window.pageYOffset;
+    let mouseScrollTimeout;
+    this.setState({
+      prevScrollpos: currentScrollPos
+    });
+
+    if (currentScrollPos > 0) {
+      this.setState({
+        isHeadlineVisible: false
+      });
+    } else {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }
+  };
+
   componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     this.setState(prevState => ({
       images: [...prevState.images, mosaicImages]
     }));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+    // window.removeEventListener("mousemove", this.handleMouseMove);
   }
 
   render() {
@@ -60,13 +88,18 @@ class WorkPage extends Component {
       columnWidth: ".masonry-grid-sizer",
       percentPosition: true
     };
+    const { isHeadlineVisible } = this.state;
     console.log(lightboxImages);
 
     return (
       <Layout>
-        <div id="work">
+        <div className="page" id="work">
           <div className="wrapper">
-            <h1 className="big centertext">Our Work</h1>
+            <h1
+              className={`big centertext ${isHeadlineVisible ? "visible" : ""}`}
+            >
+              Our Work
+            </h1>
 
             {isOpen && (
               <Lightbox

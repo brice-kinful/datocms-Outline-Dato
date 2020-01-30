@@ -50,7 +50,7 @@ class IndexPage extends Component {
     return (
       <Layout>
         <Preloader images={heroImages[0]} />
-        <div id="home" className="go">
+        <div id="home" className="page go">
           <div className="flex align-center justify-center" id="feature">
             <Headline content={headline[0]} />
           </div>

@@ -11,7 +11,10 @@
 }
 
 #studio h1 {
-    top: 275px;
+    position: fixed;
+    top: 50%;
+    height: auto;
+    transform: translateY(-50%);
 }
 
 #studio .title {

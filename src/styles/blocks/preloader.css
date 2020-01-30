@@ -1,18 +1,6 @@
-html,
-body {
-    animation-name: release;
-    animation-duration: 4500;
-    animation-fill-mode: forwards;
-}
-
-@keyframes release {
-    0% {
-        overflow: hidden;
-    }
-
-    100% {
-        overflow: visible;
-    }
+body.freeze {
+    height: 100vh;
+    overflow: hidden;
 }
 
 #preload h1 {
@@ -27,11 +15,41 @@ body {
     justify-content: center;
 }
 
+#preload svg {
+    height: 300px;
+    width: 700px;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: white;
+}
+
 #preload {
     position: fixed;
     height: 100vh;
     width: 100%;
     z-index: 999999999;
+    transition: .3s;
+}
+
+#preload:after {
+    transition: 1s;
+    content: "";
+    position: fixed;
+    display: inline-block;
+    height: 100vh;
+    width: 100%;
+    z-index: 99999999999;
+    opacity: 0;
+}
+
+#preload.wait:after {
+    background: white;
+    opacity: 1;
 }
 
 #preload .gatsby-image-wrapper {
@@ -86,27 +104,27 @@ body {
     }
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(1) {
+#preload.go .images .gatsby-image-wrapper:nth-child(1) {
     z-index: 2;
     animation: none;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(2n) {
+#preload.go .images .gatsby-image-wrapper:nth-child(2n) {
     z-index: 3;
     animation-delay: 2200ms;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(3n) {
+#preload.go .images .gatsby-image-wrapper:nth-child(3n) {
     z-index: 4;
     animation-delay: 1800ms;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(4n) {
+#preload.go .images .gatsby-image-wrapper:nth-child(4n) {
     z-index: 5;
     animation-delay: 1400ms;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(5n) {
+#preload.go .images .gatsby-image-wrapper:nth-child(5n) {
     z-index: 6;
     animation-delay: 1000ms;
 }

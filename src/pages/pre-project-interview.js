@@ -33,7 +33,7 @@ const PreProjectInterview = ({ data }) => {
     <Layout>
       <div
         id="pre-project-interview"
-        className="flex align-center justify-center"
+        className="page lex align-center justify-center"
       >
         <div className="wrapper xx_skinny">
           <p>{interview.headline}</p>

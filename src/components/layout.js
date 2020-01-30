@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 
 import Navigation from "./blocks/nav";
+import Footer from "./blocks/footer";
 
 import "../styles/reset.css";
 import "../styles/base.css";
@@ -54,16 +55,19 @@ const TemplateWrapper = ({ children }) => {
           }
         }
       `}
-      render={data => (
-        <>
-          <HelmetDatoCms
-            favicon={data.datoCmsSite.faviconMetaTags}
-            seo={data.datoCmsHome.seoMetaTags}
-          />
-          {children}
-          <Navigation menuItems={data.datoCmsMainMenu.menuItems} />
-        </>
-      )}
+      render={data => {
+        return (
+          <>
+            <HelmetDatoCms
+              favicon={data.datoCmsSite.faviconMetaTags}
+              seo={data.datoCmsHome.seoMetaTags}
+            />
+            {children}
+            <Navigation menuItems={data.datoCmsMainMenu.menuItems} />
+            <Footer />
+          </>
+        );
+      }}
     />
   );
 };

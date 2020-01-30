@@ -43,7 +43,7 @@
 
 @supports ((display: -ms-grid) or (display: grid)) {
   #instagram .wrapper {
-    max-width: 1680px;
+    /* max-width: 1680px; */
   }
 
   #instagram .flex.grid {

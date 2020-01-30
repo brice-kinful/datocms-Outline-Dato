@@ -27,7 +27,7 @@ class StudioPage extends Component {
       isHeadlineVisible: true
     });
 
-    if (currentScrollPos > 60) {
+    if (currentScrollPos > 25) {
       this.setState({
         isHeadlineVisible: false
       });

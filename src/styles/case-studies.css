@@ -4,18 +4,29 @@
     position: relative;
 }
 
-#case-studies h1 {
+
+#case-studies .title-container {
     position: fixed;
-    top: 50%;
     left: 0;
-    height: auto;
+    right: 0;
+    top: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: translateY(-50%);
-    transition: opacity .75s;
+    z-index: 9;
+    pointer-events: none;
     opacity: 0;
-    font-size: calc(23vw - 120px);
+    transition: .3s;
 }
 
-#case-studies h1.visible {
+#case-studies .title-container img {
+    width: 100%;
+}
+
+
+#case-studies .title-container.visible {
     opacity: 1;
 }
 
@@ -23,12 +34,19 @@
     grid-gap: 15%;
 }
 
+@supports (display: -ms-grid) or (display: grid) {
+    #case-studies .flex.grid {
+        padding: 0;
+    }
+
+}
+
 #case-studies .flex.grid.two {
     align-items: center;
 }
 
 #case-studies .wrapper>* {
-    padding-bottom: 7.5%;
+    padding-bottom: 190px;
 }
 
 #case-studies .wrapper>*:last-child {
@@ -37,6 +55,14 @@
 
 #case-studies .block.up {
     padding-top: 100px;
+}
+
+#case-studies .block.solo .flex>* {
+    width: 100%;
+}
+
+#case-studies .block.solo.full span {
+    flex: 0 0 600px;
 }
 
 #case-studies .grid-item.up {
@@ -67,5 +93,11 @@
 @media screen and (min-width: 1400px) {
     #case-studies h1 {
         font-size: 200px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #case-studies .block.solo.full span {
+        flex: 0 auto;
     }
 }

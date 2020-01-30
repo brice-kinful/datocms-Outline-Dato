@@ -1,12 +1,16 @@
 #contact {
-  padding: 200px 0;
+  padding: 275px 0;
 }
 
-#contact > * {
+#contact .wrapper {
+  max-width: 1680px;
+}
+
+/* #contact>* {
   padding-bottom: 200px;
-}
+} */
 
-#contact > *:last-child {
+#contact>*:last-child {
   padding-bottom: 0;
 }
 
@@ -17,7 +21,7 @@
 #contact .main p {
   font-size: 50px;
   line-height: 69px;
-  padding-bottom: 75px;
+  padding-bottom: 215px;
 }
 
 #contact .main a {
@@ -29,7 +33,7 @@
   border-bottom: 1px solid;
 }
 
-#contact .main .bottom .one-half > a {
+#contact .main .bottom .one-half>a {
   margin-bottom: 50px;
   display: inline-block;
 }
@@ -37,7 +41,7 @@
 #contact .main .bottom p,
 #contact .main .bottom a {
   font-size: 20px;
-  line-height: 33px;
+  line-height: 40px;
   padding: 0;
   margin: 0;
 }
@@ -47,4 +51,14 @@
   position: static;
   padding: 0;
   border: 0;
+}
+
+#contact .one-fourth {
+  flex: 0 0 35%;
+}
+
+@media screen and (min-width: 1500px) {
+  #contact .one-fourth {
+    flex: 0 0 400px;
+  }
 }

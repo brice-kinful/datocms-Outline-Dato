@@ -131,7 +131,7 @@ export const query = graphql`
         }
       }
     }
-    allDatoCmsCaseStudy(sort: { fields: [position], order: ASC }) {
+    allDatoCmsCaseStudy {
       edges {
         node {
           id

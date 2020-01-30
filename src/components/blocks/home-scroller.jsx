@@ -23,10 +23,13 @@ class HomeScroller extends Component {
   render() {
     const { projects } = this.props;
     const scrollerWidth = this.state.dimensions.width;
+    const scrollerHeight = this.state.dimensions.height;
 
     return (
       <div id="scroller">
-        <h1 className="centertext">Case Studies</h1>
+        <div className="wrapper skinny title-container">
+          <img src="/case-studies.svg" alt="" />
+        </div>
 
         <Measure
           bounds
@@ -35,7 +38,7 @@ class HomeScroller extends Component {
           }}
         >
           {({ measureRef }) => {
-            // console.log(this.state.dimensions);
+            console.log(this.state.dimensions);
             return (
               <ul className={`flex`} style={{ width: scrollerWidth }}>
                 <span className={`flex`} ref={measureRef}>

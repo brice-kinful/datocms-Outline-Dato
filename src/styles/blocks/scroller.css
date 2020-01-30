@@ -5,7 +5,7 @@
   overflow: hidden;
   position: relative;
   /* height: 745px; */
-  height: 35vw;
+  height: 40.5vw;
   margin-bottom: 25%;
   z-index: 1;
 }
@@ -14,21 +14,22 @@
   display: none;
 }
 
-#scroller h1 {
+#scroller .title-container {
   position: absolute;
   left: 0;
   right: 0;
+  top: 50%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* transform: translateY(150px); */
-  transform: translateY(7vw);
-  /* height: 100%; */
+  transform: translateY(-50%);
   z-index: 9;
-  font-size: calc(25vw - 200px);
   pointer-events: none;
-  /* cursor: url(/swiper.svg) 0 0, default; */
+}
+
+#scroller .title-container img {
+  width: 100%;
 }
 
 #scroller ul {

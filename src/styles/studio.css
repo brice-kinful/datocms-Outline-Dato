@@ -11,8 +11,8 @@
 }
 
 #studio h1 {
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 415px;
     height: auto;
     transform: translateY(-50%);
 }

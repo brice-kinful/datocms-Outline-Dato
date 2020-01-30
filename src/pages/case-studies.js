@@ -86,11 +86,18 @@ class CaseStudiesPage extends Component {
     return (
       <Layout>
         <div className="page" id="case-studies">
-          <h1
+          {/* <h1
             className={`big centertext ${isHeadlineVisible ? "visible" : ""}`}
           >
             Case Studies
-          </h1>
+          </h1> */}
+          <div
+            className={`wrapper skinny title-container  ${
+              isHeadlineVisible ? "visible" : ""
+            }`}
+          >
+            <img src="/case-studies.svg" alt="" />
+          </div>
           <div className="wrapper skinny">
             {data.datoCmsCaseStudiesPage.blocks.map(block => {
               switch (block.__typename) {
@@ -103,7 +110,13 @@ class CaseStudiesPage extends Component {
                         <div
                           className={`left grid-item one-half ${block.leftProjectPositioning}`}
                         >
-                          <Img fluid={block.leftProjectImage.fluid} />
+                          <AniLink
+                            fade
+                            to={`/case-studies/${block.leftProject?.slug}`}
+                          >
+                            <Img fluid={block.leftProjectImage.fluid} />
+                          </AniLink>
+
                           <span>
                             {block.leftProject?.excerpt}
                             <AniLink
@@ -118,7 +131,12 @@ class CaseStudiesPage extends Component {
                         <div
                           className={`right grid-item one-half ${block.rightProjectPositioning}`}
                         >
-                          <Img fluid={block.rightProjectImage.fluid} />
+                          <AniLink
+                            fade
+                            to={`/case-studies/${block.rightProject?.slug}`}
+                          >
+                            <Img fluid={block.rightProjectImage.fluid} />
+                          </AniLink>
                           <span>
                             {block.rightProject?.excerpt}
                             <AniLink
@@ -135,14 +153,24 @@ class CaseStudiesPage extends Component {
                   );
                 case "DatoCmsSolo":
                   return (
-                    <div className="block">
+                    <div
+                      className={`block solo ${
+                        !block.narrowWidth ? " full" : ""
+                      }`}
+                    >
                       <div
                         className={`wrapper${
                           block.narrowWidth ? " x_skinny" : ""
                         }`}
                       >
-                        <div className="">
-                          <Img fluid={block.projectImage?.fluid} />
+                        <div className="flex wrap">
+                          <AniLink
+                            fade
+                            to={`/case-studies/${block.project?.slug}`}
+                          >
+                            <Img fluid={block.projectImage?.fluid} />
+                          </AniLink>
+
                           <span>
                             {block.project?.excerpt}
                             <AniLink

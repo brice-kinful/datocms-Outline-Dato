@@ -49,7 +49,7 @@ export const query = graphql`
       slug
       headline
       image {
-        fluid(maxWidth: 550, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxHeight: 750, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid
         }
       }

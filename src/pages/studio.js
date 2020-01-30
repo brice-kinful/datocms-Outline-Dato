@@ -102,10 +102,10 @@ class StudioPage extends Component {
             </div>
           </div>
           <div className="capabilities flex wrapper skinny">
-            <div className="one-half">
+            <div className="image">
               <Img fluid={capabilities.image.fluid} />
             </div>
-            <div className="text one-half">
+            <div className="text">
               <p>{capabilities.title}</p>
               {parse(capabilities.list)}
             </div>

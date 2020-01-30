@@ -34,11 +34,17 @@
     margin-bottom: 15%;
 }
 
+#studio .capabilities .image {
+    width: 42%;
+}
+
 #studio .text {
+    width: 58%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10%;
+    padding: 10% 0 10% 17%;
+    ;
 }
 
 #studio .text li {

@@ -128,6 +128,11 @@ a.textlink {
     display: inline-block;
     padding-bottom: 5px;
     border-bottom: 1px solid;
+    transition: .3s;
+}
+
+a.textlink:hover {
+    opacity: .55;
 }
 
 p.large a.textlink {
@@ -264,7 +269,7 @@ p.large {
     width: 66.6666%;
 }
 
-.cols .col.three-fifths {
+.three-fifths {
     width: 60%;
 }
 
@@ -273,7 +278,7 @@ p.large {
     width: 50%;
 }
 
-.cols .col.two-fifths {
+.two-fifths {
     width: 40%;
 }
 

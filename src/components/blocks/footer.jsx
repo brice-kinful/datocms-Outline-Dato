@@ -69,7 +69,7 @@ class Foooter extends Component {
                   <p>North Charleston, SC 29405</p>
                 </div>
                 <div className="grid-item one-fourth">
-                  <p>Development</p>
+                  <p>Web Development</p>
                   <p>Meet our development-focused</p>
                   <p>
                     sister company,{" "}

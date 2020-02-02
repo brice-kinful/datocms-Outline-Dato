@@ -19,18 +19,66 @@
 }
 
 #contact .main p {
-  font-size: 50px;
+  font-size: 48px;
   line-height: 69px;
   padding-bottom: 215px;
 }
 
 #contact .main a {
-  font-size: 16px;
+  font-size: 20px;
   position: relative;
   bottom: 15px;
   padding-bottom: 10px;
   margin-left: 25px;
   border-bottom: 1px solid;
+}
+
+#contact .main a {
+  font-size: 20px;
+  display: inline-block;
+  padding-bottom: 5px;
+  line-height: 24px;
+  margin-left: 20px;
+  position: relative;
+  top: 0;
+  overflow: hidden;
+}
+
+#contact .main a:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  transition: .5s;
+  height: 1px;
+  background: black;
+  width: 100%;
+  bottom: 66%;
+  left: -200%;
+}
+
+#contact .main a:hover:before {
+  left: 0;
+}
+
+#contact .main a:hover:after {
+  left: -150%;
+}
+
+#contact .main a:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  transition: .5s;
+  height: 1px;
+  background: black;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+#contact .main a:hover {
+  /* opacity: .55; */
+  border-color: transparent;
 }
 
 #contact .main .bottom .one-half>a {
@@ -41,7 +89,7 @@
 #contact .main .bottom p,
 #contact .main .bottom a {
   font-size: 20px;
-  line-height: 40px;
+  line-height: 33px;
   padding: 0;
   margin: 0;
 }
@@ -55,6 +103,10 @@
 
 #contact .one-fourth {
   flex: 0 0 35%;
+}
+
+#contact .gatsby-image-wrapper {
+  height: 100%;
 }
 
 @media screen and (min-width: 1500px) {

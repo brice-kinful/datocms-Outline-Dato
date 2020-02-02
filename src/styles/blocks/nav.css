@@ -104,7 +104,7 @@ body.home #logo {
 #logo a {
   display: block;
   width: 100%;
-  max-width: 65px;
+  max-width: 60px;
   /* transform: scale(.18);
     transform-origin: top left; */
 }
@@ -125,7 +125,7 @@ body.home #logo {
 /* nav */
 #nav {
   /* display: none; */
-  width: 600px;
+  width: auto;
   max-width: 100%;
   height: auto;
   padding: 40px 0;
@@ -179,7 +179,7 @@ body.home #logo {
 
 #nav li {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 #nav li:last-child {
@@ -304,11 +304,11 @@ body.home #logo {
 }
 
 @media screen and (max-width: 480px) {
+
   #toggle_menu,
   #toggle_menu .hamburger {
     width: 30px;
   }
 }
 
-@media screen and (max-height: 768px) {
-}
+@media screen and (max-height: 768px) {}

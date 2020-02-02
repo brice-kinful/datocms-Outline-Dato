@@ -1,5 +1,5 @@
 #case-studies {
-    padding: 125px 0;
+    padding: 125px 0 250px;
     overflow: hidden;
     position: relative;
 }
@@ -87,7 +87,7 @@
     line-height: 24px;
     margin-left: 20px;
     position: relative;
-    top: -7px;
+    top: 0;
 }
 
 @media screen and (min-width: 1400px) {

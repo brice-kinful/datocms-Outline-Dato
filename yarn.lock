@@ -6882,6 +6882,13 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hoist-non-react-statics@^3.0.0:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+  dependencies:
+    react-is "^16.7.0"
+
 hoist-non-react-statics@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
@@ -10889,6 +10896,13 @@ react-images@^1.1.0-beta.3:
     react-transition-group "^2.9.0"
     react-view-pager "^0.6.0"
 
+react-in-viewport@^1.0.0-alpha.11:
+  version "1.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/react-in-viewport/-/react-in-viewport-1.0.0-alpha.11.tgz#d6629830a0a0284c7023fb26886fb324017d397a"
+  integrity sha512-T56ehLD+phvpEBZ4U2rZKtBfwqLvacZDOujsoNoEdAQVl5CT8DOeOzjUnvtJnUXLmlrQSxGg0pYMJnb/aj6rmg==
+  dependencies:
+    hoist-non-react-statics "^3.0.0"
+
 react-inlinesvg@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-inlinesvg/-/react-inlinesvg-1.2.0.tgz#fa63bda004ed941449a034574269ad4819cdbc8d"
@@ -11074,6 +11088,13 @@ react-view-pager@^0.6.0:
     react-motion "^0.5.0"
     resize-observer-polyfill "1.5.0"
     tabbable "1.1.2"
+
+react-visibility-sensor@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-5.1.1.tgz#5238380960d3a0b2be0b7faddff38541e337f5a9"
+  integrity sha512-cTUHqIK+zDYpeK19rzW6zF9YfT4486TIgizZW53wEZ+/GPBbK7cNS0EHyJVyHYacwFEvvHLEKfgJndbemWhB/w==
+  dependencies:
+    prop-types "^15.7.2"
 
 react@^16.10.2:
   version "16.10.2"

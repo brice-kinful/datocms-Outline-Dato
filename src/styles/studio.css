@@ -1,5 +1,5 @@
 #studio {
-    padding: 400px 0;
+    padding: 400px 0 200px;
 }
 
 #studio>* {
@@ -11,8 +11,8 @@
 }
 
 #studio h1 {
-    position: absolute;
-    top: 415px;
+    position: fixed;
+    top: 50%;
     height: auto;
     transform: translateY(-50%);
 }
@@ -58,22 +58,59 @@
 }
 
 #studio .team p {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
 }
 
 #studio .cta p {
-    font-size: 50px;
+    font-size: 48px;
     line-height: 69px;
 }
 
 #studio .cta a {
-    font-size: 16px;
+    font-size: 20px;
     display: inline-block;
     padding-bottom: 5px;
-    border-bottom: 1px solid;
     line-height: 24px;
     margin-left: 20px;
     position: relative;
     top: -15px;
+    overflow: hidden;
+}
+
+#studio .cta a:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    transition: .5s;
+    height: 1px;
+    background: black;
+    width: 100%;
+    bottom: 66%;
+    left: -200%;
+}
+
+#studio .cta a:hover:before {
+    left: 0;
+}
+
+#studio .cta a:hover:after {
+    left: -150%;
+}
+
+#studio .cta a:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    transition: .5s;
+    height: 1px;
+    background: black;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+#studio .cta a:hover {
+    /* opacity: .55; */
+    border-color: transparent;
 }

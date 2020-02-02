@@ -18,6 +18,11 @@ class Navigation extends Component {
     this.setState(state => ({
       isMenuOpen: false
     }));
+
+    // document.onmousemove = function(e) {
+    //   document.body.style.setProperty("--x", e.clientX + "px");
+    //   document.body.style.setProperty("--y", e.clientY + "px");
+    // };
   }
 
   openMenu = e => {
@@ -102,6 +107,7 @@ class Navigation extends Component {
             <div className={`label`}>Menu</div>
           </div>
         </div>
+        <div id="cursor"></div>
       </div>
     );
   }

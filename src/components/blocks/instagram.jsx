@@ -7,10 +7,15 @@ const Instagram = props => {
   //   console.log(grams);
   return (
     <div id="instagram" className={`standard`}>
+      <div id="cursor"></div>
       <div className={`wrapper`}>
         <div className="flex space-between">
           <p>Instagram</p>
-          <a href="https://www.instagram.com/we.are.outline" target="_blank">
+          <a
+            href="https://www.instagram.com/we.are.outline"
+            target="_blank"
+            className="line"
+          >
             @we.are.outline
           </a>
         </div>

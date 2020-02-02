@@ -1,3 +1,7 @@
+#home-capabilities {
+    padding-top: 25%;
+}
+
 .content {
     padding: 100px 0;
 }
@@ -6,6 +10,10 @@
     font-size: 20px;
     line-height: 33px;
     flex: 0 0 29%;
+}
+
+.content .one-third ul {
+    padding: 0 30px;
 }
 
 .content li {

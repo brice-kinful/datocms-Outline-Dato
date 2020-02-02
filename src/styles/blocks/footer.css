@@ -4,6 +4,8 @@
     left: 0;
     z-index: -1;
     width: 100%;
+    /* cursor: none; */
+    cursor: url(/cursor-white.svg) 0 0, default;
 }
 
 #footer .wrapper {
@@ -20,13 +22,14 @@
 
 #footer .flex.grid.four {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 25px;
+    /* grid-gap: 25px; */
+    grid-gap: 120px;
 }
 
 #footer .grid-item>* {
     margin: 0;
-    line-height: 2;
-    font-size: 16px;
+    line-height: 1.7;
+    font-size: 14px;
 }
 
 #footer a {

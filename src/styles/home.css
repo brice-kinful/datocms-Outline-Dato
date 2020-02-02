@@ -1,4 +1,6 @@
 #home>* {
   /* padding-bottom: 25%; */
   padding-bottom: 275px;
+  position: relative;
+  z-index: 1;
 }

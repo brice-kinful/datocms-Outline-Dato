@@ -8,11 +8,15 @@ class Preloader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imagesReady: false
+      imagesReady: false,
+      images: []
     };
   }
 
   componentDidMount() {
+    this.setState({
+      images: this.state.images.concat(this.props.images.images)
+    });
     document.body.classList.add("freeze");
     setTimeout(() => {
       document.body.classList.remove("freeze");
@@ -24,32 +28,40 @@ class Preloader extends Component {
   };
 
   render() {
-    const { images } = this.props;
-    const { imagesReady } = this.state;
-    const imagesLength = images.images.length;
+    console.log(this.state.images);
+    const { imagesReady, images } = this.state;
+    const imagesLength = images.length;
+    const nums = [
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight"
+    ];
 
     return (
       <div id="preload" className={`${imagesReady ? "go" : "wait"}`}>
-        <SVG src="/logo.svg" className="logo" />
-        <div className="images">
-          {images.images.map((item, index) => {
+        <div id="cursor"></div>
+        {/* <SVG src="/logo.svg" className="logo" /> */}
+        <h1 className="centertext">Outline</h1>
+        <div className={`images ${nums[images.length - 1]}`}>
+          {images.map((item, index) => {
+            // setTimeout(() => {
             return (
               <>
                 <BackgroundImage
                   fadeIn={false}
                   fluid={item.fluid}
                   backgroundColor={`#ffffff`}
+                  onLoad={imagesLength != index + 1 && this.updateImagesReady}
+                  className={nums[index]}
                 ></BackgroundImage>
-                {imagesLength == index + 1 && (
-                  <BackgroundImage
-                    fadeIn={false}
-                    fluid={item.fluid}
-                    backgroundColor={`#ffffff`}
-                    onLoad={this.updateImagesReady}
-                  ></BackgroundImage>
-                )}
               </>
             );
+            // }, 500 * index);
           })}
         </div>
       </div>

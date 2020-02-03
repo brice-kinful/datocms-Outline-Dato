@@ -1,48 +1,53 @@
 #footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    /* cursor: none; */
-    cursor: url(/cursor-white.svg) 0 0, default;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  /* cursor: none; */
+  cursor: url(/cursor-white.svg) 0 0, default;
+}
+
+footer p {
+  cursor: url(/cursor-white.svg) 0 0, default;
 }
 
 #footer a {
-    cursor: url(/cursor-blur-white.png) 8.5 8.5, pointer !important;
-    color: white;
-    display: inline-block;
+  cursor: url(/cursor-blur-white.png) 8.5 8.5, pointer !important;
+  color: white;
+  display: inline-block;
 }
 
 #footer .wrapper {
-    max-width: 100%;
-    padding-top: 60px;
-    padding-bottom: 60px;
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 #footer .logo {
-    fill: white;
-    width: 100%;
-    height: 22vw;
+  fill: white;
+  width: 100%;
+  height: 22vw;
 }
 
 #footer .flex.grid.four {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* grid-gap: 25px; */
-    grid-gap: 120px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-gap: 25px; */
+  grid-gap: 120px;
 }
 
-#footer .grid-item>* {
-    display: flex;
-    margin: 0;
-    line-height: 1.7;
-    font-size: 14px;
+#footer .grid-item > * {
+  display: flex;
+  margin: 0;
+  line-height: 1.7;
+  font-size: 14px;
+  cursor: url(/cursor-white.svg) 0 0, default;
 }
 
 #footer a.line:hover:after {
-    background: white;
+  background: white;
 }
 
-#footer p>a {
-    margin-left: 4px;
+#footer p > a {
+  margin-left: 4px;
 }

@@ -22,7 +22,7 @@ class Preloader extends Component {
     document.body.classList.add("freeze");
     setTimeout(() => {
       document.body.classList.remove("freeze");
-    }, 3250);
+    }, 3500);
   }
 
   componentWillUnmount() {

@@ -2,7 +2,7 @@
 
 #scroller {
   /* overflow: scroll; */
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   /* height: 745px; */
   height: 40.5vw;
@@ -50,10 +50,12 @@
   right: 0;
   margin: auto;
   z-index: 9;
+  visibility: hidden;
 }
 
 #scroller img.title.visible {
   opacity: 1;
+  visibility: visible;
 }
 
 #scroller ul {

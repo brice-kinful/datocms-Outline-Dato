@@ -1,403 +1,459 @@
 body.freeze {
-    height: 100vh;
-    overflow: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #preload h1 {
-    color: white;
-    position: fixed;
-    font-size: 221px;
-    z-index: 999;
-    height: 100vh;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  color: white;
+  position: fixed;
+  font-size: 221px;
+  z-index: 999;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-#preload svg {
-    height: 300px;
-    width: 700px;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    fill: white;
+#preload #loading-white-screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  z-index: 99999;
+  transition: 0.25s;
+  transition-delay: 0.75s;
+}
+
+body.loading #preload #loading-white-screen {
+  visibility: hidden;
+  opacity: 0;
+}
+
+body.loading #preload svg {
+  height: 300px;
+  width: 700px;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  fill: white;
 }
 
 #preload {
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    z-index: 999999999;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 999999999;
+  -webkit-transition: 0.75s;
+  -o-transition: 0.75s;
+  transition: 0.75s;
 }
 
 #preload:after {
-    -webkit-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s;
-    content: "";
-    position: fixed;
-    display: inline-block;
-    height: 100vh;
-    width: 100%;
-    z-index: 99999999999;
-    opacity: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  content: "";
+  position: fixed;
+  display: inline-block;
+  height: 100vh;
+  width: 100%;
+  z-index: 99999999999;
+  opacity: 0;
 }
 
 #preload.wait:after {
-    background: white;
-    opacity: 1;
+  background: white;
+  opacity: 1;
 }
 
 #preload .gatsby-image-wrapper {
-    /* padding: 50%; */
-    top: 0;
-    position: fixed !important;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: 2;
-    -webkit-animation-name: hide-me;
-    animation-name: hide-me;
-    -webkit-animation-duration: 2050ms;
-    animation-duration: 2050ms;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+  /* padding: 50%; */
+  top: 0;
+  position: fixed !important;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  /* z-index: 0; */
+  transform: translateZ(0);
+  /* -webkit-animation-name: fade-out;
+  animation-name: fade-out; */
+  -webkit-animation-duration: 4500ms;
+  animation-duration: 4500ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
-#preload.go {
-    -webkit-animation-name: fade-out;
-    animation-name: fade-out;
-    -webkit-animation-duration: 4500ms;
-    animation-duration: 4500ms;
-    -webkit-animation-delay: 1300;
-    animation-delay: 1300;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+#preload .images .gatsby-image-wrapper.loaded {
+  z-index: 2 !important;
+}
+
+body.ready #preload {
+  /* -webkit-animation-name: fade-out;
+  animation-name: fade-out; */
+  opacity: 0;
+  visibility: hidden;
 }
 
 @-webkit-keyframes fade-out {
-    0% {
-        opacity: 1;
-        visibility: visible;
-    }
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
 
-    66% {
-        opacity: 1;
-        visibility: visible;
-    }
+  66% {
+    opacity: 1;
+    visibility: visible;
+  }
 
-    80% {
-        opacity: 0;
-        visibility: hidden;
-    }
+  80% {
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes fade-out {
-    0% {
-        opacity: 1;
-        visibility: visible;
-    }
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
 
-    66% {
-        opacity: 1;
-        visibility: visible;
-    }
+  66% {
+    opacity: 1;
+    visibility: visible;
+  }
 
-    80% {
-        opacity: 0;
-        visibility: hidden;
-    }
+  80% {
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @-webkit-keyframes hide-me {
-    0% {
-        z-index: 2;
-    }
+  0% {
+    z-index: -2;
+  }
 
-    100% {
-        z-index: -99;
-    }
+  100% {
+    z-index: 2;
+  }
 }
 
 @keyframes hide-me {
-    0% {
-        z-index: 2;
-    }
+  0% {
+    z-index: -2;
+  }
 
-    100% {
-        z-index: -99;
-    }
+  100% {
+    z-index: 2;
+  }
+}
+
+#preload .images .gatsby-image-wrapper:nth-child(1) {
+  z-index: 0;
+}
+#preload .images .gatsby-image-wrapper:nth-child(2) {
+  z-index: -1;
+}
+#preload .images .gatsby-image-wrapper:nth-child(3) {
+  z-index: -2;
+}
+#preload .images .gatsby-image-wrapper:nth-child(4) {
+  z-index: -3;
+}
+#preload .images .gatsby-image-wrapper:nth-child(5) {
+  z-index: -4;
+}
+#preload .images .gatsby-image-wrapper:nth-child(6) {
+  z-index: -5;
+}
+#preload .images .gatsby-image-wrapper:nth-child(8) {
+  z-index: -6;
+}
+#preload .images .gatsby-image-wrapper:nth-child(9) {
+  z-index: -7;
+}
+#preload .images .gatsby-image-wrapper:nth-child(10) {
+  z-index: -8;
 }
 
 #preload.go .images.four .gatsby-image-wrapper:nth-child(1) {
-    -webkit-animation-delay: 1000s;
-    animation-delay: 1000s;
+  -webkit-animation-delay: 1000s;
+  animation-delay: 1000s;
 }
 
-#preload.go .images.four .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 2200ms;
-    animation-delay: 2200ms;
+#preload.go .images.four .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 2200ms;
+  animation-delay: 2200ms;
 }
 
-#preload.go .images.four .gatsby-image-wrapper:nth-child(3n) {
-    -webkit-animation-delay: 1800ms;
-    animation-delay: 1800ms;
+#preload.go .images.four .gatsby-image-wrapper:nth-child(3) {
+  -webkit-animation-delay: 1800ms;
+  animation-delay: 1800ms;
 }
 
-#preload.go .images.four .gatsby-image-wrapper:nth-child(4n) {
-    -webkit-animation-delay: 1400ms;
-    animation-delay: 1400ms;
+#preload.go .images.four .gatsby-image-wrapper:nth-child(4) {
+  -webkit-animation-delay: 1400ms;
+  animation-delay: 1400ms;
 }
-
 
 #preload.go .images.five .gatsby-image-wrapper:nth-child(1) {
-    -webkit-animation-delay: 1000s;
-    animation-delay: 1000s;
+  -webkit-animation-delay: 1000s;
+  animation-delay: 1000s;
 }
 
-#preload.go .images.five .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 2400ms;
-    animation-delay: 2400ms;
+#preload.go .images.five .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 2400ms;
+  animation-delay: 2400ms;
 }
 
-#preload.go .images.five .gatsby-image-wrapper:nth-child(3n) {
-    -webkit-animation-delay: 2000ms;
-    animation-delay: 2000ms;
+#preload.go .images.five .gatsby-image-wrapper:nth-child(3) {
+  -webkit-animation-delay: 2000ms;
+  animation-delay: 2000ms;
 }
 
-#preload.go .images.five .gatsby-image-wrapper:nth-child(4n) {
-    -webkit-animation-delay: 1800ms;
-    animation-delay: 1800ms;
+#preload.go .images.five .gatsby-image-wrapper:nth-child(4) {
+  -webkit-animation-delay: 1800ms;
+  animation-delay: 1800ms;
 }
 
-#preload.go .images.five .gatsby-image-wrapper:nth-child(5n) {
-    -webkit-animation-delay: 1400ms;
-    animation-delay: 1400ms;
+#preload.go .images.five .gatsby-image-wrapper:nth-child(5) {
+  -webkit-animation-delay: 1400ms;
+  animation-delay: 1400ms;
 }
-
 
 #preload.go .images.six .gatsby-image-wrapper:nth-child(1) {
-    -webkit-animation-delay: 1000s;
-    animation-delay: 1000s;
+  -webkit-animation-delay: 1000s;
+  animation-delay: 1000s;
 }
 
-#preload.go .images.six .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 2800ms;
-    animation-delay: 2800ms;
+#preload.go .images.six .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 2800ms;
+  animation-delay: 2800ms;
 }
 
-#preload.go .images.six .gatsby-image-wrapper:nth-child(3n) {
-    -webkit-animation-delay: 2400ms;
-    animation-delay: 2400ms;
+#preload.go .images.six .gatsby-image-wrapper:nth-child(3) {
+  -webkit-animation-delay: 2400ms;
+  animation-delay: 2400ms;
 }
 
-#preload.go .images.six .gatsby-image-wrapper:nth-child(4n) {
-    -webkit-animation-delay: 2200ms;
-    animation-delay: 2200ms;
+#preload.go .images.six .gatsby-image-wrapper:nth-child(4) {
+  -webkit-animation-delay: 2200ms;
+  animation-delay: 2200ms;
 }
 
-#preload.go .images.six .gatsby-image-wrapper:nth-child(5n) {
-    -webkit-animation-delay: 1800ms;
-    animation-delay: 1800ms;
+#preload.go .images.six .gatsby-image-wrapper:nth-child(5) {
+  -webkit-animation-delay: 1800ms;
+  animation-delay: 1800ms;
 }
 
-#preload.go .images.six .gatsby-image-wrapper:nth-child(6n) {
-    -webkit-animation-delay: 1400ms;
-    animation-delay: 1400ms;
+#preload.go .images.six .gatsby-image-wrapper:nth-child(6) {
+  -webkit-animation-delay: 1400ms;
+  animation-delay: 1400ms;
 }
 
 #preload.go .images.seven .gatsby-image-wrapper:nth-child(1) {
-    -webkit-animation-delay: 1000s;
-    animation-delay: 1000s;
+  -webkit-animation-delay: 1000s;
+  animation-delay: 1000s;
 }
 
-#preload.go .images.seven .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 3200ms;
-    animation-delay: 3200ms;
+#preload.go .images.seven .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 3200ms;
+  animation-delay: 3200ms;
 }
 
-#preload.go .images.seven .gatsby-image-wrapper:nth-child(3n) {
-    -webkit-animation-delay: 2800ms;
-    animation-delay: 2800ms;
+#preload.go .images.seven .gatsby-image-wrapper:nth-child(3) {
+  -webkit-animation-delay: 2800ms;
+  animation-delay: 2800ms;
 }
 
-#preload.go .images.seven .gatsby-image-wrapper:nth-child(4n) {
-    -webkit-animation-delay: 2400ms;
-    animation-delay: 2400ms;
+#preload.go .images.seven .gatsby-image-wrapper:nth-child(4) {
+  -webkit-animation-delay: 2400ms;
+  animation-delay: 2400ms;
 }
 
-#preload.go .images.seven .gatsby-image-wrapper:nth-child(5n) {
-    -webkit-animation-delay: 2000ms;
-    animation-delay: 2000ms;
+#preload.go .images.seven .gatsby-image-wrapper:nth-child(5) {
+  -webkit-animation-delay: 2000ms;
+  animation-delay: 2000ms;
 }
 
-#preload.go .images.seven .gatsby-image-wrapper:nth-child(6n) {
-    -webkit-animation-delay: 1800ms;
-    animation-delay: 1800ms;
+#preload.go .images.seven .gatsby-image-wrapper:nth-child(6) {
+  -webkit-animation-delay: 1800ms;
+  animation-delay: 1800ms;
 }
 
-#preload.go .images.seven .gatsby-image-wrapper:nth-child(7n) {
-    -webkit-animation-delay: 1400ms;
-    animation-delay: 1400ms;
+#preload.go .images.seven .gatsby-image-wrapper:nth-child(7) {
+  -webkit-animation-delay: 1400ms;
+  animation-delay: 1400ms;
 }
 
 #preload.go .images.eight .gatsby-image-wrapper:nth-child(1) {
-    -webkit-animation-delay: 1000s;
-    animation-delay: 1000s;
+  -webkit-animation-delay: 1300;
+  animation-delay: 1300;
 }
 
-#preload.go .images.eight .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 3100ms;
-    animation-delay: 3100ms;
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(8) {
+  -webkit-animation-delay: 3000;
+  animation-delay: 3000;
+}
+/* #preload.go .images.eight .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 1500;
+  animation-delay: 1500;
+} */
+
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(1) {
+  -webkit-animation-delay: 1000s;
+  animation-delay: 1000s;
 }
 
-#preload.go .images.eight .gatsby-image-wrapper:nth-child(3n) {
-    -webkit-animation-delay: 2800ms;
-    animation-delay: 2800ms;
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 3100ms;
+  animation-delay: 3100ms;
 }
 
-#preload.go .images.eight .gatsby-image-wrapper:nth-child(4n) {
-    -webkit-animation-delay: 2500ms;
-    animation-delay: 2500ms;
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(3) {
+  -webkit-animation-delay: 2800ms;
+  animation-delay: 2800ms;
 }
 
-#preload.go .images.eight .gatsby-image-wrapper:nth-child(5n) {
-    -webkit-animation-delay: 2200ms;
-    animation-delay: 2200ms;
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(4) {
+  -webkit-animation-delay: 2500ms;
+  animation-delay: 2500ms;
 }
 
-#preload.go .images.eight .gatsby-image-wrapper:nth-child(6n) {
-    -webkit-animation-delay: 1900ms;
-    animation-delay: 1900ms;
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(5) {
+  -webkit-animation-delay: 2200ms;
+  animation-delay: 2200ms;
 }
 
-#preload.go .images.eight .gatsby-image-wrapper:nth-child(7n) {
-    -webkit-animation-delay: 1600ms;
-    animation-delay: 1600ms;
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(6) {
+  -webkit-animation-delay: 1900ms;
+  animation-delay: 1900ms;
 }
 
-#preload.go .images.eight .gatsby-image-wrapper:nth-child(8n) {
-    -webkit-animation-delay: 1300ms;
-    animation-delay: 1300ms;
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(7) {
+  -webkit-animation-delay: 1600ms;
+  animation-delay: 1600ms;
+}
+
+#preload.go .images.eight .gatsby-image-wrapper:nth-child(8) {
+  -webkit-animation-delay: 1300ms;
+  animation-delay: 1300ms;
 }
 
 #preload.go .images.nine .gatsby-image-wrapper:nth-child(1) {
-    -webkit-animation-delay: 1000s;
-    animation-delay: 1000s;
+  -webkit-animation-delay: 1000s;
+  animation-delay: 1000s;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 3000ms;
-    animation-delay: 3000ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 3000ms;
+  animation-delay: 3000ms;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(3n) {
-    -webkit-animation-delay: 2750ms;
-    animation-delay: 2750ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(3) {
+  -webkit-animation-delay: 2750ms;
+  animation-delay: 2750ms;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(4n) {
-    -webkit-animation-delay: 2500ms;
-    animation-delay: 2500ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(4) {
+  -webkit-animation-delay: 2500ms;
+  animation-delay: 2500ms;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(5n) {
-    -webkit-animation-delay: 2250ms;
-    animation-delay: 2250ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(5) {
+  -webkit-animation-delay: 2250ms;
+  animation-delay: 2250ms;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(6n) {
-    -webkit-animation-delay: 2000ms;
-    animation-delay: 2000ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(6) {
+  -webkit-animation-delay: 2000ms;
+  animation-delay: 2000ms;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(7n) {
-    -webkit-animation-delay: 1750ms;
-    animation-delay: 1750ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(7) {
+  -webkit-animation-delay: 1750ms;
+  animation-delay: 1750ms;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(8n) {
-    -webkit-animation-delay: 1500ms;
-    animation-delay: 1500ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(8) {
+  -webkit-animation-delay: 1500ms;
+  animation-delay: 1500ms;
 }
 
-#preload.go .images.nine .gatsby-image-wrapper:nth-child(9n) {
-    -webkit-animation-delay: 1250ms;
-    animation-delay: 1250ms;
+#preload.go .images.nine .gatsby-image-wrapper:nth-child(9) {
+  -webkit-animation-delay: 1250ms;
+  animation-delay: 1250ms;
 }
 
 #preload.go .images.ten .gatsby-image-wrapper:nth-child(1) {
-    -webkit-animation-delay: 1000s;
-    animation-delay: 1000s;
+  -webkit-animation-delay: 1000s;
+  animation-delay: 1000s;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 2575ms;
-    animation-delay: 2575ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 2575ms;
+  animation-delay: 2575ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(3n) {
-    -webkit-animation-delay: 2400ms;
-    animation-delay: 2400ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(3) {
+  -webkit-animation-delay: 2400ms;
+  animation-delay: 2400ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(2n) {
-    -webkit-animation-delay: 2225ms;
-    animation-delay: 2225ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(2) {
+  -webkit-animation-delay: 2225ms;
+  animation-delay: 2225ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(5n) {
-    -webkit-animation-delay: 2050ms;
-    animation-delay: 2050ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(5) {
+  -webkit-animation-delay: 2050ms;
+  animation-delay: 2050ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(6n) {
-    -webkit-animation-delay: 1875ms;
-    animation-delay: 1875ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(6) {
+  -webkit-animation-delay: 1875ms;
+  animation-delay: 1875ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(7n) {
-    -webkit-animation-delay: 1700ms;
-    animation-delay: 1700ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(7) {
+  -webkit-animation-delay: 1700ms;
+  animation-delay: 1700ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(8n) {
-    -webkit-animation-delay: 1525ms;
-    animation-delay: 1525ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(8) {
+  -webkit-animation-delay: 1525ms;
+  animation-delay: 1525ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(9n) {
-    -webkit-animation-delay: 1350ms;
-    animation-delay: 1350ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(9) {
+  -webkit-animation-delay: 1350ms;
+  animation-delay: 1350ms;
 }
 
-#preload.go .images.ten .gatsby-image-wrapper:nth-child(10n) {
-    -webkit-animation-delay: 1175ms;
-    animation-delay: 1175ms;
+#preload.go .images.ten .gatsby-image-wrapper:nth-child(10) {
+  -webkit-animation-delay: 1175ms;
+  animation-delay: 1175ms;
 }

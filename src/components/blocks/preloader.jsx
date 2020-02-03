@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import BackgroundImage from "gatsby-background-image";
 import SVG from "react-inlinesvg";
 
+import PreloaderImage from "./preloader-image";
+
 import "../../styles/blocks/preloader.css";
 
 class Preloader extends Component {
@@ -45,31 +47,27 @@ class Preloader extends Component {
     ];
 
     return (
-      <div id="preload" className={`${imagesReady ? "go" : "wait"}`}>
-        <div id="cursor"></div>
-        {/* <SVG src="/logo.svg" className="logo" /> */}
-        <h1 className="centertext">Outline</h1>
-        <div className={`images ${nums[images.length - 1]}`}>
-          {images.map((item, index) => {
-            // setTimeout(() => {
-            return (
-              <>
-                <BackgroundImage
-                  fadeIn={false}
-                  fluid={item.fluid}
-                  backgroundColor={`#ffffff`}
-                  onLoad={
-                    imagesLength != index + 1
-                      ? this.updateImagesReady
-                      : console.log("loading images")
-                  }
-                ></BackgroundImage>
-              </>
-            );
-            // }, 500 * index);
-          })}
+      <>
+        <div id="preload">
+          <div id="loading-white-screen"></div>
+          {/* <SVG src="/logo.svg" className="logo" /> */}
+          <h1 className="centertext">Outline</h1>
+          <div className={`images ${nums[images.length - 1]}`}>
+            {images.map((item, index) => {
+              return (
+                <>
+                  <PreloaderImage
+                    src={item.fluid}
+                    wait={(index + 1) * 250}
+                    currentImage={index + 1}
+                    totalImages={images.length}
+                  />
+                </>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

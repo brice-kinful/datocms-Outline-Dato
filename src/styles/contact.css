@@ -10,7 +10,7 @@
   padding-bottom: 200px;
 } */
 
-#contact>*:last-child {
+#contact > *:last-child {
   padding-bottom: 0;
 }
 
@@ -27,48 +27,26 @@
 #contact .main a {
   font-size: 20px;
   position: relative;
-  bottom: 15px;
-  padding-bottom: 10px;
+  top: -15px;
+  padding-bottom: 0;
   margin-left: 25px;
-  border-bottom: 1px solid;
-}
-
-#contact .main a {
-  font-size: 20px;
   display: inline-block;
-  padding-bottom: 5px;
-  line-height: 24px;
-  margin-left: 20px;
-  position: relative;
-  top: 0;
-  overflow: hidden;
+  line-height: 40px;
 }
 
-#contact .main a:before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  transition: .5s;
-  height: 1px;
-  background: black;
-  width: 100%;
-  bottom: 66%;
-  left: -200%;
-}
-
-#contact .main a:hover:before {
-  left: 0;
+#contact .main a:hover {
+  top: -7px !important;
 }
 
 #contact .main a:hover:after {
-  left: -150%;
+  bottom: 50%;
 }
 
 #contact .main a:after {
   content: "";
   display: inline-block;
   position: absolute;
-  transition: .5s;
+  transition: 0.3s;
   height: 1px;
   background: black;
   width: 100%;
@@ -81,7 +59,7 @@
   border-color: transparent;
 }
 
-#contact .main .bottom .one-half>a {
+#contact .main .bottom .one-half > a {
   margin-bottom: 50px;
   display: inline-block;
 }
@@ -107,6 +85,36 @@
 
 #contact .gatsby-image-wrapper {
   height: 100%;
+}
+
+#contact .main .bottom a,
+#contact .main .bottom p {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+#contact .main .bottom a {
+  top: 0 !important;
+}
+
+#contact .main .bottom a:after {
+  content: "";
+  display: inline-block;
+  transition: 0.3s;
+  position: absolute;
+  height: 1px;
+  background: transparent;
+  width: 100%;
+  bottom: 50%;
+  /* left: 0; */
+  left: -150%;
+}
+
+#contact .main .bottom a:hover:after {
+  background: black;
+  /* bottom: 50%; */
+  left: 0;
 }
 
 @media screen and (min-width: 1500px) {

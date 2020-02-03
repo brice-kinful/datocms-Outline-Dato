@@ -120,7 +120,7 @@ class CaseStudiesPage extends Component {
                               block.leftProjectNarrowExcerpt ? "narrow" : ""
                             }`}
                           >
-                            {block.leftProject?.excerpt}
+                            <span>{block.leftProject?.excerpt}</span>
                             <AniLink
                               fade
                               to={`/case-studies/${block.leftProject?.slug}`}
@@ -147,7 +147,7 @@ class CaseStudiesPage extends Component {
                               block.rightProjectNarrowExcerpt ? "narrow" : ""
                             }`}
                           >
-                            {block.rightProject?.excerpt}
+                            <span>{block.rightProject?.excerpt}</span>
                             <AniLink
                               fade
                               to={`/case-studies/${block.rightProject?.slug}`}
@@ -186,7 +186,7 @@ class CaseStudiesPage extends Component {
                               block.projectNarrowExcerpt ? "narrow" : ""
                             }`}
                           >
-                            {block.project?.excerpt}
+                            <span>{block.project?.excerpt}</span>
                             <AniLink
                               fade
                               to={`/case-studies/${block.project?.slug}`}

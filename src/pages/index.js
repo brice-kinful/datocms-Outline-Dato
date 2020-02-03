@@ -16,11 +16,24 @@ class IndexPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      grams: []
+      grams: [],
+      email: "",
+      insta: ""
     };
   }
 
   componentDidMount() {
+    const { data } = this.props;
+    const email = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
+      return node.profileType === "Email";
+    });
+    const insta = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
+      return node.profileType === "Instagram";
+    });
+    this.setState({
+      email: email[0].node.handle,
+      insta: insta[0].node.handle
+    });
     const instagramRegExp = new RegExp(
       /<script type="text\/javascript">window\._sharedData = (.*);<\/script>/
     );
@@ -36,11 +49,13 @@ class IndexPage extends Component {
         grams: [...prevState.grams, edges]
       }));
     };
-    fetchInstagramPhotos("https://www.instagram.com/we.are.outline/");
+    fetchInstagramPhotos(`https://www.instagram.com/${email[0].node.handle}/`);
   }
 
   render() {
     const { data } = this.props;
+    const { email, insta } = this.state;
+
     const headline = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeadline";
     });
@@ -139,6 +154,14 @@ export const query = graphql`
           title
           slug
           excerpt
+        }
+      }
+    }
+    allDatoCmsSocialProfile {
+      edges {
+        node {
+          profileType
+          handle
         }
       }
     }

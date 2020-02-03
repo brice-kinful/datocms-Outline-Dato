@@ -1,118 +1,118 @@
 #case-studies {
-    padding: 125px 0 250px;
-    overflow: hidden;
-    position: relative;
+  padding: 125px 0 250px;
+  overflow: hidden;
+  position: relative;
 }
 
-
 #case-studies .title-container {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 50%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-50%);
-    z-index: 9;
-    pointer-events: none;
-    opacity: 0;
-    transition: .3s;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  z-index: 9;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s;
 }
 
 #case-studies .title-container img {
-    width: 100%;
+  width: 100%;
 }
 
-
 #case-studies .title-container.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 #case-studies .flex.grid {
-    grid-gap: 15%;
+  grid-gap: 15%;
 }
 
 @supports (display: -ms-grid) or (display: grid) {
-    #case-studies .flex.grid {
-        padding: 0;
-    }
-
+  #case-studies .flex.grid {
+    padding: 0;
+  }
 }
 
 #case-studies .flex.grid.two {
-    align-items: center;
+  align-items: center;
 }
 
-#case-studies .wrapper>* {
-    padding-bottom: 190px;
+#case-studies .wrapper > * {
+  padding-bottom: 190px;
 }
 
-#case-studies .wrapper>*:last-child {
-    padding-bottom: 0;
+#case-studies .wrapper > *:last-child {
+  padding-bottom: 0;
 }
 
 #case-studies .block.up {
-    padding-top: 100px;
+  padding-top: 100px;
 }
-
 
 #case-studies .block span.narrow {
-    max-width: 485px;
+  max-width: 485px;
 }
 
-#case-studies .block.solo .flex>* {
-    width: 100%;
+#case-studies .block.solo .flex > * {
+  width: 100%;
 }
 
 #case-studies .block.solo span.narrow {
-    flex: 0 0 550px;
-    max-width: 100%;
+  flex: 0 0 550px;
+  max-width: 100%;
 }
 
 #case-studies .block.solo.full span.narrow {
-    flex: 0 0 600px;
-    max-width: 100%;
+  flex: 0 0 600px;
+  max-width: 100%;
 }
 
 #case-studies .block.solo.full .wrapper {
-    padding: 0;
+  padding: 0;
 }
 
 #case-studies .grid-item.up {
-    margin-top: -100px;
+  margin-top: -100px;
 }
 
 #case-studies .grid-item.down {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 #case-studies .gatsby-image-wrapper {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 #case-studies span {
-    font-size: 32px;
-    line-height: 46px;
+  font-size: 32px;
+  line-height: 46px;
+  margin-right: 20px;
 }
 
 #case-studies span a {
-    font-size: 16px;
-    line-height: 24px;
-    margin-left: 20px;
-    position: relative;
-    top: 0;
+  font-size: 16px;
+  line-height: 26px;
+  position: relative;
+  top: 3px;
+}
+
+.textlink:after {
+  bottom: 2px;
 }
 
 @media screen and (min-width: 1400px) {
-    #case-studies h1 {
-        font-size: 200px;
-    }
+  #case-studies h1 {
+    font-size: 200px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    #case-studies .block.solo.full span {
-        flex: 0 auto;
-    }
+  #case-studies .block.solo.full span {
+    flex: 0 auto;
+  }
 }

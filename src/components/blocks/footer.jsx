@@ -4,7 +4,7 @@ import SVG from "react-inlinesvg";
 
 import "../../styles/blocks/footer.css";
 
-class Foooter extends Component {
+class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -74,9 +74,8 @@ class Foooter extends Component {
                 </div>
                 <div className="grid-item one-fourth">
                   <p>Web Development</p>
-                  <p>Meet our development-focused</p>
                   <p>
-                    sister company,{" "}
+                    Meet our development-focused sister company,{" "}
                     <a
                       href="https://bykinful.com"
                       target="_blank"
@@ -98,4 +97,4 @@ class Foooter extends Component {
   }
 }
 
-export default Foooter;
+export default Footer;

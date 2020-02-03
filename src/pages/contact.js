@@ -18,7 +18,12 @@ const ContactPage = ({ data }) => {
             {parse(contact.headline)}
             <div className="flex bottom inner space-between">
               <div className="one-half">
-                <AniLink to={`/${contact.viewJobsButtonUrl.slug}`} fade>
+                <AniLink
+                  to={`/${contact.viewJobsButtonUrl.slug}`}
+                  fade
+                  className="line"
+                  style={{ position: "relative" }}
+                >
                   {contact.viewJobsButtonText}
                 </AniLink>
                 {parse(contact.leftBlockText)}

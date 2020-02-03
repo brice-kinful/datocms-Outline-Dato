@@ -25,6 +25,10 @@ class Preloader extends Component {
     }, 3250);
   }
 
+  componentWillUnmount() {
+    document.body.classList.remove("freeze");
+  }
+
   updateImagesReady = () => {
     this.setState({ imagesReady: true });
   };

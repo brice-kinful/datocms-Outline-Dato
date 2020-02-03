@@ -23,6 +23,11 @@ class PreloaderImage extends Component {
     }
   }
 
+  componentWillUnmount() {
+    document.body.classList.remove("loading");
+    document.body.classList.remove("ready");
+  }
+
   loadImage = () => {
     const { waitTime } = this.state;
     if (this.props.currentImage == 1) {

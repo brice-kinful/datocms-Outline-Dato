@@ -86,7 +86,7 @@ class Layout extends Component {
               edges {
                 node {
                   profileType
-                  url
+                  handle
                 }
               }
             }

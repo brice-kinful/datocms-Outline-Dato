@@ -63,7 +63,6 @@ class Preloader extends Component {
                       ? this.updateImagesReady
                       : console.log("loading images")
                   }
-                  className={nums[index]}
                 ></BackgroundImage>
               </>
             );

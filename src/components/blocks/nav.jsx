@@ -18,11 +18,11 @@ class Navigation extends Component {
     this.setState(state => ({
       isMenuOpen: false
     }));
+    window.addEventListener("scroll", this.closeMenu);
+  }
 
-    // document.onmousemove = function(e) {
-    //   document.body.style.setProperty("--x", e.clientX + "px");
-    //   document.body.style.setProperty("--y", e.clientY + "px");
-    // };
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.closeMenu);
   }
 
   openMenu = e => {
@@ -42,6 +42,9 @@ class Navigation extends Component {
     if (this.state.isMenuOpen) {
       document.body.classList.remove("nav-open");
     }
+    this.setState(state => ({
+      isMenuOpen: false
+    }));
   };
 
   render() {

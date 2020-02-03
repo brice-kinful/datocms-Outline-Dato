@@ -16,6 +16,10 @@
   font-size: 16px;
 }
 
+#instagram p+a {
+  align-self: flex-start;
+}
+
 #instagram .cols {
   margin-bottom: 120px;
 }

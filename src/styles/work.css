@@ -34,8 +34,26 @@
     background-color: white !important;
 }
 
-.ril__navButtons {
+.ril__image,
+.ril__imagePrev,
+.ril__imageNext {
+    /* max-height: calc(100vh - 250px); */
+}
+
+/* .ril__navButtons {
     display: none !important;
+} */
+
+.ril__navButtonPrev {
+    left: 10px;
+    background: url("/swiper-left.svg") no-repeat center;
+    background-size: 50px;
+}
+
+.ril__navButtonNext {
+    right: 10px;
+    background: url("/swiper-right.svg") no-repeat center;
+    background-size: 50px;
 }
 
 .ril__closeButton {
@@ -47,12 +65,34 @@
     background-color: white;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild {
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption {
     position: fixed;
-    bottom: 60px;
+    bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
     font-size: 16px;
     line-height: 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 860px) {
+    .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption {
+        align-items: flex-end;
+        bottom: 30px;
+    }
+
+    .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
+        transform: none !important;
+
+    }
 }

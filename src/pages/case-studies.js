@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
+import BlurredImage from "../components/blocks/blurred-image";
 
 import "../styles/grid.css";
 import "../styles/case-studies.css";
@@ -70,6 +71,7 @@ class CaseStudiesPage extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props.data);
     this.setState({ prevScrollpos: window.pageYOffset });
     window.addEventListener("scroll", this.handleScroll);
     // window.addEventListener("mousemove", this.handleMouseMove);
@@ -103,16 +105,21 @@ class CaseStudiesPage extends Component {
                     >
                       <div className="wrapper flex grid two">
                         <div
-                          className={`left grid-item one-half ${block.leftProjectPositioning}`}
+                          className={`flex column left grid-item one-half ${block.leftProjectPositioning}`}
                         >
                           <AniLink
                             fade
                             to={`/case-studies/${block.leftProject?.slug}`}
                           >
-                            <Img fluid={block.leftProjectImage.fluid} />
+                            {/* <Img fluid={block.leftProjectImage.fluid} /> */}
+                            <BlurredImage src={block.leftProjectImage?.fluid} />
                           </AniLink>
 
-                          <span>
+                          <span
+                            className={`${
+                              block.leftProjectNarrowExcerpt ? "narrow" : ""
+                            }`}
+                          >
                             {block.leftProject?.excerpt}
                             <AniLink
                               fade
@@ -124,15 +131,22 @@ class CaseStudiesPage extends Component {
                           </span>
                         </div>
                         <div
-                          className={`right grid-item one-half ${block.rightProjectPositioning}`}
+                          className={`flex column right grid-item one-half ${block.rightProjectPositioning}`}
                         >
                           <AniLink
                             fade
                             to={`/case-studies/${block.rightProject?.slug}`}
                           >
-                            <Img fluid={block.rightProjectImage.fluid} />
+                            {/* <Img fluid={block.rightProjectImage.fluid} /> */}
+                            <BlurredImage
+                              src={block.rightProjectImage?.fluid}
+                            />
                           </AniLink>
-                          <span>
+                          <span
+                            className={`${
+                              block.rightProjectNarrowExcerpt ? "narrow" : ""
+                            }`}
+                          >
                             {block.rightProject?.excerpt}
                             <AniLink
                               fade
@@ -163,10 +177,15 @@ class CaseStudiesPage extends Component {
                             fade
                             to={`/case-studies/${block.project?.slug}`}
                           >
-                            <Img fluid={block.projectImage?.fluid} />
+                            {/* <Img fluid={block.projectImage?.fluid} /> */}
+                            <BlurredImage src={block.projectImage?.fluid} />
                           </AniLink>
 
-                          <span>
+                          <span
+                            className={`${
+                              block.projectNarrowExcerpt ? "narrow" : ""
+                            }`}
+                          >
                             {block.project?.excerpt}
                             <AniLink
                               fade
@@ -206,6 +225,7 @@ export const query = graphql`
             slug
             excerpt
           }
+          leftProjectNarrowExcerpt
           leftProjectImage {
             fluid(maxWidth: 860, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid
@@ -217,6 +237,7 @@ export const query = graphql`
             slug
             excerpt
           }
+          rightProjectNarrowExcerpt
           rightProjectImage {
             fluid(maxWidth: 860, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid
@@ -230,6 +251,7 @@ export const query = graphql`
             slug
             excerpt
           }
+          projectNarrowExcerpt
           projectImage {
             fluid(
               maxWidth: 1920

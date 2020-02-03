@@ -36,13 +36,13 @@ class HomeScroller extends Component {
       >
         <div id="scroller">
           {/* <div id="cursor"></div> */}
-          <div className="wrapper skinny title-container">
-            <img
-              src="/case-studies.svg"
-              alt=""
-              className={imgViz && "visible"}
-            />
-          </div>
+          {/* <div className="wrapper skinny title-container"> */}
+          <img
+            src="/case-studies.svg"
+            alt=""
+            className={`title${imgViz ? " visible" : ""}`}
+          />
+          {/* </div> */}
 
           <Measure
             bounds

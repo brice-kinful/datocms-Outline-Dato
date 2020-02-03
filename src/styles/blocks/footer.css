@@ -10,6 +10,8 @@
 
 #footer a {
     cursor: url(/cursor-blur-white.png) 8.5 8.5, pointer !important;
+    color: white;
+    display: inline-block;
 }
 
 #footer .wrapper {
@@ -31,12 +33,16 @@
 }
 
 #footer .grid-item>* {
+    display: flex;
     margin: 0;
     line-height: 1.7;
     font-size: 14px;
 }
 
-#footer a {
-    color: white;
-    display: inline-block;
+#footer a.line:hover:after {
+    background: white;
+}
+
+#footer p>a {
+    margin-left: 4px;
 }

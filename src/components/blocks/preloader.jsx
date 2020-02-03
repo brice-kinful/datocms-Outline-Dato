@@ -58,7 +58,11 @@ class Preloader extends Component {
                   fadeIn={false}
                   fluid={item.fluid}
                   backgroundColor={`#ffffff`}
-                  onLoad={imagesLength != index + 1 && this.updateImagesReady}
+                  onLoad={
+                    imagesLength != index + 1
+                      ? this.updateImagesReady
+                      : console.log("loading images")
+                  }
                   className={nums[index]}
                 ></BackgroundImage>
               </>

@@ -39,6 +39,7 @@ class Foooter extends Component {
                     <a
                       href="https://www.instagram.com/we.are.outline"
                       target="_blank"
+                      className="line"
                     >
                       Instagram
                     </a>
@@ -47,6 +48,7 @@ class Foooter extends Component {
                     <a
                       href="https://www.pinterest.com/we.are.outline"
                       target="_blank"
+                      className="line"
                     >
                       Pinterest
                     </a>
@@ -55,10 +57,12 @@ class Foooter extends Component {
                 <div className="grid-item one-fourth">
                   <p>Project Inquiries</p>
                   <div>
-                    <a href="tel:843-425-5312">843.425.5312</a>
+                    <a href="tel:843-425-5312" className="line">
+                      843.425.5312
+                    </a>
                   </div>
                   <div>
-                    <a href="mailto:hello@weareoutline.com">
+                    <a href="mailto:hello@weareoutline.com" className="line">
                       hello@weareoutline.com
                     </a>
                   </div>
@@ -73,7 +77,11 @@ class Foooter extends Component {
                   <p>Meet our development-focused</p>
                   <p>
                     sister company,{" "}
-                    <a href="https://bykinful.com" target="_blank">
+                    <a
+                      href="https://bykinful.com"
+                      target="_blank"
+                      className="line"
+                    >
                       Kinful
                     </a>
                   </p>

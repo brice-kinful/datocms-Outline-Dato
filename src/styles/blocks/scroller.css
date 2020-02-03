@@ -38,13 +38,21 @@
   pointer-events: none;
 }
 
-#scroller .title-container img {
-  width: 100%;
+#scroller img.title {
+  width: calc(100% - 120px);
   opacity: 0;
+  -webkit-transition: 0.6s;
   transition: 0.6s;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9;
 }
 
-#scroller .title-container img.visible {
+#scroller img.title.visible {
   opacity: 1;
 }
 

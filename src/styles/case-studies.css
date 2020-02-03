@@ -57,12 +57,27 @@
     padding-top: 100px;
 }
 
+
+#case-studies .block span.narrow {
+    max-width: 485px;
+}
+
 #case-studies .block.solo .flex>* {
     width: 100%;
 }
 
-#case-studies .block.solo.full span {
+#case-studies .block.solo span.narrow {
+    flex: 0 0 550px;
+    max-width: 100%;
+}
+
+#case-studies .block.solo.full span.narrow {
     flex: 0 0 600px;
+    max-width: 100%;
+}
+
+#case-studies .block.solo.full .wrapper {
+    padding: 0;
 }
 
 #case-studies .grid-item.up {

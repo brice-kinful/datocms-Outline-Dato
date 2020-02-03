@@ -1,27 +1,29 @@
 import React, { Component } from "react";
 import { Link, graphql } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Masonry from "react-masonry-component";
 import Img from "gatsby-image";
+import BlurredImage from "../components/blocks/blurred-image";
 import Lightbox from "react-image-lightbox";
 import Layout from "../components/layout";
 
 import "react-image-lightbox/style.css";
 import "../styles/work.css";
 
-const titles = [
-  <span>
-    <a href="#">Caption 1</a>
-  </span>,
-  <span>
-    <a href="#">Menu design for Le Farfalle</a>
-  </span>,
-  <span>
-    <a href="#">Caption 3</a>
-  </span>,
-  <span>
-    <a href="#">Caption 4</a>
-  </span>
-];
+// const titles = [
+//   <span>
+//     <a href="#">Caption 1</a>
+//   </span>,
+//   <span>
+//     <a href="#">Menu design for Le Farfalle</a>
+//   </span>,
+//   <span>
+//     <a href="#">Caption 3</a>
+//   </span>,
+//   <span>
+//     <a href="#">Caption 4</a>
+//   </span>
+// ];
 
 class WorkPage extends Component {
   constructor(props) {
@@ -29,6 +31,8 @@ class WorkPage extends Component {
     this.state = {
       photoIndex: 0,
       images: [],
+      imageTitles: [],
+      imagePadding: 60,
       isOpen: false,
       isHeadlineVisible: true,
       prevScrollpos: ""
@@ -55,12 +59,19 @@ class WorkPage extends Component {
     }
   };
 
+  updateImagePadding = padding => {
+    this.setState({
+      imagePadding: padding
+    });
+  };
+
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
-    this.setState(prevState => ({
-      images: [...prevState.images, mosaicImages]
-    }));
+    this.setState({
+      images: this.state.images.concat(mosaicImages)
+      // imageTitles: this.state.imageTitles.concat(titles)
+    });
   }
 
   componentWillUnmount() {
@@ -69,8 +80,16 @@ class WorkPage extends Component {
   }
 
   render() {
-    const { photoIndex, isOpen, images } = this.state;
-    const lightboxImages = images[0];
+    const {
+      photoIndex,
+      isOpen,
+      images,
+      imageTitles,
+      imagePadding,
+      isHeadlineVisible
+    } = this.state;
+    let titles = [];
+    const lightboxImages = images;
     const masonryImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     const masonryOptions = {
       transitionDuration: "0.3s",
@@ -78,8 +97,33 @@ class WorkPage extends Component {
       columnWidth: ".masonry-grid-sizer",
       percentPosition: true
     };
-    const { isHeadlineVisible } = this.state;
-    // console.log(lightboxImages);
+    masonryImages.map(image => {
+      titles.push(
+        <span
+          className="caption"
+          style={{ transform: `translateY(${imagePadding / 2 + 60}px)` }}
+        >
+          <span
+            style={{
+              color: "#000000"
+            }}
+          >
+            {image.title}
+          </span>
+          {image.customData["case-studies"] && (
+            <AniLink
+              to={`/case-studies/${image.customData["case-studies"]}`}
+              fade
+              className="textlink"
+              style={{}}
+            >
+              Project
+            </AniLink>
+          )}
+        </span>
+      );
+    });
+    // console.log(imageTitles);
 
     return (
       <Layout>
@@ -104,6 +148,12 @@ class WorkPage extends Component {
                       lightboxImages.length
                   ]
                 }
+                onImageLoad={() => {
+                  this.setState({
+                    imagePadding: lightboxImages[photoIndex].fluid.height
+                  });
+                  console.log(lightboxImages[photoIndex].customData);
+                }}
                 onCloseRequest={() => this.setState({ isOpen: false })}
                 onMovePrevRequest={() =>
                   this.setState({
@@ -133,7 +183,8 @@ class WorkPage extends Component {
                       this.setState({ isOpen: true, photoIndex: index })
                     }
                   >
-                    <Img fluid={item.fluid} key={index} />
+                    <BlurredImage src={item.fluid} key={index} />
+                    {/* <Img fluid={item.fluid} /> */}
                   </div>
                 );
               })}
@@ -156,9 +207,11 @@ export const query = graphql`
       title
       slug
       workMosaicImages {
-        imageCaption: title
+        title
         url
-        fluid(maxWidth: 400, imgixParams: { fm: "jpg", auto: "compress" }) {
+        customData
+        fluid(imgixParams: { fm: "jpg", auto: "compress" }) {
+          height
           ...GatsbyDatoCmsFluid
         }
       }

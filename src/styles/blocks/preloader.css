@@ -85,8 +85,8 @@ body.freeze {
     animation-name: fade-out;
     -webkit-animation-duration: 4500ms;
     animation-duration: 4500ms;
-    -webkit-animation-delay: 1000;
-    animation-delay: 1000;
+    -webkit-animation-delay: 1300;
+    animation-delay: 1300;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }

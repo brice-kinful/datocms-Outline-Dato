@@ -28,7 +28,7 @@ class Preloader extends Component {
   };
 
   render() {
-    console.log(this.state.images);
+    // console.log(this.state.images);
     const { imagesReady, images } = this.state;
     const imagesLength = images.length;
     const nums = [
@@ -39,7 +39,9 @@ class Preloader extends Component {
       "five",
       "six",
       "seven",
-      "eight"
+      "eight",
+      "nine",
+      "ten"
     ];
 
     return (

@@ -8,6 +8,10 @@
     cursor: url(/cursor-white.svg) 0 0, default;
 }
 
+#footer a {
+    cursor: url(/cursor-blur-white.png) 8.5 8.5, pointer !important;
+}
+
 #footer .wrapper {
     max-width: 100%;
     padding-top: 60px;

@@ -105,8 +105,15 @@ body.home #logo {
   display: block;
   width: 100%;
   max-width: 60px;
+  transition: opacity .6s;
+  opacity: 1;
   /* transform: scale(.18);
     transform-origin: top left; */
+}
+
+#logo a.footer-in-view {
+  opacity: 0;
+  z-index: -1;
 }
 
 #logo svg {

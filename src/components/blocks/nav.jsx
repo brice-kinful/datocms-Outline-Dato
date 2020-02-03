@@ -46,7 +46,8 @@ class Navigation extends Component {
 
   render() {
     const isMenuOpen = this.state.isMenuOpen;
-    const { menuItems } = this.props;
+    const { menuItems, isFooterInView } = this.props;
+    // console.log(isFooterInView);
     return (
       <div id="nav-container">
         <ReactCSSTransitionGroup
@@ -57,7 +58,11 @@ class Navigation extends Component {
           transitionLeaveTimeout={300}
         >
           <div id="logo">
-            <AniLink fade to="/">
+            <AniLink
+              fade
+              to="/"
+              className={`${isFooterInView ? "footer-in-view" : ""}`}
+            >
               <SVG src="/logo-o-dot.svg" />
             </AniLink>
           </div>

@@ -51,7 +51,7 @@ class HomeScroller extends Component {
             }}
           >
             {({ measureRef }) => {
-              console.log(this.state.dimensions);
+              // console.log(this.state.dimensions);
               return (
                 <ul className={`flex`} style={{ width: scrollerWidth }}>
                   <span className={`flex`} ref={measureRef}>

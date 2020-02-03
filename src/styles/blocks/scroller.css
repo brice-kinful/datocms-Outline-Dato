@@ -145,12 +145,12 @@
   filter: alpha(opacity=100);
 }
 
-#scroller .slide a.title:hover {
+/* #scroller .slide a.title:hover {
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
   filter: alpha(opacity=50);
-}
+} */
 
 @media screen and (max-width: 768px) {
   #scroller {

@@ -121,13 +121,14 @@ class CaseStudiesPage extends Component {
                             }`}
                           >
                             <span>{block.leftProject?.excerpt}</span>
-                            <AniLink
-                              fade
-                              to={`/case-studies/${block.leftProject?.slug}`}
-                              className="textlink"
-                            >
-                              {block.leftProject?.title}
-                            </AniLink>
+                            <span className="textlink">
+                              <AniLink
+                                fade
+                                to={`/case-studies/${block.leftProject?.slug}`}
+                              >
+                                {block.leftProject?.title}
+                              </AniLink>
+                            </span>
                           </span>
                         </div>
                         <div
@@ -148,13 +149,14 @@ class CaseStudiesPage extends Component {
                             }`}
                           >
                             <span>{block.rightProject?.excerpt}</span>
-                            <AniLink
-                              fade
-                              to={`/case-studies/${block.rightProject?.slug}`}
-                              className="textlink"
-                            >
-                              {block.rightProject?.title}
-                            </AniLink>
+                            <span className="textlink">
+                              <AniLink
+                                fade
+                                to={`/case-studies/${block.rightProject?.slug}`}
+                              >
+                                {block.rightProject?.title}
+                              </AniLink>
+                            </span>
                           </span>
                         </div>
                       </div>
@@ -187,13 +189,14 @@ class CaseStudiesPage extends Component {
                             }`}
                           >
                             <span>{block.project?.excerpt}</span>
-                            <AniLink
-                              fade
-                              to={`/case-studies/${block.project?.slug}`}
-                              className="textlink"
-                            >
-                              {block.project?.title}
-                            </AniLink>
+                            <span className="textlink">
+                              <AniLink
+                                fade
+                                to={`/case-studies/${block.project?.slug}`}
+                              >
+                                {block.project?.title}
+                              </AniLink>
+                            </span>
                           </span>
                         </div>
                       </div>

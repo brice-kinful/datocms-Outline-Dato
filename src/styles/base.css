@@ -176,12 +176,14 @@ a.line:hover:after {
     left: 0;
 }
 
-a.textlink {
+.textlink {
     display: inline-block;
     position: relative;
     overflow: hidden;
+    line-height: 1.6;
     top: 0;
-    padding-bottom: 5px;
+    cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
+    padding: 5px 0;
     /* border-bottom: 1px solid; */
     transition: .3s;
 }
@@ -198,15 +200,16 @@ a.textlink {
     left: -200%;
 } */
 
-a.textlink:hover {
+.textlink a {
+    top: 0;
+    position: relative;
+}
+
+.textlink:hover a {
     top: 8px !important;
 }
 
-a.textlink:hover:before {
-    left: 0;
-}
-
-a.textlink:after {
+.textlink a:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -214,15 +217,15 @@ a.textlink:after {
     height: 1px;
     background: black;
     width: 100%;
-    bottom: 1px;
+    bottom: -6px;
     left: 0;
 }
 
-a.textlink:hover:after {
-    bottom: 66%;
+.textlink:hover a:after {
+    bottom: 50%;
 }
 
-a.textlink:hover {
+.textlink:hover {
     /* opacity: .55; */
     border-color: transparent;
 }

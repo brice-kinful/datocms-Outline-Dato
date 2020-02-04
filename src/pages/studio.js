@@ -121,8 +121,18 @@ class StudioPage extends Component {
               );
             })}
           </div>
-          <div className="cta wrapper skinny">
-            {parse(this.props.data.datoCmsStudioPage.aboutCtaHeadline)}
+          <div className="cta wrapper skinny flex">
+            <p>
+              <span>{this.props.data.datoCmsStudioPage.aboutCtaHeadline}</span>
+              <span className="textlink">
+                <AniLink
+                  to={`/${this.props.data.datoCmsStudioPage.aboutCtaButtonUrl.slug}`}
+                  fade
+                >
+                  {this.props.data.datoCmsStudioPage.aboutCtaButtonText}
+                </AniLink>
+              </span>
+            </p>
           </div>
         </div>
       </Layout>

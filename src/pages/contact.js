@@ -15,7 +15,16 @@ const ContactPage = ({ data }) => {
       <div className="page" id="contact">
         <div className="main flex wrapper skinny">
           <div className="three-fourths text">
-            {parse(contact.headline)}
+            <div className="inner flex">
+              <p>
+                <span>{contact.headline}</span>
+                <span className="textlink">
+                  <AniLink to={`/${contact.ctaButtonUrl.slug}`} fade>
+                    {contact.ctaButtonText}
+                  </AniLink>
+                </span>
+              </p>
+            </div>
             <div className="flex bottom inner space-between">
               <div className="one-half">
                 <AniLink
@@ -53,6 +62,24 @@ export const query = graphql`
       title
       slug
       headline
+      ctaButtonText
+      ctaButtonUrl {
+        ... on DatoCmsJobsPage {
+          slug
+        }
+        ... on DatoCmsPreProjectInterview {
+          slug
+        }
+        ... on DatoCmsCaseStudiesPage {
+          slug
+        }
+        ... on DatoCmsWorkPage {
+          slug
+        }
+        ... on DatoCmsStudioPage {
+          slug
+        }
+      }
       image {
         fluid(maxHeight: 750, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid

@@ -24,6 +24,7 @@ class IndexPage extends Component {
     const instagramRegExp = new RegExp(
       /<script type="text\/javascript">window\._sharedData = (.*);<\/script>/
     );
+
     const fetchInstagramPhotos = async accountUrl => {
       const response = await axios.get(accountUrl);
       const json = JSON.parse(response.data.match(instagramRegExp)[1]);

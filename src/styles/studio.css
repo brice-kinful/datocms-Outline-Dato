@@ -1,104 +1,77 @@
 #studio {
-  /* padding: 400px 0 200px; */
-  padding: 50vh 0 200px;
+    /* padding: 400px 0 200px; */
+    padding: 50vh 0 200px;
 }
 
-#studio > * {
-  padding-bottom: 200px;
+#studio>* {
+    padding-bottom: 200px;
 }
 
-#studio > *:last-child {
-  padding-bottom: 0;
+#studio>*:last-child {
+    padding-bottom: 0;
 }
 
 #studio h1 {
-  position: fixed;
-  top: 50%;
-  height: auto;
-  transform: translateY(-50%);
+    position: fixed;
+    top: 50%;
+    height: auto;
+    transform: translateY(-50%);
 }
 
 #studio .title {
-  line-height: 45px;
+    line-height: 45px;
 }
 
-#studio .three-fourths > :last-child {
-  margin: 0;
+#studio .three-fourths> :last-child {
+    margin: 0;
 }
 
 #studio .large p {
-  font-size: 48px;
-  line-height: 69px;
+    font-size: 48px;
+    line-height: 69px;
 }
 
 #studio .hero .gatsby-image-wrapper {
-  margin-bottom: 15%;
+    margin-bottom: 15%;
 }
 
 #studio .capabilities .image {
-  width: 42%;
+    width: 42%;
 }
 
 #studio .text {
-  width: 58%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10% 0 10% 17%;
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10% 0 10% 17%;
 }
 
 #studio .text li {
-  list-style: none;
-  font-size: 32px;
-  line-height: 58px;
+    list-style: none;
+    font-size: 32px;
+    line-height: 58px;
 }
 
 #studio .team .gatsby-image-wrapper {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 #studio .team p {
-  font-size: 14px;
-  margin: 0;
+    font-size: 14px;
+    margin: 0;
 }
 
 #studio .cta p {
-  font-size: 48px;
-  line-height: 69px;
+    flex: 0 70%;
+    font-size: 48px;
+    line-height: 69px;
 }
 
-#studio .cta a {
-  font-size: 20px;
-  display: inline-block;
-  padding-bottom: 5px;
-  line-height: 24px;
-  margin-left: 20px;
-  position: relative;
-  top: 0;
-  overflow: hidden;
+#studio .cta p span:first-child {
+    margin-right: 20px;
 }
 
-#studio .cta a:hover {
-  top: 8px !important;
-}
-
-#studio .cta a:hover:after {
-  bottom: 66%;
-}
-
-#studio .cta a:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  transition: 0.3s;
-  height: 1px;
-  background: black;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-}
-
-#studio .cta a:hover {
-  /* opacity: .55; */
-  border-color: transparent;
+#studio .cta .textlink {
+    font-size: 20px;
 }

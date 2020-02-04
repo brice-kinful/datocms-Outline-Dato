@@ -10,7 +10,7 @@
   padding-bottom: 200px;
 } */
 
-#contact > *:last-child {
+#contact>*:last-child {
   padding-bottom: 0;
 }
 
@@ -21,37 +21,16 @@
 #contact .main p {
   font-size: 48px;
   line-height: 69px;
+  flex: 0 90%;
   padding-bottom: 215px;
 }
 
-#contact .main a {
+#contact .main p span:first-child {
+  margin-right: 20px;
+}
+
+#contact .main .textlink {
   font-size: 20px;
-  position: relative;
-  top: -15px;
-  padding-bottom: 0;
-  margin-left: 25px;
-  display: inline-block;
-  line-height: 40px;
-}
-
-#contact .main a:hover {
-  top: -7px !important;
-}
-
-#contact .main a:hover:after {
-  bottom: 50%;
-}
-
-#contact .main a:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  transition: 0.3s;
-  height: 1px;
-  background: black;
-  width: 100%;
-  bottom: 0;
-  left: 0;
 }
 
 #contact .main a:hover {
@@ -59,7 +38,7 @@
   border-color: transparent;
 }
 
-#contact .main .bottom .one-half > a {
+#contact .main .bottom .one-half>a {
   margin-bottom: 50px;
   display: inline-block;
 }
@@ -91,7 +70,7 @@
 #contact .main .bottom p {
   position: relative;
   overflow: hidden;
-  display: flex;
+  /* display: flex; */
 }
 
 #contact .main .bottom a {

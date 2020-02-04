@@ -12,13 +12,15 @@ const Headline = props => {
       <div className={`wrapper skinny`}>
         <p>
           {content.text}
-          <AniLink
-            to={`/${content.buttonUrl.slug}`}
-            fade
-            className={"styrene_light textlink"}
-          >
-            {content.buttonText}
-          </AniLink>
+          <span className="textlink">
+            <AniLink
+              to={`/${content.buttonUrl.slug}`}
+              fade
+              className={"styrene_light"}
+            >
+              {content.buttonText}
+            </AniLink>
+          </span>
         </p>
       </div>
     </div>

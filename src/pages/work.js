@@ -43,11 +43,10 @@ class WorkPage extends Component {
   handleScroll = () => {
     const { prevScrollpos } = this.state;
     const currentScrollPos = window.pageYOffset;
-    let mouseScrollTimeout;
     this.setState({
-      prevScrollpos: currentScrollPos
+      prevScrollpos: currentScrollPos,
+      isHeadlineVisible: true
     });
-
     if (currentScrollPos > 0) {
       this.setState({
         isHeadlineVisible: false
@@ -59,6 +58,30 @@ class WorkPage extends Component {
     }
   };
 
+  tick() {
+    this.setState(state => ({
+      seconds: state.seconds + 1
+    }));
+    if (this.state.seconds > 15) {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }
+  }
+
+  handleMouseMove = () => {
+    clearInterval(this.interval);
+    this.interval = setInterval(() => this.tick(), 1000);
+    this.setState(state => ({
+      seconds: 0
+    }));
+    if (this.state.prevScrollpos > 0) {
+      this.setState(state => ({
+        isHeadlineVisible: false
+      }));
+    }
+  };
+
   updateImagePadding = padding => {
     this.setState({
       imagePadding: padding
@@ -67,16 +90,18 @@ class WorkPage extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("mousemove", this.handleMouseMove);
+    this.interval = setInterval(() => this.tick(), 1000);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     this.setState({
       images: this.state.images.concat(mosaicImages)
-      // imageTitles: this.state.imageTitles.concat(titles)
     });
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
-    // window.removeEventListener("mousemove", this.handleMouseMove);
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    clearInterval(this.interval);
   }
 
   render() {

@@ -13,7 +13,6 @@ class CaseStudiesPage extends Component {
     super(props);
     this.state = {
       isHeadlineVisible: true,
-      isMouseIdle: false,
       seconds: 0,
       prevScrollpos: ""
     };
@@ -23,8 +22,6 @@ class CaseStudiesPage extends Component {
   handleScroll = () => {
     const { prevScrollpos } = this.state;
     const currentScrollPos = window.pageYOffset;
-    let mouseScrollTimeout;
-    // console.log(currentScrollPos);
     this.setState({
       prevScrollpos: currentScrollPos,
       isHeadlineVisible: true

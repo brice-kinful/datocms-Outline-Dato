@@ -12,7 +12,7 @@ class StudioPage extends Component {
     super(props);
     this.state = {
       isHeadlineVisible: true,
-      isMouseIdle: false,
+      seconds: 0,
       prevScrollpos: ""
     };
   }
@@ -21,12 +21,10 @@ class StudioPage extends Component {
   handleScroll = () => {
     const { prevScrollpos } = this.state;
     const currentScrollPos = window.pageYOffset;
-    let mouseScrollTimeout;
     this.setState({
       prevScrollpos: currentScrollPos,
       isHeadlineVisible: true
     });
-
     if (currentScrollPos > 25) {
       this.setState({
         isHeadlineVisible: false
@@ -38,45 +36,44 @@ class StudioPage extends Component {
     }
   };
 
-  mouseStopped = () => {
-    console.log("mouse has stopped moving");
-    this.setState({ isMouseIdle: true });
-  };
+  tick() {
+    this.setState(state => ({
+      seconds: state.seconds + 1
+    }));
+    if (this.state.seconds > 15) {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }
+  }
 
   handleMouseMove = () => {
-    const { prevScrollpos, isMouseIdle } = this.state;
-    const currentScrollPos = window.pageYOffset;
-    let mouseMoveTimeout;
-    clearTimeout(mouseMoveTimeout);
-    mouseMoveTimeout = setTimeout(this.mouseStopped, 1000);
-
-    console.log("mouse is moving");
-    this.setState({ isMouseIdle: false });
-
-    //screensaver
-    if (currentScrollPos > 60) {
-      //   clearTimeout(mouseMoveTimeout2);
-
-      if (!isMouseIdle) {
-        this.setState({ isHeadlineVisible: false });
-        // mouseMoveTimeout2 = setTimeout(() => {
-        //   this.setState({ isHeadlineVisible: true });
-        // }, 15000);
-      } else {
-        this.setState({ isHeadlineVisible: true });
-      }
+    clearInterval(this.interval);
+    this.interval = setInterval(() => this.tick(), 1000);
+    this.setState(state => ({
+      seconds: 0
+    }));
+    if (this.state.prevScrollpos > 25) {
+      this.setState(state => ({
+        isHeadlineVisible: false
+      }));
     }
   };
 
   componentDidMount() {
+    // console.log(this.props.data);
+    this.setState({ prevScrollpos: window.pageYOffset });
     window.addEventListener("scroll", this.handleScroll);
-    // window.addEventListener("mousemove", this.handleMouseMove);
+    window.addEventListener("mousemove", this.handleMouseMove);
+    this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
-    // window.removeEventListener("mousemove", this.handleMouseMove);
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    clearInterval(this.interval);
   }
+
   render() {
     const hero = this.props.data.datoCmsStudioPage.aboutHero[0];
     const capabilities = this.props.data.datoCmsStudioPage.aboutCapabilities[0];

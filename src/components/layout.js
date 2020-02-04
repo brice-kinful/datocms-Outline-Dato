@@ -32,8 +32,8 @@ class Layout extends Component {
         isFooterInView: true
       });
     }
-    console.log(currentScrollPos);
-    console.log(pageHeight);
+    // console.log(currentScrollPos);
+    // console.log(pageHeight);
   };
 
   componentDidMount() {

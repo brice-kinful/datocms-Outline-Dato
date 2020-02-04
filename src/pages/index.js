@@ -16,28 +16,14 @@ class IndexPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      grams: [],
-      email: "",
-      insta: ""
+      grams: []
     };
   }
 
   componentDidMount() {
-    const { data } = this.props;
-    const email = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
-      return node.profileType === "Email";
-    });
-    const insta = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
-      return node.profileType === "Instagram";
-    });
-    this.setState({
-      email: email[0].node.handle,
-      insta: insta[0].node.handle
-    });
     const instagramRegExp = new RegExp(
       /<script type="text\/javascript">window\._sharedData = (.*);<\/script>/
     );
-
     const fetchInstagramPhotos = async accountUrl => {
       const response = await axios.get(accountUrl);
       const json = JSON.parse(response.data.match(instagramRegExp)[1]);
@@ -49,25 +35,29 @@ class IndexPage extends Component {
         grams: [...prevState.grams, edges]
       }));
     };
-    fetchInstagramPhotos(`https://www.instagram.com/${email[0].node.handle}/`);
+    fetchInstagramPhotos("https://www.instagram.com/we.are.outline/");
   }
 
   render() {
     const { data } = this.props;
-    const { email, insta } = this.state;
-
+    // const email = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
+    //   return node.profileType === "Email";
+    // });
+    // const insta = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
+    //   return node.profileType === "Instagram";
+    // });
     const headline = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeadline";
     });
     const heroImages = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeroImage";
     });
+    // console.log(insta);
     return (
       <Layout>
         <Preloader images={heroImages[0]} />
         <div id="home" className="page">
           <div className="flex align-center justify-center" id="feature">
-            <div id="cursor"></div>
             <Headline content={headline[0]} />
           </div>
           <HomeScroller projects={data.datoCmsHome.scrollerCaseStudies} />

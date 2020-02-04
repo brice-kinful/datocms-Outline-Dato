@@ -51,6 +51,11 @@ class WorkPage extends Component {
       this.setState({
         isHeadlineVisible: false
       });
+      clearInterval(this.interval);
+      this.interval = setInterval(() => this.tick(), 1000);
+      this.setState(state => ({
+        seconds: 0
+      }));
     } else {
       this.setState({
         isHeadlineVisible: true
@@ -75,11 +80,6 @@ class WorkPage extends Component {
     this.setState(state => ({
       seconds: 0
     }));
-    if (this.state.prevScrollpos > 0) {
-      this.setState(state => ({
-        isHeadlineVisible: false
-      }));
-    }
   };
 
   updateImagePadding = padding => {

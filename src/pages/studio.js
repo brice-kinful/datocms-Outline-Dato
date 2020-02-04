@@ -29,6 +29,11 @@ class StudioPage extends Component {
       this.setState({
         isHeadlineVisible: false
       });
+      clearInterval(this.interval);
+      this.interval = setInterval(() => this.tick(), 1000);
+      this.setState(state => ({
+        seconds: 0
+      }));
     } else {
       this.setState({
         isHeadlineVisible: true
@@ -53,11 +58,6 @@ class StudioPage extends Component {
     this.setState(state => ({
       seconds: 0
     }));
-    if (this.state.prevScrollpos > 25) {
-      this.setState(state => ({
-        isHeadlineVisible: false
-      }));
-    }
   };
 
   componentDidMount() {

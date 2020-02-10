@@ -35,6 +35,7 @@
     "react-images": "^1.1.0-beta.3",
     "react-in-viewport": "^1.0.0-alpha.11",
     "react-inlinesvg": "^1.2.0",
+    "react-input-range": "^1.3.0",
     "react-masonry-component": "^6.2.1",
     "react-measure": "^2.3.0",
     "react-resize-detector": "^4.2.1",

@@ -108,7 +108,9 @@ class Layout extends Component {
               >
                 {({ measureRef }) => {
                   // console.log(this.state.pageHeight);
-                  return <div ref={measureRef}>{children}</div>;
+                  return (
+                    <React.Fragment ref={measureRef}>{children}</React.Fragment>
+                  );
                 }}
               </Measure>
               <Navigation

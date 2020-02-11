@@ -200,16 +200,20 @@ a.line:hover:after {
     left: -200%;
 } */
 
-.textlink a {
+.textlink a,
+.textlink span {
     top: 0;
     position: relative;
+    transition: .3s;
 }
 
-.textlink:hover a {
+.textlink:hover a,
+.textlink:hover span {
     top: 8px !important;
 }
 
-.textlink a:after {
+.textlink a:after,
+.textlink span:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -221,7 +225,8 @@ a.line:hover:after {
     left: 0;
 }
 
-.textlink:hover a:after {
+.textlink:hover a:after,
+.textlink:hover span:after {
     bottom: 50%;
 }
 

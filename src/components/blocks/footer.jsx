@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Measure from "react-measure";
 import SVG from "react-inlinesvg";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import "../../styles/blocks/footer.css";
 
@@ -55,7 +56,14 @@ class Footer extends Component {
                   </div>
                 </div>
                 <div className="grid-item one-fourth">
-                  <p>Project Inquiries</p>
+                  <AniLink
+                    fade
+                    to={`/pre-project-interview`}
+                    className="line"
+                    style={{ display: "inline-block" }}
+                  >
+                    Project Inquiries
+                  </AniLink>
                   <div>
                     <a href="tel:843-425-5312" className="line">
                       843.425.5312

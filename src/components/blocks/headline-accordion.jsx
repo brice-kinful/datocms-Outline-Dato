@@ -37,32 +37,28 @@ class HeadlineAccordion extends Component {
     const { content } = this.props;
 
     return (
-      <div className={`block`} style={blockStyle}>
+      <div className={`block accordion-block`}>
         <div className={`wrapper`} style={{ maxWidth: "1400px" }}>
           <Accordion>
-            <Accordion.Title
-              active={activeIndex === 0}
-              index={0}
-              className="saol_display_light"
-            >
+            <Accordion.Title active={activeIndex === 0} index={0} className="">
               {content.headline}
               <span
                 name="dropdown"
                 onClick={this.handleClick}
-                className="styrene_light"
+                className="textlink"
               >
-                {this.state.btn}
+                <span>{this.state.btn}</span>
               </span>
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 0}>
-              <p>
+              <p className="">
                 {content.extendedText}
                 <span
                   name="dropdown"
-                  className="styrene_light"
+                  className="styrene_light textlink"
                   onClick={this.handleClick}
                 >
-                  {this.state.btn}
+                  <span>{this.state.btn}</span>
                 </span>
               </p>
             </Accordion.Content>

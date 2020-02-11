@@ -1,12 +1,16 @@
+.block.accordion-block {
+    padding: 200px 0;
+}
+
 .accordion.ui .content {
     opacity: 0;
+    padding: 0;
     visibility: hidden;
     transition: .6s;
     max-height: 0;
 }
 
 .accordion.ui .content p {
-    font-family: 'SaolDisplay Light', serif;
     font-weight: normal;
     font-style: normal;
     font-size: 48px;
@@ -22,7 +26,7 @@
 
 .accordion.ui .title {
     pointer-events: none;
-    font-size: 64px;
+    font-size: 48px;
     line-height: 1.225;
 }
 
@@ -31,14 +35,10 @@
     visibility: hidden;
 }
 
-.accordion.ui span {
+.accordion.ui .textlink {
     pointer-events: initial;
-    font-size: 16px;
-    position: relative;
-    bottom: 15px;
-    padding-bottom: 10px;
+    font-size: 20px;
     margin-left: 25px;
-    border-bottom: 1px solid;
 }
 
 #home .accordion {

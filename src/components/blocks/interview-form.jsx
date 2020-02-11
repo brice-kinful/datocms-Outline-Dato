@@ -179,6 +179,7 @@ const InterviewForm = () => {
                   <Form
                     id="interview-form"
                     name="interview-form"
+                    autocomplete="off"
                     action="/thanks/"
                     method="post"
                     onSubmit={handleSubmit}

@@ -8,7 +8,11 @@ const SideBySide = props => {
     <div
       className={`block side-by-side ${
         content.leftPositioning ? content.leftPositioning : ""
-      } ${content.rightPositioning ? content.rightPositioning : ""}`}
+      } ${content.rightPositioning ? content.rightPositioning : ""}${
+        content.doubleTopPadding ? " pad-top" : ""
+      }${content.doubleBottomPadding ? " pad-bottom" : ""}${
+        content.setBottomPaddingToZero ? " no-pad-bottom" : ""
+      }${content.setTopPaddingToZero ? " no-pad-top" : ""}`}
     >
       <div
         className={`wrapper flex grid two ${content.fullWidth ? "full" : ""}`}

@@ -33,6 +33,22 @@ body.frozen {
     padding: 100px 0;
 }
 
+.block.pad-top {
+    padding-top: 200px;
+}
+
+.block.pad-bottom {
+    padding-bottom: 200px;
+}
+
+.block.no-pad-bottom {
+    padding-bottom: 0 !important;
+}
+
+.block.no-pad-top {
+    padding-top: 0 !important;
+}
+
 .block .narrow {
     max-width: 1000px;
 }
@@ -72,7 +88,7 @@ body.frozen {
 }
 
 .block .gatsby-image-wrapper {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 
 .block.url-block a {

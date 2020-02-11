@@ -36,7 +36,6 @@ class CaseStudy extends Component {
         ? 0
         : activeProjectIndex + 1;
     const { hasHeroImageLoaded } = this.state;
-    console.log(project);
     return (
       <Layout>
         <div className="page" id="case-study">
@@ -81,7 +80,11 @@ class CaseStudy extends Component {
               case "DatoCmsImageBlock":
                 return (
                   <div
-                    className="block"
+                    className={`block${
+                      block.doubleTopPadding ? " pad-top" : ""
+                    }${block.doubleBottomPadding ? " pad-bottom" : ""}${
+                      block.setBottomPaddingToZero ? " no-pad-bottom" : ""
+                    }${block.setTopPaddingToZero ? " no-pad-top" : ""}`}
                     key={block.id}
                     style={{ backgroundColor: block.backgroundColor?.hex }}
                   >
@@ -100,9 +103,16 @@ class CaseStudy extends Component {
                 );
               case "DatoCmsFullWidthImageBlock":
                 return (
-                  <React.Fragment key={block.id}>
+                  <div
+                    className={`block full-width-block${
+                      block.doubleTopPadding ? " pad-top" : ""
+                    }${block.doubleBottomPadding ? " pad-bottom" : ""}${
+                      block.setBottomPaddingToZero ? " no-pad-bottom" : ""
+                    }${block.setTopPaddingToZero ? " no-pad-top" : ""}`}
+                    key={block.id}
+                  >
                     <BlurredImage src={block.image.fluid} />
-                  </React.Fragment>
+                  </div>
                 );
               case "DatoCmsTextBlock":
                 return (
@@ -189,7 +199,9 @@ export const query = graphql`
             hex
           }
           setTopPaddingToZero
+          doubleTopPadding
           setBottomPaddingToZero
+          doubleBottomPadding
         }
         ... on DatoCmsImageBlock {
           id
@@ -203,7 +215,9 @@ export const query = graphql`
             hex
           }
           setTopPaddingToZero
+          doubleTopPadding
           setBottomPaddingToZero
+          doubleBottomPadding
         }
         ... on DatoCmsTextBlock {
           id
@@ -215,7 +229,9 @@ export const query = graphql`
             hex
           }
           setTopPaddingToZero
+          doubleTopPadding
           setBottomPaddingToZero
+          doubleBottomPadding
         }
         ... on DatoCmsUrlBlock {
           id
@@ -227,7 +243,9 @@ export const query = graphql`
             hex
           }
           setTopPaddingToZero
+          doubleTopPadding
           setBottomPaddingToZero
+          doubleBottomPadding
         }
         ... on DatoCmsSideBySideBlock {
           id
@@ -255,7 +273,9 @@ export const query = graphql`
           rightSideImageCustomWidth
           rightPositioning: rightImagePositioning
           setTopPaddingToZero
+          doubleTopPadding
           setBottomPaddingToZero
+          doubleBottomPadding
         }
       }
     }

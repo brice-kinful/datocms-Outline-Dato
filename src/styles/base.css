@@ -202,7 +202,8 @@ a.line:hover:after {
 
 .textlink a,
 .textlink span,
-.textlink button {
+.textlink button,
+.page#default a {
     top: 0;
     position: relative;
     transition: .3s;
@@ -216,7 +217,8 @@ a.line:hover:after {
 
 .textlink a:after,
 .textlink span:after,
-.textlink button:after {
+.textlink button:after,
+.page#default a:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -230,7 +232,8 @@ a.line:hover:after {
 
 .textlink:hover a:after,
 .textlink:hover span:after,
-.textlink:hover button:after {
+.textlink:hover button:after,
+.page#default a:hover:after {
     bottom: 50%;
 }
 
@@ -607,6 +610,35 @@ h1.big.visible {
 .gatsby-image-wrapper.blur.loaded {
     -webkit-filter: blur(0);
     filter: blur(0);
+}
+
+.page#default {
+    padding: 200px 0;
+}
+
+.page#default .content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.page#default .content>* {
+    margin-bottom: 30px;
+}
+
+.page#default .content>*:last-child {
+    margin-bottom: 0;
+}
+
+.page#default .content ul li {
+    list-style: disc;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.page#default .content h2 {
+    font-family: "Styrene Light";
+    font-size: 32px;
+    line-height: 46px;
 }
 
 

@@ -5,7 +5,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: 'Outline | Branding | Web Design | Charleston, SC',
-    titleTemplate: '%s | Outline | Charleston, SC'
+    titleTemplate: '%s | Outline | Charleston, SC',
+    siteUrl: 'https://nifty-lovelace-0b9de5.netlify.com'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

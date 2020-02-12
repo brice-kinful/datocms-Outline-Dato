@@ -16,6 +16,7 @@ const UrlBlock = props => {
         <a
           href={`http://${content.url}`}
           style={{ color: content.textColor?.hex }}
+          className=""
         >
           {content.url}
         </a>

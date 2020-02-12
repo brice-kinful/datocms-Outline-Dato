@@ -59,7 +59,7 @@ class HomeScroller extends Component {
                       return (
                         <li className={`slide`} key={project.slug}>
                           <AniLink to={`/project/${project.slug}`}>
-                            <img src={project.thumbnail.url} />
+                            <img src={project.scrollerThumbnail.url} />
                           </AniLink>
                           <AniLink
                             to={`/case-studies/${project.slug}`}
@@ -78,7 +78,7 @@ class HomeScroller extends Component {
                       return (
                         <li className={`slide`} key={`${project.slug}-x2`}>
                           <AniLink to={`/project/${project.slug}`}>
-                            <img src={project.thumbnail.url} />
+                            <img src={project.scrollerThumbnail.url} />
                           </AniLink>
                           <AniLink
                             to={`/case-studies/${project.slug}`}

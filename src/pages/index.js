@@ -114,7 +114,7 @@ export const query = graphql`
       scrollerCaseStudies {
         title
         slug
-        thumbnail {
+        scrollerThumbnail {
           fluid(maxWidth: 495, imgixParams: { fm: "jpg", auto: "compress" }) {
             ...GatsbyDatoCmsFluid
           }

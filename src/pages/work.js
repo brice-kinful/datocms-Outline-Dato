@@ -118,15 +118,19 @@ class WorkPage extends Component {
           >
             {image.title}
           </span>
-          {image.customData["case-studies"] && (
-            <AniLink
-              to={`/case-studies/${image.customData["case-studies"]}`}
-              fade
-              className="textlink"
-              style={{}}
-            >
-              Project
-            </AniLink>
+          {image.customData["button-url"] && (
+            <span className="textlink">
+              <AniLink
+                to={`/case-studies/${image.customData["button-url"]}`}
+                fade
+                className=""
+                style={{}}
+              >
+                {image.customData["button-title"]
+                  ? image.customData["button-title"]
+                  : "See More"}
+              </AniLink>
+            </span>
           )}
         </span>
       );
@@ -160,7 +164,7 @@ class WorkPage extends Component {
                   this.setState({
                     imagePadding: lightboxImages[photoIndex].fluid.height
                   });
-                  console.log(lightboxImages[photoIndex].customData);
+                  // console.log(lightboxImages[photoIndex].customData);
                 }}
                 onCloseRequest={() => this.setState({ isOpen: false })}
                 onMovePrevRequest={() =>

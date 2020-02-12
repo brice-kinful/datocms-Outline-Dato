@@ -598,11 +598,12 @@ a.btn:hover {
     background: white;
     min-height: 100vh;
     opacity: 0;
-    -webkit-transition: opacity 0.2s ease-in;
-    -o-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
+    -webkit-transition: opacity 0.15s ease-in;
+    -o-transition: opacity 0.15s ease-in;
+    transition: opacity 0.15s ease-in;
     animation: pageLoading;
-    animation-duration: .5s;
+    animation-delay: .3s;
+    animation-duration: .3s;
     animation-fill-mode: forwards;
 }
 

@@ -107,7 +107,7 @@ const InterviewForm = () => {
                       result => {
                         console.log(`Final form submitted`);
                         setStatus({ success: true });
-                        navigate(`/thanks`);
+                        navigate(`/thanks/`);
                       },
                       error => {
                         console.log(error.text);

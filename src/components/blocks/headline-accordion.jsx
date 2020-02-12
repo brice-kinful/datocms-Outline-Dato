@@ -22,7 +22,7 @@ class HeadlineAccordion extends Component {
     const lessText = this.props.content?.dropdownLessText
       ? this.props.content.dropdownLessText
       : "Less";
-    const { activeIndex, btn } = this.state;
+    const { activeIndex } = this.state;
     const newIndex = activeIndex === index ? -1 : index;
     const updatedBtnText = newIndex === -1 ? moreText : lessText;
 

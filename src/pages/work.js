@@ -1,29 +1,13 @@
 import React, { Component } from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Masonry from "react-masonry-component";
-import Img from "gatsby-image";
 import BlurredImage from "../components/blocks/blurred-image";
 import Lightbox from "react-image-lightbox";
 import Layout from "../components/layout";
 
 import "react-image-lightbox/style.css";
 import "../styles/work.css";
-
-// const titles = [
-//   <span>
-//     <a href="#">Caption 1</a>
-//   </span>,
-//   <span>
-//     <a href="#">Menu design for Le Farfalle</a>
-//   </span>,
-//   <span>
-//     <a href="#">Caption 3</a>
-//   </span>,
-//   <span>
-//     <a href="#">Caption 4</a>
-//   </span>
-// ];
 
 class WorkPage extends Component {
   constructor(props) {
@@ -41,7 +25,6 @@ class WorkPage extends Component {
 
   // scroll
   handleScroll = () => {
-    const { prevScrollpos } = this.state;
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
@@ -109,7 +92,6 @@ class WorkPage extends Component {
       photoIndex,
       isOpen,
       images,
-      imageTitles,
       imagePadding,
       isHeadlineVisible
     } = this.state;
@@ -122,11 +104,12 @@ class WorkPage extends Component {
       columnWidth: ".masonry-grid-sizer",
       percentPosition: true
     };
-    masonryImages.map(image => {
+    masonryImages.map((image, index) => {
       titles.push(
         <span
           className="caption"
           style={{ transform: `translateY(${imagePadding / 2 + 60}px)` }}
+          key={index}
         >
           <span
             style={{
@@ -204,6 +187,7 @@ class WorkPage extends Component {
                 return (
                   <div
                     className="masonry-grid-item"
+                    key={index}
                     onClick={() =>
                       this.setState({ isOpen: true, photoIndex: index })
                     }

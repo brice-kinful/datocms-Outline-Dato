@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
@@ -19,7 +19,6 @@ class StudioPage extends Component {
 
   // scroll
   handleScroll = () => {
-    const { prevScrollpos } = this.state;
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
@@ -108,9 +107,9 @@ class StudioPage extends Component {
             </div>
           </div>
           <div className="team flex grid five wrapper">
-            {team.map(member => {
+            {team.map((member, index) => {
               return (
-                <div className="member grid-item one-fifth">
+                <div className="member grid-item one-fifth" key={index}>
                   <Img fluid={member.headshot.fluid} />
                   <p>{member.name}</p>
                   <p>{member.jobTitle}</p>

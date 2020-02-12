@@ -31,15 +31,15 @@ class HomeCapabilities extends Component {
             <div className="one-third title">{words[0].title}</div>
             <div className="one-third">
               <ul>
-                {wordsLeft.map(word => {
-                  return <li>{word.props.children}</li>;
+                {wordsLeft.map((word, index) => {
+                  return <li key={index}>{word.props.children}</li>;
                 })}
               </ul>
             </div>
             <div className="one-third">
               <ul>
-                {wordsRight.map(word => {
-                  return <li>{word.props.children}</li>;
+                {wordsRight.map((word, index) => {
+                  return <li key={index}>{word.props.children}</li>;
                 })}
               </ul>
             </div>

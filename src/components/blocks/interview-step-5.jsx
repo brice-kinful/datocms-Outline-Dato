@@ -47,15 +47,15 @@ const InterviewStepFive = props => {
         <div className={`wrapper`}>
           <div className={`table styrene_medium uppercase`}>
             <div className={`cell`}>
-              {props.step != 1 && (
+              {props.step !== 1 && (
                 <span className="textlink">
-                  <a
-                    href="#"
+                  <button
+                    type="button"
                     className={`previous`}
                     onClick={props.decrementStep}
                   >
                     Previous
-                  </a>
+                  </button>
                 </span>
               )}
             </div>

@@ -136,13 +136,13 @@ body {
     cursor: none; */
 }
 
-body #home {
-    /* background: white; */
+button {
+    font-family: inherit;
+    background: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    font-style: inherit;
 }
-
-.page {}
-
-.gatsby-image-wrapper {}
 
 a {
     cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
@@ -201,19 +201,22 @@ a.line:hover:after {
 } */
 
 .textlink a,
-.textlink span {
+.textlink span,
+.textlink button {
     top: 0;
     position: relative;
     transition: .3s;
 }
 
 .textlink:hover a,
-.textlink:hover span {
+.textlink:hover span,
+.textlink button {
     top: 8px !important;
 }
 
 .textlink a:after,
-.textlink span:after {
+.textlink span:after,
+.textlink button:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -226,7 +229,8 @@ a.line:hover:after {
 }
 
 .textlink:hover a:after,
-.textlink:hover span:after {
+.textlink:hover span:after,
+.textlink:hover button:after {
     bottom: 50%;
 }
 

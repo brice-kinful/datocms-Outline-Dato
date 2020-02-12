@@ -29,7 +29,7 @@ class CaseStudy extends Component {
     const project = this.props.data.datoCmsCaseStudy;
     const allProjects = this.props.data.allDatoCmsCaseStudy.edges;
     const activeProjectIndex = allProjects.findIndex(
-      ({ node }) => node.slug == project.slug
+      ({ node }) => node.slug === project.slug
     );
     const nextProject =
       allProjects.length === activeProjectIndex + 1

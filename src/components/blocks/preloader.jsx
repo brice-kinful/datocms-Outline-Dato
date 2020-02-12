@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import BackgroundImage from "gatsby-background-image";
-import SVG from "react-inlinesvg";
 
 import PreloaderImage from "./preloader-image";
 
@@ -35,8 +33,7 @@ class Preloader extends Component {
 
   render() {
     // console.log(this.state.images);
-    const { imagesReady, images } = this.state;
-    const imagesLength = images.length;
+    const { images } = this.state;
     const nums = [
       "one",
       "two",
@@ -59,14 +56,14 @@ class Preloader extends Component {
           <div className={`images ${nums[images.length - 1]}`}>
             {images.map((item, index) => {
               return (
-                <>
+                <React.Fragment key={index}>
                   <PreloaderImage
                     src={item.fluid}
                     wait={(index + 1) * 250}
                     currentImage={index + 1}
                     totalImages={images.length}
                   />
-                </>
+                </React.Fragment>
               );
             })}
           </div>

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { graphql } from "gatsby";
 import axios from "axios";
 import Layout from "../components/layout";
 import Preloader from "../components/blocks/preloader";
@@ -21,6 +20,12 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
+    const insta = this.props.data.allDatoCmsSocialProfile.edges.filter(
+      ({ node }) => {
+        return node.profileType === "Instagram";
+      }
+    );
+    const handle = insta[0].node.handle;
     const instagramRegExp = new RegExp(
       /<script type="text\/javascript">window\._sharedData = (.*);<\/script>/
     );
@@ -36,7 +41,7 @@ class IndexPage extends Component {
         grams: [...prevState.grams, edges]
       }));
     };
-    fetchInstagramPhotos("https://www.instagram.com/we.are.outline/");
+    fetchInstagramPhotos(`https://www.instagram.com/${handle}/`);
   }
 
   render() {
@@ -44,16 +49,15 @@ class IndexPage extends Component {
     // const email = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
     //   return node.profileType === "Email";
     // });
-    // const insta = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
-    //   return node.profileType === "Instagram";
-    // });
+    const insta = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
+      return node.profileType === "Instagram";
+    });
     const headline = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeadline";
     });
     const heroImages = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeroImage";
     });
-    // console.log(insta);
     return (
       <Layout>
         <Preloader images={heroImages[0]} />
@@ -63,7 +67,10 @@ class IndexPage extends Component {
           </div>
           <HomeScroller projects={data.datoCmsHome.scrollerCaseStudies} />
           <HomeCapabilities content={data.datoCmsHome.capabilities} />
-          <Instagram grams={this.state.grams[0]} />
+          <Instagram
+            grams={this.state.grams[0]}
+            handle={insta[0].node.handle}
+          />
         </div>
       </Layout>
     );

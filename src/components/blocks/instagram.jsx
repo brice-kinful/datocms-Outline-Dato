@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import "../../styles/blocks/instagram.css";
-import axios from "axios";
 
 const Instagram = props => {
-  const { grams } = props;
+  const { grams, handle } = props;
   //   console.log(grams);
   return (
     <div id="instagram" className={`standard`}>
@@ -12,11 +11,12 @@ const Instagram = props => {
         <div className="flex space-between">
           <p>Instagram</p>
           <a
-            href="https://www.instagram.com/we.are.outline"
+            href={`https://www.instagram.com/${handle}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="line"
           >
-            @we.are.outline
+            {handle}
           </a>
         </div>
         <div className="flex grid">
@@ -28,9 +28,10 @@ const Instagram = props => {
                 className="col"
                 key={node.id}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className={`inner`}>
-                  <img src={node.thumbnail_src} />
+                  <img src={node.thumbnail_src} alt="" />
                 </div>
               </a>
             );

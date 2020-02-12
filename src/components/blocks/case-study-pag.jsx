@@ -4,15 +4,7 @@ import parse from "html-react-parser";
 import Img from "gatsby-image";
 
 const CaseStudiesPagination = props => {
-  const {
-    title,
-    thumbnail,
-    services,
-    location,
-    photography,
-    featured,
-    slug
-  } = props;
+  const { thumbnail, services, location, photography, featured, slug } = props;
   return (
     <div className="related">
       <div className="flex wrapper">

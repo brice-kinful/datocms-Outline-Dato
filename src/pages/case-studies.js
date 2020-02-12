@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import BlurredImage from "../components/blocks/blurred-image";
 
@@ -20,7 +19,6 @@ class CaseStudiesPage extends Component {
 
   // scroll
   handleScroll = () => {
-    const { prevScrollpos } = this.state;
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
@@ -89,12 +87,13 @@ class CaseStudiesPage extends Component {
             <img src="/case-studies.svg" alt="" />
           </div>
           <div className="wrapper skinny">
-            {data.datoCmsCaseStudiesPage.blocks.map(block => {
+            {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {
               switch (block.__typename) {
                 case "DatoCmsSideBySide":
                   return (
                     <div
                       className={`block ${block.leftProjectPositioning} ${block.rightProjectPositioning}`}
+                      key={index}
                     >
                       <div className="wrapper flex grid two">
                         <div
@@ -195,6 +194,8 @@ class CaseStudiesPage extends Component {
                       </div>
                     </div>
                   );
+                default:
+                  break;
               }
             })}
           </div>

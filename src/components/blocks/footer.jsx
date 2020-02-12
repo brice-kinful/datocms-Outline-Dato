@@ -40,6 +40,7 @@ class Footer extends Component {
                     <a
                       href="https://www.instagram.com/we.are.outline"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="line"
                     >
                       Instagram
@@ -49,6 +50,7 @@ class Footer extends Component {
                     <a
                       href="https://www.pinterest.com/we.are.outline"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="line"
                     >
                       Pinterest
@@ -87,6 +89,7 @@ class Footer extends Component {
                     <a
                       href="https://bykinful.com"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="line"
                     >
                       Kinful

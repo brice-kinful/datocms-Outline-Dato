@@ -1,5 +1,4 @@
 import React from "react";
-import BlurredImage from "./blurred-image";
 import parse from "html-react-parser";
 
 const SideBySide = props => {
@@ -33,6 +32,7 @@ const SideBySide = props => {
               <img
                 src={content.leftSideImage.fluid.src}
                 style={{ maxWidth: `${content.leftSideImageCustomWidth}px` }}
+                alt=""
               />
             </div>
           )}
@@ -53,6 +53,7 @@ const SideBySide = props => {
               <img
                 src={content.rightSideImage.fluid.src}
                 style={{ maxWidth: `${content.rightSideImageCustomWidth}px` }}
+                alt=""
               />
             </div>
           )}

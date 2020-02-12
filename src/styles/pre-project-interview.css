@@ -319,8 +319,13 @@ input.required+span {
     text-align: right
 }
 
-#interview .nav .cell a.next,
-#interview .nav .cell a.previous {
+#interview .nav .cell .textlink {
+    line-height: 1;
+    padding: 0;
+}
+
+#interview .nav .cell button.next,
+#interview .nav .cell button.previous {
     cursor: pointer;
     text-transform: initial;
     letter-spacing: .02em;
@@ -328,14 +333,26 @@ input.required+span {
     font-family: "Styrene Light";
     font-weight: normal;
     font-style: normal;
+    padding: 8px 0;
+    line-height: 1.6;
+    transition: .3s;
+    overflow: hidden;
+    top: 0 !important;
+    cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
+}
+
+#interview .nav .cell .textlink:hover button.next,
+#interview .nav .cell .textlink:hover button.previous {
+    top: 8px !important;
 }
 
 #interview .nav .cell button.next {
     display: inline-block;
-    width: 140px;
+    /* width: 140px; */
     text-align: center;
     line-height: 1;
-    transition: all 50ms linear
+    /* transition: all 50ms linear; */
+    transition: .3s;
 }
 
 #interview .nav .cell button.next:hover {

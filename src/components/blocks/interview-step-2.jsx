@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { Field } from "formik";
 
 const InterviewStepTwo = props => {
@@ -122,13 +122,13 @@ const InterviewStepTwo = props => {
           <div className={`table styrene_medium uppercase`}>
             <div className={`cell`}>
               <span className="textlink">
-                <a
-                  href="#"
+                <button
+                  type="button"
                   className={`previous`}
                   onClick={props.decrementStep}
                 >
                   Previous
-                </a>
+                </button>
               </span>
             </div>
             <div className={`cell`}>
@@ -142,20 +142,23 @@ const InterviewStepTwo = props => {
                 props.values.type_next_level === "") ? (
                 <>
                   <span className="textlink">
-                    <a
-                      href="#"
+                    <button
                       className={`next disabled`}
                       onClick={props.incrementStep}
                     >
                       Next
-                    </a>
+                    </button>
                   </span>
                 </>
               ) : (
                 <span className="textlink">
-                  <a href="#" className={`next`} onClick={props.incrementStep}>
+                  <button
+                    type="button"
+                    className={`next`}
+                    onClick={props.incrementStep}
+                  >
                     Next
-                  </a>
+                  </button>
                 </span>
               )}
             </div>

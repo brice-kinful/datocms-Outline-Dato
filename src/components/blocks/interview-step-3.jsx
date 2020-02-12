@@ -125,46 +125,45 @@ const InterviewStepThree = props => {
           <div className={`table styrene_medium uppercase`}>
             <div className={`cell`}>
               <span className="textlink">
-                <a
-                  href="#"
+                <button
+                  type="button"
                   className={`previous`}
                   onClick={props.decrementStep}
                 >
                   Previous
-                </a>
+                </button>
               </span>
             </div>
             <div className={`cell`}>
-              {props.values.services_brand_strategy != "" ||
-              props.values.services_visual_identity != "" ||
-              props.values.services_web_dev != "" ||
-              props.values.services_ecommerce != "" ||
-              props.values.services_print_collateral != "" ||
-              props.values.services_packaging_design != "" ||
-              props.values.services_content_strategy_dev != "" ||
-              props.values.services_naming != "" ||
-              props.values.services_art_directon != "" ||
-              props.values.services_other != "" ? (
+              {props.values.services_brand_strategy !== "" ||
+              props.values.services_visual_identity !== "" ||
+              props.values.services_web_dev !== "" ||
+              props.values.services_ecommerce !== "" ||
+              props.values.services_print_collateral !== "" ||
+              props.values.services_packaging_design !== "" ||
+              props.values.services_content_strategy_dev !== "" ||
+              props.values.services_naming !== "" ||
+              props.values.services_art_directon !== "" ||
+              props.values.services_other !== "" ? (
                 <>
                   <span className="textlink">
-                    <a
-                      href="#"
+                    <button
+                      type="button"
                       className={`next`}
                       onClick={props.incrementStep}
                     >
                       Next
-                    </a>
+                    </button>
                   </span>
                 </>
               ) : (
                 <span className="textlink">
-                  <a
-                    href="#"
+                  <button
                     className={`next disabled`}
                     onClick={props.incrementStep}
                   >
                     Next
-                  </a>
+                  </button>
                 </span>
               )}
             </div>

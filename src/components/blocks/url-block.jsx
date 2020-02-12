@@ -1,5 +1,4 @@
 import React from "react";
-import parse from "html-react-parser";
 
 const UrlBlock = props => {
   const { content } = props;

@@ -24,7 +24,6 @@ class HomeScroller extends Component {
     const { projects } = this.props;
     const { imgViz } = this.state;
     const scrollerWidth = this.state.dimensions.width;
-    const scrollerHeight = this.state.dimensions.height;
 
     return (
       <VizSensor
@@ -59,7 +58,7 @@ class HomeScroller extends Component {
                       return (
                         <li className={`slide`} key={project.slug}>
                           <AniLink to={`/project/${project.slug}`}>
-                            <img src={project.scrollerThumbnail.url} />
+                            <img src={project.scrollerThumbnail.url} alt="" />
                           </AniLink>
                           <AniLink
                             to={`/case-studies/${project.slug}`}
@@ -78,7 +77,7 @@ class HomeScroller extends Component {
                       return (
                         <li className={`slide`} key={`${project.slug}-x2`}>
                           <AniLink to={`/project/${project.slug}`}>
-                            <img src={project.scrollerThumbnail.url} />
+                            <img src={project.scrollerThumbnail.url} alt="" />
                           </AniLink>
                           <AniLink
                             to={`/case-studies/${project.slug}`}

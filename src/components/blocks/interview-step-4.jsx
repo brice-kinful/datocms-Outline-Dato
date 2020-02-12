@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Field } from "formik";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 
@@ -66,15 +65,15 @@ class InterviewStepFour extends Component {
             <label>Timeline*</label>
             <div className={`slider`}>
               <div className={`display`}>
-                {this.props.values.timeline_min == 0
+                {this.props.values.timeline_min === 0
                   ? "now"
-                  : this.props.values.timeline_min == 1
+                  : this.props.values.timeline_min === 1
                   ? `1 month`
                   : `${this.props.values.timeline_min} months`}{" "}
                 -{" "}
-                {this.props.values.timeline_max == 12
+                {this.props.values.timeline_max === 12
                   ? "1 year"
-                  : this.props.values.timeline_max == 1
+                  : this.props.values.timeline_max === 1
                   ? `1 month`
                   : `${this.props.values.timeline_max} months`}
               </div>
@@ -93,38 +92,38 @@ class InterviewStepFour extends Component {
             <div className={`table styrene_medium uppercase`}>
               <div className={`cell`}>
                 <span className="textlink">
-                  <a
-                    href="#"
+                  <button
+                    type="button"
                     className={`previous`}
                     onClick={this.props.decrementStep}
                   >
                     Previous
-                  </a>
+                  </button>
                 </span>
               </div>
               <div className={`cell`}>
-                {this.props.values.budget != "" ||
-                this.props.values.timeline != "" ? (
+                {this.props.values.budget !== "" ||
+                this.props.values.timeline !== "" ? (
                   <>
                     <span className="textlink">
-                      <a
-                        href="#"
+                      <button
+                        type="button"
                         className={`next`}
                         onClick={this.props.incrementStep}
                       >
                         Next
-                      </a>
+                      </button>
                     </span>
                   </>
                 ) : (
                   <span className="textlink">
-                    <a
-                      href="#"
+                    <button
+                      type="button"
                       className={`next disabled`}
                       onClick={this.props.incrementStep}
                     >
                       Next
-                    </a>
+                    </button>
                   </span>
                 )}
               </div>

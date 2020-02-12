@@ -79,7 +79,7 @@ const InterviewStepOne = props => {
         <div className={`wrapper`}>
           <div className={`table styrene_medium uppercase`}>
             <div className={`cell`}>
-              {props.step != 1 && (
+              {props.step !== 1 && (
                 <button
                   className={`previous`}
                   onClick={props.decrementStep}
@@ -103,20 +103,23 @@ const InterviewStepOne = props => {
               props.errors.company ? (
                 <>
                   <span className="textlink">
-                    <a
-                      href="#"
+                    <button
                       className={`next disabled`}
                       onClick={props.incrementStep}
                     >
                       Next
-                    </a>
+                    </button>
                   </span>
                 </>
               ) : (
                 <span className="textlink">
-                  <a href="#" className={`next`} onClick={props.incrementStep}>
+                  <button
+                    type="button"
+                    className={`next`}
+                    onClick={props.incrementStep}
+                  >
                     Next
-                  </a>
+                  </button>
                 </span>
               )}
             </div>

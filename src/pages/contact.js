@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from "gatsby-image";
 import Layout from "../components/layout";

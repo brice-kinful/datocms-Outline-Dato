@@ -129,11 +129,15 @@ const InterviewForm = () => {
               handleReset
             }) => {
               const incrementStep = () => {
-                console.log("Updated values Below:");
-                console.log(values);
+                // console.log("Updated values Below:");
+                // console.log(values);
 
                 if (
                   step === 1 &&
+                  values.first_name !== "" &&
+                  values.last_name !== "" &&
+                  values.email !== "" &&
+                  values.phone !== "" &&
                   errors.first_name !== "Required" &&
                   errors.last_name !== "Required" &&
                   errors.email !== ("Required" || "Invalid email address") &&
@@ -143,16 +147,16 @@ const InterviewForm = () => {
                 ) {
                   setStep(step + 1);
                   //run the first email js function below
-                  // emailjs
-                  //   .send("gmail", "interview_template_step_1", values)
-                  //   .then(
-                  //     result => {
-                  //       console.log(`Email submitted for step 1`);
-                  //     },
-                  //     error => {
-                  //       console.log(error.text);
-                  //     }
-                  //   );
+                  emailjs
+                    .send("gmail", "interview_template_step_1", values)
+                    .then(
+                      result => {
+                        console.log(`Email submitted for step 1`);
+                      },
+                      error => {
+                        console.log(error.text);
+                      }
+                    );
                 }
 
                 step === 2 &&

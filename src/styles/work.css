@@ -2,11 +2,11 @@
   padding: 200px 0;
 }
 
-#work > * {
+#work>* {
   padding-bottom: 200px;
 }
 
-#work > *:last-child {
+#work>*:last-child {
   padding-bottom: 0;
 }
 
@@ -17,7 +17,7 @@
   transform: translateY(-50%);
 }
 
-#work > .wrapper {
+#work>.wrapper {
   padding: 0 42px;
 }
 
@@ -82,11 +82,36 @@
   margin: auto;
 }
 
-.ril-toolbar-left
-  .ril-toolbar__item__child.ril__toolbarItemChild
-  .caption
-  span {
-  margin-bottom: 8px;
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span:first-child {
+  margin-right: 15px;
+}
+
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink {
+  font-size: 12px;
+  padding: 5px 0;
+  position: relative;
+  top: -6px;
+}
+
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink a:after {
+  bottom: -3px;
+}
+
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink:hover a {
+  top: 6px;
+}
+
+.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink:hover a:after {
+  bottom: 50%;
 }
 
 @media screen and (max-width: 860px) {
@@ -95,10 +120,7 @@
     bottom: 30px;
   }
 
-  .ril-toolbar-left
-    .ril-toolbar__item__child.ril__toolbarItemChild
-    .caption
-    span {
+  .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
     transform: none !important;
   }
 }

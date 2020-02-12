@@ -4,3 +4,15 @@
   position: relative;
   z-index: 1;
 }
+
+@media screen and (max-width: 1024px) {
+  #home>* {
+    padding-bottom: 75px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #home>* {
+    padding-bottom: 50px;
+  }
+}

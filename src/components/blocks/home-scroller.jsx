@@ -9,7 +9,8 @@ class HomeScroller extends Component {
     super(props);
     this.state = {
       dimensions: {
-        width: 2000
+        width: 2000,
+        imgViz: false
       }
     };
   }
@@ -36,11 +37,9 @@ class HomeScroller extends Component {
         <div id="scroller">
           {/* <div id="cursor"></div> */}
           {/* <div className="wrapper skinny title-container"> */}
-          <img
-            src="/case-studies.svg"
-            alt=""
-            className={`title${imgViz ? " visible" : ""}`}
-          />
+          <h1 className={`big title${imgViz ? " visible" : ""}`}>
+            Case Studies
+          </h1>
           {/* </div> */}
 
           <Measure

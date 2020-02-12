@@ -10,7 +10,7 @@ const Headline = props => {
     <div className={`headline`}>
       <div className={`wrapper skinny`}>
         <p>
-          {content.text}
+          <span>{content.text}</span>
           <span className="textlink">
             <AniLink
               to={`/${content.buttonUrl.slug}`}

@@ -60,7 +60,6 @@ class CaseStudiesPage extends Component {
   };
 
   componentDidMount() {
-    // console.log(this.props.data);
     this.setState({ prevScrollpos: window.pageYOffset });
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
@@ -76,6 +75,7 @@ class CaseStudiesPage extends Component {
   render() {
     const { data } = this.props;
     const { isHeadlineVisible } = this.state;
+
     return (
       <Layout>
         <div className="page" id="case-studies">
@@ -84,7 +84,7 @@ class CaseStudiesPage extends Component {
               isHeadlineVisible ? "visible" : ""
             }`}
           >
-            <img src="/case-studies.svg" alt="" />
+            <h1 className="big title">Case Studies</h1>
           </div>
           <div className="wrapper skinny">
             {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {

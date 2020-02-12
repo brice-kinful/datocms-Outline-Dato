@@ -131,6 +131,24 @@ body.home #logo {
 }
 
 /* nav */
+#nav-container:after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #fff, #fff 10%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, .1) 80%, rgba(255, 255, 255, 0));
+  opacity: 0;
+  visibility: hidden;
+  transition: .6s;
+}
+
+body.nav-open #nav-container:after {
+  opacity: 1;
+  visibility: visible;
+}
+
 #nav {
   /* display: none; */
   width: auto;
@@ -268,21 +286,28 @@ body.home #logo {
 
   #nav {
     padding: 30px 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    top: 0;
+    background: white;
   }
 
-  #nav .title {
-    margin: 50px 0 40px;
-    text-align: center;
+  #nav .wrapper,
+  #nav .flex {
+    height: 100%;
   }
 
-  #nav .title li {
+  #nav .flex {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nav li {
     display: block;
     margin: 10px 0;
     text-align: center;
-  }
-
-  #nav .title li a {
-    font-size: 10px;
   }
 
   #logo {

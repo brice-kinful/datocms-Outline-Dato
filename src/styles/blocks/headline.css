@@ -8,11 +8,44 @@
     line-height: 69px;
 }
 
+.headline p span:first-child {
+    margin-right: 20px;
+}
 
 .headline .textlink {
     font-size: 20px;
     line-height: 24px;
     position: relative;
     top: 0;
-    margin-left: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .headline p {
+        font-size: 36px;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .headline p {
+        font-size: 5.5vw;
+    }
+
+    .headline .textlink {
+        font-size: 16px;
+        line-height: 1;
+        padding: 5px 0;
+    }
+
+    .headline .textlink a {
+        padding: 5px 0;
+    }
+
+    .headline .textlink a:after {
+        bottom: 1px;
+    }
+
+    .headline .textlink:hover a::after {
+        bottom: 50%;
+    }
 }

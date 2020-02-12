@@ -76,3 +76,55 @@
     font-size: 20px;
     top: 4px;
 }
+
+@media screen and (max-width: 1024px) {
+    #studio>* {
+        padding-bottom: 75px;
+    }
+
+    #studio .large p,
+    #studio .cta p {
+        font-size: 36px;
+        line-height: 1.6;
+    }
+
+    #studio .cta p {
+        flex: 1;
+    }
+
+    #studio .text li {
+        font-size: 24px;
+        line-height: 2;
+    }
+
+    #studio .flex.grid {
+        grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #studio>* {
+        padding-bottom: 50px;
+    }
+
+    #studio {
+        padding: 200px 0;
+    }
+
+    #studio .flex {
+        flex-wrap: wrap;
+    }
+
+    #studio .flex>* {
+        width: 100%;
+    }
+
+    #studio .text {
+        padding: 50px 0 0;
+    }
+
+    #studio .flex.grid {
+        grid-gap: 30px;
+    }
+
+}

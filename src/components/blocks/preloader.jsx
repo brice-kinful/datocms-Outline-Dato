@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import SVG from "react-inlinesvg";
 import PreloaderImage from "./preloader-image";
 
 import "../../styles/blocks/preloader.css";
@@ -51,8 +51,8 @@ class Preloader extends Component {
       <>
         <div id="preload">
           <div id="loading-white-screen"></div>
-          {/* <SVG src="/logo.svg" className="logo" /> */}
-          <h1 className="centertext">Outline</h1>
+          <SVG src="/logo.svg" className="logo" />
+          {/* <h1 className="centertext">Outline</h1> */}
           <div className={`images ${nums[images.length - 1]}`}>
             {images.map((item, index) => {
               return (

@@ -38,8 +38,8 @@
   pointer-events: none;
 }
 
-#scroller img.title {
-  width: calc(100% - 120px);
+#scroller h1.title {
+  width: 100%;
   opacity: 0;
   -webkit-transition: 0.6s;
   transition: 0.6s;
@@ -49,11 +49,12 @@
   left: 0;
   right: 0;
   margin: auto;
+  text-align: center;
   z-index: 9;
   visibility: hidden;
 }
 
-#scroller img.title.visible {
+#scroller h1.title.visible {
   opacity: 1;
   visibility: visible;
 }
@@ -165,9 +166,20 @@
 @media screen and (max-width: 768px) {
   #scroller {
     height: auto;
-    margin-bottom: 80px;
+    margin-bottom: 0;
     padding: 0 30px;
     overflow: visible;
+  }
+
+  #scroller h1.title {
+    margin-top: 100px;
+    opacity: 1;
+    visibility: visible;
+    position: static;
+  }
+
+  #scroller .flex {
+    width: auto !important;
   }
 
   #scroller ul {

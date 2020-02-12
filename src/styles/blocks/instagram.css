@@ -82,6 +82,10 @@
   #instagram .cols {
     margin-bottom: 60px;
   }
+
+  #instagram .flex.grid {
+    grid-gap: 30px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {

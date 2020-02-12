@@ -22,3 +22,32 @@
     list-style: none;
     margin-bottom: 27px;
 }
+
+@media screen and (max-width: 1024px) {
+    .content li {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #home-capabilities {
+        padding-top: 50px;
+    }
+
+    .content.flex {
+        flex-wrap: wrap;
+    }
+
+    .content .one-third {
+        flex: 0 auto;
+        width: 100%;
+    }
+
+    .content .one-third ul {
+        padding: 30px 0 0;
+    }
+
+    .content .one-third:last-child ul {
+        padding: 0;
+    }
+}

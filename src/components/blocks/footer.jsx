@@ -58,23 +58,30 @@ class Footer extends Component {
                   </div>
                 </div>
                 <div className="grid-item one-fourth">
-                  <AniLink
-                    fade
-                    to={`/pre-project-interview`}
-                    className="line"
-                    style={{ display: "inline-block" }}
-                  >
-                    Project Inquiries
-                  </AniLink>
+                  <p>
+                    <AniLink
+                      fade
+                      to={`/pre-project-interview`}
+                      className="line"
+                      style={{ display: "inline-block" }}
+                    >
+                      Project Inquiries
+                    </AniLink>
+                  </p>
+
                   <div>
-                    <a href="tel:843-425-5312" className="line">
-                      843.425.5312
-                    </a>
+                    <p>
+                      <a href="tel:843-425-5312" className="line">
+                        843.425.5312
+                      </a>
+                    </p>
                   </div>
                   <div>
-                    <a href="mailto:hello@weareoutline.com" className="line">
-                      hello@weareoutline.com
-                    </a>
+                    <p>
+                      <a href="mailto:hello@weareoutline.com" className="line">
+                        hello@weareoutline.com
+                      </a>
+                    </p>
                   </div>
                 </div>
                 <div className="grid-item one-fourth">
@@ -86,6 +93,7 @@ class Footer extends Component {
                   <p>Web Development</p>
                   <p>
                     Meet our development-focused sister company,{" "}
+                    {/* <span className="textlink"> */}
                     <a
                       href="https://bykinful.com"
                       target="_blank"
@@ -94,6 +102,7 @@ class Footer extends Component {
                     >
                       Kinful
                     </a>
+                    {/* </span> */}
                   </p>
                 </div>
               </div>

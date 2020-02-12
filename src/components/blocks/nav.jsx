@@ -81,22 +81,20 @@ class Navigation extends Component {
           {isMenuOpen && (
             <div id="nav">
               <div className={`wrapper`}>
-                <div className={``}>
-                  <ul className="flex">
-                    {menuItems.map(item => {
-                      const name = item.menuItemText;
-                      const url = item.menuItemPage.slug;
+                <ul className="flex">
+                  {menuItems.map(item => {
+                    const name = item.menuItemText;
+                    const url = item.menuItemPage.slug;
 
-                      return (
-                        <li key={name}>
-                          <AniLink fade to={`/${url}`}>
-                            {name}
-                          </AniLink>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                    return (
+                      <li key={name}>
+                        <AniLink fade to={`/${url}`}>
+                          {name}
+                        </AniLink>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           )}

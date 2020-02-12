@@ -116,22 +116,22 @@ class WorkPage extends Component {
               color: "#000000"
             }}
           >
-            {image.title}
+            <span>{image.title}</span>
+            {image.customData["button-url"] && (
+              <span className="textlink">
+                <AniLink
+                  to={`/case-studies/${image.customData["button-url"]}`}
+                  fade
+                  className=""
+                  style={{}}
+                >
+                  {image.customData["button-title"]
+                    ? image.customData["button-title"]
+                    : "See More"}
+                </AniLink>
+              </span>
+            )}
           </span>
-          {image.customData["button-url"] && (
-            <span className="textlink">
-              <AniLink
-                to={`/case-studies/${image.customData["button-url"]}`}
-                fade
-                className=""
-                style={{}}
-              >
-                {image.customData["button-title"]
-                  ? image.customData["button-title"]
-                  : "See More"}
-              </AniLink>
-            </span>
-          )}
         </span>
       );
     });

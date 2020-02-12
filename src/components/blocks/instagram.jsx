@@ -16,7 +16,7 @@ const Instagram = props => {
             rel="noopener noreferrer"
             className="line"
           >
-            {handle}
+            @{handle}
           </a>
         </div>
         <div className="flex grid">

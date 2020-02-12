@@ -131,6 +131,7 @@ body {
     line-height: 1;
     color: #000000;
     cursor: url(/cursor.svg) 0 0, default;
+    transition: .3s;
     /* background: radial-gradient(farthest-side, black 95%, black 100%) calc(var(--x) - .55em) calc(var(--y) - .55em)/.5em .5em fixed no-repeat;
     background-color: white;
     cursor: none; */
@@ -265,8 +266,9 @@ h2 {
 }
 
 h1.big {
-    font-size: 18vw;
+    font-size: 15vw;
     position: absolute;
+    width: 100%;
     left: 0;
     right: 0;
     margin: auto;
@@ -274,7 +276,17 @@ h1.big {
     align-items: center;
     justify-content: center;
     z-index: 9;
+    transition: .75s;
+    opacity: 0;
+    visibility: hidden;
 }
+
+
+h1.big.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 
 h2 {
     font-size: 42px;
@@ -585,13 +597,23 @@ a.btn:hover {
 .page {
     background: white;
     min-height: 100vh;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    animation: pageLoading;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
 }
 
-.page:not(#home) h1.big {
-    transition: .75s;
-    opacity: 0;
-    visibility: hidden;
-    /* z-index: -99; */
+@keyframes pageLoading {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 h1.big.visible {
@@ -602,9 +624,9 @@ h1.big.visible {
 .gatsby-image-wrapper.blur {
     -webkit-filter: blur(15px);
     filter: blur(15px);
-    transition: -webkit-filter 1.5s;
-    transition: filter 1.5s;
-    transition: filter 1.5s, -webkit-filter 1.5s;
+    transition: -webkit-filter .75s;
+    transition: filter .75s;
+    transition: filter .75s, -webkit-filter .75s;
 }
 
 .gatsby-image-wrapper.blur.loaded {
@@ -644,7 +666,7 @@ h1.big.visible {
 
 @media screen and (min-width: 1200px) {
     h1.big {
-        font-size: 221px;
+        font-size: 203px;
     }
 }
 
@@ -664,7 +686,8 @@ h1.big.visible {
         font-size: 38px;
     }
 
-    .wrapper {
+    .wrapper,
+    .wrapper.skinny {
         padding: 0 30px;
     }
 

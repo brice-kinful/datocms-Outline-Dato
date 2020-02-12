@@ -108,14 +108,18 @@ class Layout extends Component {
               >
                 {({ measureRef }) => {
                   // console.log(this.state.pageHeight);
-                  return <div ref={measureRef}>{children}</div>;
+                  return (
+                    <div ref={measureRef}>
+                      {children}
+                      <Footer />
+                    </div>
+                  );
                 }}
               </Measure>
               <Navigation
                 menuItems={data.datoCmsMainMenu.menuItems}
                 isFooterInView={this.state.isFooterInView}
               />
-              <Footer />
             </>
           );
         }}

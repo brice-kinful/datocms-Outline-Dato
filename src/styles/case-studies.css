@@ -4,28 +4,18 @@
     position: relative;
 }
 
-#case-studies .title-container {
+#case-studies h1 {
     position: fixed;
     left: 0;
     right: 0;
     top: 50%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transform: translateY(-50%);
     z-index: 9;
     pointer-events: none;
-    opacity: 0;
-    transition: 0.3s;
 }
 
 #case-studies .title-container img {
     width: 100%;
-}
-
-#case-studies .title-container.visible {
-    opacity: 1;
 }
 
 #case-studies .flex.grid {

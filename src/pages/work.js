@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import Masonry from "react-masonry-component";
+import Masonry from "react-masonry-css";
 import BlurredImage from "../components/blocks/blurred-image";
 import Lightbox from "react-image-lightbox";
 import Layout from "../components/layout";
@@ -65,12 +65,6 @@ class WorkPage extends Component {
     }));
   };
 
-  updateImagePadding = padding => {
-    this.setState({
-      imagePadding: padding
-    });
-  };
-
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
@@ -98,11 +92,11 @@ class WorkPage extends Component {
     let titles = [];
     const lightboxImages = images;
     const masonryImages = this.props.data.datoCmsWorkPage.workMosaicImages;
-    const masonryOptions = {
-      transitionDuration: "0.3s",
-      itemSelector: ".masonry-grid-item",
-      columnWidth: ".masonry-grid-sizer",
-      percentPosition: true
+    const breakpointColumnsObj = {
+      default: 5,
+      1024: 4,
+      768: 3,
+      480: 2
     };
     masonryImages.map((image, index) => {
       titles.push(
@@ -114,6 +108,7 @@ class WorkPage extends Component {
           <span
             style={{
               color: "#000000"
+              // transform: `translateY(${imagePadding}px)`
             }}
           >
             <span>{image.title}</span>
@@ -162,7 +157,10 @@ class WorkPage extends Component {
                 }
                 onImageLoad={() => {
                   this.setState({
-                    imagePadding: lightboxImages[photoIndex].fluid.height
+                    imagePadding:
+                      lightboxImages[photoIndex].fluid.height > 500
+                        ? 500
+                        : lightboxImages[photoIndex].fluid.height
                   });
                   // console.log(lightboxImages[photoIndex].customData);
                 }}
@@ -182,11 +180,10 @@ class WorkPage extends Component {
               />
             )}
             <Masonry
-              options={masonryOptions}
-              disableImagesLoaded={false}
-              updateOnEachImageLoad={true}
+              breakpointCols={breakpointColumnsObj}
+              className="masonry-grid"
+              columnClassName="masonry-grid_column"
             >
-              <div className="masonry-grid-sizer"></div>
               {masonryImages.map((item, index) => {
                 return (
                   <div
@@ -197,7 +194,6 @@ class WorkPage extends Component {
                     }
                   >
                     <BlurredImage src={item.fluid} key={index} />
-                    {/* <Img fluid={item.fluid} /> */}
                   </div>
                 );
               })}
@@ -223,7 +219,7 @@ export const query = graphql`
         title
         url
         customData
-        fluid(imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(imgixParams: { fm: "jpg", auto: "compress" }, maxHeight: 400) {
           height
           ...GatsbyDatoCmsFluid
         }

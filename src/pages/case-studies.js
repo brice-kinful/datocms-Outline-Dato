@@ -79,12 +79,10 @@ class CaseStudiesPage extends Component {
     return (
       <Layout>
         <div className="page" id="case-studies">
-          <div
-            className={`wrapper skinny title-container  ${
-              isHeadlineVisible ? "visible" : ""
-            }`}
-          >
-            <h1 className="big title">Case Studies</h1>
+          <div className={`wrapper skinny`}>
+            <h1 className={`big title${isHeadlineVisible ? " visible" : ""}`}>
+              Case Studies
+            </h1>
           </div>
           <div className="wrapper skinny">
             {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {

@@ -152,11 +152,6 @@ body.frozen {
   max-width: 2400px;
 }
 
-.block.side-by-side.sticky-left.pad-bottom,
-.block.side-by-side.sticky-right.pad-bottom {
-  padding-bottom: 400px;
-}
-
 .block.side-by-side.sticky-right .wrapper.skinny {
   padding-right: 0;
 }
@@ -169,6 +164,7 @@ body.frozen {
 .block.side-by-side.sticky-left .one-half:first-child .inner>img,
 .block.side-by-side.sticky-right .one-half:last-child .inner>img {
   position: absolute;
+  top: 0;
 }
 
 .block.side-by-side.sticky-left .one-half:first-child .inner>img {

@@ -1,70 +1,121 @@
-import React from "react";
+import React, { Component } from "react";
 import parse from "html-react-parser";
+import Measure from "react-measure";
 
-const SideBySide = props => {
-  const { content } = props;
-  return (
-    <div
-      className={`block side-by-side ${
-        content.leftPositioning ? content.leftPositioning : ""
-      } ${content.rightPositioning ? content.rightPositioning : ""}${
-        content.doubleTopPadding ? " pad-top" : ""
-      }${content.doubleBottomPadding ? " pad-bottom" : ""}${
-        content.setBottomPaddingToZero ? " no-pad-bottom" : ""
-      }${content.setTopPaddingToZero ? " no-pad-top" : ""}${
-        content.leftSideImageStick ? " sticky-left" : ""
-      }${content.rightSideImageStick ? " sticky-right" : ""}`}
-    >
+class SideBySide extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      leftSideImageHeight: "",
+      rightSideImageHeight: ""
+    };
+  }
+  render() {
+    const { content } = this.props;
+    const { leftSideImageHeight, rightSideImageHeight } = this.state;
+    return (
       <div
-        className={`wrapper flex grid two ${
-          content.fullWidth ? "full" : "skinny"
-        }`}
+        className={`block side-by-side ${
+          content.leftPositioning ? content.leftPositioning : ""
+        } ${content.rightPositioning ? content.rightPositioning : ""}${
+          content.doubleTopPadding ? " pad-top" : ""
+        }${content.doubleBottomPadding ? " pad-bottom" : ""}${
+          content.setBottomPaddingToZero ? " no-pad-bottom" : ""
+        }${content.setTopPaddingToZero ? " no-pad-top" : ""}${
+          content.leftSideImageStick ? " sticky-left" : ""
+        }${content.rightSideImageStick ? " sticky-right" : ""}`}
       >
         <div
-          className={`flex column justify-center left grid-item one-half ${
-            content.leftPositioning ? content.leftPositioning : ""
+          className={`wrapper flex grid two ${
+            content.fullWidth ? "full" : "skinny"
           }`}
         >
-          {content.leftSideText && (
-            <span style={{ color: content.leftTextColor.hex }}>
-              {parse(content.leftSideText)}
-            </span>
-          )}
-          {content.leftSideImage && (
-            <div className="inner flex justify-center">
-              {/* <BlurredImage src={content.leftSideImage.fluid} /> */}
-              <img
-                src={content.leftSideImage.fluid.src}
-                style={{ maxWidth: `${content.leftSideImageCustomWidth}px` }}
-                alt=""
-              />
-            </div>
-          )}
-        </div>
-        <div
-          className={`flex column justify-center right grid-item one-half ${
-            content.rightPositioning ? content.rightPositioning : ""
-          }`}
-        >
-          {content.rightSideText && (
-            <span style={{ color: content.rightTextColor.hex }}>
-              {parse(content.rightSideText)}
-            </span>
-          )}
-          {content.rightSideImage && (
-            <div className="inner flex justify-center">
-              {/* <BlurredImage src={content.rightSideImage.fluid} /> */}
-              <img
-                src={content.rightSideImage.fluid.src}
-                style={{ maxWidth: `${content.rightSideImageCustomWidth}px` }}
-                alt=""
-              />
-            </div>
-          )}
+          <div
+            className={`flex column justify-center left grid-item one-half ${
+              content.leftPositioning ? content.leftPositioning : ""
+            }`}
+          >
+            {content.leftSideText && (
+              <span style={{ color: content.leftTextColor.hex }}>
+                {parse(content.leftSideText)}
+              </span>
+            )}
+            {content.leftSideImage && (
+              <div
+                className="inner flex justify-center"
+                style={{ height: leftSideImageHeight }}
+              >
+                {/* <BlurredImage src={content.leftSideImage.fluid} /> */}
+                <Measure
+                  bounds
+                  onResize={contentRect => {
+                    this.setState({
+                      leftSideImageHeight: contentRect.bounds.height
+                    });
+                  }}
+                >
+                  {({ measureRef }) => {
+                    // console.log(this.state.pageHeight);
+                    return (
+                      <img
+                        ref={measureRef}
+                        src={content.leftSideImage.fluid.src}
+                        style={{
+                          maxWidth: `${content.leftSideImageCustomWidth}px`
+                        }}
+                        alt=""
+                      />
+                    );
+                  }}
+                </Measure>
+              </div>
+            )}
+          </div>
+          <div
+            className={`flex column justify-center right grid-item one-half ${
+              content.rightPositioning ? content.rightPositioning : ""
+            }`}
+          >
+            {content.rightSideText && (
+              <span style={{ color: content.rightTextColor.hex }}>
+                {parse(content.rightSideText)}
+              </span>
+            )}
+            {content.rightSideImage && (
+              <div
+                className="inner flex justify-center"
+                style={{ height: rightSideImageHeight }}
+              >
+                {/* <BlurredImage src={content.rightSideImage.fluid} /> */}
+                <Measure
+                  bounds
+                  onResize={contentRect => {
+                    this.setState({
+                      rightSideImageHeight: contentRect.bounds.height
+                    });
+                  }}
+                >
+                  {({ measureRef }) => {
+                    // console.log(this.state.pageHeight);
+                    return (
+                      <img
+                        ref={measureRef}
+                        src={content.rightSideImage.fluid.src}
+                        style={{
+                          maxWidth: `${content.rightSideImageCustomWidth}px`
+                        }}
+                        alt=""
+                      />
+                    );
+                  }}
+                </Measure>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SideBySide;

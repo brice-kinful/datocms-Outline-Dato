@@ -76,6 +76,8 @@
 
 .ril__closeButton {
   background: url("/modal-close.svg") no-repeat center !important;
+  background-size: 60px !important;
+  width: 40px;
 }
 
 .ril__caption,
@@ -160,7 +162,7 @@
 
 @media screen and (max-width: 860px) {
   .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption {
-    align-items: flex-end;
+    align-items: center;
     bottom: 30px;
   }
 

@@ -79,7 +79,7 @@ class CaseStudiesPage extends Component {
     return (
       <Layout>
         <div className="page" id="case-studies">
-          <div className={`wrapper skinny`}>
+          <div className={`wrapper skinny`} style={{ zIndex: 999 }}>
             <h1 className={`big title${isHeadlineVisible ? " visible" : ""}`}>
               Case Studies
             </h1>

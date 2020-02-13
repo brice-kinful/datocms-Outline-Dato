@@ -54,7 +54,8 @@ body.frozen {
 }
 
 .block .flex.grid {
-  grid-gap: 15%;
+  /* grid-gap: 15%; */
+  grid-gap: 200px;
 }
 
 @supports (display: -ms-grid) or (display: grid) {
@@ -67,11 +68,11 @@ body.frozen {
   align-items: center;
 }
 
-.block .wrapper > * {
+.block .wrapper>* {
   padding-bottom: 190px;
 }
 
-.block .wrapper > *:last-child {
+.block .wrapper>*:last-child {
   padding-bottom: 0;
 }
 
@@ -103,6 +104,11 @@ body.frozen {
 
 .block.url-block a:after {
   height: 5px;
+  bottom: 6px;
+}
+
+.block.url-block .textlink:hover a:after {
+  bottom: 50%;
 }
 
 .block.url-block a:hover {
@@ -216,12 +222,12 @@ body.frozen {
   margin-left: auto;
 }
 
-#case-study .related .inner > .one-half:first-child {
+#case-study .related .inner>.one-half:first-child {
   padding-right: 45px;
   flex: 1.8;
 }
 
-#case-study .related .inner > .one-half:last-child {
+#case-study .related .inner>.one-half:last-child {
   padding-left: 15px;
   flex: 1.7;
 }

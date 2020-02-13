@@ -23,7 +23,7 @@ class Layout extends Component {
   checkFooterScroll = () => {
     const { pageHeight } = this.state;
     const currentScrollPos = window.pageYOffset;
-    if (currentScrollPos < pageHeight * 0.8) {
+    if (currentScrollPos < pageHeight * 0.92) {
       this.setState({
         isFooterInView: false
       });

@@ -25,6 +25,10 @@ class CaseStudy extends Component {
     document.body.classList.add("frozen");
   }
 
+  componentWillUnmount() {
+    document.body.classList.remove("frozen");
+  }
+
   render() {
     const project = this.props.data.datoCmsCaseStudy;
     const allProjects = this.props.data.allDatoCmsCaseStudy.edges;
@@ -89,7 +93,10 @@ class CaseStudy extends Component {
                     style={{ backgroundColor: block.backgroundColor?.hex }}
                   >
                     <div
-                      className={`wrapper${block.narrowWidth ? " narrow" : ""}`}
+                      className={`wrapper skinny`}
+                      style={
+                        block.customWidth && { width: `${block.customWidth}px` }
+                      }
                     >
                       <BlurredImage src={block.image.fluid} />
                     </div>
@@ -159,7 +166,7 @@ export const query = graphql`
       excerpt
       thumbnail {
         fluid(maxWidth: 320, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       brandColor {
@@ -210,6 +217,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid
             }
           }
+          customWidth
           narrowWidth
           backgroundColor {
             hex
@@ -228,6 +236,7 @@ export const query = graphql`
           backgroundColor {
             hex
           }
+          customWidth
           setTopPaddingToZero
           doubleTopPadding
           setBottomPaddingToZero

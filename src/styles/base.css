@@ -131,7 +131,7 @@ body {
     line-height: 1;
     color: #000000;
     cursor: url(/cursor.svg) 0 0, default;
-    transition: .3s;
+    transition: 0.3s;
     /* background: radial-gradient(farthest-side, black 95%, black 100%) calc(var(--x) - .55em) calc(var(--y) - .55em)/.5em .5em fixed no-repeat;
     background-color: white;
     cursor: none; */
@@ -155,13 +155,13 @@ a.line {
     position: relative;
     top: 0;
     overflow: hidden;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 a.line:after {
     content: "";
     display: inline-block;
-    transition: .3s;
+    transition: 0.3s;
     position: absolute;
     height: 1px;
     background: transparent;
@@ -186,7 +186,7 @@ a.line:hover:after {
     cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
     padding: 5px 0;
     /* border-bottom: 1px solid; */
-    transition: .3s;
+    transition: 0.3s;
 }
 
 /* a.textlink:before {
@@ -207,7 +207,7 @@ a.line:hover:after {
 .page#default a {
     top: 0;
     position: relative;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .textlink:hover a,
@@ -223,7 +223,7 @@ a.line:hover:after {
     content: "";
     display: inline-block;
     position: absolute;
-    transition: .3s;
+    transition: 0.3s;
     height: 1px;
     background: black;
     width: 100%;
@@ -276,17 +276,15 @@ h1.big {
     align-items: center;
     justify-content: center;
     z-index: 9;
-    transition: .75s;
+    transition: 0.75s;
     opacity: 0;
     visibility: hidden;
 }
-
 
 h1.big.visible {
     opacity: 1 !important;
     visibility: visible !important;
 }
-
 
 h2 {
     font-size: 42px;
@@ -458,11 +456,12 @@ p.large {
     max-width: 2400px;
     padding: 0 60px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .wrapper.skinny {
-    /* max-width: 1300px; */
-    padding: 0 10%;
+    max-width: 1400px;
 }
 
 .wrapper.x_skinny {
@@ -597,13 +596,16 @@ a.btn:hover {
 .page {
     background: white;
     min-height: 100vh;
+
+}
+
+.page:not(#home)>* {
     opacity: 0;
-    -webkit-transition: opacity 0.15s ease-in;
-    -o-transition: opacity 0.15s ease-in;
-    transition: opacity 0.15s ease-in;
+    -webkit-transition: opacity 0.33s ease-in;
+    -o-transition: opacity 0.33s ease-in;
+    transition: opacity 0.33s ease-in;
     animation: pageLoading;
-    animation-delay: .3s;
-    animation-duration: .3s;
+    animation-duration: 0.33s;
     animation-fill-mode: forwards;
 }
 
@@ -623,16 +625,18 @@ h1.big.visible {
 }
 
 .gatsby-image-wrapper.blur {
+    opacity: 0;
     -webkit-filter: blur(15px);
     filter: blur(15px);
-    transition: -webkit-filter .75s;
-    transition: filter .75s;
-    transition: filter .75s, -webkit-filter .75s;
+    transition: -webkit-filter 0.75s, opacity .75s;
+    transition: filter 0.75s, opacity .75s;
+    transition: filter 0.75s, -webkit-filter 0.75s, opacity .75s;
 }
 
 .gatsby-image-wrapper.blur.loaded {
     -webkit-filter: blur(0);
     filter: blur(0);
+    opacity: 1;
 }
 
 .page#default {
@@ -663,7 +667,6 @@ h1.big.visible {
     font-size: 32px;
     line-height: 46px;
 }
-
 
 @media screen and (min-width: 1200px) {
     h1.big {

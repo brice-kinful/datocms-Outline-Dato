@@ -14,7 +14,10 @@ const TextBlock = props => {
         backgroundColor: content.backgroundColor?.hex
       }}
     >
-      <div className="wrapper x_skinny">
+      <div
+        className="wrapper x_skinny"
+        style={content.customWidth && { width: `${content.customWidth}px` }}
+      >
         <span style={{ color: content.textColor?.hex }}>
           {parse(content.copy)}
         </span>

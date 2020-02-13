@@ -14,7 +14,9 @@ const SideBySide = props => {
       }${content.setTopPaddingToZero ? " no-pad-top" : ""}`}
     >
       <div
-        className={`wrapper flex grid two ${content.fullWidth ? "full" : ""}`}
+        className={`wrapper flex grid two ${
+          content.fullWidth ? "full" : "skinny"
+        }`}
       >
         <div
           className={`flex column justify-center left grid-item one-half ${

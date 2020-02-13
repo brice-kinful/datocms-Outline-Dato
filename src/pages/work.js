@@ -158,8 +158,8 @@ class WorkPage extends Component {
                 onImageLoad={() => {
                   this.setState({
                     imagePadding:
-                      lightboxImages[photoIndex].fluid.height > 500
-                        ? 500
+                      lightboxImages[photoIndex].fluid.height > 600
+                        ? 600
                         : lightboxImages[photoIndex].fluid.height
                   });
                   // console.log(lightboxImages[photoIndex].customData);

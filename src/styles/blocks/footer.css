@@ -14,8 +14,8 @@
   -o-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
   animation: pageLoading;
-  animation-duration: .5s;
-  animation-delay: .5s;
+  animation-duration: .7s;
+  animation-delay: .7s;
   animation-fill-mode: forwards;
 }
 

@@ -11,14 +11,18 @@ const UrlBlock = props => {
       }`}
       style={{ backgroundColor: content.backgroundColor?.hex }}
     >
-      <div className="wrapper centertext">
-        <a
-          href={`http://${content.url}`}
-          style={{ color: content.textColor?.hex }}
-          className=""
-        >
-          {content.url}
-        </a>
+      <div className="wrapper centertext skinny">
+        <span className="textlink">
+          <a
+            href={`http://${content.url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: content.textColor?.hex }}
+            className=""
+          >
+            {content.url}
+          </a>
+        </span>
       </div>
     </div>
   );

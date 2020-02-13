@@ -10,7 +10,7 @@ body.freeze {
   background: white;
   z-index: 99999;
   transition: 0.25s;
-  transition-delay: 0.75s;
+  transition-delay: 1s;
 }
 
 body.loading #preload #loading-white-screen {
@@ -76,7 +76,7 @@ body.ready #preload {
 
 #preload svg.logo {
   width: calc(100% - 60px);
-  height: 235px;
+  height: 185px;
   fill: white;
   position: fixed;
   z-index: 999;
@@ -86,7 +86,6 @@ body.ready #preload {
   right: 0;
   margin: auto;
 }
-
 
 @-webkit-keyframes fade-out {
   0% {

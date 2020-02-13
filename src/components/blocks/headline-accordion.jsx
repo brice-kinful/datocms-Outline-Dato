@@ -38,10 +38,10 @@ class HeadlineAccordion extends Component {
 
     return (
       <div className={`block accordion-block`}>
-        <div className={`wrapper`} style={{ maxWidth: "1400px" }}>
+        <div className={`wrapper skinny`}>
           <Accordion>
             <Accordion.Title active={activeIndex === 0} index={0} className="">
-              {content.headline}
+              <span>{content.headline}</span>
               <span
                 name="dropdown"
                 onClick={this.handleClick}

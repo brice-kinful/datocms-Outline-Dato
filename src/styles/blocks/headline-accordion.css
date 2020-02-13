@@ -1,5 +1,5 @@
 .block.accordion-block {
-    padding: 200px 0;
+    padding: 245px 0 100px;
 }
 
 .accordion.ui .content {
@@ -26,19 +26,30 @@
 
 .accordion.ui .title {
     pointer-events: none;
-    font-size: 48px;
-    line-height: 1.225;
+    font-size: 50px;
+    line-height: 69px;
 }
 
-.accordion.ui .title.active span {
+.accordion.ui .title.active span.textlink {
     opacity: 0;
     visibility: hidden;
+}
+
+.accordion.ui .title span:first-child {
+    margin-right: 25px;
 }
 
 .accordion.ui .textlink {
     pointer-events: initial;
     font-size: 20px;
-    margin-left: 25px;
+}
+
+.block .accordion.ui .textlink span::after {
+    bottom: -4px;
+}
+
+.block .accordion.ui .textlink:hover span::after {
+    bottom: 50%;
 }
 
 #home .accordion {

@@ -55,7 +55,7 @@
 .ril__imageNext {
   /* max-height: calc(100vh - 250px); */
   /* width: 33.3333%; */
-  max-height: 500px;
+  max-height: 600px;
 }
 
 .ril__navButtons {
@@ -81,6 +81,8 @@
   position: absolute;
   top: 68px;
   right: 60px;
+  opacity: 1 !important;
+  cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
 }
 
 .ril__caption,

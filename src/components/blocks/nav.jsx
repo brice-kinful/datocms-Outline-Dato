@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "gatsby";
 import SVG from "react-inlinesvg";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
@@ -88,9 +89,7 @@ class Navigation extends Component {
 
                     return (
                       <li key={name}>
-                        <AniLink fade to={`/${url}`}>
-                          {name}
-                        </AniLink>
+                        <Link to={`/${url}`}>{name}</Link>
                       </li>
                     );
                   })}

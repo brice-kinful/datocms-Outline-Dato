@@ -6,6 +6,10 @@ body.frozen {
   padding: 0;
 }
 
+#case-study>* {
+  opacity: 1 !important;
+}
+
 #case-study .screen {
   position: fixed;
   width: 100%;
@@ -81,15 +85,15 @@ body.frozen {
 }
 
 .block .block.up {
-  padding-top: 200px;
+  padding-top: 275px;
 }
 
 .block .grid-item.up {
-  margin-top: -200px;
+  margin-top: -275px;
 }
 
 .block .grid-item.down {
-  margin-top: 100px;
+  margin-top: 275px;
 }
 
 .block .gatsby-image-wrapper {
@@ -102,7 +106,7 @@ body.frozen {
   font-family: "SaolDisplay Light", serif;
   font-weight: 400;
   font-style: normal;
-  padding: 15px;
+  padding: 25px 15px;
   display: inline-block;
   overflow: hidden;
   transition: 0.3s;
@@ -115,7 +119,7 @@ body.frozen {
   left: 0;
   width: 100%;
   top: auto;
-  bottom: -6px;
+  bottom: 0;
 }
 
 .block.url-block a>span:after {
@@ -131,13 +135,17 @@ body.frozen {
   top: auto !important;
 }
 
-/* .block.side-by-side.sticky-right .flex .one-half:last-child {
-  margin-right: -10vw;
+.block.side-by-side.sticky-right .flex .one-half:first-child {
+  max-width: 570px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-.block.side-by-side.sticky-left .flex .one-half:first-child {
-  margin-left: -10vw;
-} */
+.block.side-by-side.sticky-left .flex .one-half:last-child {
+  max-width: 570px;
+  margin-right: auto;
+  margin-left: 0;
+}
 
 .block.side-by-side.sticky-left .wrapper.skinny,
 .block.side-by-side.sticky-right .wrapper.skinny {
@@ -175,6 +183,10 @@ body.frozen {
   margin-right: auto;
 }
 
+.block.text-block p:last-child {
+  margin-bottom: 0;
+}
+
 /* .block.url-block a:hover {
   -webkit-filter: blur(2px);
   filter: blur(2px);
@@ -186,7 +198,6 @@ body.frozen {
 
 #case-study .related .wrapper {
   margin-bottom: 60px;
-  max-width: 1400px;
 }
 
 #case-study .related .inner {
@@ -254,7 +265,7 @@ body.frozen {
 #case-study .related ul li {
   font-size: 16px;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 6px;
 }
 
 #case-study .related ul li:last-child {
@@ -287,23 +298,23 @@ body.frozen {
 }
 
 #case-study .related .inner>.one-half:first-child {
-  padding-right: 45px;
+  padding-right: 60px;
   flex: 1.8;
 }
 
 #case-study .related .inner>.one-half:last-child {
-  padding-left: 15px;
+  padding-left: 25px;
   flex: 1.7;
 }
 
 @media screen and (min-width: 1800px) {
   .block.url-block a {
-    font-size: 165px;
+    font-size: 145px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   #case-study .related .wrapper a.next {
-    font-size: 165px;
+    font-size: 158px;
   }
 }

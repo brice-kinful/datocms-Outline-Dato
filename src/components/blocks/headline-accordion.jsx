@@ -52,7 +52,7 @@ class HeadlineAccordion extends Component {
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 0}>
               <p className="">
-                {content.extendedText}
+                <span>{content.extendedText}</span>
                 <span
                   name="dropdown"
                   className="styrene_light textlink"

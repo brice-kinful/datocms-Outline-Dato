@@ -135,7 +135,7 @@ class WorkPage extends Component {
     return (
       <Layout>
         <div className="page" id="work">
-          <div className="wrapper">
+          <div className="wrapper" style={{ zIndex: 99 }}>
             <h1
               className={`big centertext ${isHeadlineVisible ? "visible" : ""}`}
             >

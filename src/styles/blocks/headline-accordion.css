@@ -35,7 +35,8 @@
     visibility: hidden;
 }
 
-.accordion.ui .title span:first-child {
+.accordion.ui .title span:first-child,
+.accordion.ui .content span:first-child {
     margin-right: 25px;
 }
 

@@ -605,11 +605,12 @@ a.btn:hover {
 
 .page:not(#home)>* {
     opacity: 0;
-    -webkit-transition: opacity 0.33s ease-in;
-    -o-transition: opacity 0.33s ease-in;
-    transition: opacity 0.33s ease-in;
+    -webkit-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
     animation: pageLoading;
-    animation-duration: 0.33s;
+    animation-duration: 0.5s;
+    animation-delay: .95s;
     animation-fill-mode: forwards;
 }
 

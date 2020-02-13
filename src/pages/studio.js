@@ -82,7 +82,7 @@ class StudioPage extends Component {
     return (
       <Layout>
         <div className="page" id="studio">
-          <div className="hero wrapper skinny">
+          <div className="hero wrapper skinny" style={{ zIndex: 99 }}>
             <h1
               className={`big centertext ${isHeadlineVisible ? "visible" : ""}`}
             >

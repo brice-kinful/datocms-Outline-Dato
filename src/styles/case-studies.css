@@ -33,7 +33,8 @@
 }
 
 #case-studies .wrapper>* {
-    padding-bottom: 190px;
+    padding-bottom: 250px;
+    padding-top: 0;
 }
 
 #case-studies .wrapper>*:last-child {
@@ -67,11 +68,11 @@
 }
 
 #case-studies .grid-item.up {
-    margin-top: -100px;
+    margin-top: -85%;
 }
 
 #case-studies .grid-item.down {
-    margin-top: 100px;
+    margin-top: 85%;
 }
 
 #case-studies .gatsby-image-wrapper {

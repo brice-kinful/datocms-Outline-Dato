@@ -9,7 +9,7 @@ const CaseStudiesPagination = props => {
   const { thumbnail, services, location, photography, featured, slug } = props;
   return (
     <div className="related">
-      <div className="flex wrapper">
+      <div className="flex wrapper skinny">
         <div className="one-half">
           <div className="inner">
             <ul>

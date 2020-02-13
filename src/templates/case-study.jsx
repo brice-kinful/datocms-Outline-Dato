@@ -95,7 +95,9 @@ class CaseStudy extends Component {
                     <div
                       className={`wrapper skinny`}
                       style={
-                        block.customWidth && { width: `${block.customWidth}px` }
+                        block.customWidth && {
+                          maxWidth: `${block.customWidth}px`
+                        }
                       }
                     >
                       <BlurredImage src={block.image.fluid} />
@@ -218,7 +220,6 @@ export const query = graphql`
             }
           }
           customWidth
-          narrowWidth
           backgroundColor {
             hex
           }
@@ -269,6 +270,7 @@ export const query = graphql`
             }
           }
           leftSideImageCustomWidth
+          leftSideImageStick
           leftPositioning: leftImagePositioning
           rightSideText
           rightTextColor {
@@ -280,6 +282,7 @@ export const query = graphql`
             }
           }
           rightSideImageCustomWidth
+          rightSideImageStick
           rightPositioning: rightImagePositioning
           setTopPaddingToZero
           doubleTopPadding

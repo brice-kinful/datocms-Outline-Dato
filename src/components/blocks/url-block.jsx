@@ -21,6 +21,7 @@ const UrlBlock = props => {
             className=""
           >
             {content.url}
+            <span style={{ background: content.textColor?.hex }}></span>
           </a>
         </span>
       </div>

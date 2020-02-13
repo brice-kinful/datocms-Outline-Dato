@@ -11,7 +11,9 @@ const SideBySide = props => {
         content.doubleTopPadding ? " pad-top" : ""
       }${content.doubleBottomPadding ? " pad-bottom" : ""}${
         content.setBottomPaddingToZero ? " no-pad-bottom" : ""
-      }${content.setTopPaddingToZero ? " no-pad-top" : ""}`}
+      }${content.setTopPaddingToZero ? " no-pad-top" : ""}${
+        content.leftSideImageStick ? " sticky-left" : ""
+      }${content.rightSideImageStick ? " sticky-right" : ""}`}
     >
       <div
         className={`wrapper flex grid two ${
@@ -29,7 +31,7 @@ const SideBySide = props => {
             </span>
           )}
           {content.leftSideImage && (
-            <div className="flex justify-center">
+            <div className="inner flex justify-center">
               {/* <BlurredImage src={content.leftSideImage.fluid} /> */}
               <img
                 src={content.leftSideImage.fluid.src}

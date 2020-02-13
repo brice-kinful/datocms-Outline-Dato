@@ -58,6 +58,10 @@ body.frozen {
   grid-gap: 200px;
 }
 
+.block .flex img {
+  width: 100%;
+}
+
 @supports (display: -ms-grid) or (display: grid) {
   .block .flex.grid.full {
     padding: 0;
@@ -77,11 +81,11 @@ body.frozen {
 }
 
 .block .block.up {
-  padding-top: 100px;
+  padding-top: 200px;
 }
 
 .block .grid-item.up {
-  margin-top: -100px;
+  margin-top: -200px;
 }
 
 .block .grid-item.down {
@@ -94,27 +98,87 @@ body.frozen {
 
 .block.url-block a {
   font-size: 8vw;
+  line-height: 8vw;
   font-family: "SaolDisplay Light", serif;
   font-weight: 400;
   font-style: normal;
+  padding: 15px;
   display: inline-block;
   overflow: hidden;
   transition: 0.3s;
+  position: relative;
 }
 
-.block.url-block a:after {
+.block.url-block a>span {
   height: 5px;
-  bottom: 6px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: auto;
+  bottom: -6px;
 }
 
-.block.url-block .textlink:hover a:after {
+.block.url-block a>span:after {
+  display: none;
+}
+
+.block.url-block .textlink a:after {
+  display: none;
+}
+
+.block.url-block .textlink:hover a>span {
   bottom: 50%;
+  top: auto !important;
 }
 
-.block.url-block a:hover {
+/* .block.side-by-side.sticky-right .flex .one-half:last-child {
+  margin-right: -10vw;
+}
+
+.block.side-by-side.sticky-left .flex .one-half:first-child {
+  margin-left: -10vw;
+} */
+
+.block.side-by-side.sticky-left .wrapper.skinny,
+.block.side-by-side.sticky-right .wrapper.skinny {
+  max-width: 2400px;
+}
+
+.block.side-by-side.sticky-left.pad-bottom,
+.block.side-by-side.sticky-right.pad-bottom {
+  padding-bottom: 400px;
+}
+
+.block.side-by-side.sticky-right .wrapper.skinny {
+  padding-right: 0;
+}
+
+.block.side-by-side.sticky-left .inner,
+.block.side-by-side.sticky-right .inner {
+  position: relative;
+}
+
+.block.side-by-side.sticky-left .one-half:first-child .inner>img,
+.block.side-by-side.sticky-right .one-half:last-child .inner>img {
+  position: absolute;
+}
+
+.block.side-by-side.sticky-left .one-half:first-child .inner>img {
+  left: 0;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.block.side-by-side.sticky-right .one-half:last-child .inner>img {
+  right: 0;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* .block.url-block a:hover {
   -webkit-filter: blur(2px);
   filter: blur(2px);
-}
+} */
 
 #case-study .related {
   padding: 130px 0 190px;

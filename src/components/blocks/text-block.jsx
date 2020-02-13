@@ -16,7 +16,7 @@ const TextBlock = props => {
     >
       <div
         className="wrapper x_skinny"
-        style={content.customWidth && { width: `${content.customWidth}px` }}
+        style={content.customWidth && { maxWidth: `${content.customWidth}px` }}
       >
         <span style={{ color: content.textColor?.hex }}>
           {parse(content.copy)}

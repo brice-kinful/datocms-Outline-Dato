@@ -104,8 +104,9 @@ const InterviewStepOne = props => {
                 <>
                   <span className="textlink">
                     <button
-                      className={`next disabled`}
+                      className={`next`}
                       onClick={props.incrementStep}
+                      disabled
                     >
                       Next
                     </button>

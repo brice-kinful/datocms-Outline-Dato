@@ -107,13 +107,12 @@ const InterviewForm = () => {
                       result => {
                         console.log(`Final form submitted`);
                         setStatus({ success: true });
-                        setSubmitting(true);
+                        navigate(`/thanks`);
                       },
                       error => {
                         console.log(error.text);
                       }
-                    )
-                    .then(navigate(`/thanks/`));
+                    );
                 })
                 .catch(error => {
                   console.log("Error: Please Try Again!");

@@ -119,7 +119,8 @@ class InterviewStepFour extends Component {
                   <span className="textlink">
                     <button
                       type="button"
-                      className={`next disabled`}
+                      className={`next`}
+                      disabled
                       onClick={this.props.incrementStep}
                     >
                       Next

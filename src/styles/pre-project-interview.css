@@ -360,9 +360,15 @@ input.required+span {
 }
 
 #interview .nav .cell button.next:disabled {
-    opacity: .25;
+    opacity: .75;
     pointer-events: none;
-    cursor: not-allowed
+    cursor: not-allowed !important;
+    position: static !important;
+}
+
+
+#interview .nav .cell button.next:disabled:after {
+    display: none;
 }
 
 #interview h3 {

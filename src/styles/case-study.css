@@ -9,6 +9,11 @@ body.frozen {
   /* opacity: 1 !important; */
 }
 
+#case-study>*:not(.screen) {
+  animation: none !important;
+  opacity: 1;
+}
+
 /* #case-study .hero,
 #case-study .block,
 #case-study .related {
@@ -22,6 +27,7 @@ body.frozen {
   top: 0;
   left: 0;
   z-index: 99999999;
+  animation: none !important;
   opacity: 1;
   visibility: visible;
   transition: 2s;

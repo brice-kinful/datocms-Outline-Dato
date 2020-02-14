@@ -89,7 +89,7 @@ class Navigation extends Component {
 
                     return (
                       <li key={name}>
-                        <Link to={`/${url}`}>{name}</Link>
+                        <AniLink to={`/${url}`}>{name}</AniLink>
                       </li>
                     );
                   })}

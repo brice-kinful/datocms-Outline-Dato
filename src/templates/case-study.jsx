@@ -42,7 +42,7 @@ class CaseStudy extends Component {
     const { hasHeroImageLoaded } = this.state;
     return (
       <Layout>
-        <div className="" id="case-study">
+        <div className="page" id="case-study">
           <HelmetDatoCms seo={project.seoMetaTags} />
           <div
             className={`screen flex align-center justify-center wrapper${
@@ -261,6 +261,9 @@ export const query = graphql`
         ... on DatoCmsSideBySideBlock {
           id
           fullWidth
+          backgroundColor {
+            hex
+          }
           leftSideText
           leftTextColor {
             hex

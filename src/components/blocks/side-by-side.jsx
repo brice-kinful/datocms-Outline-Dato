@@ -25,6 +25,7 @@ class SideBySide extends Component {
         }${content.setTopPaddingToZero ? " no-pad-top" : ""}${
           content.leftSideImageStick ? " sticky-left" : ""
         }${content.rightSideImageStick ? " sticky-right" : ""}`}
+        style={{ backgroundColor: content.backgroundColor?.hex }}
       >
         <div
           className={`wrapper flex grid two ${

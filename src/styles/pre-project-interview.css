@@ -3,7 +3,7 @@
     /* height: 100vh; */
 }
 
-#interview+div+#footer {
+#interview+.footer {
     display: none;
 }
 

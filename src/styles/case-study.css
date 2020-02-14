@@ -4,11 +4,16 @@ body.frozen {
 
 #case-study {
   padding: 0;
+  background: white;
+  min-height: 100vh;
+  /* opacity: 1 !important; */
 }
 
-#case-study>* {
-  opacity: 1 !important;
-}
+/* #case-study .hero,
+#case-study .block,
+#case-study .related {
+  opacity: 0;
+} */
 
 #case-study .screen {
   position: fixed;
@@ -17,15 +22,48 @@ body.frozen {
   top: 0;
   left: 0;
   z-index: 99999999;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.75s;
+  opacity: 1;
+  visibility: visible;
+  transition: 2s;
   background-color: white;
 }
 
-#case-study .screen.visible {
-  visibility: visible;
+#case-study .screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#case-study .screen:after {
+  content: "";
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
   opacity: 1;
+  visibility: visible;
+  background: white;
+  -webkit-transition: opacity 1.5s ease-in;
+  -o-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+  animation: introLoad;
+  animation-duration: 1.5s;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes introLoad {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 #case-study .hero,
@@ -118,7 +156,7 @@ body.frozen {
 }
 
 .block.url-block a>span {
-  height: 5px;
+  height: 3px;
   position: absolute;
   left: 0;
   width: 100%;
@@ -158,6 +196,10 @@ body.frozen {
 
 .block.side-by-side.sticky-right .wrapper.skinny {
   padding-right: 0;
+}
+
+.block.side-by-side.sticky-left .wrapper.skinny {
+  padding-left: 0;
 }
 
 .block.side-by-side.sticky-left .inner,

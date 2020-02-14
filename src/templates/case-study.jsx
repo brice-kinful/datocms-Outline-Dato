@@ -42,11 +42,11 @@ class CaseStudy extends Component {
     const { hasHeroImageLoaded } = this.state;
     return (
       <Layout>
-        <div className="page" id="case-study">
+        <div className="" id="case-study">
           <HelmetDatoCms seo={project.seoMetaTags} />
           <div
             className={`screen flex align-center justify-center wrapper${
-              hasHeroImageLoaded ? "" : " visible"
+              hasHeroImageLoaded ? " hidden" : ""
             }`}
             style={{ backgroundColor: project.brandColor.hex }}
           >
@@ -62,11 +62,12 @@ class CaseStudy extends Component {
           <div className="hero">
             <Img
               fluid={project.heroImage.fluid}
+              durationFadeIn={1000}
               onLoad={() =>
                 setTimeout(() => {
                   this.setState({ hasHeroImageLoaded: true });
                   document.body.classList.remove("frozen");
-                }, 1500)
+                }, 2000)
               }
             />
           </div>

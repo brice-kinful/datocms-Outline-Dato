@@ -1,5 +1,5 @@
 #case-studies {
-    padding: 125px 0 250px;
+    padding: 125px 0 200px;
     overflow: hidden;
     position: relative;
 }
@@ -33,7 +33,7 @@
 }
 
 #case-studies .wrapper>* {
-    padding-bottom: 250px;
+    padding-bottom: 200px;
     padding-top: 0;
 }
 

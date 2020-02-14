@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 import Measure from "react-measure";
-
 import Navigation from "./blocks/nav";
 import Footer from "./blocks/footer";
 
@@ -15,14 +14,22 @@ class Layout extends Component {
     this.state = {
       isFooterInView: false,
       windowTopPos: 0,
-      pageHeight: 1000
+      pageHeight: 1000,
+      location: "",
+      loaded: false
     };
   }
 
   // scroll
   checkFooterScroll = () => {
-    const { pageHeight } = this.state;
+    const { pageHeight, loaded } = this.state;
     const currentScrollPos = window.pageYOffset;
+    if (currentScrollPos > 100) {
+      //load footer
+      this.setState({
+        loaded: true
+      });
+    }
     if (currentScrollPos < pageHeight - 650) {
       this.setState({
         isFooterInView: false
@@ -37,7 +44,10 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    this.setState({ windowTopPos: window.pageYOffset });
+    this.setState({
+      windowTopPos: window.pageYOffset,
+      location: this.props.location
+    });
     window.addEventListener("scroll", this.checkFooterScroll);
   }
 
@@ -94,6 +104,7 @@ class Layout extends Component {
           }
         `}
         render={data => {
+          const { loaded } = this.state;
           return (
             <>
               <HelmetDatoCms
@@ -109,12 +120,12 @@ class Layout extends Component {
                 {({ measureRef }) => {
                   // console.log(this.state.pageHeight);
                   return (
-                    <div ref={measureRef}>
-                      <>{children}</>
-                      <div className="footer">
-                        <Footer />
+                    <>
+                      <div ref={measureRef} className="page">
+                        {children}
                       </div>
-                    </div>
+                      {loaded && <Footer />}
+                    </>
                   );
                 }}
               </Measure>

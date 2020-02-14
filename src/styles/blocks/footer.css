@@ -2,31 +2,19 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  opacity: 1;
   z-index: -1;
   width: 100%;
   /* cursor: none; */
   cursor: url(/cursor-white.svg) 0 0, default;
-}
-
-.page+#footer {
-  opacity: 0;
+  /* opacity: 0; */
   -webkit-transition: opacity 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
   animation: pageLoading;
-  animation-duration: .7s;
-  animation-delay: .7s;
+  animation-duration: .2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
-}
-
-@keyframes pageLoading {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 footer p {

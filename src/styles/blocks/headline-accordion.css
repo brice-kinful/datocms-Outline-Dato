@@ -38,6 +38,8 @@
 .accordion.ui .title span:first-child,
 .accordion.ui .content span:first-child {
     margin-right: 25px;
+    padding-bottom: 10px;
+    top: -10px;
 }
 
 .accordion.ui .textlink {
@@ -53,8 +55,12 @@
     bottom: -4px;
 }
 
+.block .accordion.ui .textlink:hover span {
+    top: 0px !important;
+}
+
 .block .accordion.ui .textlink:hover span::after {
-    bottom: 50%;
+    bottom: calc(50% + 5px);
 }
 
 #home .accordion {

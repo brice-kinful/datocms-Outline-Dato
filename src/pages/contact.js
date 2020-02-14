@@ -9,7 +9,7 @@ import "../styles/contact.css";
 
 const ContactPage = ({ data }) => {
   const contact = data.datoCmsContactPage;
-  console.log(contact);
+  // console.log(contact);
   return (
     <Layout>
       <div className="page" id="contact">

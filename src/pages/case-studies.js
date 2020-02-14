@@ -13,7 +13,8 @@ class CaseStudiesPage extends Component {
     this.state = {
       isHeadlineVisible: true,
       seconds: 0,
-      prevScrollpos: ""
+      prevScrollpos: "",
+      display: false
     };
   }
 
@@ -60,13 +61,19 @@ class CaseStudiesPage extends Component {
   };
 
   componentDidMount() {
-    this.setState({ prevScrollpos: window.pageYOffset });
+    this.setState({
+      prevScrollpos: window.pageYOffset,
+      display: !this.state.display
+    });
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
+    this.setState({
+      display: !this.state.display
+    });
     window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener("mousemove", this.handleMouseMove);
     clearInterval(this.interval);
@@ -74,7 +81,7 @@ class CaseStudiesPage extends Component {
 
   render() {
     const { data } = this.props;
-    const { isHeadlineVisible } = this.state;
+    const { isHeadlineVisible, display } = this.state;
 
     return (
       <Layout>

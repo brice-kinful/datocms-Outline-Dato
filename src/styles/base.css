@@ -600,17 +600,16 @@ a.btn:hover {
 .page {
     background: white;
     min-height: 100vh;
-
 }
 
-.page:not(#home)>* {
+.page {
     opacity: 0;
     -webkit-transition: opacity 1.25s ease-in;
     -o-transition: opacity 1.25s ease-in;
     transition: opacity 1.25s ease-in;
     animation: pageLoading;
     animation-duration: 1.25s;
-    animation-delay: .95s;
+    animation-delay: 0.95s;
     animation-fill-mode: forwards;
 }
 
@@ -624,6 +623,24 @@ a.btn:hover {
     }
 }
 
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
 h1.big.visible {
     opacity: 1 !important;
     visibility: visible !important;
@@ -633,9 +650,9 @@ h1.big.visible {
     opacity: 0;
     -webkit-filter: blur(15px);
     filter: blur(15px);
-    transition: -webkit-filter 0.75s, opacity .75s;
-    transition: filter 0.75s, opacity .75s;
-    transition: filter 0.75s, -webkit-filter 0.75s, opacity .75s;
+    transition: -webkit-filter 0.75s, opacity 0.75s;
+    transition: filter 0.75s, opacity 0.75s;
+    transition: filter 0.75s, -webkit-filter 0.75s, opacity 0.75s;
 }
 
 .gatsby-image-wrapper.blur.loaded {

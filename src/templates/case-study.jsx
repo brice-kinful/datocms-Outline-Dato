@@ -3,6 +3,7 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 import BlurredImage from "../components/blocks/blurred-image";
 import HeadlineAccordion from "../components/blocks/headline-accordion";
@@ -17,12 +18,16 @@ class CaseStudy extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasHeroImageLoaded: false
+      hasHeroImageLoaded: false,
+      display: false
     };
   }
 
   componentDidMount() {
     document.body.classList.add("frozen");
+    this.setState({
+      display: !this.state.display
+    });
   }
 
   componentWillUnmount() {
@@ -30,6 +35,7 @@ class CaseStudy extends Component {
   }
 
   render() {
+    const { display } = this.state;
     const project = this.props.data.datoCmsCaseStudy;
     const allProjects = this.props.data.allDatoCmsCaseStudy.edges;
     const activeProjectIndex = allProjects.findIndex(
@@ -44,6 +50,7 @@ class CaseStudy extends Component {
       <Layout>
         <div className="page" id="case-study">
           <HelmetDatoCms seo={project.seoMetaTags} />
+
           <div
             className={`screen flex align-center justify-center wrapper${
               hasHeroImageLoaded ? " hidden" : ""

@@ -154,7 +154,7 @@ body.frozen {
   font-family: "SaolDisplay Light", serif;
   font-weight: 400;
   font-style: normal;
-  padding: 25px 15px;
+  padding: 25px 0;
   display: inline-block;
   overflow: hidden;
   transition: 0.3s;
@@ -162,7 +162,7 @@ body.frozen {
 }
 
 .block.url-block a>span {
-  height: 3px;
+  height: 2px;
   position: absolute;
   left: 0;
   width: 100%;
@@ -186,13 +186,13 @@ body.frozen {
 .block.side-by-side.sticky-right .flex .one-half:first-child {
   max-width: 570px;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: auto;
 }
 
 .block.side-by-side.sticky-left .flex .one-half:last-child {
   max-width: 570px;
   margin-right: auto;
-  margin-left: 0;
+  margin-left: auto;
 }
 
 .block.side-by-side.sticky-left .wrapper.skinny,

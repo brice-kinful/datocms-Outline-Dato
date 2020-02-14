@@ -7,6 +7,27 @@
     display: none;
 }
 
+.thanks {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
+    animation: loading;
+    animation-duration: 0.5s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 #interview>* {
     padding-bottom: 200px;
 }

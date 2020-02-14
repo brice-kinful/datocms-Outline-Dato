@@ -10,7 +10,7 @@ const PreProjectInterview = ({ data }) => {
   emailjs.init(process.env.GATSBY_EMAILJS_USER_ID);
   return (
     <Layout>
-      <div id="interview" className="page lex align-center justify-center">
+      <div id="interview" className="page flex align-center justify-center">
         <InterviewForm />
       </div>
     </Layout>

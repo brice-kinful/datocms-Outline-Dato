@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { redirectTo } from "@reach/router";
+import { navigate } from "@reach/router";
 import emailjs from "emailjs-com";
 
 import InterviewStepOne from "./interview-step-1";
@@ -101,7 +101,7 @@ const InterviewForm = () => {
                   resetForm({});
                   console.log(`Final form submitted`);
                   setStatus({ success: true });
-                  redirectTo("/thanks");
+                  navigate("/thanks");
 
                   // write final email send function below
                   // emailjs
@@ -129,7 +129,8 @@ const InterviewForm = () => {
               values,
               setFieldValue,
               handleSubmit,
-              handleReset
+              handleReset,
+              isSubmitting
             }) => {
               const incrementStep = () => {
                 // console.log("Updated values Below:");

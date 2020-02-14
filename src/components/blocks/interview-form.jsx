@@ -116,6 +116,7 @@ const InterviewForm = () => {
                           result => {
                             // console.log(`Final form submitted`);
                             setStatus({ success: true });
+                            setFormStatus("finished");
                           },
                           error => {
                             console.log(error.text);

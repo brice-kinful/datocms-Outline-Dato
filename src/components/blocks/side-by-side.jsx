@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import parse from "html-react-parser";
 import Measure from "react-measure";
+import BlurredImage from "./blurred-image";
 
 class SideBySide extends Component {
   constructor(props) {
@@ -45,29 +46,35 @@ class SideBySide extends Component {
                 className="inner flex justify-center"
                 style={{ height: leftSideImageHeight }}
               >
-                {/* <BlurredImage src={content.leftSideImage.fluid} /> */}
-                <Measure
-                  bounds
-                  onResize={contentRect => {
-                    this.setState({
-                      leftSideImageHeight: contentRect.bounds.height
-                    });
-                  }}
-                >
-                  {({ measureRef }) => {
-                    // console.log(this.state.pageHeight);
-                    return (
-                      <img
-                        ref={measureRef}
-                        src={content.leftSideImage.fluid.src}
-                        style={{
-                          maxWidth: `${content.leftSideImageCustomWidth}px`
-                        }}
-                        alt=""
-                      />
-                    );
-                  }}
-                </Measure>
+                {content.leftSideImageStick || content.rightSideImageStick ? (
+                  <Measure
+                    bounds
+                    onResize={contentRect => {
+                      this.setState({
+                        leftSideImageHeight: contentRect.bounds.height
+                      });
+                    }}
+                  >
+                    {({ measureRef }) => {
+                      // console.log(this.state.pageHeight);
+                      return (
+                        <img
+                          ref={measureRef}
+                          src={content.leftSideImage.fluid.src}
+                          style={{
+                            maxWidth: `${content.leftSideImageCustomWidth}px`
+                          }}
+                          alt=""
+                        />
+                      );
+                    }}
+                  </Measure>
+                ) : (
+                  <BlurredImage
+                    src={content.leftSideImage.fluid}
+                    customWidth={content.leftSideImageCustomWidth}
+                  />
+                )}
               </div>
             )}
           </div>
@@ -86,29 +93,35 @@ class SideBySide extends Component {
                 className="inner flex justify-center"
                 style={{ height: rightSideImageHeight }}
               >
-                {/* <BlurredImage src={content.rightSideImage.fluid} /> */}
-                <Measure
-                  bounds
-                  onResize={contentRect => {
-                    this.setState({
-                      rightSideImageHeight: contentRect.bounds.height
-                    });
-                  }}
-                >
-                  {({ measureRef }) => {
-                    // console.log(this.state.pageHeight);
-                    return (
-                      <img
-                        ref={measureRef}
-                        src={content.rightSideImage.fluid.src}
-                        style={{
-                          maxWidth: `${content.rightSideImageCustomWidth}px`
-                        }}
-                        alt=""
-                      />
-                    );
-                  }}
-                </Measure>
+                {content.rightSideImageStick || content.leftSideImageStick ? (
+                  <Measure
+                    bounds
+                    onResize={contentRect => {
+                      this.setState({
+                        rightSideImageHeight: contentRect.bounds.height
+                      });
+                    }}
+                  >
+                    {({ measureRef }) => {
+                      // console.log(this.state.pageHeight);
+                      return (
+                        <img
+                          ref={measureRef}
+                          src={content.rightSideImage.fluid.src}
+                          style={{
+                            maxWidth: `${content.rightSideImageCustomWidth}px`
+                          }}
+                          alt=""
+                        />
+                      );
+                    }}
+                  </Measure>
+                ) : (
+                  <BlurredImage
+                    src={content.rightSideImage.fluid}
+                    customWidth={content.rightSideImageCustomWidth}
+                  />
+                )}
               </div>
             )}
           </div>

@@ -168,7 +168,7 @@ export const query = graphql`
       excerpt
       thumbnail {
         fluid(maxWidth: 320, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsFluid_noBase64
+          ...GatsbyDatoCmsFluid
         }
       }
       brandColor {

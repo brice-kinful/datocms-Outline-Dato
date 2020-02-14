@@ -56,7 +56,7 @@ class HomeScroller extends Component {
                     {projects.map(project => {
                       return (
                         <li className={`slide`} key={project.slug}>
-                          <AniLink to={`/project/${project.slug}`}>
+                          <AniLink to={`/case-studies/${project.slug}`}>
                             <img src={project.scrollerThumbnail.url} alt="" />
                           </AniLink>
                           <AniLink

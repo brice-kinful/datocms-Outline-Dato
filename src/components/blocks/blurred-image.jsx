@@ -14,12 +14,13 @@ class BlurredImage extends Component {
   };
 
   render() {
-    const { src } = this.props;
+    const { src, customWidth } = this.props;
     return (
       <Img
         fluid={src}
         onLoad={this.loadImage}
         className={`blur ${this.state.loaded ? "loaded" : ""}`}
+        style={customWidth && { maxWidth: `${customWidth}px` }}
       />
     );
   }

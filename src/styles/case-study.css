@@ -57,6 +57,10 @@ body.frozen {
   max-width: 1000px;
 }
 
+.block .gatsby-image-wrapper {
+  width: 100%;
+}
+
 .block .flex.grid {
   /* grid-gap: 15%; */
   grid-gap: 200px;

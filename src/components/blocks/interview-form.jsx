@@ -99,20 +99,23 @@ const InterviewForm = () => {
                   setSubmitting(false);
                   //reset values to zero
                   resetForm({});
+                  console.log(`Final form submitted`);
+                  setStatus({ success: true });
+                  navigate(`/thanks`);
 
                   // write final email send function below
-                  emailjs
-                    .send("gmail", "interview_template_step_final", values)
-                    .then(
-                      result => {
-                        console.log(`Final form submitted`);
-                        setStatus({ success: true });
-                        navigate(`/thanks`);
-                      },
-                      error => {
-                        console.log(error.text);
-                      }
-                    );
+                  // emailjs
+                  //   .send("gmail", "interview_template_step_final", values)
+                  //   .then(
+                  //     result => {
+                  //       console.log(`Final form submitted`);
+                  //       setStatus({ success: true });
+                  //       navigate(`/thanks`);
+                  //     },
+                  //     error => {
+                  //       console.log(error.text);
+                  //     }
+                  //   );
                 })
                 .catch(error => {
                   console.log("Error: Please Try Again!");
@@ -147,16 +150,16 @@ const InterviewForm = () => {
                 ) {
                   setStep(step + 1);
                   //run the first email js function below
-                  emailjs
-                    .send("gmail", "interview_template_step_1", values)
-                    .then(
-                      result => {
-                        console.log(`Email submitted for step 1`);
-                      },
-                      error => {
-                        console.log(error.text);
-                      }
-                    );
+                  // emailjs
+                  //   .send("gmail", "interview_template_step_1", values)
+                  //   .then(
+                  //     result => {
+                  //       console.log(`Email submitted for step 1`);
+                  //     },
+                  //     error => {
+                  //       console.log(error.text);
+                  //     }
+                  //   );
                 }
 
                 step === 2 &&
@@ -183,7 +186,7 @@ const InterviewForm = () => {
                   <Form
                     id="interview-form"
                     name="interview-form"
-                    autocomplete="off"
+                    autoComplete="off"
                     action="/thanks/"
                     method="post"
                     onSubmit={handleSubmit}

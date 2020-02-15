@@ -2,6 +2,10 @@ body.frozen {
   overflow: hidden;
 }
 
+body.frozen .footer-container {
+  opacity: 0 !important;
+}
+
 #case-study {
   padding: 0;
   background: white;
@@ -10,6 +14,7 @@ body.frozen {
 }
 
 
+#case-study,
 #case-study>*:not(.screen) {
   animation: none !important;
   opacity: 1 !important;
@@ -21,6 +26,30 @@ body.frozen {
 #case-study .related {
   opacity: 0;
 } */
+
+#case-study .block>* {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 1.25s ease-in;
+  -o-transition: 1.25s ease-in;
+  transition: 1.25s ease-in;
+  animation: pageLoading;
+  animation-duration: 2s;
+  /* animation-delay: 1.5s; */
+  animation-fill-mode: forwards;
+}
+
+@keyframes pageLoading {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 #case-study .screen {
   position: fixed;

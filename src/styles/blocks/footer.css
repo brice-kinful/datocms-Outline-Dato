@@ -19,7 +19,8 @@
   }
 }
 
-.tl-wrapper .footer-container {
+.tl-wrapper .footer-container,
+.tl-wrapper-status--entered .footer-container {
   opacity: 0;
   visibility: hidden;
   position: relative;
@@ -34,10 +35,7 @@
   animation-fill-mode: forwards;
 }
 
-.tl-wrapper.tl-wrapper--mount.tl-wrapper-status--entered {
-  opacity: 0;
-}
-
+.tl-wrapper.tl-wrapper--mount--entering #footer,
 .tl-wrapper.tl-wrapper-status--exiting #footer {
   opacity: 0 !important;
 }

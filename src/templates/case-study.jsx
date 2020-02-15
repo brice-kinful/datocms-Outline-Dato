@@ -63,6 +63,7 @@ class CaseStudy extends Component {
           </div>
           <div className="hero">
             <Img
+              loading={"eager"}
               fluid={project.heroImage.fluid}
               durationFadeIn={1000}
               onLoad={() =>

@@ -1,149 +1,149 @@
 #case-studies {
-    padding: 125px 0 200px;
-    overflow: hidden;
-    position: relative;
+  padding: 125px 0 200px;
+  overflow: hidden;
+  position: relative;
 }
 
 #case-studies h1 {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9;
-    pointer-events: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  pointer-events: none;
 }
 
 #case-studies .title-container img {
-    width: 100%;
+  width: 100%;
 }
 
-#case-studies>*:not(.title-container) {
-    opacity: 1 !important;
-    visibility: visible !important;
+#case-studies > *:not(.title-container) {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-#case-studies>*>*:not(h1) {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: 1.25s ease-in;
-    -o-transition: 1.25s ease-in;
-    transition: 1.25s ease-in;
-    animation: pageLoading;
-    animation-duration: 2s;
-    /* animation-delay: 1.5s; */
-    animation-fill-mode: forwards;
+#case-studies > * > *:not(h1) {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 1.25s ease-in;
+  -o-transition: 1.25s ease-in;
+  transition: 1.25s ease-in;
+  animation: pageLoading;
+  animation-duration: 2s;
+  /* animation-delay: 1.5s; */
+  animation-fill-mode: forwards;
 }
 
 @keyframes pageLoading {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-    }
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 #case-studies .flex.grid {
-    grid-gap: 15%;
+  grid-gap: 15%;
 }
 
 @supports (display: -ms-grid) or (display: grid) {
-    #case-studies .flex.grid {
-        padding: 0;
-    }
+  #case-studies .flex.grid {
+    padding: 0;
+  }
 }
 
 #case-studies .flex.grid.two {
-    align-items: center;
+  align-items: center;
 }
 
-#case-studies .wrapper>* {
-    padding-bottom: 200px;
-    padding-top: 0;
+#case-studies .wrapper > * {
+  padding-bottom: 200px;
+  padding-top: 0;
 }
 
-#case-studies .wrapper>*:last-child {
-    padding-bottom: 0;
+#case-studies .wrapper > *:last-child {
+  padding-bottom: 0;
 }
 
 #case-studies .block.up {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 #case-studies .block span.narrow {
-    max-width: 485px;
+  max-width: 485px;
 }
 
-#case-studies .block.solo .flex>* {
-    width: 100%;
+#case-studies .block.solo .flex > * {
+  width: 100%;
 }
 
 #case-studies .block.solo span.narrow {
-    flex: 0 0 550px;
-    max-width: 100%;
+  flex: 0 0 550px;
+  max-width: 100%;
 }
 
 #case-studies .block.solo.full span.narrow {
-    flex: 0 0 600px;
-    max-width: 100%;
+  flex: 0 0 600px;
+  max-width: 100%;
 }
 
 #case-studies .block.solo.full .wrapper {
-    padding: 0;
+  padding: 0;
 }
 
 #case-studies .grid-item.up {
-    margin-top: -85%;
+  margin-top: -100%;
 }
 
 #case-studies .grid-item.down {
-    margin-top: 85%;
+  margin-top: 100%;
 }
 
 #case-studies .gatsby-image-wrapper {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 #case-studies span {
-    font-size: 32px;
-    line-height: 46px;
-    margin-right: 20px;
+  font-size: 32px;
+  line-height: 46px;
+  margin-right: 20px;
 }
 
 #case-studies span a {
-    font-size: 16px;
-    line-height: 26px;
-    position: relative;
-    top: 3px;
+  font-size: 16px;
+  line-height: 26px;
+  position: relative;
+  top: 3px;
 }
 
 #case-studies span.textlink {
-    line-height: 1.6;
-    margin: 0;
-    display: inline-flex;
-    top: -10px;
+  line-height: 1.6;
+  margin: 0;
+  display: inline-flex;
+  top: -10px;
 }
 
 #case-studies span.textlink a:after {
-    bottom: 0;
+  bottom: 0;
 }
 
 #case-studies span.textlink:hover a:after {
-    bottom: 50%;
+  bottom: 50%;
 }
 
 @media screen and (min-width: 1400px) {
-    #case-studies h1 {
-        font-size: 200px;
-    }
+  #case-studies h1 {
+    font-size: 200px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    #case-studies .block.solo.full span {
-        flex: 0 auto;
-    }
+  #case-studies .block.solo.full span {
+    flex: 0 auto;
+  }
 }

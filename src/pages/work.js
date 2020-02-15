@@ -194,7 +194,7 @@ class WorkPage extends Component {
                       this.setState({ isOpen: true, photoIndex: index })
                     }
                   >
-                    <BlurredImage src={item.fluid} key={index} />
+                    <BlurredImage src={item.fluid} key={index} offset={0} />
                   </div>
                 );
               })}

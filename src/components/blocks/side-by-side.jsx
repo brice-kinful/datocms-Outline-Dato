@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import parse from "html-react-parser";
 import Measure from "react-measure";
 import BlurredImage from "./blurred-image";
+import LazyLoad from "react-lazyload";
 
 class SideBySide extends Component {
   constructor(props) {
@@ -59,14 +60,20 @@ class SideBySide extends Component {
                     {({ measureRef }) => {
                       // console.log(this.state.pageHeight);
                       return (
-                        <img
-                          ref={measureRef}
-                          src={content.leftSideImage.fluid.src}
-                          style={{
-                            maxWidth: `${content.leftSideImageCustomWidth}px`
-                          }}
-                          alt=""
-                        />
+                        <LazyLoad
+                          height={content.leftSideImage.fluid.height}
+                          offset={0}
+                        >
+                          <img
+                            ref={measureRef}
+                            src={content.leftSideImage.fluid.src}
+                            className="blur"
+                            style={{
+                              maxWidth: `${content.leftSideImageCustomWidth}px`
+                            }}
+                            alt=""
+                          />
+                        </LazyLoad>
                       );
                     }}
                   </Measure>
@@ -106,14 +113,20 @@ class SideBySide extends Component {
                     {({ measureRef }) => {
                       // console.log(this.state.pageHeight);
                       return (
-                        <img
-                          ref={measureRef}
-                          src={content.rightSideImage.fluid.src}
-                          style={{
-                            maxWidth: `${content.rightSideImageCustomWidth}px`
-                          }}
-                          alt=""
-                        />
+                        <LazyLoad
+                          height={content.rightSideImage.fluid.height}
+                          offset={0}
+                        >
+                          <img
+                            ref={measureRef}
+                            src={content.rightSideImage.fluid.src}
+                            className="blur"
+                            style={{
+                              maxWidth: `${content.rightSideImageCustomWidth}px`
+                            }}
+                            alt=""
+                          />
+                        </LazyLoad>
                       );
                     }}
                   </Measure>

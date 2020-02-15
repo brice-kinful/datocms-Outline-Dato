@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Img from "gatsby-image";
+import LazyLoad from "react-lazyload";
 
 class BlurredImage extends Component {
   constructor(props) {
@@ -14,14 +15,18 @@ class BlurredImage extends Component {
   };
 
   render() {
-    const { src, customWidth } = this.props;
+    const { src, customWidth, offset } = this.props;
     return (
-      <Img
-        fluid={src}
-        onLoad={this.loadImage}
-        className={`blur ${this.state.loaded ? "loaded" : ""}`}
-        style={customWidth && { maxWidth: `${customWidth}px` }}
-      />
+      <LazyLoad height={src.height} offset={offset ? offset : 350}>
+        <Img
+          fluid={src}
+          fadeIn={false}
+          loading={"eager"}
+          onLoad={this.loadImage}
+          className={`blur ${this.state.loaded ? "loaded" : ""}`}
+          style={customWidth && { maxWidth: `${customWidth}px` }}
+        />
+      </LazyLoad>
     );
   }
 }

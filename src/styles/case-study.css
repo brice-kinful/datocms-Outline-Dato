@@ -13,9 +13,8 @@ body.frozen .footer-container {
   /* opacity: 1 !important; */
 }
 
-
 #case-study,
-#case-study>*:not(.screen) {
+#case-study > *:not(.screen) {
   animation: none !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -27,7 +26,7 @@ body.frozen .footer-container {
   opacity: 0;
 } */
 
-#case-study .block>* {
+#case-study .block > * {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 1.25s ease-in;
@@ -69,7 +68,6 @@ body.frozen .footer-container {
   opacity: 0;
   visibility: hidden;
 }
-
 
 #case-study .hero,
 #case-study .hero .gatsby-image-wrapper {
@@ -123,11 +121,11 @@ body.frozen .footer-container {
   align-items: center;
 }
 
-.block .wrapper>* {
+.block .wrapper > * {
   padding-bottom: 190px;
 }
 
-.block .wrapper>*:last-child {
+.block .wrapper > *:last-child {
   padding-bottom: 0;
 }
 
@@ -160,7 +158,7 @@ body.frozen .footer-container {
   position: relative;
 }
 
-.block.url-block a>span {
+.block.url-block a > span {
   height: 2px;
   position: absolute;
   left: 0;
@@ -169,7 +167,7 @@ body.frozen .footer-container {
   bottom: 0;
 }
 
-.block.url-block a>span:after {
+.block.url-block a > span:after {
   display: none;
 }
 
@@ -177,7 +175,7 @@ body.frozen .footer-container {
   display: none;
 }
 
-.block.url-block .textlink:hover a>span {
+.block.url-block .textlink:hover a > span {
   bottom: 50%;
   top: auto !important;
 }
@@ -212,19 +210,19 @@ body.frozen .footer-container {
   position: relative;
 }
 
-.block.side-by-side.sticky-left .one-half:first-child .inner>img,
-.block.side-by-side.sticky-right .one-half:last-child .inner>img {
+.block.side-by-side.sticky-left .one-half:first-child .inner > img,
+.block.side-by-side.sticky-right .one-half:last-child .inner > img {
   position: absolute;
   top: 0;
 }
 
-.block.side-by-side.sticky-left .one-half:first-child .inner>img {
+.block.side-by-side.sticky-left .one-half:first-child .inner > img {
   left: 0;
   margin-right: 0;
   margin-left: auto;
 }
 
-.block.side-by-side.sticky-right .one-half:last-child .inner>img {
+.block.side-by-side.sticky-right .one-half:last-child .inner > img {
   right: 0;
   margin-left: 0;
   margin-right: auto;
@@ -344,12 +342,12 @@ body.frozen .footer-container {
   margin-left: auto;
 }
 
-#case-study .related .inner>.one-half:first-child {
+#case-study .related .inner > .one-half:first-child {
   padding-right: 60px;
   flex: 1.8;
 }
 
-#case-study .related .inner>.one-half:last-child {
+#case-study .related .inner > .one-half:last-child {
   padding-left: 25px;
   flex: 1.7;
 }

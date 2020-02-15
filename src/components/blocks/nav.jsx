@@ -63,6 +63,7 @@ class Navigation extends Component {
         >
           <div id="logo">
             <AniLink
+              preventScrollJump
               fade
               to="/"
               className={`${isFooterInView ? "footer-in-view" : ""}`}
@@ -89,7 +90,7 @@ class Navigation extends Component {
 
                     return (
                       <li key={name}>
-                        <AniLink fade to={`/${url}`}>
+                        <AniLink preventScrollJump fade to={`/${url}`}>
                           {name}
                         </AniLink>
                       </li>

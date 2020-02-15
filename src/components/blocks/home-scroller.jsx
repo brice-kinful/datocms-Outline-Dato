@@ -56,10 +56,14 @@ class HomeScroller extends Component {
                     {projects.map(project => {
                       return (
                         <li className={`slide`} key={project.slug}>
-                          <AniLink to={`/case-studies/${project.slug}`}>
+                          <AniLink
+                            preventScrollJump
+                            to={`/case-studies/${project.slug}`}
+                          >
                             <img src={project.scrollerThumbnail.url} alt="" />
                           </AniLink>
                           <AniLink
+                            preventScrollJump
                             to={`/case-studies/${project.slug}`}
                             fade
                             className={`title line`}
@@ -75,10 +79,14 @@ class HomeScroller extends Component {
                     {projects.map(project => {
                       return (
                         <li className={`slide`} key={`${project.slug}-x2`}>
-                          <AniLink to={`/project/${project.slug}`}>
+                          <AniLink
+                            preventScrollJump
+                            to={`/project/${project.slug}`}
+                          >
                             <img src={project.scrollerThumbnail.url} alt="" />
                           </AniLink>
                           <AniLink
+                            preventScrollJump
                             to={`/case-studies/${project.slug}`}
                             fade
                             className={`title line`}

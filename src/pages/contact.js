@@ -19,7 +19,11 @@ const ContactPage = ({ data }) => {
               <p>
                 <span>{contact.headline}</span>
                 <span className="textlink">
-                  <AniLink to={`/${contact.ctaButtonUrl.slug}`} fade>
+                  <AniLink
+                    preventScrollJump
+                    to={`/${contact.ctaButtonUrl.slug}`}
+                    fade
+                  >
                     {contact.ctaButtonText}
                   </AniLink>
                 </span>
@@ -28,6 +32,7 @@ const ContactPage = ({ data }) => {
             <div className="flex bottom inner space-between">
               <div className="one-half">
                 <AniLink
+                  preventScrollJump
                   to={`/${contact.viewJobsButtonUrl.slug}`}
                   fade
                   className="line"

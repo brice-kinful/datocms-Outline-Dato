@@ -2,19 +2,60 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  opacity: 1;
   z-index: -1;
   width: 100%;
-  /* cursor: none; */
   cursor: url(/cursor-white.svg) 0 0, default;
-  /* opacity: 0; */
-  -webkit-transition: opacity 0.2s ease-in;
-  -o-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
-  animation: pageLoading;
-  animation-duration: .2s;
-  animation-delay: 1s;
+}
+
+@keyframes pageLoading {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.tl-wrapper .footer-container {
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  padding-top: 100vh;
+  z-index: -1;
+  -webkit-transition: .25s ease-in;
+  -o-transition: .25s ease-in;
+  transition: .25s ease-in;
+  animation: footerReveal;
+  animation-duration: .25s;
+  animation-delay: .5s;
   animation-fill-mode: forwards;
+}
+
+.tl-wrapper.tl-wrapper--mount.tl-wrapper-status--entered {
+  opacity: 0;
+}
+
+.tl-wrapper.tl-wrapper-status--exiting #footer {
+  opacity: 0 !important;
+}
+
+@keyframes footerReveal {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 footer p {

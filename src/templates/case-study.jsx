@@ -18,24 +18,19 @@ class CaseStudy extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasHeroImageLoaded: false,
-      display: false
+      hasHeroImageLoaded: false
     };
   }
 
   componentDidMount() {
     document.body.classList.add("frozen");
-    this.setState({
-      display: !this.state.display
-    });
   }
 
   componentWillUnmount() {
-    document.body.classList.remove("frozen");
+    // document.body.classList.remove("frozen");
   }
 
   render() {
-    const { display } = this.state;
     const project = this.props.data.datoCmsCaseStudy;
     const allProjects = this.props.data.allDatoCmsCaseStudy.edges;
     const activeProjectIndex = allProjects.findIndex(
@@ -74,7 +69,7 @@ class CaseStudy extends Component {
                 setTimeout(() => {
                   this.setState({ hasHeroImageLoaded: true });
                   document.body.classList.remove("frozen");
-                }, 2000)
+                }, 3500)
               }
             />
           </div>

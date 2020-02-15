@@ -13,6 +13,7 @@ const Headline = props => {
           <span>{content.text}</span>
           <span className="textlink">
             <AniLink
+              preventScrollJump
               to={`/${content.buttonUrl.slug}`}
               fade
               className={"styrene_light"}

@@ -105,6 +105,7 @@ class CaseStudiesPage extends Component {
                           className={`flex column left grid-item one-half ${block.leftProjectPositioning}`}
                         >
                           <AniLink
+                            preventScrollJump
                             fade
                             to={`/case-studies/${block.leftProject?.slug}`}
                           >
@@ -120,6 +121,7 @@ class CaseStudiesPage extends Component {
                             <span>{block.leftProject?.excerpt}</span>
                             <span className="textlink">
                               <AniLink
+                                preventScrollJump
                                 fade
                                 to={`/case-studies/${block.leftProject?.slug}`}
                               >
@@ -132,6 +134,7 @@ class CaseStudiesPage extends Component {
                           className={`flex column right grid-item one-half ${block.rightProjectPositioning}`}
                         >
                           <AniLink
+                            preventScrollJump
                             fade
                             to={`/case-studies/${block.rightProject?.slug}`}
                           >
@@ -148,6 +151,7 @@ class CaseStudiesPage extends Component {
                             <span>{block.rightProject?.excerpt}</span>
                             <span className="textlink">
                               <AniLink
+                                preventScrollJump
                                 fade
                                 to={`/case-studies/${block.rightProject?.slug}`}
                               >
@@ -173,6 +177,7 @@ class CaseStudiesPage extends Component {
                       >
                         <div className="flex wrap">
                           <AniLink
+                            preventScrollJump
                             fade
                             to={`/case-studies/${block.project?.slug}`}
                           >
@@ -188,6 +193,7 @@ class CaseStudiesPage extends Component {
                             <span>{block.project?.excerpt}</span>
                             <span className="textlink">
                               <AniLink
+                                preventScrollJump
                                 fade
                                 to={`/case-studies/${block.project?.slug}`}
                               >

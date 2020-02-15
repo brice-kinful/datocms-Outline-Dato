@@ -24,7 +24,7 @@ class Layout extends Component {
   checkFooterScroll = () => {
     const { pageHeight, loaded } = this.state;
     const currentScrollPos = window.pageYOffset;
-    if (currentScrollPos > 100) {
+    if (currentScrollPos > pageHeight - 1000) {
       //load footer
       this.setState({
         loaded: true
@@ -44,14 +44,22 @@ class Layout extends Component {
   };
 
   componentDidMount() {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 850);
     this.setState({
       windowTopPos: window.pageYOffset,
-      location: this.props.location
+      location: this.props.location,
+      loaded: false
     });
     window.addEventListener("scroll", this.checkFooterScroll);
   }
 
   componentWillUnmount() {
+    this.setState({
+      loaded: false
+    });
+    // document.getElementsByClassName("page").classList.add("transitioning");
     window.removeEventListener("scroll", this.checkFooterScroll);
   }
 
@@ -121,10 +129,10 @@ class Layout extends Component {
                   // console.log(this.state.pageHeight);
                   return (
                     <>
-                      <div ref={measureRef} className="page">
-                        {children}
+                      <div ref={measureRef}>{children}</div>
+                      <div className="footer-container">
+                        {loaded && <Footer />}
                       </div>
-                      {loaded && <Footer />}
                     </>
                   );
                 }}

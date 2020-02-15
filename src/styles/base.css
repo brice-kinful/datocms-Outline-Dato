@@ -600,27 +600,45 @@ a.btn:hover {
 .page {
     background: white;
     min-height: 100vh;
-}
-
-.page {
     opacity: 0;
-    -webkit-transition: opacity 1.25s ease-in;
-    -o-transition: opacity 1.25s ease-in;
-    transition: opacity 1.25s ease-in;
+    visibility: hidden;
+    -webkit-transition: 1.25s ease-in;
+    -o-transition: 1.25s ease-in;
+    transition: 1.25s ease-in;
     animation: pageLoading;
     animation-duration: 1.25s;
-    animation-delay: 0.95s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.page>* {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 1.25s ease-in;
+    -o-transition: 1.25s ease-in;
+    transition: 1.25s ease-in;
+    animation: pageLoading;
+    animation-duration: 2s;
+    /* animation-delay: 1.5s; */
     animation-fill-mode: forwards;
 }
 
 @keyframes pageLoading {
     0% {
         opacity: 0;
+        visibility: hidden;
     }
 
     100% {
         opacity: 1;
+        visibility: visible;
     }
+}
+
+.page>.wrapper {
+    position: relative;
+    z-index: 9;
+    background: white;
 }
 
 .example-enter {

@@ -43,12 +43,22 @@ const CaseStudiesPagination = props => {
         <div className="one-half">
           <div className="inner flex">
             <div className={`col one-half`}>
-              <AniLink fade to={`/case-studies/${slug}`} className="next">
+              <AniLink
+                preventScrollJump
+                fade
+                to={`/case-studies/${slug}`}
+                className="next"
+              >
                 Next
               </AniLink>
             </div>
             <div className="col one-half">
-              <AniLink fade to={`/case-studies/${slug}`} className="next">
+              <AniLink
+                preventScrollJump
+                fade
+                to={`/case-studies/${slug}`}
+                className="next"
+              >
                 {thumbnail && <Img fluid={thumbnail} className="next-thumb" />}
               </AniLink>
             </div>

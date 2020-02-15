@@ -60,6 +60,7 @@ class Footer extends Component {
                 <div className="grid-item one-fourth">
                   <p>
                     <AniLink
+                      preventScrollJump
                       fade
                       to={`/pre-project-interview`}
                       className="line"

@@ -21,7 +21,7 @@ const JobsPage = ({ data }) => {
                   {node.jobShortDescription}
                 </p>
                 <span className="textlink">
-                  <AniLink fade to={`/jobs/${node.jobSlug}`}>
+                  <AniLink preventScrollJump fade to={`/jobs/${node.jobSlug}`}>
                     Read More
                   </AniLink>
                 </span>

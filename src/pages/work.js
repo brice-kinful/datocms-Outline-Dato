@@ -115,6 +115,7 @@ class WorkPage extends Component {
             {image.customData["button-url"] && (
               <span className="textlink">
                 <AniLink
+                  preventScrollJump
                   to={`/case-studies/${image.customData["button-url"]}`}
                   fade
                   className=""

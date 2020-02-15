@@ -9,9 +9,11 @@ body.frozen {
   /* opacity: 1 !important; */
 }
 
+
 #case-study>*:not(.screen) {
   animation: none !important;
-  opacity: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* #case-study .hero,
@@ -39,38 +41,6 @@ body.frozen {
   visibility: hidden;
 }
 
-#case-study .screen:after {
-  content: "";
-  display: inline-block;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 9999999999;
-  opacity: 1;
-  visibility: visible;
-  background: white;
-  -webkit-transition: opacity 1.5s ease-in;
-  -o-transition: opacity 1.5s ease-in;
-  transition: opacity 1.5s ease-in;
-  animation: introLoad;
-  animation-duration: 1.5s;
-  animation-delay: .5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes introLoad {
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 
 #case-study .hero,
 #case-study .hero .gatsby-image-wrapper {

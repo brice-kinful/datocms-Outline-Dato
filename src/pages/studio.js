@@ -122,6 +122,7 @@ class StudioPage extends Component {
               <span>{this.props.data.datoCmsStudioPage.aboutCtaHeadline}</span>
               <span className="textlink">
                 <AniLink
+                  preventScrollJump
                   to={`/${this.props.data.datoCmsStudioPage.aboutCtaButtonUrl.slug}`}
                   fade
                 >

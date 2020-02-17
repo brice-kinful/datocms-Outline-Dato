@@ -96,12 +96,16 @@
   padding: 0;
 }
 
+#case-studies .block.up.down {
+  padding-bottom: 325px;
+}
+
 #case-studies .grid-item.up {
-  margin-top: -100%;
+  margin-top: -58%;
 }
 
 #case-studies .grid-item.down {
-  margin-top: 100%;
+  margin-top: 58%;
 }
 
 #case-studies .gatsby-image-wrapper {

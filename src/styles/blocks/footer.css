@@ -71,7 +71,6 @@
 
 footer p {
   cursor: url(/cursor-white.svg) 0 0, default;
-  max-width: 280px;
 }
 
 #footer a {
@@ -98,7 +97,7 @@ footer p {
   grid-gap: 120px;
 }
 
-#footer .grid-item>* {
+#footer .grid-item > * {
   display: flex;
   margin: 0;
   line-height: 1.7;
@@ -110,13 +109,14 @@ footer p {
   font-size: 14px;
   margin: 0;
   line-height: 1.7;
+  max-width: 280px;
 }
 
 #footer .grid-item a.line {
   font-size: 14px;
 }
 
-#footer .grid-item:last-child>* {
+#footer .grid-item:last-child > * {
   display: inline-block;
 }
 
@@ -126,7 +126,7 @@ footer p {
   background: white;
 }
 
-#footer p>a {
+#footer p > a {
   /* margin-left: 4px; */
 }
 
@@ -151,7 +151,7 @@ footer p {
     grid-gap: 30px;
   }
 
-  #footer .grid-item>* {
+  #footer .grid-item > * {
     font-size: 12px;
   }
 }

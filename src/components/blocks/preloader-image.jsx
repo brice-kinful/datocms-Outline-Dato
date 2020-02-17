@@ -12,7 +12,10 @@ class PreloaderImage extends Component {
   }
 
   componentDidMount() {
-    const { wait, currentImage } = this.props;
+    const { wait, currentImage, loadAllImages, totalImages } = this.props;
+    if (currentImage === totalImages) {
+      loadAllImages();
+    }
     this.setState({
       waitTime: 1200 + wait
     });
@@ -28,21 +31,27 @@ class PreloaderImage extends Component {
 
   loadImage = () => {
     const { waitTime } = this.state;
-    if (this.props.currentImage === 1) {
-      // this.setState({ loaded: true });
-      setTimeout(() => {
-        this.setState({ loaded: true });
-      }, waitTime * 1.15);
+    const { currentImage, totalImages, allImagesReady } = this.props;
+
+    if (currentImage === 1) {
+      this.setState({ loaded: true });
+      // setTimeout(() => {
+      //   this.setState({ loaded: true });
+      // }, waitTime * 1.15);
     } else {
-      setTimeout(() => {
-        this.setState({ loaded: true });
-      }, waitTime * 1.25);
+      if (allImagesReady) {
+        setTimeout(() => {
+          this.setState({ loaded: true });
+        }, waitTime * 1.65);
+      }
     }
-    if (this.props.currentImage === this.props.totalImages) {
-      setTimeout(() => {
-        document.body.classList.remove("loading");
-        document.body.classList.add("ready");
-      }, waitTime * 1.5);
+    if (currentImage === totalImages) {
+      if (allImagesReady) {
+        setTimeout(() => {
+          document.body.classList.remove("loading", "freeze");
+          document.body.classList.add("ready");
+        }, waitTime * 1.79);
+      }
     }
   };
 

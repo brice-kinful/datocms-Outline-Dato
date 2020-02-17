@@ -18,9 +18,6 @@ class Preloader extends Component {
       images: this.state.images.concat(this.props.images.images)
     });
     document.body.classList.add("freeze");
-    setTimeout(() => {
-      document.body.classList.remove("freeze");
-    }, 4000);
   }
 
   componentWillUnmount() {
@@ -59,9 +56,11 @@ class Preloader extends Component {
                 <React.Fragment key={index}>
                   <PreloaderImage
                     src={item.fluid}
-                    wait={(index + 1) * 300}
+                    wait={(index + 1) * 200}
                     currentImage={index + 1}
                     totalImages={images.length}
+                    loadAllImages={this.updateImagesReady}
+                    allImagesReady={this.state.imagesReady}
                   />
                 </React.Fragment>
               );

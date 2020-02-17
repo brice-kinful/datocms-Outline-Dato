@@ -94,7 +94,7 @@ body.nav-open #toggle_menu .hamburger span:nth-child(2) {
   width: 100%;
   top: 60px;
   left: 60px;
-  z-index: 9999999;
+  z-index: 99999;
 }
 
 body.home #logo {

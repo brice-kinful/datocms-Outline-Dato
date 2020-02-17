@@ -71,7 +71,7 @@ class CaseStudy extends Component {
                 setTimeout(() => {
                   this.setState({ hasHeroImageLoaded: true });
                   document.body.classList.remove("frozen");
-                }, 3500)
+                }, 3000)
               }
             />
           </div>

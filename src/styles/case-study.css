@@ -8,12 +8,13 @@ body.frozen .footer-container {
 
 #case-study {
   padding: 0;
-  background: white;
+  /* background: white; */
   min-height: 100vh;
   /* opacity: 1 !important; */
   -webkit-transition: .55s ease-in;
   -o-transition: .55s ease-in;
   transition: .55s ease-in;
+  animation-delay: 0s !important;
 }
 
 #case-study .screen {

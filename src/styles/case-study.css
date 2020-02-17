@@ -57,6 +57,7 @@ body.frozen .footer-container {
 #case-study .screen {
   position: fixed;
   width: 100%;
+  max-width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
@@ -209,7 +210,8 @@ body.frozen .footer-container {
 
 .block.side-by-side.sticky-left .wrapper.skinny,
 .block.side-by-side.sticky-right .wrapper.skinny {
-  max-width: 2400px;
+  /* max-width: 2400px; */
+  max-width: 1680px;
 }
 
 .block.side-by-side.sticky-right .wrapper.skinny {
@@ -363,8 +365,8 @@ body.frozen .footer-container {
 }
 
 #case-study .related .inner>.one-half:last-child {
-  padding-left: 25px;
-  flex: 1.7;
+  padding-left: 50px;
+  flex: 1.3;
 }
 
 @media screen and (min-width: 1800px) {

@@ -19,13 +19,13 @@ class BlurredImage extends Component {
     return (
       <LazyLoad
         height={src.height}
-        offset={offset ? offset : -250}
+        offset={offset ? offset : -400}
         style={{ minHeight: src.height }}
       >
         <Img
           fluid={src}
           fadeIn={false}
-          loading={"eager"}
+          loading={"lazy"}
           onLoad={this.loadImage}
           className={`blur ${this.state.loaded ? "loaded" : ""}`}
           style={customWidth && { maxWidth: `${customWidth}px` }}

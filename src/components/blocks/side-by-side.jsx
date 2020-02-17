@@ -15,6 +15,7 @@ class SideBySide extends Component {
   render() {
     const { content } = this.props;
     const { leftSideImageHeight, rightSideImageHeight } = this.state;
+    console.log(content);
     return (
       <div
         className={`block side-by-side ${
@@ -29,14 +30,20 @@ class SideBySide extends Component {
         style={{ backgroundColor: content.backgroundColor?.hex }}
       >
         <div
-          className={`wrapper flex grid two ${
-            content.fullWidth ? "full" : "skinny"
+          className={`wrapper flex grid two${
+            content.fullWidth ? " full" : " skinny"
+          }${content.leftSide60Width ? " left_60" : ""}${
+            content.rightSide60Width ? " right_60" : ""
           }`}
         >
           <div
-            className={`flex column justify-center left grid-item one-half ${
-              content.leftPositioning ? content.leftPositioning : ""
-            }`}
+            className={`flex column justify-center left grid-item${
+              content.leftSide60Width
+                ? " three-fifths"
+                : content.rightSide60Width
+                ? " two-fifths"
+                : " one-half"
+            }  ${content.leftPositioning ? content.leftPositioning : ""}`}
           >
             {content.leftSideText && (
               <span style={{ color: content.leftTextColor.hex }}>
@@ -91,9 +98,13 @@ class SideBySide extends Component {
             )}
           </div>
           <div
-            className={`flex column justify-center right grid-item one-half ${
-              content.rightPositioning ? content.rightPositioning : ""
-            }`}
+            className={`flex column justify-center right grid-item${
+              content.righttSide60Width
+                ? " three-fifths"
+                : content.leftSide60Width
+                ? " two-fifths"
+                : " one-half"
+            } ${content.rightPositioning ? content.rightPositioning : ""}`}
           >
             {content.rightSideText && (
               <span style={{ color: content.rightTextColor.hex }}>

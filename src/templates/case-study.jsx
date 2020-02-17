@@ -268,6 +268,7 @@ export const query = graphql`
           backgroundColor {
             hex
           }
+          leftSide60Width
           leftSideText
           leftTextColor {
             hex
@@ -280,6 +281,7 @@ export const query = graphql`
           leftSideImageCustomWidth
           leftSideImageStick
           leftPositioning: leftImagePositioning
+          rightSide60Width
           rightSideText
           rightTextColor {
             hex

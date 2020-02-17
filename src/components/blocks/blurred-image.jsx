@@ -20,8 +20,8 @@ class BlurredImage extends Component {
       <LazyLoad
         height={src.height ? src.height : "1000px"}
         offset={offset ? offset : -400}
-        style={{ minHeight: `${src.height ? src.height : "1000px"}` }}
-        resize={true}
+        // style={{ minHeight: `${src.height ? src.height : "1000px"}` }}
+        // resize={true}
       >
         <Img
           fluid={src}

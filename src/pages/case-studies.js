@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import BlurredImage from "../components/blocks/blurred-image";
 
@@ -108,9 +108,9 @@ class CaseStudiesPage extends Component {
                           className={`flex column left grid-item one-half ${block.leftProjectPositioning}`}
                         >
                           <AniLink
-                            preventScrollJump
                             fade
                             to={`/case-studies/${block.leftProject?.slug}`}
+                            preventScrollJump
                           >
                             {/* <Img fluid={block.leftProjectImage.fluid} /> */}
                             <BlurredImage
@@ -127,9 +127,9 @@ class CaseStudiesPage extends Component {
                             <span>{block.leftProject?.excerpt}</span>
                             <span className="textlink">
                               <AniLink
-                                preventScrollJump
                                 fade
                                 to={`/case-studies/${block.leftProject?.slug}`}
+                                preventScrollJump
                               >
                                 {block.leftProject?.title}
                               </AniLink>
@@ -140,9 +140,9 @@ class CaseStudiesPage extends Component {
                           className={`flex column right grid-item one-half ${block.rightProjectPositioning}`}
                         >
                           <AniLink
-                            preventScrollJump
                             fade
                             to={`/case-studies/${block.rightProject?.slug}`}
+                            preventScrollJump
                           >
                             {/* <Img fluid={block.rightProjectImage.fluid} /> */}
                             <BlurredImage
@@ -158,9 +158,9 @@ class CaseStudiesPage extends Component {
                             <span>{block.rightProject?.excerpt}</span>
                             <span className="textlink">
                               <AniLink
-                                preventScrollJump
                                 fade
                                 to={`/case-studies/${block.rightProject?.slug}`}
+                                preventScrollJump
                               >
                                 {block.rightProject?.title}
                               </AniLink>
@@ -184,9 +184,9 @@ class CaseStudiesPage extends Component {
                       >
                         <div className="flex wrap">
                           <AniLink
-                            preventScrollJump
                             fade
                             to={`/case-studies/${block.project?.slug}`}
+                            preventScrollJump
                           >
                             {/* <Img fluid={block.projectImage?.fluid} /> */}
                             <BlurredImage
@@ -203,9 +203,9 @@ class CaseStudiesPage extends Component {
                             <span>{block.project?.excerpt}</span>
                             <span className="textlink">
                               <AniLink
-                                preventScrollJump
                                 fade
                                 to={`/case-studies/${block.project?.slug}`}
+                                preventScrollJump
                               >
                                 {block.project?.title}
                               </AniLink>

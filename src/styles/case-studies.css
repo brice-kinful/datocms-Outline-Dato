@@ -1,6 +1,6 @@
 #case-studies {
   padding: 125px 0 200px;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }
 
@@ -16,35 +16,6 @@
 
 #case-studies .title-container img {
   width: 100%;
-}
-
-#case-studies>*:not(.title-container) {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-#case-studies>*>*:not(h1) {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 1.25s ease-in;
-  -o-transition: 1.25s ease-in;
-  transition: 1.25s ease-in;
-  animation: pageLoading;
-  animation-duration: 2s;
-  /* animation-delay: 1.5s; */
-  animation-fill-mode: forwards;
-}
-
-@keyframes pageLoading {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  100% {
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 #case-studies .flex.grid {

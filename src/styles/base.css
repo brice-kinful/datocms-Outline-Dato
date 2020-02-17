@@ -604,7 +604,7 @@ a.btn:hover {
 
 .container {
   background: white;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 1.25s ease-in;
@@ -614,12 +614,11 @@ a.btn:hover {
   animation-duration: 1.25s;
   animation-delay: 2.25s;
   animation-fill-mode: forwards;
-  /* margin-bottom: 0 !important; */
 }
 
 .page {
   background: white;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
 }
 

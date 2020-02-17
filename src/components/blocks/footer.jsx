@@ -33,7 +33,11 @@ class Footer extends Component {
       >
         {({ contentRect, measureRef }) => {
           return (
-            <div id="footer" className={`black-bg`} ref={measureRef}>
+            <div
+              id="footer"
+              className={`${loaded ? "black-bg" : "white-bg"}`}
+              ref={measureRef}
+            >
               <div className="wrapper flex grid four">
                 <div className="grid-item one-fourth">
                   <p>Follow</p>

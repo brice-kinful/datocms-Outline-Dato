@@ -136,7 +136,7 @@ class Layout extends Component {
                         />
                         {children}
                         <div className="footer-container">
-                          <Footer />
+                          <Footer loaded={this.state.loaded} />
                         </div>
                       </div>
                     </>

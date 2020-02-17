@@ -46,7 +46,7 @@ class SideBySide extends Component {
             {content.leftSideImage && (
               <div
                 className="inner flex justify-center"
-                style={{ height: leftSideImageHeight }}
+                style={{ minHeight: leftSideImageHeight }}
               >
                 {content.leftSideImageStick || content.rightSideImageStick ? (
                   <Measure
@@ -61,7 +61,7 @@ class SideBySide extends Component {
                       // console.log(this.state.pageHeight);
                       return (
                         <LazyLoad
-                          height={content.leftSideImage.fluid.height}
+                          height={content.leftSideImage.fluid.height + 200}
                           offset={0}
                         >
                           <img
@@ -99,7 +99,7 @@ class SideBySide extends Component {
             {content.rightSideImage && (
               <div
                 className="inner flex justify-center"
-                style={{ height: rightSideImageHeight }}
+                style={{ minHeight: rightSideImageHeight }}
               >
                 {content.rightSideImageStick || content.leftSideImageStick ? (
                   <Measure
@@ -114,7 +114,7 @@ class SideBySide extends Component {
                       // console.log(this.state.pageHeight);
                       return (
                         <LazyLoad
-                          height={content.rightSideImage.fluid.height}
+                          height={content.rightSideImage.fluid.height + 200}
                           offset={0}
                         >
                           <img

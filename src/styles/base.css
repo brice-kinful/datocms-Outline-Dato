@@ -106,6 +106,11 @@ SaolDisplay LightItalic
     background-color: black; */
 }
 
+.white-bg {
+  background: white;
+  color: #ffffff;
+}
+
 * {
   /* cursor: none; */
 }
@@ -655,7 +660,7 @@ h1.big.visible {
 
 .gatsby-image-wrapper.blur,
 img.blur {
-  /* opacity: 0; */
+  opacity: 0;
   -webkit-filter: blur(15px);
   filter: blur(15px);
   transition: -webkit-filter 0.75s, opacity 0.75s;
@@ -667,7 +672,7 @@ img.blur {
 img.blur {
   -webkit-filter: blur(0);
   filter: blur(0);
-  /* opacity: 1; */
+  opacity: 1;
 }
 
 .page#default {

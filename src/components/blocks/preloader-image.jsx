@@ -29,17 +29,20 @@ class PreloaderImage extends Component {
   loadImage = () => {
     const { waitTime } = this.state;
     if (this.props.currentImage === 1) {
-      this.setState({ loaded: true });
-    } else {
+      // this.setState({ loaded: true });
       setTimeout(() => {
         this.setState({ loaded: true });
       }, waitTime * 1.15);
+    } else {
+      setTimeout(() => {
+        this.setState({ loaded: true });
+      }, waitTime * 1.25);
     }
     if (this.props.currentImage === this.props.totalImages) {
       setTimeout(() => {
         document.body.classList.remove("loading");
         document.body.classList.add("ready");
-      }, waitTime * 1.25);
+      }, waitTime * 1.5);
     }
   };
 

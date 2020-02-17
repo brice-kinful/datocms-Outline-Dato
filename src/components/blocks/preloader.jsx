@@ -20,7 +20,7 @@ class Preloader extends Component {
     document.body.classList.add("freeze");
     setTimeout(() => {
       document.body.classList.remove("freeze");
-    }, 3500);
+    }, 4000);
   }
 
   componentWillUnmount() {
@@ -59,7 +59,7 @@ class Preloader extends Component {
                 <React.Fragment key={index}>
                   <PreloaderImage
                     src={item.fluid}
-                    wait={(index + 1) * 250}
+                    wait={(index + 1) * 300}
                     currentImage={index + 1}
                     totalImages={images.length}
                   />

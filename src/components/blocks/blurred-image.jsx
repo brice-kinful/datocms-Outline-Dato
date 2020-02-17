@@ -25,7 +25,7 @@ class BlurredImage extends Component {
         <Img
           fluid={src}
           fadeIn={false}
-          loading={"lazy"}
+          loading={"auto"}
           onLoad={this.loadImage}
           className={`blur ${this.state.loaded ? "loaded" : ""}`}
           style={customWidth && { maxWidth: `${customWidth}px` }}

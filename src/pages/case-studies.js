@@ -113,7 +113,10 @@ class CaseStudiesPage extends Component {
                             to={`/case-studies/${block.leftProject?.slug}`}
                           >
                             {/* <Img fluid={block.leftProjectImage.fluid} /> */}
-                            <BlurredImage src={block.leftProjectImage?.fluid} />
+                            <BlurredImage
+                              src={block.leftProjectImage?.fluid}
+                              offset={-5}
+                            />
                           </AniLink>
 
                           <span
@@ -144,6 +147,7 @@ class CaseStudiesPage extends Component {
                             {/* <Img fluid={block.rightProjectImage.fluid} /> */}
                             <BlurredImage
                               src={block.rightProjectImage?.fluid}
+                              offset={-5}
                             />
                           </AniLink>
                           <span
@@ -185,7 +189,10 @@ class CaseStudiesPage extends Component {
                             to={`/case-studies/${block.project?.slug}`}
                           >
                             {/* <Img fluid={block.projectImage?.fluid} /> */}
-                            <BlurredImage src={block.projectImage?.fluid} />
+                            <BlurredImage
+                              src={block.projectImage?.fluid}
+                              offset={-5}
+                            />
                           </AniLink>
 
                           <span

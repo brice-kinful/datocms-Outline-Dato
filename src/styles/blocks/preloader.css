@@ -10,12 +10,16 @@ body.freeze {
   background: white;
   z-index: 99999;
   transition: 0.25s;
-  transition-delay: 1s;
+  /* transition-delay: .5s; */
 }
 
 body.loading #preload #loading-white-screen {
   visibility: hidden;
   opacity: 0;
+}
+
+body.loading #preload #home>* {
+  visibility: hidden;
 }
 
 #preload {
@@ -133,7 +137,7 @@ body.ready #preload {
 
 @-webkit-keyframes hide-me {
   0% {
-    z-index: -2;
+    z-index: 1;
   }
 
   100% {
@@ -143,7 +147,7 @@ body.ready #preload {
 
 @keyframes hide-me {
   0% {
-    z-index: -2;
+    z-index: 1;
   }
 
   100% {
@@ -152,39 +156,39 @@ body.ready #preload {
 }
 
 #preload .images .gatsby-image-wrapper:nth-child(1) {
-  z-index: 0;
+  z-index: 1;
 }
 
 #preload .images .gatsby-image-wrapper:nth-child(2) {
-  z-index: -1;
-}
-
-#preload .images .gatsby-image-wrapper:nth-child(3) {
   z-index: -2;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(4) {
+#preload .images .gatsby-image-wrapper:nth-child(3) {
   z-index: -3;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(5) {
+#preload .images .gatsby-image-wrapper:nth-child(4) {
   z-index: -4;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(6) {
+#preload .images .gatsby-image-wrapper:nth-child(5) {
   z-index: -5;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(8) {
+#preload .images .gatsby-image-wrapper:nth-child(6) {
   z-index: -6;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(9) {
+#preload .images .gatsby-image-wrapper:nth-child(8) {
   z-index: -7;
 }
 
-#preload .images .gatsby-image-wrapper:nth-child(10) {
+#preload .images .gatsby-image-wrapper:nth-child(9) {
   z-index: -8;
+}
+
+#preload .images .gatsby-image-wrapper:nth-child(10) {
+  z-index: -9;
 }
 
 @media screen and (max-width: 860px) {

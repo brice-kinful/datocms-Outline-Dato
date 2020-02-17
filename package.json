@@ -59,7 +59,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "postinstall": "cd ./node_modules/gatsby-plugin-transition-link && yarn install && gatsby build",
+    "postinstall": "cd ./node_modules/gatsby-plugin-transition-link && yarn install && cd ../../ && gatsby build",
     "dev": "rm -r ./.cache && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },

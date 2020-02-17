@@ -45,7 +45,7 @@ class Layout extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 1);
     }, 850);
     this.setState({
       windowTopPos: window.pageYOffset,

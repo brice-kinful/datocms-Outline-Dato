@@ -66,18 +66,22 @@
 .ril__navButtons {
   cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
   z-index: 9999;
+  width: 60px;
+  height: 40px;
+  padding: 50px 40px;
+  opacity: 1;
 }
 
 .ril__navButtonPrev {
   left: 60px;
   background: url("/swiper-left.svg") no-repeat center;
-  background-size: 50px;
+  /* background-size: 50px; */
 }
 
 .ril__navButtonNext {
   right: 60px;
   background: url("/swiper-right.svg") no-repeat center;
-  background-size: 50px;
+  /* background-size: 50px; */
 }
 
 .ril__closeButton {

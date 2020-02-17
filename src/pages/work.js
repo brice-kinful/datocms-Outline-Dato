@@ -8,6 +8,7 @@ import Layout from "../components/layout";
 
 import "react-image-lightbox/style.css";
 import "../styles/work.css";
+import LazyLoad from "react-lazyload";
 
 class WorkPage extends Component {
   constructor(props) {

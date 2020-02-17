@@ -130,19 +130,19 @@ class Layout extends Component {
                   return (
                     <>
                       <div ref={measureRef} className="container">
+                        <Navigation
+                          menuItems={data.datoCmsMainMenu.menuItems}
+                          isFooterInView={this.state.isFooterInView}
+                        />
                         {children}
-                      </div>
-                      <div className="footer-container">
-                        <Footer />
+                        <div className="footer-container">
+                          <Footer />
+                        </div>
                       </div>
                     </>
                   );
                 }}
               </Measure>
-              <Navigation
-                menuItems={data.datoCmsMainMenu.menuItems}
-                isFooterInView={this.state.isFooterInView}
-              />
             </>
           );
         }}

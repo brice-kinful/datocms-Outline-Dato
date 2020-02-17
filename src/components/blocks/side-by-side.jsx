@@ -61,7 +61,11 @@ class SideBySide extends Component {
                       // console.log(this.state.pageHeight);
                       return (
                         <LazyLoad
-                          height={content.leftSideImage.fluid.height + 200}
+                          height={
+                            content.leftSideImage.fluid.height
+                              ? content.leftSideImageHeight.fluid.height + 200
+                              : "1000px"
+                          }
                           offset={0}
                         >
                           <img
@@ -114,7 +118,11 @@ class SideBySide extends Component {
                       // console.log(this.state.pageHeight);
                       return (
                         <LazyLoad
-                          height={content.rightSideImage.fluid.height + 200}
+                          height={
+                            content.rightSideImage.fluid.height
+                              ? content.rightSideImage.fluid.height + 200
+                              : "1000px"
+                          }
                           offset={0}
                         >
                           <img

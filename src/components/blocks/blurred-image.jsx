@@ -18,9 +18,9 @@ class BlurredImage extends Component {
     const { src, customWidth, offset } = this.props;
     return (
       <LazyLoad
-        height={src.height}
+        height={src.height ? src.height : "1000px"}
         offset={offset ? offset : -400}
-        style={{ minHeight: src.height }}
+        style={{ minHeight: `${src.height ? src.height : "1000px"}` }}
       >
         <Img
           fluid={src}

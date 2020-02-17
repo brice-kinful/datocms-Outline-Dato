@@ -98,12 +98,7 @@ class Footer extends Component {
                 <div className="grid-item one-fourth">
                   <p>Web Development</p>
                   <p>
-                    Meet our development-focused
-                    {/* <span className="textlink"> */}
-                    {/* </span> */}
-                  </p>
-                  <p>
-                    sister company,{" "}
+                    Meet our development-focused sister company,{" "}
                     <a
                       href="https://bykinful.com"
                       target="_blank"

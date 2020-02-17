@@ -3,20 +3,6 @@ body.freeze {
   overflow: hidden;
 }
 
-#preload #loading-white-screen {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  background: white;
-  z-index: 99999;
-  transition: 0.25s;
-  /* transition-delay: .5s; */
-}
-
-body.loading #preload #loading-white-screen {
-  visibility: hidden;
-  opacity: 0;
-}
 
 body.loading #preload #home>* {
   visibility: hidden;
@@ -32,7 +18,7 @@ body.loading #preload #home>* {
   transition: 0.75s;
 }
 
-#preload:after {
+/* #preload:after {
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
@@ -48,7 +34,7 @@ body.loading #preload #home>* {
 #preload.wait:after {
   background: white;
   opacity: 1;
-}
+} */
 
 #preload .gatsby-image-wrapper {
   /* padding: 50%; */
@@ -57,14 +43,7 @@ body.loading #preload #home>* {
   left: 0;
   height: 100vh;
   width: 100vw;
-  /* z-index: 0; */
   transform: translateZ(0);
-  /* -webkit-animation-name: fade-out;
-  animation-name: fade-out; */
-  -webkit-animation-duration: 4500ms;
-  animation-duration: 4500ms;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
 }
 
 #preload .images .gatsby-image-wrapper.loaded {

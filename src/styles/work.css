@@ -65,6 +65,7 @@
 
 .ril__navButtons {
   cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
+  z-index: 9999;
 }
 
 .ril__navButtonPrev {

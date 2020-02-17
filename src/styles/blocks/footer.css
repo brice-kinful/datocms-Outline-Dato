@@ -5,10 +5,10 @@
   left: 0;
   z-index: -1;
   width: 100%;
-  -webkit-transition: 0.5s ease-in;
-  -o-transition: 0.5s ease-in;
-  transition: 0.5s ease-in;
-  animation-duration: 0.5s;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  animation-duration: 0.1s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
   cursor: url(/cursor-white.svg) 0 0, default;
@@ -71,6 +71,7 @@
 
 footer p {
   cursor: url(/cursor-white.svg) 0 0, default;
+  max-width: 280px;
 }
 
 #footer a {
@@ -129,7 +130,7 @@ footer p {
   /* margin-left: 4px; */
 }
 
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1260px) {
   #footer .flex.grid.four {
     grid-gap: 60px;
   }

@@ -24,7 +24,7 @@ class Layout extends Component {
   checkFooterScroll = () => {
     const { pageHeight, loaded } = this.state;
     const currentScrollPos = window.pageYOffset;
-    if (currentScrollPos > pageHeight - 1000) {
+    if (currentScrollPos > pageHeight - 1400) {
       //load footer
       this.setState({
         loaded: true

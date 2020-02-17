@@ -81,7 +81,7 @@ class HomeScroller extends Component {
                         <li className={`slide`} key={`${project.slug}-x2`}>
                           <AniLink
                             preventScrollJump
-                            to={`/project/${project.slug}`}
+                            to={`/case-studies/${project.slug}`}
                           >
                             <img src={project.scrollerThumbnail.url} alt="" />
                           </AniLink>

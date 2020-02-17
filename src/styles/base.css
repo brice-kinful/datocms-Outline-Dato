@@ -423,7 +423,7 @@ p.large {
   -webkit-box-direction: normal;
 }
 
-.flex > img {
+.flex>img {
   align-self: center;
 }
 
@@ -607,11 +607,12 @@ a.btn:hover {
   transition: 1.25s ease-in;
   animation: pageLoading;
   animation-duration: 1.25s;
-  animation-delay: 2s;
+  animation-delay: 2.25s;
   animation-fill-mode: forwards;
+  margin-bottom: 0 !important;
 }
 
-.page > *:not(.title-container) {
+.page>*:not(.title-container) {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 1.25s ease-in;
@@ -635,7 +636,7 @@ a.btn:hover {
   }
 }
 
-.page > .wrapper {
+.page>.wrapper {
   position: relative;
   z-index: 9;
   background: white;
@@ -672,11 +673,11 @@ img.blur {
   padding-bottom: 0;
 }
 
-.page#default .content > * {
+.page#default .content>* {
   margin-bottom: 30px;
 }
 
-.page#default .content > *:last-child {
+.page#default .content>*:last-child {
   margin-bottom: 0;
 }
 
@@ -826,6 +827,7 @@ img.blur {
 }
 
 @media screen and (max-width: 480px) {
+
   /* pre-project interview */
   #interview label {
     font-size: 12px;

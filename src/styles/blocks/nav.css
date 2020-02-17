@@ -131,6 +131,7 @@ body.home #logo {
 }
 
 /* nav */
+
 #nav-container:after {
   content: "";
   position: fixed;
@@ -314,6 +315,7 @@ body.nav-open #nav-container:after {
   #logo {
     top: 30px;
     left: 30px;
+    /* opacity: 1 !important; */
   }
 
   #logo a svg {

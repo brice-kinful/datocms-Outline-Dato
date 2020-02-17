@@ -129,7 +129,9 @@ class Layout extends Component {
                   // console.log(this.state.pageHeight);
                   return (
                     <>
-                      <div ref={measureRef}>{children}</div>
+                      <div ref={measureRef} className="container">
+                        {children}
+                      </div>
                       <div className="footer-container">
                         {loaded && <Footer />}
                       </div>

@@ -18,12 +18,12 @@
   width: 100%;
 }
 
-#case-studies > *:not(.title-container) {
+#case-studies>*:not(.title-container) {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-#case-studies > * > *:not(h1) {
+#case-studies>*>*:not(h1) {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 1.25s ease-in;
@@ -61,12 +61,12 @@
   align-items: center;
 }
 
-#case-studies .wrapper > * {
+#case-studies .wrapper>* {
   padding-bottom: 200px;
   padding-top: 0;
 }
 
-#case-studies .wrapper > *:last-child {
+#case-studies .wrapper>*:last-child {
   padding-bottom: 0;
 }
 
@@ -78,7 +78,7 @@
   max-width: 485px;
 }
 
-#case-studies .block.solo .flex > * {
+#case-studies .block.solo .flex>* {
   width: 100%;
 }
 

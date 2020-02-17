@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import LazyLoad from "react-lazyload";
 
 import BlurredImage from "../components/blocks/blurred-image";
 import HeadlineAccordion from "../components/blocks/headline-accordion";
@@ -27,7 +28,7 @@ class CaseStudy extends Component {
   }
 
   componentWillUnmount() {
-    // document.body.classList.remove("frozen");
+    document.body.classList.remove("frozen");
   }
 
   render() {
@@ -65,7 +66,7 @@ class CaseStudy extends Component {
             <Img
               loading={"eager"}
               fluid={project.heroImage.fluid}
-              durationFadeIn={1000}
+              // durationFadeIn={1000}
               onLoad={() =>
                 setTimeout(() => {
                   this.setState({ hasHeroImageLoaded: true });

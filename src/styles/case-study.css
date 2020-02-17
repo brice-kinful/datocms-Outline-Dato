@@ -16,10 +16,10 @@ body.frozen .footer-container {
   transition: .55s ease-in;
 }
 
-#case-study>*:not(.screen) {
+#case-study .screen {
   animation: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  /* opacity: 1 !important;
+  visibility: visible !important; */
 }
 
 /* #case-study .hero,
@@ -28,6 +28,7 @@ body.frozen .footer-container {
   opacity: 0;
 } */
 
+#case-study .block,
 #case-study .block>* {
   opacity: 0;
   visibility: hidden;

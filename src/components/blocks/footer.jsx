@@ -21,6 +21,7 @@ class Footer extends Component {
 
   render() {
     const { el } = this.state;
+    const { loaded } = this.props;
     const pageStyle = el[0];
     return (
       <Measure
@@ -32,7 +33,7 @@ class Footer extends Component {
       >
         {({ contentRect, measureRef }) => {
           return (
-            <div id="footer" className="black-bg" ref={measureRef}>
+            <div id="footer" className={`black-bg`} ref={measureRef}>
               <div className="wrapper flex grid four">
                 <div className="grid-item one-fourth">
                   <p>Follow</p>

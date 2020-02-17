@@ -133,7 +133,7 @@ class Layout extends Component {
                         {children}
                       </div>
                       <div className="footer-container">
-                        {loaded && <Footer />}
+                        <Footer />
                       </div>
                     </>
                   );

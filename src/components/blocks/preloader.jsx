@@ -8,7 +8,7 @@ class Preloader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imagesReady: false,
+      imagesReady: -1,
       images: []
     };
   }
@@ -21,15 +21,15 @@ class Preloader extends Component {
   }
 
   componentWillUnmount() {
-    document.body.classList.remove("freeze");
+    document.body.classList.remove("freeze", "ready", "loading");
   }
 
   updateImagesReady = () => {
-    this.setState({ imagesReady: true });
+    this.setState({ imagesReady: this.state.imagesReady + 1 });
   };
 
   render() {
-    // console.log(this.state.images);
+    // console.log(this.state.imagesReady);
     const { images } = this.state;
     const nums = [
       "one",
@@ -56,10 +56,10 @@ class Preloader extends Component {
                 <React.Fragment key={index}>
                   <PreloaderImage
                     src={item.fluid}
-                    wait={(index + 1) * 200}
+                    wait={(index + 1) * 150}
                     currentImage={index + 1}
                     totalImages={images.length}
-                    loadAllImages={this.updateImagesReady}
+                    imageLoaded={this.updateImagesReady}
                     allImagesReady={this.state.imagesReady}
                   />
                 </React.Fragment>

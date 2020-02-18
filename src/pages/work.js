@@ -18,10 +18,21 @@ class WorkPage extends Component {
       imageTitles: [],
       imagePadding: 60,
       isOpen: false,
+      lightboxBgColor: "",
+      lightboxTextColor: "",
       isHeadlineVisible: true,
       prevScrollpos: ""
     };
   }
+
+  //update colors
+  updateColors = (bgColor, textColor) => {
+    console.log("updating colors");
+    this.setState({
+      lightboxBgColor: bgColor,
+      lightboxTextColor: textColor
+    });
+  };
 
   // scroll
   handleScroll = () => {
@@ -57,12 +68,6 @@ class WorkPage extends Component {
     }
   }
 
-  changeCloseBtn = () => {
-    document
-      .getElementsByClassName("ril__closeButton")
-      .insertAdjacentHTML("afterend", '<div id="two">two</div>');
-  };
-
   handleMouseMove = () => {
     clearInterval(this.interval);
     this.interval = setInterval(() => this.tick(), 1000);
@@ -93,31 +98,27 @@ class WorkPage extends Component {
       isOpen,
       images,
       imagePadding,
-      isHeadlineVisible
+      isHeadlineVisible,
+      lightboxBgColor,
+      lightboxTextColor
     } = this.state;
     let titles = [];
     const lightboxImages = images;
     const masonryImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     const breakpointColumnsObj = {
       default: 5,
-      1024: 4,
-      768: 3,
-      480: 2
+      1024: 4
     };
     masonryImages.map((image, index) => {
       titles.push(
         <span
           className="caption"
-          style={{ transform: `translateY(${imagePadding / 2 + 60}px)` }}
+          style={{ transform: `translateY(${imagePadding / 2 + 40}px)` }}
           key={index}
         >
-          <span
-            style={{
-              color: "#000000"
-              // transform: `translateY(${imagePadding}px)`
-            }}
-          >
-            <span>{image.title}</span>
+          <span>
+            <span className="bg"></span>
+            <span className="title">{image.title}</span>
             {image.customData["button-url"] && (
               <span className="textlink">
                 <AniLink
@@ -155,14 +156,20 @@ class WorkPage extends Component {
                 nextSrc={
                   lightboxImages[(photoIndex + 1) % lightboxImages.length]
                 }
-                imageTitle={titles[photoIndex]}
+                imageCaption={titles[photoIndex]}
                 prevSrc={
                   lightboxImages[
                     (photoIndex + lightboxImages.length - 1) %
                       lightboxImages.length
                   ]
                 }
+                imagePadding={100}
                 onImageLoad={() => {
+                  const bgColor =
+                    lightboxImages[photoIndex].customData["background-color"];
+                  const textColor =
+                    lightboxImages[photoIndex].customData["text-color"];
+                  this.updateColors(bgColor, textColor);
                   this.setState({
                     imagePadding:
                       lightboxImages[photoIndex].fluid.height > 600
@@ -184,7 +191,18 @@ class WorkPage extends Component {
                     photoIndex: (photoIndex + 1) % lightboxImages.length
                   })
                 }
-                onAfterOpen={() => this.changeCloseBtn}
+                reactModalStyle={{
+                  overlay: {
+                    backgroundColor: `${
+                      lightboxBgColor ? lightboxBgColor : "#F5F5F1"
+                    }`
+                  },
+                  content: {
+                    color: `${
+                      lightboxTextColor ? lightboxTextColor : "#000000"
+                    }`
+                  }
+                }}
               />
             )}
             <Masonry

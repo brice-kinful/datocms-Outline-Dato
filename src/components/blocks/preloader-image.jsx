@@ -12,46 +12,31 @@ class PreloaderImage extends Component {
   }
 
   componentDidMount() {
-    const { wait, currentImage, loadAllImages, totalImages } = this.props;
-    if (currentImage === totalImages) {
-      loadAllImages();
-    }
+    const { wait, currentImage } = this.props;
     this.setState({
       waitTime: 1200 + wait
     });
-    if (currentImage === 1) {
-      document.body.classList.add("loading");
-    }
-  }
-
-  componentWillUnmount() {
-    document.body.classList.remove("loading");
-    document.body.classList.remove("ready");
   }
 
   loadImage = () => {
     const { waitTime } = this.state;
-    const { currentImage, totalImages, allImagesReady } = this.props;
+    const {
+      currentImage,
+      totalImages,
+      imageLoaded,
+      allImagesReady
+    } = this.props;
 
-    if (currentImage === 1) {
-      this.setState({ loaded: true });
-      // setTimeout(() => {
-      //   this.setState({ loaded: true });
-      // }, waitTime * 1.15);
-    } else {
-      if (allImagesReady) {
-        setTimeout(() => {
-          this.setState({ loaded: true });
-        }, waitTime * 1.65);
-      }
-    }
+    imageLoaded();
+
+    this.setState({ loaded: true });
+
     if (currentImage === totalImages) {
-      if (allImagesReady) {
-        setTimeout(() => {
-          document.body.classList.remove("loading", "freeze");
-          document.body.classList.add("ready");
-        }, waitTime * 1.79);
-      }
+      document.body.classList.add("loading");
+      setTimeout(() => {
+        document.body.classList.remove("freeze", "loading");
+        document.body.classList.add("ready");
+      }, 6000);
     }
   };
 
@@ -61,9 +46,17 @@ class PreloaderImage extends Component {
     return (
       <Img
         fluid={src}
+        fadeIn="false"
+        loading="eager"
         onLoad={this.loadImage}
         className={`${loaded ? "loaded" : ""}`}
       />
+      // <img
+      //   src={src.src}
+      //   alt={""}
+      //   className={`${loaded ? "loaded" : ""}`}
+      //   onLoad={this.loadImage}
+      // />
     );
   }
 }

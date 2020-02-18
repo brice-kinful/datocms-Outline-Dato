@@ -26,7 +26,7 @@ class HomeCapabilities extends Component {
       <div id={`home-capabilities`}>
         <div id="cursor"></div>
         <div className={`wrapper skinny`}>
-          <Img fluid={featuredImage[0].image.fluid} />
+          <Img fluid={featuredImage[0].image?.fluid} />
           <div className="content flex">
             <div className="one-third title">{words[0].title}</div>
             <div className="one-third">

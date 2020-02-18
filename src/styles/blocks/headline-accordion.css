@@ -38,8 +38,8 @@
 .accordion.ui .title span:first-child,
 .accordion.ui .content span:first-child {
     margin-right: 25px;
-    padding-bottom: 10px;
-    top: -10px;
+    /* padding-bottom: 10px; */
+    /* top: -10px; */
 }
 
 .accordion.ui .textlink {
@@ -48,20 +48,20 @@
 }
 
 .block.accordion-block .textlink {
-    top: 5px;
+    top: 3px;
 }
 
 .block .accordion.ui .textlink span::after {
-    bottom: -4px;
+    /* bottom: -4px; */
 }
 
 .block .accordion.ui .textlink:hover span {
-    top: 0px !important;
+    /* top: 0px !important; */
 }
 
-.block .accordion.ui .textlink:hover span::after {
-    bottom: calc(50% + 5px);
-}
+/* .block .accordion.ui .textlink:hover span::after {
+    bottom: 50;
+} */
 
 #home .accordion {
     padding-top: 150px;

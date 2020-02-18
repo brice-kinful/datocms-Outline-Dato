@@ -12,6 +12,7 @@
 
 #work h1 {
   position: fixed;
+  z-index: 1;
   top: 50%;
   height: auto;
   transform: translateY(-50%);
@@ -52,7 +53,7 @@
 }
 
 .ril__outer {
-  background-color: white !important;
+  background-color: inherit;
 }
 
 .ril__image,
@@ -60,7 +61,7 @@
 .ril__imageNext {
   /* max-height: calc(100vh - 250px); */
   /* width: 33.3333%; */
-  max-height: 600px;
+  /* max-height: 600px; */
 }
 
 .ril__navButtons {
@@ -124,14 +125,24 @@
 
 .ril__caption,
 .ril__toolbar {
-  background-color: white;
+  background-color: transparent;
 }
+
+.ril__captionContent {
+  color: inherit;
+}
+
+.ril__zoomInButton,
+.ril__zoomOutButton {
+  display: none;
+}
+
 
 .ril__toolbarSide {
   padding-right: 60px;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption {
+.ril__caption .caption {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -148,7 +159,7 @@
   margin: auto;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
+.ril__caption .caption span {
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -157,31 +168,31 @@
   line-height: 1.6;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span:first-child {
+.ril__caption .caption .title {
   margin-right: 15px;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink {
+.ril__caption .caption .textlink {
   font-size: 12px;
   padding: 5px 0;
   position: relative;
   top: -6px;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink a:after {
+.ril__caption .caption .textlink a:after {
   bottom: -3px;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink:hover a {
+.ril__caption .caption .textlink:hover a {
   top: 6px;
 }
 
-.ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span span.textlink:hover a:after {
+.ril__caption .caption .textlink:hover a:after {
   bottom: 50%;
 }
 
 @media screen and (max-width: 768px) {
-  .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption {
+  .ril__caption .caption {
     align-items: center;
     bottom: 30px;
   }

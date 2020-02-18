@@ -9,6 +9,7 @@ import HeadlineAccordion from "../components/blocks/headline-accordion";
 import SideBySide from "../components/blocks/side-by-side";
 import TextBlock from "../components/blocks/text-block";
 import UrlBlock from "../components/blocks/url-block";
+import VideoBlock from "../components/blocks/video-block";
 import CaseStudiesPagination from "../components/blocks/case-study-pag";
 
 import "../styles/case-study.css";
@@ -136,6 +137,12 @@ class CaseStudy extends Component {
                 return (
                   <React.Fragment key={block.id}>
                     <UrlBlock content={block} />
+                  </React.Fragment>
+                );
+              case "DatoCmsVideoBlock":
+                return (
+                  <React.Fragment key={block.id}>
+                    <VideoBlock content={block.vimeoVideo} />
                   </React.Fragment>
                 );
               default:
@@ -296,6 +303,13 @@ export const query = graphql`
           doubleTopPadding
           setBottomPaddingToZero
           doubleBottomPadding
+        }
+        ... on DatoCmsVideoBlock {
+          vimeoVideo {
+            provider
+            providerUid
+            url
+          }
         }
       }
     }

@@ -107,8 +107,12 @@ SaolDisplay LightItalic
 }
 
 .white-bg {
-  background: white;
-  color: #ffffff;
+  background: #F5F5F1;
+  color: #F5F5F1;
+}
+
+body.loading #footer .logo {
+  fill: #F5F5F1;
 }
 
 * {

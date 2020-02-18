@@ -60,7 +60,7 @@ class HomeScroller extends Component {
                             preventScrollJump
                             to={`/case-studies/${project.slug}`}
                           >
-                            <img src={project.scrollerThumbnail.url} alt="" />
+                            <img src={project.scrollerThumbnail?.url} alt="" />
                           </AniLink>
                           <AniLink
                             preventScrollJump
@@ -83,7 +83,7 @@ class HomeScroller extends Component {
                             preventScrollJump
                             to={`/case-studies/${project.slug}`}
                           >
-                            <img src={project.scrollerThumbnail.url} alt="" />
+                            <img src={project.scrollerThumbnail?.url} alt="" />
                           </AniLink>
                           <AniLink
                             preventScrollJump

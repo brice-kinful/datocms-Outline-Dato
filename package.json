@@ -10,7 +10,7 @@
     "emailjs-com": "^2.4.1",
     "formik": "^2.1.2",
     "framer-motion": "^1.8.4",
-    "gatsby": "^2.15.8-page-data-404.16",
+    "gatsby": "^2.19.18",
     "gatsby-background-image": "^0.9.13",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-gtag": "^1.0.12",

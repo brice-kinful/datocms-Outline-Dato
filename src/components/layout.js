@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
+import "intersection-observer";
 import Measure from "react-measure";
 import Navigation from "./blocks/nav";
 import Footer from "./blocks/footer";

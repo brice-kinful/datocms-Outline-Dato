@@ -16,7 +16,7 @@ class Content extends Component {
   render() {
     const { content, enterCount } = this.props;
     const { leftSideImageHeight, rightSideImageHeight } = this.state;
-    console.log(content);
+    // console.log(content);
     return (
       <div
         className={`block side-by-side ${

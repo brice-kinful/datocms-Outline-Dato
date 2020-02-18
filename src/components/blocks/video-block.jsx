@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import ReactPlayer from "react-player/lib/players/Vimeo";
+import handleViewport from "react-in-viewport";
 
-class VideoBlock extends Component {
+class Video extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
-    const { content } = this.props;
+    const { content, enterCount } = this.props;
     return (
       <div
         className={`block video-block${
@@ -18,21 +19,15 @@ class VideoBlock extends Component {
         style={{ backgroundColor: content.backgroundColor?.hex }}
       >
         <div className="wrapper centertext skinny">
-          <div className="player-wrapper">
+          <div className={`player-wrapper blur ${enterCount > 0 && "loaded"}`}>
             <ReactPlayer
-              url={content.url}
+              url={content.vimeoVideo.url}
               className="react-player"
               playing
               loop
               width="100%"
               height="100%"
-              config={{
-                vimeo: {
-                  playerOptions: {
-                    controls: false
-                  }
-                }
-              }}
+              config={{ vimeo: { playerOptions: { background: true } } }}
             />
           </div>
         </div>
@@ -40,5 +35,7 @@ class VideoBlock extends Component {
     );
   }
 }
+
+const VideoBlock = handleViewport(Video, { rootMargin: "-1.0px" });
 
 export default VideoBlock;

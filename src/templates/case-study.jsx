@@ -142,7 +142,7 @@ class CaseStudy extends Component {
               case "DatoCmsVideoBlock":
                 return (
                   <React.Fragment key={block.id}>
-                    <VideoBlock content={block.vimeoVideo} />
+                    <VideoBlock content={block} />
                   </React.Fragment>
                 );
               default:
@@ -305,6 +305,13 @@ export const query = graphql`
           doubleBottomPadding
         }
         ... on DatoCmsVideoBlock {
+          backgroundColor {
+            hex
+          }
+          setTopPaddingToZero
+          doubleTopPadding
+          setBottomPaddingToZero
+          doubleBottomPadding
           vimeoVideo {
             provider
             providerUid

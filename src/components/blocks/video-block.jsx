@@ -21,7 +21,7 @@ class Video extends Component {
         <div className="wrapper centertext skinny">
           <div className={`player-wrapper blur ${enterCount > 0 && "loaded"}`}>
             <ReactPlayer
-              url={content.vimeoVideo.url}
+              url={content.vimeoVideo?.url}
               className="react-player"
               playing
               loop

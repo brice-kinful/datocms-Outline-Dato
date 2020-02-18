@@ -88,13 +88,23 @@ class Navigation extends Component {
                     const url = item.menuItemPage.slug;
 
                     return (
-                      <li key={name}>
-                        <AniLink preventScrollJump fade to={`/${url}`}>
-                          {name}
-                        </AniLink>
-                      </li>
+                      <React.Fragment key={name}>
+                        <li>
+                          <AniLink preventScrollJump fade to={`/${url}`}>
+                            {name}
+                          </AniLink>
+                        </li>
+                      </React.Fragment>
                     );
                   })}
+                  <li
+                    className="show_768 textlink email"
+                    style={{ marginTop: "25px" }}
+                  >
+                    <a href="mailto:hello@weareoutline.com" className="">
+                      hello@weareoutline.com
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

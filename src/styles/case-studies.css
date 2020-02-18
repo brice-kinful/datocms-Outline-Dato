@@ -122,3 +122,53 @@
     flex: 0 auto;
   }
 }
+
+@media screen and (max-width: 860px) {
+  #case-studies span {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  #case-studies span.textlink {
+    top: -4px;
+  }
+
+  @supports (display: -ms-grid) or (display: grid) {
+    #case-studies .flex.grid {
+      grid-gap: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  @supports (display: -ms-grid) or (display: grid) {
+    #case-studies .flex.grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #case-studies {
+    padding: 300px 0 100px;
+  }
+
+  #case-studies h1 {
+    top: 200px;
+  }
+
+  #case-studies .block {
+    padding: 50px 0 !important;
+  }
+
+  #case-studies .block .wrapper {
+    padding: 0;
+  }
+
+  #case-studies .flex.grid.two .grid-item:first-child {
+    padding-bottom: 50px !important;
+  }
+
+  #case-studies .grid-item {
+    margin: 0 !important;
+    position: static;
+  }
+}

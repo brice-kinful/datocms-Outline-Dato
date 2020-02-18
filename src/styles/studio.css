@@ -120,11 +120,39 @@
     width: 100%;
   }
 
+  #studio .capabilities .image {
+    width: 100%;
+  }
+
+  #studio p {
+    font-size: 14px;
+  }
+
+  #studio .large p,
+  #studio .cta p {
+    font-size: 22px;
+  }
+
   #studio .text {
     padding: 50px 0 0;
+  }
+
+  #studio .flex.grid.team {
+    grid-template-columns: 1fr 1fr;
   }
 
   #studio .flex.grid {
     grid-gap: 30px;
   }
+}
+
+@media screen and (max-width: 600px) {
+  #studio {
+    padding: 350px 0 100px;
+  }
+
+  #studio h1 {
+    top: 200px;
+  }
+
 }

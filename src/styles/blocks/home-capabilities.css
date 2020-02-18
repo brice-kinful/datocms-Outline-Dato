@@ -32,6 +32,11 @@
 @media screen and (max-width: 768px) {
     #home-capabilities {
         padding-top: 50px;
+        z-index: 0;
+    }
+
+    .content {
+        padding: 50px 0;
     }
 
     .content.flex {
@@ -41,6 +46,7 @@
     .content .one-third {
         flex: 0 auto;
         width: 100%;
+        font-size: 14px;
     }
 
     .content .one-third ul {

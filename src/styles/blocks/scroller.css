@@ -167,15 +167,16 @@
   #scroller {
     height: auto;
     margin-bottom: 0;
-    padding: 0 30px;
+    padding: 0;
     overflow: visible;
   }
 
   #scroller h1.title {
     margin-top: 100px;
-    opacity: 1;
+    z-index: 99;
+    /* opacity: 1;
     visibility: visible;
-    position: static;
+    position: static; */
   }
 
   #scroller .flex {
@@ -193,9 +194,14 @@
     display: block;
   }
 
+  #scroller .slick-track {
+    display: flex;
+    align-items: center;
+  }
+
   #scroller .slide {
     margin: 0 auto 40px;
-    padding: 0;
+    padding: 0 12.5px;
     width: 100%;
     max-width: 455px;
   }

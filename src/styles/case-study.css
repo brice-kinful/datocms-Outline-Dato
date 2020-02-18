@@ -374,5 +374,6 @@ body.frozen .footer-container {
   .block.side-by-side.sticky-right .flex .one-half:first-child img,
   .block.side-by-side.sticky-left .flex .one-half:last-child img {
     max-height: 50vw;
+    width: auto;
   }
 }

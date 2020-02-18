@@ -702,6 +702,13 @@ h1.big.visible {
   }
 }
 
+@media screen and (min-width: 769px) {
+  .show_768 {
+    display: none !important;
+  }
+}
+
+
 /* Base Mobile */
 
 @media screen and (max-width: 768px) {

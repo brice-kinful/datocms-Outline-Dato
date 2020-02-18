@@ -89,6 +89,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  #instagram .flex.grid .col:last-child {
+    display: none;
+  }
+
   #instagram .flex.grid .col {
     width: 50%;
   }

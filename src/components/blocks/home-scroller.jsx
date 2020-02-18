@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import AniLink from "../transitions/AniLink";
 import VizSensor from "react-visibility-sensor";
 import Measure from "react-measure";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../../styles/blocks/scroller.css";
 
 class HomeScroller extends Component {
@@ -25,6 +29,17 @@ class HomeScroller extends Component {
     const { projects } = this.props;
     const { imgViz } = this.state;
     const scrollerWidth = this.state.dimensions.width;
+
+    const settings = {
+      dots: false,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      centerMode: true,
+      centerPadding: "25%",
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
 
     return (
       <VizSensor
@@ -51,7 +66,10 @@ class HomeScroller extends Component {
             {({ measureRef }) => {
               // console.log(this.state.dimensions);
               return (
-                <ul className={`flex`} style={{ width: scrollerWidth }}>
+                <ul
+                  className={`flex hide_768`}
+                  style={{ width: scrollerWidth }}
+                >
                   <span className={`flex`} ref={measureRef}>
                     {projects.map(project => {
                       return (
@@ -101,6 +119,24 @@ class HomeScroller extends Component {
               );
             }}
           </Measure>
+
+          <Slider {...settings}>
+            {projects.map(project => {
+              return (
+                <div className={`slide`} key={`${project.slug}-mobile`}>
+                  <img src={project.scrollerThumbnail?.url} alt="" />
+                  <AniLink
+                    preventScrollJump
+                    to={`/case-studies/${project.slug}`}
+                    fade
+                    className={`title line`}
+                  >
+                    {project.title}
+                  </AniLink>
+                </div>
+              );
+            })}
+          </Slider>
         </div>
       </VizSensor>
     );

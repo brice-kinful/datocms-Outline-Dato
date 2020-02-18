@@ -276,6 +276,12 @@ body.nav-open #nav-container:after {
 
 /* Mobile */
 @media screen and (max-width: 768px) {
+
+  #logo {
+    z-index: 999999;
+    width: auto;
+  }
+
   #toggle_menu {
     top: 30px;
     right: 35px;
@@ -286,13 +292,17 @@ body.nav-open #nav-container:after {
     width: 30px;
   }
 
+  #nav-container:after {
+    display: none;
+  }
+
   #nav {
-    padding: 30px 0;
+    padding: 155px 0 115px;
     width: 100%;
     max-width: 100%;
-    height: 100vh;
+    height: auto;
     top: 0;
-    background: white;
+    background: linear-gradient(180deg, #F5F5F1, #F5F5F1 83%, rgba(255, 245, 241, .90) 90%, rgba(245, 245, 241, .75) 94%, rgba(255, 245, 241, .65) 96%, rgba(255, 245, 241, .45) 98%, rgba(255, 245, 241, .25) 99%, rgba(255, 245, 241, 0));
   }
 
   #nav .wrapper,
@@ -303,13 +313,12 @@ body.nav-open #nav-container:after {
   #nav .flex {
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  #nav li {
-    display: block;
-    margin: 10px 0;
-    text-align: center;
+  #nav li:not(.email) a {
+    font-size: 20px;
+    line-height: 40px;
   }
 
   #logo {
@@ -335,7 +344,7 @@ body.nav-open #nav-container:after {
   }
 
   #nav .wrapper {
-    padding: 0 20px;
+    padding: 0 30px;
   }
 }
 

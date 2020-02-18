@@ -103,18 +103,15 @@ footer p {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   #footer .flex.grid.four {
-    grid-gap: 30px;
+    grid-gap: 35px 15px;
   }
 
-  #footer .grid-item>* {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #footer .flex.grid.four {
-    grid-template-columns: 1fr;
+  #footer .grid-item>*,
+  #footer .grid-item p,
+  #footer .grid-item a,
+  #footer .grid-item a.line {
+    font-size: 11px;
   }
 }

@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: "https://nifty-lovelace-0b9de5.netlify.com"
   },
   plugins: [
+    'gatsby-plugin-eslint',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,

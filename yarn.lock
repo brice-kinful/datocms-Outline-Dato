@@ -1123,9 +1123,9 @@
     "@types/react" "*"
 
 "@types/react@*":
-  version "16.9.19"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.19.tgz#c842aa83ea490007d29938146ff2e4d9e4360c40"
-  integrity sha512-LJV97//H+zqKWMms0kvxaKYJDG05U2TtQB3chRLF8MPNs+MQh/H1aGlyDUxjaHvu08EAGerdX2z4LTBc7ns77A==
+  version "16.9.20"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.20.tgz#e83285766340fb1a7fafe7e5c4708c53832e3641"
+  integrity sha512-jRrWBr25zzEVNa4QbESKLPluvrZ3W6Odfwrfe2F5vzbrDuNvlpnHa/xbZcXg8RH5D4CE181J5VxrRrLvzRH+5A==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -2456,9 +2456,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001027:
-  version "1.0.30001027"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001027.tgz#283e2ef17d94889cc216a22c6f85303d78ca852d"
-  integrity sha512-7xvKeErvXZFtUItTHgNtLgS9RJpVnwBlWX8jSo/BO8VsF6deszemZSkJJJA1KOKrXuzZH4WALpAJdq5EyfgMLg==
+  version "1.0.30001028"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001028.tgz#f2241242ac70e0fa9cda55c2776d32a0867971c2"
+  integrity sha512-Vnrq+XMSHpT7E+LWoIYhs3Sne8h9lx9YJV3acH3THNCwU/9zV93/ta4xVfzTtnqd3rvnuVpVjE3DFqf56tr3aQ==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -3966,9 +3966,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.349, electron-to-chromium@^1.3.47:
-  version "1.3.353"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.353.tgz#c6f13f27d5212643979867a400c1a5e8a4ef042a"
-  integrity sha512-CkG24biyy9qQTQs8U2vGQaiyWSFDxAXP/UGHBveXZ1TGoWOAw+eYZXryrX0UeIMKnQjcaHx33hzYuydv98kqGQ==
+  version "1.3.354"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.354.tgz#6c6ad9ef63654c4c022269517c5a3095cebc94db"
+  integrity sha512-24YMkNiZWOUeF6YeoscWfIGP0oMx+lJpU/miwI+lcu7plIDpyZn8Gx0lx0qTDlzGoz7hx+lpyD8QkbkX5L2Pqw==
 
 element-resize-detector@^1.1.9, element-resize-detector@^1.2.1:
   version "1.2.1"
@@ -4254,6 +4254,17 @@ eslint-loader@^2.2.1:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
+eslint-loader@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-3.0.3.tgz#e018e3d2722381d982b1201adb56819c73b480ca"
+  integrity sha512-+YRqB95PnNvxNp1HEjQmvf9KNvCin5HXYYseOXVC2U0KEcw4IkQ2IQEBG46j7+gW39bMzeu0GsUhVbBY3Votpw==
+  dependencies:
+    fs-extra "^8.1.0"
+    loader-fs-cache "^1.0.2"
+    loader-utils "^1.2.3"
+    object-hash "^2.0.1"
+    schema-utils "^2.6.1"
+
 eslint-module-utils@^2.4.1:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.5.2.tgz#7878f7504824e1b857dd2505b59a8e5eda26a708"
@@ -4359,7 +4370,7 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
-eslint@^6.7.2:
+eslint@^6.7.2, eslint@^6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.8.0.tgz#62262d6729739f9275723824302fb227c8c93ffb"
   integrity sha512-K+Iayyo2LtyYhDSYwz5D5QdWw0hCacNzyq1Y821Xna2xSJj7cijoLLYmLxTQgcgZ9mC61nryMy9S7GRbYpI5Ig==
@@ -5213,6 +5224,11 @@ gatsby-page-utils@^0.0.39:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
+
+gatsby-plugin-eslint@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-eslint/-/gatsby-plugin-eslint-2.0.8.tgz#1ff7f546a427d274dc2de3932ba29822aae330c3"
+  integrity sha512-vAMy37povmQJNg6ZxY78fkWR3pKwG8MNMhO3u+4vXj2MYT5avhFvHPJTAb126ZCuygf30gAWlpwbV50zP894Jw==
 
 gatsby-plugin-gtag@^1.0.12:
   version "1.0.13"
@@ -7474,7 +7490,7 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
-loader-fs-cache@^1.0.0:
+loader-fs-cache@^1.0.0, loader-fs-cache@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.2.tgz#54cedf6b727e1779fd8f01205f05f6e88706f086"
   integrity sha512-70IzT/0/L+M20jUlEqZhZyArTU6VKLRTYRDAYN26g4jfzpJqjipLL3/hgYpySqI9PwsVRHHFja0LfEmsx9X2Cw==
@@ -8538,6 +8554,11 @@ object-hash@^1.1.4:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.3.1.tgz#fde452098a951cb145f039bb7d455449ddc126df"
   integrity sha512-OSuu/pU4ENM9kmREg0BdNrUDIl1heYa4mBZacJc+vVWz4GtAwu7jO8s4AIt2aGRUTqxykpWzI3Oqnsm13tTMDA==
+
+object-hash@^2.0.1:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-2.0.3.tgz#d12db044e03cd2ca3d77c0570d87225b02e1e6ea"
+  integrity sha512-JPKn0GMu+Fa3zt3Bmr66JhokJU5BaNBIh4ZeTlaCBzrBsOeXzwcKKAK1tbLiPKgvwmPXsDvvLHoWh5Bm7ofIYg==
 
 object-inspect@^1.7.0:
   version "1.7.0"
@@ -9654,9 +9675,9 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.23:
     supports-color "^5.4.0"
 
 postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.5:
-  version "7.0.26"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.26.tgz#5ed615cfcab35ba9bbb82414a4fa88ea10429587"
-  integrity sha512-IY4oRjpXWYshuTDFxMVkJDtWIk2LhsTlu8bZnbEJA4+bYT16Lvpo8Qv6EvDumhYRgzjZl489pmsY3qVgJQ08nA==
+  version "7.0.27"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.27.tgz#cc67cdc6b0daa375105b7c424a85567345fc54d9"
+  integrity sha512-WuQETPMcW9Uf1/22HWUWP9lgsIC+KEHg2kozMflKjbeUtw9ujvFX6QmIfozaErDkmLWS9WEnEdEe6Uo9/BNTdQ==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
@@ -11075,6 +11096,14 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
+
+schema-utils@^2.6.1:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.6.4.tgz#a27efbf6e4e78689d91872ee3ccfa57d7bdd0f53"
+  integrity sha512-VNjcaUxVnEeun6B2fiiUDjXXBtD4ZSH7pdbfIu1pOFwgptDPLMo/z9jr4sUfsjFVPqDCEin/F7IYlq7/E6yDbQ==
+  dependencies:
+    ajv "^6.10.2"
+    ajv-keywords "^3.4.1"
 
 scroll-behavior@^0.9.10:
   version "0.9.11"

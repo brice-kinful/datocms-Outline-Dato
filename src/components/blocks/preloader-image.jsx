@@ -34,7 +34,7 @@ class PreloaderImage extends Component {
     if (currentImage === totalImages) {
       document.body.classList.add("loading");
       setTimeout(() => {
-        document.body.classList.remove("freeze", "loading");
+        document.body.classList.remove("freeze");
         document.body.classList.add("ready");
       }, 6000);
     }

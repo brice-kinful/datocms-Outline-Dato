@@ -18,14 +18,13 @@ body.ready #nav-container {
   height: 100vh;
   width: 100%;
   z-index: 999999999;
-  -webkit-transition: 0.75s;
-  -o-transition: 0.75s;
-  transition: 0.75s;
+  -webkit-transition: 1.25s;
+  -o-transition: 1.25s;
+  transition: 1.25s;
 }
 
 body.ready #preload {
-  /* -webkit-animation-name: fade-out;
-  animation-name: fade-out; */
+  transition: 1.25s;
   opacity: 0;
   visibility: hidden;
 }
@@ -162,7 +161,7 @@ body.loading #preload .images .gatsby-image-wrapper {
   }
 }
 
-/* @-webkit-keyframes hidePreloader {
+@-webkit-keyframes hidePreloader {
   0% {
     opacity: 1;
     visibility: visible;
@@ -184,7 +183,7 @@ body.loading #preload .images .gatsby-image-wrapper {
     opacity: 0;
     visibility: hidden;
   }
-} */
+}
 
 /* @-webkit-keyframes showHomeContent {
   0% {

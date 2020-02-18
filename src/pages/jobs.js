@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import parse from "html-react-parser";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../components/transitions/AniLink";
 
 const JobsPage = ({ data }) => {
   const content = data.datoCmsJobsPage;

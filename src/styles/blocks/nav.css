@@ -135,12 +135,12 @@ body.home #logo {
 #nav-container:after {
   content: "";
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
   width: 100%;
   height: 400px;
   top: 0;
   left: 0;
-  background: linear-gradient(180deg, #fff, #fff 10%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, .1) 80%, rgba(255, 255, 255, 0));
+  background: linear-gradient(180deg, #F5F5F1, #F5F5F1 10%, rgba(245, 245, 241, .5) 50%, rgba(255, 245, 241, .1) 80%, rgba(245, 245, 241, 0));
   opacity: 0;
   visibility: hidden;
   transition: .6s;

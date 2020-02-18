@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Outline | Branding | Web Design | Charleston, SC',
-    titleTemplate: '%s | Outline | Charleston, SC',
-    siteUrl: 'https://nifty-lovelace-0b9de5.netlify.com'
+    title: "Outline | Branding | Web Design | Charleston, SC",
+    titleTemplate: "%s | Outline | Charleston, SC",
+    siteUrl: "https://nifty-lovelace-0b9de5.netlify.com"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,7 +18,7 @@ module.exports = {
       options: {
         apiToken: process.env.GATSBY_DATO_API_TOKEN,
         previewMode: true
-      },
-    },
-  ],
-}
+      }
+    }
+  ]
+};

@@ -1,5 +1,5 @@
 import React from "react";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../transitions/AniLink";
 import parse from "html-react-parser";
 import Img from "gatsby-image";
 

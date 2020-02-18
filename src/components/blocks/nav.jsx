@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "gatsby";
 import SVG from "react-inlinesvg";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../transitions/AniLink";
 
 import "../../styles/blocks/nav.css";
 
@@ -51,7 +51,6 @@ class Navigation extends Component {
   render() {
     const isMenuOpen = this.state.isMenuOpen;
     const { menuItems, isFooterInView } = this.props;
-    // console.log(isFooterInView);
     return (
       <div id="nav-container">
         <ReactCSSTransitionGroup

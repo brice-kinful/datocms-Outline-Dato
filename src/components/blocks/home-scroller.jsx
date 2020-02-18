@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../transitions/AniLink";
 import VizSensor from "react-visibility-sensor";
 import Measure from "react-measure";
 import "../../styles/blocks/scroller.css";

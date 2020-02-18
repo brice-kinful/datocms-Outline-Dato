@@ -3,8 +3,6 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-// import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-// import LazyLoad from "react-lazyload";
 
 import BlurredImage from "../components/blocks/blurred-image";
 import HeadlineAccordion from "../components/blocks/headline-accordion";

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Measure from "react-measure";
 import SVG from "react-inlinesvg";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../transitions/AniLink";
 
 import "../../styles/blocks/footer.css";
 

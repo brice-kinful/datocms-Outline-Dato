@@ -18,7 +18,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.17",
     "gatsby-plugin-sitemap": "^2.2.26",
-    "gatsby-plugin-transition-link": "https://github.com/brice-outline/gatsby-plugin-transition-link.git",
+    "gatsby-plugin-transition-link": "^1.17.7",
     "gatsby-source-datocms": "^2.1.18",
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-transformer-remark": "^2.6.27",
@@ -59,7 +59,6 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "postinstall": "cd ./node_modules/gatsby-plugin-transition-link && yarn install && cd ../../ && gatsby build",
     "dev": "rm -r ./.cache && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },

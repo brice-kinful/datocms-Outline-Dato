@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import parse from "html-react-parser";
 import Measure from "react-measure";
 import BlurredImage from "./blurred-image";
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
+import handleViewport from "react-in-viewport";
 
-class SideBySide extends Component {
+class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +14,7 @@ class SideBySide extends Component {
     };
   }
   render() {
-    const { content } = this.props;
+    const { content, enterCount } = this.props;
     const { leftSideImageHeight, rightSideImageHeight } = this.state;
     console.log(content);
     return (
@@ -67,24 +68,15 @@ class SideBySide extends Component {
                     {({ measureRef }) => {
                       // console.log(this.state.pageHeight);
                       return (
-                        <LazyLoad
-                          height={
-                            content.leftSideImage.fluid.height
-                              ? content.leftSideImageHeight.fluid.height + 200
-                              : "1000px"
-                          }
-                          offset={0}
-                        >
-                          <img
-                            ref={measureRef}
-                            src={content.leftSideImage.fluid.src}
-                            className="blur"
-                            style={{
-                              maxWidth: `${content.leftSideImageCustomWidth}px`
-                            }}
-                            alt=""
-                          />
-                        </LazyLoad>
+                        <img
+                          ref={measureRef}
+                          src={content.leftSideImage.fluid.src}
+                          className={`blur ${enterCount > 0 && "loaded"}`}
+                          style={{
+                            maxWidth: `${content.leftSideImageCustomWidth}px`
+                          }}
+                          alt=""
+                        />
                       );
                     }}
                   </Measure>
@@ -128,24 +120,15 @@ class SideBySide extends Component {
                     {({ measureRef }) => {
                       // console.log(this.state.pageHeight);
                       return (
-                        <LazyLoad
-                          height={
-                            content.rightSideImage.fluid.height
-                              ? content.rightSideImage.fluid.height + 200
-                              : "1000px"
-                          }
-                          offset={0}
-                        >
-                          <img
-                            ref={measureRef}
-                            src={content.rightSideImage.fluid.src}
-                            className="blur"
-                            style={{
-                              maxWidth: `${content.rightSideImageCustomWidth}px`
-                            }}
-                            alt=""
-                          />
-                        </LazyLoad>
+                        <img
+                          ref={measureRef}
+                          src={content.rightSideImage.fluid.src}
+                          className={`blur ${enterCount > 0 && "loaded"}`}
+                          style={{
+                            maxWidth: `${content.rightSideImageCustomWidth}px`
+                          }}
+                          alt=""
+                        />
                       );
                     }}
                   </Measure>
@@ -163,5 +146,7 @@ class SideBySide extends Component {
     );
   }
 }
+
+const SideBySide = handleViewport(Content, { rootMargin: "-1.0px" });
 
 export default SideBySide;

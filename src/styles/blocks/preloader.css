@@ -4,7 +4,7 @@ body.freeze {
 }
 
 
-body.loading #preload #home>* {
+body.loading #home {
   visibility: hidden;
 }
 

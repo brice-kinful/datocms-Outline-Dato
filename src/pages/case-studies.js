@@ -5,7 +5,7 @@ import BlurredImage from "../components/blocks/blurred-image";
 
 import "../styles/grid.css";
 import "../styles/case-studies.css";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../components/transitions/AniLink";
 
 class CaseStudiesPage extends Component {
   constructor(props) {

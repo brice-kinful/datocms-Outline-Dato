@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Img from "gatsby-image";
-import LazyLoad from "react-lazyload";
+import handleViewport from "react-in-viewport";
 
-class BlurredImage extends Component {
+class Image extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,30 +10,20 @@ class BlurredImage extends Component {
     };
   }
 
-  loadImage = () => {
-    this.setState({ loaded: true });
-  };
-
   render() {
-    const { src, customWidth, offset } = this.props;
+    const { src, customWidth, enterCount } = this.props;
     return (
-      <LazyLoad
-        height={src.height ? src.height : "1000px"}
-        offset={offset ? offset : -400}
-        // style={{ minHeight: `${src.height ? src.height : "1000px"}` }}
-        // resize={true}
-      >
-        <Img
-          fluid={src}
-          fadeIn={false}
-          loading={"auto"}
-          onLoad={this.loadImage}
-          className={`blur ${this.state.loaded ? "loaded" : ""}`}
-          style={customWidth && { maxWidth: `${customWidth}px` }}
-        />
-      </LazyLoad>
+      <Img
+        fluid={src}
+        fadeIn={false}
+        loading={"eager"}
+        className={`blur ${enterCount > 0 && "loaded"}`}
+        style={customWidth && { maxWidth: `${customWidth}px` }}
+      />
     );
   }
 }
+
+const BlurredImage = handleViewport(Image, { rootMargin: "-1.0px" });
 
 export default BlurredImage;

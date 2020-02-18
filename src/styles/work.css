@@ -85,14 +85,41 @@
 }
 
 .ril__closeButton {
-  background: url("/modal-close.svg") no-repeat center !important;
-  background-size: 60px !important;
+  /* background: url("/modal-close.svg") no-repeat center !important; */
+  /* background-size: 60px !important; */
+  background: none !important;
   width: 40px;
   position: absolute;
   top: 68px;
   right: 60px;
   opacity: 1 !important;
   cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
+}
+
+.ril__closeButton:before,
+.ril__closeButton:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: #000000;
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+.ril__closeButton:before {
+  -webkit-transform: rotate(25deg);
+  -moz-transform: rotate(25deg);
+  -o-transform: rotate(25deg);
+  transform: rotate(25deg);
+}
+
+.ril__closeButton:after {
+  -webkit-transform: rotate(-25deg);
+  -moz-transform: rotate(-25deg);
+  -o-transform: rotate(-25deg);
+  transform: rotate(-25deg);
 }
 
 .ril__caption,

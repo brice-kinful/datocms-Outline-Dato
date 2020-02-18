@@ -134,6 +134,7 @@ body {
   font-style: normal;
   letter-spacing: 0.02em;
   line-height: 1;
+  background: #F5F5F1;
   color: #000000;
   cursor: url(/cursor.svg) 0 0, default;
   transition: 0.3s;
@@ -428,7 +429,7 @@ p.large {
   -webkit-box-direction: normal;
 }
 
-.flex > img {
+.flex>img {
   align-self: center;
 }
 
@@ -603,7 +604,7 @@ a.btn:hover {
 }
 
 .container {
-  background: white;
+  background: #F5F5F1;
   min-height: 100vh;
   opacity: 0;
   visibility: hidden;
@@ -617,7 +618,7 @@ a.btn:hover {
 }
 
 .page {
-  background: white;
+  background: #F5F5F1;
   min-height: 100vh;
   width: 100%;
 }
@@ -634,10 +635,10 @@ a.btn:hover {
   }
 }
 
-.page > .wrapper {
+.page>.wrapper {
   position: relative;
   z-index: 9;
-  background: white;
+  background: #F5F5F1;
 }
 
 h1.big.visible {
@@ -656,7 +657,7 @@ h1.big.visible {
 }
 
 .gatsby-image-wrapper.blur.loaded,
-.blur {
+.blur.loaded {
   -webkit-filter: blur(0);
   filter: blur(0);
   opacity: 1;
@@ -671,11 +672,11 @@ h1.big.visible {
   padding-bottom: 0;
 }
 
-.page#default .content > * {
+.page#default .content>* {
   margin-bottom: 30px;
 }
 
-.page#default .content > *:last-child {
+.page#default .content>*:last-child {
   margin-bottom: 0;
 }
 
@@ -687,8 +688,8 @@ h1.big.visible {
 
 .page#default .content h2 {
   font-family: "Styrene Light";
-  font-size: 32px;
-  line-height: 46px;
+  font-size: 28px;
+  line-height: 38px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -825,6 +826,7 @@ h1.big.visible {
 }
 
 @media screen and (max-width: 480px) {
+
   /* pre-project interview */
   #interview label {
     font-size: 12px;

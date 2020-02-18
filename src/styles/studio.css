@@ -50,8 +50,8 @@
 
 #studio .text li {
     list-style: none;
-    font-size: 32px;
-    line-height: 58px;
+    font-size: 28px;
+    line-height: 38px;
 }
 
 #studio .team .gatsby-image-wrapper {
@@ -65,8 +65,8 @@
 
 #studio .cta p {
     flex: 0 70%;
-    font-size: 48px;
-    line-height: 69px;
+    font-size: 42px;
+    line-height: 60px;
 }
 
 #studio .cta p span:first-child {
@@ -74,7 +74,7 @@
 }
 
 #studio .cta .textlink {
-    font-size: 20px;
+    font-size: 18px;
     top: 4px;
 }
 

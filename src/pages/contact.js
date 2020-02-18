@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../components/transitions/AniLink";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
 import parse from "html-react-parser";

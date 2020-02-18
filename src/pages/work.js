@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "../components/transitions/AniLink";
 import Masonry from "react-masonry-css";
 import BlurredImage from "../components/blocks/blurred-image";
 import Lightbox from "react-image-lightbox";
@@ -8,7 +8,6 @@ import Layout from "../components/layout";
 
 import "react-image-lightbox/style.css";
 import "../styles/work.css";
-import LazyLoad from "react-lazyload";
 
 class WorkPage extends Component {
   constructor(props) {
@@ -31,7 +30,7 @@ class WorkPage extends Component {
       prevScrollpos: currentScrollPos,
       isHeadlineVisible: true
     });
-    if (currentScrollPos > 0) {
+    if (currentScrollPos > 2) {
       this.setState({
         isHeadlineVisible: false
       });
@@ -57,6 +56,12 @@ class WorkPage extends Component {
       });
     }
   }
+
+  changeCloseBtn = () => {
+    document
+      .getElementsByClassName("ril__closeButton")
+      .insertAdjacentHTML("afterend", '<div id="two">two</div>');
+  };
 
   handleMouseMove = () => {
     clearInterval(this.interval);
@@ -179,6 +184,7 @@ class WorkPage extends Component {
                     photoIndex: (photoIndex + 1) % lightboxImages.length
                   })
                 }
+                onAfterOpen={() => this.changeCloseBtn}
               />
             )}
             <Masonry

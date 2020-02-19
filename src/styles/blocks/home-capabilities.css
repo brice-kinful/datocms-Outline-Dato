@@ -1,5 +1,6 @@
 #home-capabilities {
     padding-top: 25%;
+    z-index: 0 !important;
 }
 
 .content {

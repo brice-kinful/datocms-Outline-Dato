@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
+import Layout from "../components/layout";
 import AniLink from "../components/transitions/AniLink";
 import Masonry from "react-masonry-css";
 import BlurredImage from "../components/blocks/blurred-image";
 import Lightbox from "react-image-lightbox";
-import Layout from "../components/layout";
+import Modal from "react-modal";
+import Slider from "react-slick";
 
 import "react-image-lightbox/style.css";
 import "../styles/work.css";
@@ -14,6 +16,7 @@ class WorkPage extends Component {
     super(props);
     this.state = {
       photoIndex: 0,
+      updatePhotoIndex: 0,
       images: [],
       imageTitles: [],
       imagePadding: 60,
@@ -109,14 +112,23 @@ class WorkPage extends Component {
       default: 5,
       1024: 4
     };
+    const settings = {
+      dots: false,
+      infinite: false,
+      speed: 500,
+      slidesToShow: lightboxImages.length,
+      slidesToScroll: 1,
+      slickGoTo: photoIndex,
+      afterChange: () =>
+        this.setState(state => ({
+          updatePhotoIndex: state.updatePhotoIndex + 1
+        })),
+      beforeChange: (current, next) => this.setState({ photoIndex: next })
+    };
     masonryImages.map((image, index) => {
       titles.push(
-        <span
-          className="caption"
-          style={{ transform: `translateY(${imagePadding / 2 + 40}px)` }}
-          key={index}
-        >
-          <span>
+        <span className="caption" key={index}>
+          <span style={{ transform: `translateY(${imagePadding / 2 + 40}px)` }}>
             <span className="bg"></span>
             <span className="title">{image.title}</span>
             {image.customData["button-url"] && (
@@ -132,6 +144,7 @@ class WorkPage extends Component {
                     ? image.customData["button-title"]
                     : "See More"}
                 </AniLink>
+                <span style={{ background: lightboxTextColor }}></span>
               </span>
             )}
           </span>
@@ -151,59 +164,94 @@ class WorkPage extends Component {
             </h1>
 
             {isOpen && (
-              <Lightbox
-                mainSrc={lightboxImages[photoIndex].url}
-                nextSrc={
-                  lightboxImages[(photoIndex + 1) % lightboxImages.length]
-                }
-                imageCaption={titles[photoIndex]}
-                prevSrc={
-                  lightboxImages[
-                    (photoIndex + lightboxImages.length - 1) %
-                      lightboxImages.length
-                  ]
-                }
-                imagePadding={100}
-                onImageLoad={() => {
-                  const bgColor =
-                    lightboxImages[photoIndex].customData["background-color"];
-                  const textColor =
-                    lightboxImages[photoIndex].customData["text-color"];
-                  this.updateColors(bgColor, textColor);
-                  this.setState({
-                    imagePadding:
-                      lightboxImages[photoIndex].fluid.height > 600
-                        ? 600
-                        : lightboxImages[photoIndex].fluid.height
-                  });
-                  // console.log(lightboxImages[photoIndex].customData);
-                }}
-                onCloseRequest={() => this.setState({ isOpen: false })}
-                onMovePrevRequest={() =>
-                  this.setState({
-                    photoIndex:
-                      (photoIndex + lightboxImages.length - 1) %
-                      lightboxImages.length
-                  })
-                }
-                onMoveNextRequest={() =>
-                  this.setState({
-                    photoIndex: (photoIndex + 1) % lightboxImages.length
-                  })
-                }
-                reactModalStyle={{
-                  overlay: {
-                    backgroundColor: `${
-                      lightboxBgColor ? lightboxBgColor : "#F5F5F1"
-                    }`
-                  },
-                  content: {
-                    color: `${
-                      lightboxTextColor ? lightboxTextColor : "#000000"
-                    }`
+              <>
+                <Lightbox
+                  wrapperClassName={`${
+                    lightboxImages[photoIndex].customData["text-color"] === ""
+                      ? "black"
+                      : lightboxImages[photoIndex].customData["text-color"]
+                  }`}
+                  mainSrc={lightboxImages[photoIndex].url}
+                  nextSrc={
+                    lightboxImages[(photoIndex + 1) % lightboxImages.length]
                   }
-                }}
-              />
+                  imageCaption={titles[photoIndex]}
+                  prevSrc={
+                    lightboxImages[
+                      (photoIndex + lightboxImages.length - 1) %
+                        lightboxImages.length
+                    ]
+                  }
+                  imagePadding={100}
+                  onImageLoad={() => {
+                    const bgColor =
+                      lightboxImages[photoIndex].customData["background-color"];
+                    const textColor =
+                      lightboxImages[photoIndex].customData["text-color"] === ""
+                        ? "black"
+                        : lightboxImages[photoIndex].customData["text-color"];
+                    this.updateColors(bgColor, textColor);
+                    this.setState({
+                      imagePadding:
+                        lightboxImages[photoIndex].fluid.height > 600
+                          ? 600
+                          : lightboxImages[photoIndex].fluid.height
+                    });
+                    // console.log(lightboxImages[photoIndex].customData);
+                  }}
+                  onCloseRequest={() => this.setState({ isOpen: false })}
+                  onMovePrevRequest={() =>
+                    this.setState({
+                      photoIndex:
+                        (photoIndex + lightboxImages.length - 1) %
+                        lightboxImages.length
+                    })
+                  }
+                  onMoveNextRequest={() =>
+                    this.setState({
+                      photoIndex: (photoIndex + 1) % lightboxImages.length
+                    })
+                  }
+                  reactModalStyle={{
+                    overlay: {
+                      backgroundColor: `${
+                        lightboxBgColor ? lightboxBgColor : "#F5F5F1"
+                      }`
+                    },
+                    content: {
+                      color: `${
+                        lightboxTextColor ? lightboxTextColor : "#000000"
+                      }`
+                    }
+                  }}
+                />
+                <div className="mobile-modal">
+                  <div className="wrapper white-bg">
+                    <div className="close-container white-bg">
+                      <div
+                        className="close"
+                        onClick={() => this.setState({ isOpen: false })}
+                      ></div>
+                    </div>
+                    <Slider
+                      ref={slider => (this.slider = slider)}
+                      {...settings}
+                    >
+                      {masonryImages.map((item, index) => {
+                        return (
+                          <>
+                            <BlurredImage
+                              src={item.fluid}
+                              key={index}
+                              offset={-100}
+                            />
+                          </>
+                        );
+                      })}
+                    </Slider>
+                  </div>
+                </div>
+              </>
             )}
             <Masonry
               breakpointCols={breakpointColumnsObj}
@@ -215,9 +263,10 @@ class WorkPage extends Component {
                   <div
                     className="masonry-grid-item"
                     key={index}
-                    onClick={() =>
-                      this.setState({ isOpen: true, photoIndex: index })
-                    }
+                    onClick={() => {
+                      this.setState({ isOpen: true, photoIndex: index });
+                      // this.slider.slickGoTo(this.state.photoIndex);
+                    }}
                   >
                     <BlurredImage src={item.fluid} key={index} offset={-100} />
                   </div>

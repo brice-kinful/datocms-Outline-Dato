@@ -734,6 +734,24 @@ h1.big.visible {
     padding: 0 25px;
   }
 
+  .page#default .content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .page#default .content ul li {
+    font-size: 14px;
+  }
+
+  .page#default .content h2 {
+    font-family: "Styrene Light";
+    font-size: 24px;
+  }
+
+  .page#default .textlink {
+    font-size: 12px;
+  }
+
   #footer {
     padding-bottom: 20px;
   }

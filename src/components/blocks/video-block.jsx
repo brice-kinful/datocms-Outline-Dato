@@ -25,9 +25,18 @@ class Video extends Component {
               className="react-player"
               playing
               loop
+              playsinline
               width="100%"
               height="100%"
-              config={{ vimeo: { playerOptions: { background: true } } }}
+              config={{
+                vimeo: {
+                  playerOptions: {
+                    background: true,
+                    autoplay: true,
+                    autopause: false
+                  }
+                }
+              }}
             />
           </div>
         </div>

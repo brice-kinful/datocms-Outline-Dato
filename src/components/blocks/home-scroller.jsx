@@ -120,7 +120,7 @@ class HomeScroller extends Component {
             }}
           </Measure>
 
-          <Slider {...settings}>
+          <Slider {...settings} className="show_768">
             {projects.map(project => {
               return (
                 <div className={`slide`} key={`${project.slug}-mobile`}>

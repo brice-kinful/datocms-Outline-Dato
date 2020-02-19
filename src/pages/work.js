@@ -5,11 +5,13 @@ import AniLink from "../components/transitions/AniLink";
 import Masonry from "react-masonry-css";
 import BlurredImage from "../components/blocks/blurred-image";
 import Lightbox from "react-image-lightbox";
-import Modal from "react-modal";
-import Slider from "react-slick";
+import { genericHashLink } from "react-router-hash-link";
+import GatsbyLink from "gatsby-link";
 
 import "react-image-lightbox/style.css";
 import "../styles/work.css";
+
+const HashLink = props => genericHashLink(props, GatsbyLink);
 
 class WorkPage extends Component {
   constructor(props) {
@@ -36,6 +38,8 @@ class WorkPage extends Component {
       lightboxTextColor: textColor
     });
   };
+
+  //update mobile modal image
 
   // scroll
   handleScroll = () => {
@@ -112,19 +116,7 @@ class WorkPage extends Component {
       default: 5,
       1024: 4
     };
-    const settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: lightboxImages.length,
-      slidesToScroll: 1,
-      slickGoTo: photoIndex,
-      afterChange: () =>
-        this.setState(state => ({
-          updatePhotoIndex: state.updatePhotoIndex + 1
-        })),
-      beforeChange: (current, next) => this.setState({ photoIndex: next })
-    };
+
     masonryImages.map((image, index) => {
       titles.push(
         <span className="caption" key={index}>
@@ -151,7 +143,6 @@ class WorkPage extends Component {
         </span>
       );
     });
-    // console.log(imageTitles);
 
     return (
       <Layout>
@@ -225,6 +216,7 @@ class WorkPage extends Component {
                     }
                   }}
                 />
+
                 <div className="mobile-modal">
                   <div className="wrapper white-bg">
                     <div className="close-container white-bg">
@@ -233,22 +225,19 @@ class WorkPage extends Component {
                         onClick={() => this.setState({ isOpen: false })}
                       ></div>
                     </div>
-                    <Slider
-                      ref={slider => (this.slider = slider)}
-                      {...settings}
-                    >
-                      {masonryImages.map((item, index) => {
-                        return (
-                          <>
-                            <BlurredImage
-                              src={item.fluid}
-                              key={index}
-                              offset={-100}
-                            />
-                          </>
-                        );
-                      })}
-                    </Slider>
+                    {masonryImages.map((item, index) => {
+                      return (
+                        <div id={`photo-${index}`}>
+                          <span class="spacer"></span>
+
+                          <BlurredImage
+                            src={item.fluid}
+                            key={index}
+                            offset={-100}
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </>
@@ -259,16 +248,23 @@ class WorkPage extends Component {
               columnClassName="masonry-grid_column"
             >
               {masonryImages.map((item, index) => {
+                const slider = this.slider;
                 return (
                   <div
                     className="masonry-grid-item"
                     key={index}
                     onClick={() => {
                       this.setState({ isOpen: true, photoIndex: index });
-                      // this.slider.slickGoTo(this.state.photoIndex);
+                      console.log(index);
                     }}
                   >
-                    <BlurredImage src={item.fluid} key={index} offset={-100} />
+                    <HashLink to={`/work#photo-${index}`}>
+                      <BlurredImage
+                        src={item.fluid}
+                        key={index}
+                        offset={-100}
+                      />
+                    </HashLink>
                   </div>
                 );
               })}

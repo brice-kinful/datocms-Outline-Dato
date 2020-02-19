@@ -2,11 +2,11 @@
   padding: 200px 0;
 }
 
-#work>* {
+#work > * {
   padding-bottom: 200px;
 }
 
-#work>*:last-child {
+#work > *:last-child {
   padding-bottom: 0;
 }
 
@@ -18,7 +18,7 @@
   transform: translateY(-50%);
 }
 
-#work>.wrapper {
+#work > .wrapper {
   padding: 0 60px;
 }
 
@@ -199,11 +199,11 @@
 }
 
 .ril__caption .caption .textlink a:after,
-.ril__caption .caption .textlink a+span:after {
+.ril__caption .caption .textlink a + span:after {
   display: none;
 }
 
-.ril__caption .caption .textlink a+span {
+.ril__caption .caption .textlink a + span {
   background: initial;
   position: absolute;
   bottom: 0;
@@ -217,7 +217,7 @@
   top: 6px;
 }
 
-.ril__caption .caption .textlink:hover a+span {
+.ril__caption .caption .textlink:hover a + span {
   bottom: 6px;
   top: auto !important;
 }
@@ -279,23 +279,30 @@
   transform: rotate(-25deg);
 }
 
-
 #work .mobile-modal .wrapper {
   padding: 100px 25px;
 }
 
-#work .mobile-modal .wrapper>* {
-  margin: 50px 0;
+#work .mobile-modal .wrapper > * {
+  margin: 0;
 }
 
 .ReactModal__Body--open #nav-container {
   opacity: 0;
 }
 
-#work .slick-initialized .slick-slide {
+#work .slick-initialized .slick-slide,
+#work .mobile-modal a {
   width: 100% !important;
   height: auto;
   margin: 25px 0;
+  display: block;
+}
+
+#work .mobile-modal .spacer {
+  margin: 0;
+  height: 50px;
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
@@ -316,7 +323,10 @@
     /* bottom: 30px; */
   }
 
-  .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
+  .ril-toolbar-left
+    .ril-toolbar__item__child.ril__toolbarItemChild
+    .caption
+    span {
     transform: none !important;
   }
 
@@ -327,7 +337,7 @@
     background-size: 70px !important;
   }
 
-  #work>.wrapper {
+  #work > .wrapper {
     padding: 0 25px;
   }
 

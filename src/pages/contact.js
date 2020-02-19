@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { graphql } from "gatsby";
 import AniLink from "../components/transitions/AniLink";
 import Img from "gatsby-image";
@@ -7,54 +7,138 @@ import parse from "html-react-parser";
 
 import "../styles/contact.css";
 
-const ContactPage = ({ data }) => {
-  const contact = data.datoCmsContactPage;
-  // console.log(contact);
-  return (
-    <Layout>
-      <div className="page" id="contact">
-        <div className="main flex wrapper skinny">
-          <div className="three-fourths text">
-            <div className="inner flex">
-              <p>
-                <span>{contact.headline}</span>
-                <span className="textlink">
+class ContactPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isHeadlineVisible: true,
+      seconds: 0,
+      prevScrollpos: ""
+    };
+  }
+
+  // scroll
+  handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      isHeadlineVisible: true
+    });
+    if (currentScrollPos > 25) {
+      this.setState({
+        isHeadlineVisible: false
+      });
+      clearInterval(this.interval);
+      this.interval = setInterval(() => this.tick(), 1000);
+      this.setState(state => ({
+        seconds: 0
+      }));
+    } else {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }
+  };
+
+  tick() {
+    this.setState(state => ({
+      seconds: state.seconds + 1
+    }));
+    if (this.state.seconds > 15) {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }
+  }
+
+  handleMouseMove = () => {
+    clearInterval(this.interval);
+    this.interval = setInterval(() => this.tick(), 1000);
+    this.setState(state => ({
+      seconds: 0
+    }));
+  };
+
+  componentDidMount() {
+    this.setState({ prevScrollpos: window.pageYOffset });
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("mousemove", this.handleMouseMove);
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    clearInterval(this.interval);
+  }
+
+  render() {
+    const contact = this.props.data.datoCmsContactPage;
+    const { isHeadlineVisible } = this.state;
+    return (
+      <Layout>
+        <div className="page" id="contact">
+          <div className="main flex wrapper skinny">
+            <h1
+              className={`big centertext show_768 ${
+                isHeadlineVisible ? "visible" : ""
+              }`}
+            >
+              Contact
+            </h1>
+            <div className="three-fourths text">
+              <div className="inner flex hide_768">
+                <p>
+                  <span>{contact.headline}</span>
+                  <span className="textlink">
+                    <AniLink
+                      preventScrollJump
+                      to={`/${contact.ctaButtonUrl.slug}`}
+                      fade
+                    >
+                      {contact.ctaButtonText}
+                    </AniLink>
+                  </span>
+                </p>
+              </div>
+              <div className="flex bottom inner space-between">
+                <div className="one-half">
                   <AniLink
                     preventScrollJump
-                    to={`/${contact.ctaButtonUrl.slug}`}
+                    to={`/${contact.viewJobsButtonUrl.slug}`}
                     fade
+                    className="line hide_768"
+                    style={{ position: "relative" }}
                   >
-                    {contact.ctaButtonText}
+                    {contact.viewJobsButtonText}
                   </AniLink>
-                </span>
-              </p>
-            </div>
-            <div className="flex bottom inner space-between">
-              <div className="one-half">
-                <AniLink
-                  preventScrollJump
-                  to={`/${contact.viewJobsButtonUrl.slug}`}
-                  fade
-                  className="line"
-                  style={{ position: "relative" }}
-                >
-                  {contact.viewJobsButtonText}
-                </AniLink>
-                {parse(contact.leftBlockText)}
-              </div>
-              <div className="one-half flex align-end">
-                {parse(contact.rightBlockText)}
+                  {parse(contact.leftBlockText)}
+                </div>
+                <div className="one-half flex align-end">
+                  {parse(contact.rightBlockText)}
+                </div>
+                <div className="textlink show_768">
+                  <AniLink
+                    preventScrollJump
+                    to={`/${contact.viewJobsButtonUrl.slug}`}
+                    fade
+                    className=" "
+                    style={{ position: "relative" }}
+                  >
+                    {contact.viewJobsButtonText}
+                  </AniLink>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="one-fourth">
-            <Img fluid={contact.image.fluid} />
+            <div className="one-fourth">
+              <Img fluid={contact.image.fluid} />
+            </div>
           </div>
         </div>
-      </div>
-    </Layout>
-  );
-};
+      </Layout>
+    );
+  }
+}
 
 export default ContactPage;
 

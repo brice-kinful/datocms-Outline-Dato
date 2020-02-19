@@ -76,10 +76,26 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+
+    .block.accordion-block {
+        padding: 150px 0;
+    }
 
     .accordion.ui .title,
     .accordion.ui .content p {
-        font-size: 7vw;
+        font-size: 22px;
+        line-height: 32px;
+        position: relative;
+    }
+
+    .accordion.ui .textlink {
+        pointer-events: initial;
+        font-size: 18px;
+        line-height: 22px;
+        position: absolute;
+        bottom: -30px;
+        top: auto;
+        left: 0;
     }
 }

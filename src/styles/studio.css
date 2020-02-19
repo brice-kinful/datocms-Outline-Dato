@@ -3,11 +3,11 @@
   padding: 50vh 0 200px;
 }
 
-#studio>* {
+#studio > * {
   padding-bottom: 200px;
 }
 
-#studio>*:last-child {
+#studio > *:last-child {
   padding-bottom: 0;
 }
 
@@ -23,7 +23,7 @@
   line-height: 45px;
 }
 
-#studio .three-fourths> :last-child {
+#studio .three-fourths > :last-child {
   margin: 0;
 }
 
@@ -79,7 +79,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  #studio>* {
+  #studio > * {
     padding-bottom: 75px;
   }
 
@@ -104,7 +104,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  #studio>* {
+  #studio > * {
     padding-bottom: 50px;
   }
 
@@ -112,11 +112,19 @@
     padding: 200px 0;
   }
 
+  #studio {
+    padding: 350px 0 100px;
+  }
+
+  #studio h1 {
+    top: 200px;
+  }
+
   #studio .flex {
     flex-wrap: wrap;
   }
 
-  #studio .flex>* {
+  #studio .flex > * {
     width: 100%;
   }
 
@@ -147,12 +155,4 @@
 }
 
 @media screen and (max-width: 600px) {
-  #studio {
-    padding: 350px 0 100px;
-  }
-
-  #studio h1 {
-    top: 200px;
-  }
-
 }

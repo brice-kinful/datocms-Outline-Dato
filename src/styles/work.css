@@ -2,11 +2,11 @@
   padding: 200px 0;
 }
 
-#work>* {
+#work > * {
   padding-bottom: 200px;
 }
 
-#work>*:last-child {
+#work > *:last-child {
   padding-bottom: 0;
 }
 
@@ -18,7 +18,7 @@
   transform: translateY(-50%);
 }
 
-#work>.wrapper {
+#work > .wrapper {
   padding: 0 60px;
 }
 
@@ -137,7 +137,6 @@
   display: none;
 }
 
-
 .ril__toolbarSide {
   padding-right: 60px;
 }
@@ -192,12 +191,23 @@
 }
 
 @media screen and (max-width: 768px) {
+  #work {
+    padding: 325px 0 100px;
+  }
+
+  #work h1 {
+    top: 200px;
+  }
+
   .ril__caption .caption {
     align-items: center;
     bottom: 30px;
   }
 
-  .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
+  .ril-toolbar-left
+    .ril-toolbar__item__child.ril__toolbarItemChild
+    .caption
+    span {
     transform: none !important;
   }
 
@@ -208,22 +218,22 @@
     background-size: 70px !important;
   }
 
-  #work>.wrapper {
-    padding: 0 30px;
+  #work > .wrapper {
+    padding: 0 25px;
   }
 
   .masonry-grid {
-    margin-left: -30px;
+    margin-left: -25px;
     /* gutter size offset */
   }
 
   .masonry-grid_column {
-    padding-left: 30px;
+    padding-left: 25px;
     /* gutter size */
     background-clip: padding-box;
   }
 
   .masonry-grid-item {
-    padding: 15px 0;
+    padding: 12.5px 0;
   }
 }

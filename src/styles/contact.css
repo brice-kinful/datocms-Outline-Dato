@@ -29,16 +29,6 @@
   margin-right: 20px;
 }
 
-#contact .main .textlink {
-  font-size: 18px;
-  top: 3px;
-}
-
-#contact .main a:hover {
-  /* opacity: .55; */
-  border-color: transparent;
-}
-
 #contact .main .bottom .one-half>a {
   margin-bottom: 50px;
   display: inline-block;
@@ -74,31 +64,125 @@
   /* display: flex; */
 }
 
-#contact .main .bottom a {
-  top: 0 !important;
-}
-
-#contact .main .bottom a:after {
-  content: "";
-  display: inline-block;
-  transition: 0.3s;
-  position: absolute;
-  height: 1px;
-  background: transparent;
-  width: 100%;
-  bottom: 50%;
-  /* left: 0; */
-  left: -150%;
-}
-
-#contact .main .bottom a:hover:after {
-  background: black;
-  /* bottom: 50%; */
-  left: 0;
-}
 
 @media screen and (min-width: 1500px) {
   #contact .one-fourth {
     flex: 0 0 400px;
   }
+}
+
+@media screen and (max-width: 1200px) {
+  #contact .main .three-fourths {
+    width: 50%;
+    padding-right: 30px;
+  }
+
+  #contact .one-fourth {
+    flex: 0 auto;
+    width: 50%;
+  }
+
+  #contact .bottom {
+    flex-wrap: wrap;
+  }
+
+  #contact .bottom>* {
+    width: 100%;
+  }
+
+  #contact .gatsby-image-wrapper {
+    height: auto;
+  }
+
+  #contact .main p {
+    padding-bottom: 60px;
+  }
+
+  #contact .main .bottom .one-half:first-child p {
+    margin-bottom: 30px;
+  }
+
+}
+
+
+@media screen and (min-width: 769px) {
+
+  #contact .main .textlink {
+    font-size: 18px;
+    top: 3px;
+  }
+
+  #contact .main a:hover {
+    /* opacity: .55; */
+    border-color: transparent;
+  }
+
+  #contact .main .bottom a {
+    top: 0 !important;
+  }
+
+  #contact .main .bottom a:after {
+    content: "";
+    display: inline-block;
+    transition: 0.3s;
+    position: absolute;
+    height: 1px;
+    background: transparent;
+    width: 100%;
+    bottom: 50%;
+    /* left: 0; */
+    left: -150%;
+  }
+
+  #contact .main .bottom a:hover:after {
+    background: black;
+    /* bottom: 50%; */
+    left: 0;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  #contact {
+    padding: 325px 0 100px;
+  }
+
+  #contact h1 {
+    position: fixed;
+    top: 200px;
+    height: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+  }
+
+  #contact .main,
+  #contact .bottom {
+    flex-wrap: wrap;
+  }
+
+  #contact .main>*,
+  #contact .bottom>* {
+    width: 100%;
+  }
+
+  #contact .main .three-fourths {
+    padding-right: 0;
+  }
+
+  #contact .bottom .one-half {
+    margin-bottom: 30px;
+  }
+
+  #contact .main .bottom p,
+  #contact .main .bottom a {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  #contact .one-fourth {
+    flex: 0 auto;
+    padding-top: 100px;
+  }
+
 }

@@ -107,12 +107,12 @@ SaolDisplay LightItalic
 }
 
 .white-bg {
-  background: #F5F5F1;
-  color: #F5F5F1;
+  background: #f5f5f1;
+  color: #f5f5f1;
 }
 
 body.loading #footer .logo {
-  fill: #F5F5F1;
+  fill: #f5f5f1;
 }
 
 * {
@@ -138,7 +138,7 @@ body {
   font-style: normal;
   letter-spacing: 0.02em;
   line-height: 1;
-  background: #F5F5F1;
+  background: #f5f5f1;
   color: #000000;
   cursor: url(/cursor.svg) 0 0, default;
   transition: 0.3s;
@@ -608,7 +608,7 @@ a.btn:hover {
 }
 
 .container {
-  background: #F5F5F1;
+  background: #f5f5f1;
   min-height: 100vh;
   opacity: 0;
   visibility: hidden;
@@ -622,7 +622,7 @@ a.btn:hover {
 }
 
 .page {
-  background: #F5F5F1;
+  background: #f5f5f1;
   min-height: 100vh;
   width: 100%;
 }
@@ -642,7 +642,7 @@ a.btn:hover {
 .page>.wrapper {
   position: relative;
   z-index: 9;
-  background: #F5F5F1;
+  background: #f5f5f1;
 }
 
 h1.big.visible {
@@ -708,7 +708,6 @@ h1.big.visible {
   }
 }
 
-
 /* Base Mobile */
 
 @media screen and (max-width: 768px) {
@@ -725,9 +724,14 @@ h1.big.visible {
     font-size: 38px;
   }
 
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
   .wrapper,
   .wrapper.skinny {
-    padding: 0 30px;
+    padding: 0 25px;
   }
 
   #footer {

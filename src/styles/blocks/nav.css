@@ -91,7 +91,7 @@ body.nav-open #toggle_menu .hamburger span:nth-child(2) {
 /* logo */
 #logo {
   position: fixed;
-  width: 100%;
+  width: auto;
   top: 60px;
   left: 60px;
   z-index: 99999;
@@ -105,7 +105,7 @@ body.home #logo {
   display: block;
   width: 100%;
   max-width: 60px;
-  transition: opacity .6s;
+  transition: opacity 0.6s;
   opacity: 1;
   /* transform: scale(.18);
     transform-origin: top left; */
@@ -140,10 +140,17 @@ body.home #logo {
   height: 400px;
   top: 0;
   left: 0;
-  background: linear-gradient(180deg, #F5F5F1, #F5F5F1 10%, rgba(245, 245, 241, .5) 50%, rgba(255, 245, 241, .1) 80%, rgba(245, 245, 241, 0));
+  background: linear-gradient(
+    180deg,
+    #f5f5f1,
+    #f5f5f1 10%,
+    rgba(245, 245, 241, 0.5) 50%,
+    rgba(255, 245, 241, 0.1) 80%,
+    rgba(245, 245, 241, 0)
+  );
   opacity: 0;
   visibility: hidden;
-  transition: .6s;
+  transition: 0.6s;
 }
 
 body.nav-open #nav-container:after {
@@ -276,7 +283,6 @@ body.nav-open #nav-container:after {
 
 /* Mobile */
 @media screen and (max-width: 768px) {
-
   #logo {
     z-index: 999999;
     width: auto;
@@ -284,7 +290,7 @@ body.nav-open #nav-container:after {
 
   #toggle_menu {
     top: 30px;
-    right: 35px;
+    right: 30px;
   }
 
   #toggle_menu,
@@ -302,7 +308,17 @@ body.nav-open #nav-container:after {
     max-width: 100%;
     height: auto;
     top: 0;
-    background: linear-gradient(180deg, #F5F5F1, #F5F5F1 83%, rgba(255, 245, 241, .90) 90%, rgba(245, 245, 241, .75) 94%, rgba(255, 245, 241, .65) 96%, rgba(255, 245, 241, .45) 98%, rgba(255, 245, 241, .25) 99%, rgba(255, 245, 241, 0));
+    background: linear-gradient(
+      180deg,
+      #f5f5f1,
+      #f5f5f1 83%,
+      rgba(255, 245, 241, 0.9) 90%,
+      rgba(245, 245, 241, 0.75) 94%,
+      rgba(255, 245, 241, 0.65) 96%,
+      rgba(255, 245, 241, 0.45) 98%,
+      rgba(255, 245, 241, 0.25) 99%,
+      rgba(255, 245, 241, 0)
+    );
   }
 
   #nav .wrapper,
@@ -323,7 +339,7 @@ body.nav-open #nav-container:after {
 
   #logo {
     top: 30px;
-    left: 30px;
+    left: 25px;
     /* opacity: 1 !important; */
   }
 
@@ -344,16 +360,16 @@ body.nav-open #nav-container:after {
   }
 
   #nav .wrapper {
-    padding: 0 30px;
+    padding: 0 25px;
   }
 }
 
 @media screen and (max-width: 480px) {
-
   #toggle_menu,
   #toggle_menu .hamburger {
     width: 30px;
   }
 }
 
-@media screen and (max-height: 768px) {}
+@media screen and (max-height: 768px) {
+}

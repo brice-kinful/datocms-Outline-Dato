@@ -7,14 +7,15 @@
 }
 
 #home #feature {
-    /* height: 100vh;
+    height: 100vh;
+    /* 
     min-height: 650px; */
     padding: 0;
 }
 
 #home #feature .headline {
-    padding-top: 15vw;
-    padding-bottom: 15vw;
+    /* padding-top: 15vw;
+    padding-bottom: 15vw; */
 }
 
 
@@ -84,8 +85,12 @@
 
 @media screen and (min-width: 1600px) {
     #home #feature .headline {
-        padding-top: 400px;
-        padding-bottom: 400px;
+        /* padding-top: 400px;
+        padding-bottom: 400px; */
+    }
+
+    #feature .headline {
+        margin-top: -250px !important;
     }
 }
 
@@ -105,6 +110,13 @@
         font-size: 50px;
     }
 
+}
+
+
+@media screen and (min-width: 769px) {
+    #feature .headline {
+        margin-top: -15vw;
+    }
 }
 
 @media screen and (max-width: 768px) {

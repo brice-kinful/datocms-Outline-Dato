@@ -113,7 +113,7 @@
 }
 
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 861px) {
     #feature .headline {
         margin-top: -15vw;
     }
@@ -156,7 +156,7 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 860px) {
 
     #home #feature,
     #home #feature .slick-prev,
@@ -164,8 +164,13 @@
     #home #feature .slick-slide .full-image img,
     #home #feature .slick-slide .double-image.flex img {
         height: auto;
-        min-height: auto;
+        min-height: 600px;
     }
+
+}
+
+@media screen and (max-width: 768px) {
+
 
     #home #feature .headline {
         padding-top: 150px;

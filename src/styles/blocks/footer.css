@@ -74,7 +74,7 @@ footer p {
 }
 
 #footer .grid-item:last-child>* {
-  display: inline-block;
+  display: block;
 }
 
 #footer a.line:hover:after,

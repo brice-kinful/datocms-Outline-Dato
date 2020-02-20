@@ -47,7 +47,7 @@ class HomeScroller extends Component {
         onChange={isVisible => {
           this.setState({ imgViz: isVisible });
         }}
-        offset={{ bottom: 150 }}
+        offset={{ bottom: -200 }}
         scrollCheck={true}
       >
         <div

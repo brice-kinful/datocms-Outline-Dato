@@ -452,6 +452,11 @@ body.frozen .footer-container {
     padding-top: 0;
   }
 
+  #case-study .screen h1 {
+    top: 50% !important;
+  }
+
+
   .block {
     padding: 30px 0;
   }

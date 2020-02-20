@@ -152,7 +152,11 @@
   }
 
   #case-studies h1 {
-    top: 200px;
+    top: 185px;
+  }
+
+  #case-studies .gatsby-image-wrapper {
+    margin-bottom: 15px;
   }
 
   #case-studies .block {

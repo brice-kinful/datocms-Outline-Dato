@@ -150,7 +150,7 @@
   }
 
   #studio .text p {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   #studio .flex.grid.team {
@@ -164,6 +164,11 @@
 
   #studio .capabilities {
     padding-bottom: 100px;
+  }
+
+  #studio .text li {
+    line-height: 1;
+    margin-bottom: 20px;
   }
 }
 

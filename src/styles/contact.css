@@ -147,6 +147,10 @@
     padding: 325px 0 100px;
   }
 
+  #contact .main .three-fourths {
+    width: 100%;
+  }
+
   #contact h1 {
     position: fixed;
     top: 200px;
@@ -178,6 +182,10 @@
   #contact .main .bottom a {
     font-size: 14px;
     line-height: 22px;
+  }
+
+  #contact .main .bottom .one-half:first-child p {
+    margin-bottom: 0;
   }
 
   #contact .one-fourth {

@@ -27,7 +27,12 @@ class Content extends Component {
           content.setBottomPaddingToZero ? " no-pad-bottom" : ""
         }${content.setTopPaddingToZero ? " no-pad-top" : ""}${
           content.leftSideImageStick ? " sticky-left" : ""
-        }${content.rightSideImageStick ? " sticky-right" : ""}`}
+        }${content.rightSideImageStick ? " sticky-right" : ""} ${
+          (!content.rightSideText && !content.rightSideImage) ||
+          (!content.leftSideText && !content.leftSideImage)
+            ? " empty-side"
+            : ""
+        }`}
         style={{ backgroundColor: content.backgroundColor?.hex }}
       >
         <div
@@ -44,7 +49,9 @@ class Content extends Component {
                 : content.rightSide60Width
                 ? " two-fifths"
                 : " one-half"
-            }  ${content.leftPositioning ? content.leftPositioning : ""}`}
+            } ${content.leftPositioning ? content.leftPositioning : ""} ${
+              !content.leftSideText && !content.leftSideImage ? " empty" : ""
+            }`}
           >
             {content.leftSideText && (
               <span style={{ color: content.leftTextColor.hex }}>
@@ -96,7 +103,9 @@ class Content extends Component {
                 : content.leftSide60Width
                 ? " two-fifths"
                 : " one-half"
-            } ${content.rightPositioning ? content.rightPositioning : ""}`}
+            } ${content.rightPositioning ? content.rightPositioning : ""} ${
+              !content.rightSideText && !content.rightSideImage ? " empty" : ""
+            }`}
           >
             {content.rightSideText && (
               <span style={{ color: content.rightTextColor.hex }}>

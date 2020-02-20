@@ -477,6 +477,26 @@ body.frozen .footer-container {
       grid-template-columns: 1fr;
       grid-gap: 30px;
     }
+
+    .block.block.side-by-side .flex.grid {
+      grid-gap: 25px;
+    }
+
+    .block.side-by-side.empty-side .flex.grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .block.side-by-side .grid-item.empty {
+    display: none;
+  }
+
+  .block.side-by-side.down {
+    padding-bottom: 160px;
+  }
+
+  .block .grid-item.down {
+    margin: 0;
   }
 
   .block.url-block a {

@@ -104,7 +104,14 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
+
+  #footer .wrapper.bottom {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   #footer .flex.grid.four {
+    padding-top: 25px;
     grid-gap: 35px 15px;
   }
 

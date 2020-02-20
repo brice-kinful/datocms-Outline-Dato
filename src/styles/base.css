@@ -729,6 +729,11 @@ h1.big.visible {
     line-height: 22px;
   }
 
+  .textlink {
+    display: block !important;
+    margin-top: 3px;
+  }
+
   .wrapper,
   .wrapper.skinny {
     padding: 0 25px;

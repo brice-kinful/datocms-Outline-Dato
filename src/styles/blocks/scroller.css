@@ -174,6 +174,7 @@
   #scroller h1.title {
     margin-top: 100px;
     z-index: 99;
+    position: static;
     /* opacity: 1;
     visibility: visible;
     position: static; */

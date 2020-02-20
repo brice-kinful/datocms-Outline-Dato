@@ -13,8 +13,8 @@
 }
 
 #home #feature .headline {
-    padding-top: 250px;
-    padding-bottom: 250px;
+    padding-top: 15vw;
+    padding-bottom: 15vw;
 }
 
 
@@ -80,6 +80,13 @@
     margin-top: -9999px;
     position: relative;
     top: -50px;
+}
+
+@media screen and (min-width: 1600px) {
+    #home #feature .headline {
+        padding-top: 400px;
+        padding-bottom: 400px;
+    }
 }
 
 @media screen and (max-width: 1200px) {

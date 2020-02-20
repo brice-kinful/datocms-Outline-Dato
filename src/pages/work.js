@@ -226,8 +226,9 @@ class WorkPage extends Component {
                       ></div>
                     </div>
                     {masonryImages.map((item, index) => {
+                      console.log(item);
                       return (
-                        <div id={`photo-${index}`}>
+                        <div id={`photo-${index}`} className="photo">
                           <span class="spacer"></span>
 
                           <BlurredImage
@@ -235,6 +236,7 @@ class WorkPage extends Component {
                             key={index}
                             offset={-100}
                           />
+                          {item.title && <p>{item.title}</p>}
                         </div>
                       );
                     })}

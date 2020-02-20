@@ -6,6 +6,7 @@
   position: relative;
   /* height: 745px; */
   height: 34vw;
+  /* height: auto; */
   /* margin-bottom: 25%; */
   z-index: 1;
   /* cursor: url(/cursor.svg) 3 -35, default; */
@@ -162,6 +163,16 @@
   opacity: 0.5;
   filter: alpha(opacity=50);
 } */
+
+@media screen and (min-width: 1600px) {
+  #scroller {
+    height: 635px;
+  }
+
+  #scroller li {
+    width: 475px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   #scroller {

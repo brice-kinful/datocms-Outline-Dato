@@ -12,9 +12,10 @@ class HomeScroller extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      imgViz: false,
       dimensions: {
-        width: 2000,
-        imgViz: false
+        height: 550,
+        width: 2000
       }
     };
   }
@@ -27,7 +28,7 @@ class HomeScroller extends Component {
 
   render() {
     const { projects } = this.props;
-    const { imgViz } = this.state;
+    const { imgViz, dimensions } = this.state;
     const scrollerWidth = this.state.dimensions.width;
 
     const settings = {
@@ -46,10 +47,15 @@ class HomeScroller extends Component {
         onChange={isVisible => {
           this.setState({ imgViz: isVisible });
         }}
-        offset={{ bottom: -200 }}
+        offset={{ bottom: 150 }}
         scrollCheck={true}
       >
-        <div id="scroller">
+        <div
+          id="scroller"
+          // style={{
+          //   height: dimensions.bottom - dimensions.top + dimensions.height
+          // }}
+        >
           {/* <div id="cursor"></div> */}
           {/* <div className="wrapper skinny title-container"> */}
           <h1 className={`big title${imgViz ? " visible" : ""}`}>
@@ -61,6 +67,7 @@ class HomeScroller extends Component {
             bounds
             onResize={contentRect => {
               this.setState({ dimensions: contentRect.bounds });
+              console.log(contentRect.bounds);
             }}
           >
             {({ measureRef }) => {

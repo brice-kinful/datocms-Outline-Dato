@@ -61,7 +61,7 @@
 .ril__imageNext {
   /* max-height: calc(100vh - 250px); */
   /* width: 33.3333%; */
-  /* max-height: 600px; */
+  max-height: 600px;
 }
 
 .ril__navButtons {
@@ -232,14 +232,21 @@
   width: 100%;
 }
 
+#work .mobile-modal .photo {
+  position: relative;
+  top: 50px;
+}
+
 #work .mobile-modal .close-container {
-  padding: 25px 0;
   width: 100%;
   position: fixed;
   z-index: 9999;
   top: 0;
   right: 0;
   margin: 0 !important;
+  background: linear-gradient(180deg, #f5f5f1, #f5f5f1 50%, rgba(245, 245, 241, 0.5) 60%, rgba(255, 245, 241, 0.1) 85%, rgba(255, 245, 241, 0),
+      rgba(255, 245, 241, 0));
+  height: 215px;
 }
 
 #work .mobile-modal .close-container .close {
@@ -316,6 +323,13 @@
 
   #work h1 {
     top: 200px;
+  }
+
+  #work p {
+    color: #000000;
+    padding-top: 15px;
+    margin: 0;
+    text-align: center;
   }
 
   .ril__caption .caption {

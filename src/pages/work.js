@@ -237,6 +237,30 @@ class WorkPage extends Component {
                             offset={-100}
                           />
                           {item.title && <p>{item.title}</p>}
+                          {item.customData["button-url"] && (
+                            <div className="centertext">
+                              <span
+                                className="textlink"
+                                style={{
+                                  fontSize: "12px",
+                                  display: "inline-block !important",
+                                  marginTop: "-15px",
+                                  padding: 0
+                                }}
+                              >
+                                <AniLink
+                                  preventScrollJump
+                                  to={`/case-studies/${item.customData["button-url"]}`}
+                                  fade
+                                >
+                                  {item.customData["button-title"]
+                                    ? item.customData["button-title"]
+                                    : "See More"}
+                                </AniLink>
+                                <span style={{ background: "#000000" }}></span>
+                              </span>
+                            </div>
+                          )}
                         </div>
                       );
                     })}

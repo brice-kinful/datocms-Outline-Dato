@@ -111,7 +111,7 @@ SaolDisplay LightItalic
   color: #f5f5f1;
 }
 
-body.loading #footer .logo {
+body.loading:not(.ready) #footer .logo {
   fill: #f5f5f1;
 }
 

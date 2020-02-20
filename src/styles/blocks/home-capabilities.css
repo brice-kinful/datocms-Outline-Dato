@@ -40,6 +40,10 @@
         padding: 50px 0;
     }
 
+    .content li {
+        margin-bottom: 20px;
+    }
+
     .content.flex {
         flex-wrap: wrap;
     }

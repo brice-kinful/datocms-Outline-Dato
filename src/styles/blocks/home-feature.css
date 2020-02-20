@@ -7,9 +7,14 @@
 }
 
 #home #feature {
-    height: 100vh;
-    min-height: 650px;
+    /* height: 100vh;
+    min-height: 650px; */
     padding: 0;
+}
+
+#home #feature .headline {
+    padding-top: 250px;
+    padding-bottom: 250px;
 }
 
 
@@ -139,7 +144,13 @@
     #home #feature .slick-next,
     #home #feature .slick-slide .full-image img,
     #home #feature .slick-slide .double-image.flex img {
-        height: 100vh;
+        height: auto;
+        min-height: auto;
+    }
+
+    #home #feature .headline {
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 
     #home #feature+div {

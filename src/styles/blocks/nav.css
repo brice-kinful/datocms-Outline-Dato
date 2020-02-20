@@ -140,14 +140,12 @@ body.home #logo {
   height: 400px;
   top: 0;
   left: 0;
-  background: linear-gradient(
-    180deg,
-    #f5f5f1,
-    #f5f5f1 10%,
-    rgba(245, 245, 241, 0.5) 50%,
-    rgba(255, 245, 241, 0.1) 80%,
-    rgba(245, 245, 241, 0)
-  );
+  background: linear-gradient(180deg,
+      #f5f5f1,
+      #f5f5f1 10%,
+      rgba(245, 245, 241, 0.5) 50%,
+      rgba(255, 245, 241, 0.1) 80%,
+      rgba(245, 245, 241, 0));
   opacity: 0;
   visibility: hidden;
   transition: 0.6s;
@@ -285,7 +283,7 @@ body.nav-open #nav-container:after {
 @media screen and (max-width: 768px) {
   #logo {
     z-index: 999999;
-    width: auto;
+    width: 40px;
   }
 
   #toggle_menu {
@@ -303,22 +301,20 @@ body.nav-open #nav-container:after {
   }
 
   #nav {
-    padding: 155px 0 115px;
+    padding: 150px 0 115px;
     width: 100%;
     max-width: 100%;
     height: auto;
     top: 0;
-    background: linear-gradient(
-      180deg,
-      #f5f5f1,
-      #f5f5f1 83%,
-      rgba(255, 245, 241, 0.9) 90%,
-      rgba(245, 245, 241, 0.75) 94%,
-      rgba(255, 245, 241, 0.65) 96%,
-      rgba(255, 245, 241, 0.45) 98%,
-      rgba(255, 245, 241, 0.25) 99%,
-      rgba(255, 245, 241, 0)
-    );
+    background: linear-gradient(180deg,
+        #f5f5f1,
+        #f5f5f1 83%,
+        rgba(255, 245, 241, 0.9) 90%,
+        rgba(245, 245, 241, 0.75) 94%,
+        rgba(255, 245, 241, 0.65) 96%,
+        rgba(255, 245, 241, 0.45) 98%,
+        rgba(255, 245, 241, 0.25) 99%,
+        rgba(255, 245, 241, 0));
   }
 
   #nav .wrapper,
@@ -344,7 +340,7 @@ body.nav-open #nav-container:after {
   }
 
   #logo a svg {
-    width: 65px;
+    width: 40px;
     /* height: 28px; */
   }
 
@@ -365,11 +361,11 @@ body.nav-open #nav-container:after {
 }
 
 @media screen and (max-width: 480px) {
+
   #toggle_menu,
   #toggle_menu .hamburger {
     width: 30px;
   }
 }
 
-@media screen and (max-height: 768px) {
-}
+@media screen and (max-height: 768px) {}

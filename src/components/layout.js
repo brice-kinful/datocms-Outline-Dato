@@ -45,6 +45,16 @@ class Layout extends Component {
   };
 
   componentDidMount() {
+    //safari check
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf("safari") != -1) {
+      if (ua.indexOf("chrome") > -1) {
+        document.body.classList.remove("safari");
+      } else {
+        document.body.classList.add("safari");
+      }
+    }
+
     setTimeout(() => {
       window.scrollTo(0, 1);
     }, 850);

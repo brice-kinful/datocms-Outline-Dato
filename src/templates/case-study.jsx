@@ -9,6 +9,7 @@ import HeadlineAccordion from "../components/blocks/headline-accordion";
 import SideBySide from "../components/blocks/side-by-side";
 import TextBlock from "../components/blocks/text-block";
 import UrlBlock from "../components/blocks/url-block";
+import ImageSlider from "../components/blocks/image-slider";
 import VideoBlock from "../components/blocks/video-block";
 import CaseStudiesPagination from "../components/blocks/case-study-pag";
 
@@ -107,6 +108,12 @@ class CaseStudy extends Component {
                       <BlurredImage src={block.image.fluid} />
                     </div>
                   </div>
+                );
+              case "DatoCmsImageSliderBlock":
+                return (
+                  <React.Fragment key={block.id}>
+                    <ImageSlider content={block} />
+                  </React.Fragment>
                 );
               case "DatoCmsSideBySideBlock":
                 return (
@@ -238,6 +245,24 @@ export const query = graphql`
           setBottomPaddingToZero
           doubleBottomPadding
         }
+        ... on DatoCmsImageSliderBlock {
+          id
+          gallery {
+            fluid(maxWidth: 2400, imgixParams: { auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          caption
+          fullWidth
+          customWidth
+          backgroundColor {
+            hex
+          }
+          setTopPaddingToZero
+          doubleTopPadding
+          setBottomPaddingToZero
+          doubleBottomPadding
+        }
         ... on DatoCmsTextBlock {
           id
           copy
@@ -273,6 +298,7 @@ export const query = graphql`
           backgroundColor {
             hex
           }
+          alignTextTop
           leftSide60Width
           leftSideText
           leftTextColor {

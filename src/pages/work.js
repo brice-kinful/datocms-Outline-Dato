@@ -1,45 +1,22 @@
 import React, { Component } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
-import AniLink from "../components/transitions/AniLink";
-import Masonry from "react-masonry-css";
 import BlurredImage from "../components/blocks/blurred-image";
-import Lightbox from "react-image-lightbox";
-import { genericHashLink } from "react-router-hash-link";
-import GatsbyLink from "gatsby-link";
 
-import "react-image-lightbox/style.css";
+import "../styles/grid.css";
 import "../styles/work.css";
+import AniLink from "../components/transitions/AniLink";
 
-const HashLink = props => genericHashLink(props, GatsbyLink);
-
-class WorkPage extends Component {
+class CaseStudiesPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photoIndex: 0,
-      updatePhotoIndex: 0,
-      images: [],
-      imageTitles: [],
-      imagePadding: 60,
-      isOpen: false,
-      lightboxBgColor: "",
-      lightboxTextColor: "",
       isHeadlineVisible: true,
-      prevScrollpos: ""
+      seconds: 0,
+      prevScrollpos: "",
+      display: false
     };
   }
-
-  //update colors
-  updateColors = (bgColor, textColor) => {
-    console.log("updating colors");
-    this.setState({
-      lightboxBgColor: bgColor,
-      lightboxTextColor: textColor
-    });
-  };
-
-  //update mobile modal image
 
   // scroll
   handleScroll = () => {
@@ -48,7 +25,7 @@ class WorkPage extends Component {
       prevScrollpos: currentScrollPos,
       isHeadlineVisible: true
     });
-    if (currentScrollPos > 2) {
+    if (currentScrollPos > 60) {
       this.setState({
         isHeadlineVisible: false
       });
@@ -84,217 +61,164 @@ class WorkPage extends Component {
   };
 
   componentDidMount() {
+    this.setState({
+      prevScrollpos: window.pageYOffset,
+      display: !this.state.display
+    });
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
-    const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
-    this.setState({
-      images: this.state.images.concat(mosaicImages)
-    });
   }
 
   componentWillUnmount() {
+    this.setState({
+      display: !this.state.display
+    });
     window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener("mousemove", this.handleMouseMove);
     clearInterval(this.interval);
   }
 
   render() {
-    const {
-      photoIndex,
-      isOpen,
-      images,
-      imagePadding,
-      isHeadlineVisible,
-      lightboxBgColor,
-      lightboxTextColor
-    } = this.state;
-    let titles = [];
-    const lightboxImages = images;
-    const masonryImages = this.props.data.datoCmsWorkPage.workMosaicImages;
-    const breakpointColumnsObj = {
-      default: 5,
-      1024: 4
-    };
-
-    masonryImages.map((image, index) => {
-      titles.push(
-        <span className="caption" key={index}>
-          <span style={{ transform: `translateY(${imagePadding / 2 + 40}px)` }}>
-            <span className="bg"></span>
-            <span className="title">{image.title}</span>
-            {image.customData["button-url"] && (
-              <span className="textlink">
-                <AniLink
-                  preventScrollJump
-                  to={`/case-studies/${image.customData["button-url"]}`}
-                  fade
-                  className=""
-                  style={{}}
-                >
-                  {image.customData["button-title"]
-                    ? image.customData["button-title"]
-                    : "See More"}
-                </AniLink>
-                <span style={{ background: lightboxTextColor }}></span>
-              </span>
-            )}
-          </span>
-        </span>
-      );
-    });
+    const { data } = this.props;
+    const { isHeadlineVisible, display } = this.state;
 
     return (
       <Layout>
-        <div className="page" id="work">
-          <div className="wrapper" style={{ zIndex: 99 }}>
-            <h1
-              className={`big centertext ${isHeadlineVisible ? "visible" : ""}`}
-            >
-              Our Work
+        <div className="page" id="case-studies">
+          <div
+            className={`wrapper skinny title-container`}
+            style={{ zIndex: 999 }}
+          >
+            <h1 className={`big title${isHeadlineVisible ? " visible" : ""}`}>
+              Work
             </h1>
+          </div>
+          <div className="wrapper skinny">
+            {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {
+              switch (block.__typename) {
+                case "DatoCmsSideBySide":
+                  return (
+                    <div
+                      className={`block ${block.leftProjectPositioning} ${block.rightProjectPositioning}`}
+                      key={index}
+                    >
+                      <div className="wrapper flex grid two">
+                        <div
+                          className={`flex column left grid-item one-half ${block.leftProjectPositioning}`}
+                        >
+                          <AniLink
+                            fade
+                            to={`/work/${block.leftProject?.slug}`}
+                            preventScrollJump
+                          >
+                            {/* <Img fluid={block.leftProjectImage.fluid} /> */}
+                            <BlurredImage
+                              src={block.leftProjectImage?.fluid}
+                              offset={-5}
+                            />
+                          </AniLink>
 
-            {isOpen && (
-              <>
-                <Lightbox
-                  wrapperClassName={`${
-                    lightboxImages[photoIndex].customData["text-color"] === ""
-                      ? "black"
-                      : lightboxImages[photoIndex].customData["text-color"]
-                  }`}
-                  mainSrc={lightboxImages[photoIndex].url}
-                  nextSrc={
-                    lightboxImages[(photoIndex + 1) % lightboxImages.length]
-                  }
-                  imageCaption={titles[photoIndex]}
-                  prevSrc={
-                    lightboxImages[
-                      (photoIndex + lightboxImages.length - 1) %
-                        lightboxImages.length
-                    ]
-                  }
-                  imagePadding={100}
-                  onImageLoad={() => {
-                    const bgColor =
-                      lightboxImages[photoIndex].customData["background-color"];
-                    const textColor =
-                      lightboxImages[photoIndex].customData["text-color"] === ""
-                        ? "black"
-                        : lightboxImages[photoIndex].customData["text-color"];
-                    this.updateColors(bgColor, textColor);
-                    this.setState({
-                      imagePadding:
-                        lightboxImages[photoIndex].fluid.height > 600
-                          ? 600
-                          : lightboxImages[photoIndex].fluid.height
-                    });
-                    // console.log(lightboxImages[photoIndex].customData);
-                  }}
-                  onCloseRequest={() => this.setState({ isOpen: false })}
-                  onMovePrevRequest={() =>
-                    this.setState({
-                      photoIndex:
-                        (photoIndex + lightboxImages.length - 1) %
-                        lightboxImages.length
-                    })
-                  }
-                  onMoveNextRequest={() =>
-                    this.setState({
-                      photoIndex: (photoIndex + 1) % lightboxImages.length
-                    })
-                  }
-                  reactModalStyle={{
-                    overlay: {
-                      backgroundColor: `${
-                        lightboxBgColor ? lightboxBgColor : "#F5F5F1"
-                      }`
-                    },
-                    content: {
-                      color: `${
-                        lightboxTextColor ? lightboxTextColor : "#000000"
-                      }`
-                    }
-                  }}
-                />
-
-                <div className="mobile-modal">
-                  <div className="wrapper white-bg">
-                    <div className="close-container white-bg">
-                      <div
-                        className="close"
-                        onClick={() => this.setState({ isOpen: false })}
-                      ></div>
-                    </div>
-                    {masonryImages.map((item, index) => {
-                      console.log(item);
-                      return (
-                        <div id={`photo-${index}`} className="photo">
-                          <span class="spacer"></span>
-
-                          <BlurredImage
-                            src={item.fluid}
-                            key={index}
-                            offset={-100}
-                          />
-                          {item.title && <p>{item.title}</p>}
-                          {item.customData["button-url"] && (
-                            <div className="centertext">
-                              <span
-                                className="textlink"
-                                style={{
-                                  fontSize: "12px",
-                                  display: "inline-block !important",
-                                  marginTop: "-15px",
-                                  padding: 0
-                                }}
+                          <span
+                            className={`${
+                              block.leftProjectNarrowExcerpt ? "narrow" : ""
+                            }`}
+                          >
+                            <span>{block.leftProject?.excerpt}</span>
+                            <span className="textlink">
+                              <AniLink
+                                fade
+                                to={`/work/${block.leftProject?.slug}`}
+                                preventScrollJump
                               >
-                                <AniLink
-                                  preventScrollJump
-                                  to={`/case-studies/${item.customData["button-url"]}`}
-                                  fade
-                                >
-                                  {item.customData["button-title"]
-                                    ? item.customData["button-title"]
-                                    : "See More"}
-                                </AniLink>
-                                <span style={{ background: "#000000" }}></span>
-                              </span>
-                            </div>
-                          )}
+                                {block.leftProject?.title}
+                              </AniLink>
+                            </span>
+                          </span>
                         </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </>
-            )}
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="masonry-grid"
-              columnClassName="masonry-grid_column"
-            >
-              {masonryImages.map((item, index) => {
-                const slider = this.slider;
-                return (
-                  <div
-                    className="masonry-grid-item"
-                    key={index}
-                    onClick={() => {
-                      this.setState({ isOpen: true, photoIndex: index });
-                      console.log(index);
-                    }}
-                  >
-                    <HashLink to={`/work#photo-${index}`}>
-                      <BlurredImage
-                        src={item.fluid}
-                        key={index}
-                        offset={-100}
-                      />
-                    </HashLink>
-                  </div>
-                );
-              })}
-            </Masonry>
+                        <div
+                          className={`flex column right grid-item one-half ${block.rightProjectPositioning}`}
+                        >
+                          <AniLink
+                            fade
+                            to={`/work/${block.rightProject?.slug}`}
+                            preventScrollJump
+                          >
+                            {/* <Img fluid={block.rightProjectImage.fluid} /> */}
+                            <BlurredImage
+                              src={block.rightProjectImage?.fluid}
+                              offset={-5}
+                            />
+                          </AniLink>
+                          <span
+                            className={`${
+                              block.rightProjectNarrowExcerpt ? "narrow" : ""
+                            }`}
+                          >
+                            <span>{block.rightProject?.excerpt}</span>
+                            <span className="textlink">
+                              <AniLink
+                                fade
+                                to={`/work/${block.rightProject?.slug}`}
+                                preventScrollJump
+                              >
+                                {block.rightProject?.title}
+                              </AniLink>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                case "DatoCmsSolo":
+                  return (
+                    <div
+                      className={`block solo ${
+                        !block.narrowWidth ? " full" : ""
+                      }`}
+                    >
+                      <div
+                        className={`wrapper${
+                          block.narrowWidth ? " x_skinny" : ""
+                        }`}
+                      >
+                        <div className="flex wrap">
+                          <AniLink
+                            fade
+                            to={`/work/${block.project?.slug}`}
+                            preventScrollJump
+                          >
+                            {/* <Img fluid={block.projectImage?.fluid} /> */}
+                            <BlurredImage
+                              src={block.projectImage?.fluid}
+                              offset={-5}
+                            />
+                          </AniLink>
+
+                          <span
+                            className={`${
+                              block.projectNarrowExcerpt ? "narrow" : ""
+                            }`}
+                          >
+                            <span>{block.project?.excerpt}</span>
+                            <span className="textlink">
+                              <AniLink
+                                fade
+                                to={`/work/${block.project?.slug}`}
+                                preventScrollJump
+                              >
+                                {block.project?.title}
+                              </AniLink>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                default:
+                  break;
+              }
+            })}
           </div>
         </div>
       </Layout>
@@ -302,23 +226,59 @@ class WorkPage extends Component {
   }
 }
 
-export default WorkPage;
+export default CaseStudiesPage;
 
 export const query = graphql`
   query {
-    datoCmsWorkPage {
+    datoCmsCaseStudiesPage {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
       slug
-      workMosaicImages {
-        title
-        url
-        customData
-        fluid(imgixParams: { fm: "jpg", auto: "compress" }, maxHeight: 400) {
-          height
-          ...GatsbyDatoCmsFluid
+      blocks {
+        ... on DatoCmsSideBySide {
+          leftProject {
+            title
+            slug
+            excerpt
+          }
+          leftProjectNarrowExcerpt
+          leftProjectImage {
+            fluid(maxWidth: 860, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          leftProjectPositioning
+          rightProject {
+            title
+            slug
+            excerpt
+          }
+          rightProjectNarrowExcerpt
+          rightProjectImage {
+            fluid(maxWidth: 860, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          rightProjectPositioning
+        }
+        ... on DatoCmsSolo {
+          project {
+            title
+            slug
+            excerpt
+          }
+          projectNarrowExcerpt
+          projectImage {
+            fluid(
+              maxWidth: 1920
+              imgixParams: { fm: "jpg", auto: "compress" }
+            ) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          narrowWidth
         }
       }
     }

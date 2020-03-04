@@ -49,9 +49,10 @@
 }
 
 #studio .text li {
-  list-style: none;
   font-size: 28px;
-  line-height: 38px;
+  line-height: 1;
+  list-style: none;
+  margin-bottom: 20px;
 }
 
 #studio .team .gatsby-image-wrapper {

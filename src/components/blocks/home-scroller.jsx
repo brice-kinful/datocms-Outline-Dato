@@ -83,13 +83,13 @@ class HomeScroller extends Component {
                         <li className={`slide`} key={project.slug}>
                           <AniLink
                             preventScrollJump
-                            to={`/case-studies/${project.slug}`}
+                            to={`/work/${project.slug}`}
                           >
                             <img src={project.scrollerThumbnail?.url} alt="" />
                           </AniLink>
                           <AniLink
                             preventScrollJump
-                            to={`/case-studies/${project.slug}`}
+                            to={`/work/${project.slug}`}
                             fade
                             className={`title line`}
                           >
@@ -106,13 +106,13 @@ class HomeScroller extends Component {
                         <li className={`slide`} key={`${project.slug}-x2`}>
                           <AniLink
                             preventScrollJump
-                            to={`/case-studies/${project.slug}`}
+                            to={`/work/${project.slug}`}
                           >
                             <img src={project.scrollerThumbnail?.url} alt="" />
                           </AniLink>
                           <AniLink
                             preventScrollJump
-                            to={`/case-studies/${project.slug}`}
+                            to={`/work/${project.slug}`}
                             fade
                             className={`title line`}
                           >
@@ -134,7 +134,7 @@ class HomeScroller extends Component {
                   <img src={project.scrollerThumbnail?.url} alt="" />
                   <AniLink
                     preventScrollJump
-                    to={`/case-studies/${project.slug}`}
+                    to={`/work/${project.slug}`}
                     fade
                     className={`title line`}
                   >

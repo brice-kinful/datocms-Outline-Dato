@@ -3,6 +3,16 @@ body.freeze {
   overflow: hidden;
 }
 
+body.freeze #footer .logo,
+body.freeze svg.logo {
+  opacity: 0;
+}
+
+body.freeze.loading #footer .logo,
+body.freeze.loading svg.logo {
+  opacity: 1;
+}
+
 body #home,
 body.freeze #nav-container {
   visibility: hidden;

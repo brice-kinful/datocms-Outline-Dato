@@ -131,7 +131,7 @@ input.required+span {
 #interview .field input[type=text] {
     width: calc(100% - 3px);
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 20px;
     height: 46px;
     text-indent: 15px;
     font-family: inherit;
@@ -167,7 +167,7 @@ input.required+span {
     height: 165px;
     margin-top: 20px;
     resize: none;
-    font-size: 18px;
+    font-size: 20px;
     font-family: inherit;
 }
 
@@ -232,7 +232,7 @@ input.required+span {
     width: 20px;
     height: 20px;
     z-index: 9;
-    cursor: pointer
+    cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
 }
 
 #interview .check label.special,
@@ -249,7 +249,7 @@ input.required+span {
     height: 17px;
     display: inline-block;
     line-height: 17px;
-    cursor: pointer;
+    cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
     border: 1px solid #000
 }
 
@@ -282,7 +282,7 @@ input.required+span {
 #interview .btn,
 #interview input[type=submit] {
     display: block;
-    cursor: pointer;
+    cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
     width: 100%;
     background: #000;
     border: 1px solid transparent;
@@ -347,7 +347,6 @@ input.required+span {
 
 #interview .nav .cell button.next,
 #interview .nav .cell button.previous {
-    cursor: pointer;
     text-transform: initial;
     letter-spacing: .02em;
     width: auto;
@@ -401,7 +400,7 @@ input.required+span {
     position: fixed;
     top: 60px;
     right: 150px;
-    font-size: 18px;
+    font-size: 20px;
     z-index: 1
 }
 

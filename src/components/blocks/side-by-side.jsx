@@ -40,7 +40,7 @@ class Content extends Component {
             content.fullWidth ? " full" : " skinny"
           }${content.leftSide60Width ? " left_60" : ""}${
             content.rightSide60Width ? " right_60" : ""
-          }`}
+          }${content.alignTextTop ? "" : " align-center"}`}
         >
           <div
             className={`flex column justify-center left grid-item${
@@ -54,13 +54,18 @@ class Content extends Component {
             }`}
           >
             {content.leftSideText && (
-              <span style={{ color: content.leftTextColor.hex }}>
+              <span
+                style={{
+                  color: content.leftTextColor.hex,
+                  maxWidth: `${content.leftSideImageCustomWidth}px`
+                }}
+              >
                 {parse(content.leftSideText)}
               </span>
             )}
             {content.leftSideImage && (
               <div
-                className="inner flex justify-center"
+                className="inner flex"
                 style={{ minHeight: leftSideImageHeight }}
               >
                 {content.leftSideImageStick || content.rightSideImageStick ? (
@@ -108,13 +113,18 @@ class Content extends Component {
             }`}
           >
             {content.rightSideText && (
-              <span style={{ color: content.rightTextColor.hex }}>
+              <span
+                style={{
+                  color: content.rightTextColor.hex,
+                  maxWidth: `${content.rightSideImageCustomWidth}px`
+                }}
+              >
                 {parse(content.rightSideText)}
               </span>
             )}
             {content.rightSideImage && (
               <div
-                className="inner flex justify-center"
+                className="inner flex"
                 style={{ minHeight: rightSideImageHeight }}
               >
                 {content.rightSideImageStick || content.leftSideImageStick ? (

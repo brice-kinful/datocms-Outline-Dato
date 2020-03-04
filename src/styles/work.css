@@ -1,369 +1,196 @@
-#work {
-  padding: 200px 0;
+#case-studies {
+  padding: 125px 0 200px;
+  /* overflow: hidden; */
+  position: relative;
 }
 
-#work>* {
+#case-studies h1 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  pointer-events: none;
+}
+
+#case-studies .title-container img {
+  width: 100%;
+}
+
+#case-studies .flex.grid {
+  grid-gap: 15%;
+}
+
+@supports (display: -ms-grid) or (display: grid) {
+  #case-studies .flex.grid {
+    padding: 0;
+  }
+}
+
+#case-studies .flex.grid.two {
+  align-items: center;
+}
+
+#case-studies .wrapper>* {
   padding-bottom: 200px;
+  padding-top: 0;
 }
 
-#work>*:last-child {
+#case-studies .wrapper>*:last-child {
   padding-bottom: 0;
 }
 
-#work h1 {
-  position: fixed;
-  z-index: 1;
-  top: 50%;
-  height: auto;
-  transform: translateY(-50%);
+#case-studies .block.up {
+  padding-top: 100px;
 }
 
-#work>.wrapper {
-  padding: 0 60px;
+#case-studies .block span.narrow {
+  max-width: 485px;
 }
 
-/* New masonry */
-
-.masonry-grid {
-  display: -webkit-box;
-  /* Not needed if autoprefixing */
-  display: -ms-flexbox;
-  /* Not needed if autoprefixing */
-  display: flex;
-  margin-left: -60px;
-  /* gutter size offset */
-  width: auto;
-}
-
-.masonry-grid_column {
-  padding-left: 60px;
-  /* gutter size */
-  background-clip: padding-box;
-}
-
-/* [END] New masonry */
-
-.masonry-grid-sizer,
-.masonry-grid-item {
-  /* width: 20%; */
-}
-
-.masonry-grid-item {
-  padding: 30px 0;
-}
-
-.ril__outer {
-  background-color: inherit;
-}
-
-.ril__image,
-.ril__imagePrev,
-.ril__imageNext {
-  /* max-height: calc(100vh - 250px); */
-  /* width: 33.3333%; */
-  max-height: 600px;
-}
-
-.ril__navButtons {
-  cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
-  z-index: 9999;
-  width: 60px;
-  height: 40px;
-  padding: 50px 40px;
-  opacity: 1;
-}
-
-.ril__navButtonPrev {
-  left: 60px;
-  background: url("/swiper-left.svg") no-repeat center;
-  /* background-size: 50px; */
-}
-
-.white .ril__navButtonPrev {
-  background: url("/swiper-left-white.svg") no-repeat center;
-}
-
-.ril__navButtonNext {
-  right: 60px;
-  background: url("/swiper-right.svg") no-repeat center;
-  /* background-size: 50px; */
-}
-
-.white .ril__navButtonNext {
-  background: url("/swiper-right-white.svg") no-repeat center;
-}
-
-.ril__closeButton {
-  /* background: url("/modal-close.svg") no-repeat center !important; */
-  /* background-size: 60px !important; */
-  background: none !important;
-  width: 40px;
-  position: absolute;
-  top: 68px;
-  right: 60px;
-  opacity: 1 !important;
-  cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
-}
-
-.ril__closeButton:before,
-.ril__closeButton:after {
-  content: "";
-  display: inline-block;
+#case-studies .block.solo .flex>* {
   width: 100%;
-  height: 2px;
-  background: #000000;
-  position: absolute;
-  z-index: 9999;
-  top: 15px;
-  right: 0;
 }
 
-.white .ril__closeButton::before,
-.white .ril__closeButton::after {
-  background: #ffffff;
+#case-studies .block.solo span.narrow {
+  flex: 0 0 550px;
+  max-width: 100%;
 }
 
-.ril__closeButton:before {
-  -webkit-transform: rotate(25deg);
-  -moz-transform: rotate(25deg);
-  -o-transform: rotate(25deg);
-  transform: rotate(25deg);
+#case-studies .block.solo.full span.narrow {
+  flex: 0 0 600px;
+  max-width: 100%;
 }
 
-.ril__closeButton:after {
-  -webkit-transform: rotate(-25deg);
-  -moz-transform: rotate(-25deg);
-  -o-transform: rotate(-25deg);
-  transform: rotate(-25deg);
-}
-
-.ril__caption,
-.ril__toolbar {
-  background-color: transparent;
-}
-
-.ril__captionContent {
-  color: inherit;
-}
-
-.ril__zoomInButton,
-.ril__zoomOutButton {
-  display: none;
-}
-
-.ril__toolbarSide {
-  padding-right: 60px;
-}
-
-.ril__caption .caption {
-  position: fixed;
-  z-index: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 16px;
-  line-height: 24px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: calc(100% - 160px);
-  margin: auto;
-}
-
-.ril__caption .caption span {
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  font-size: 20px;
+#case-studies .block.solo.full .wrapper {
   padding: 0;
+}
+
+#case-studies .block.up.down {
+  padding-bottom: 325px;
+}
+
+#case-studies .grid-item.up {
+  margin-top: -58%;
+}
+
+#case-studies .grid-item.down {
+  margin-top: 58%;
+}
+
+#case-studies .gatsby-image-wrapper {
+  margin-bottom: 40px;
+}
+
+#case-studies .gatsby-image-wrapper.loaded {
+  transition: filter .5s;
+}
+
+#case-studies .gatsby-image-wrapper:hover {
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+
+#case-studies span {
+  font-size: 28px;
+  line-height: 38px;
+  margin-right: 20px;
+}
+
+#case-studies span a {
+  font-size: 16px;
+  line-height: 26px;
+  position: relative;
+  top: 3px;
+}
+
+#case-studies span.textlink {
   line-height: 1.6;
+  margin: 0;
+  display: inline-flex;
+  top: -10px;
 }
 
-.ril__caption .caption .title {
-  margin-right: 15px;
-}
-
-.ril__caption .caption .textlink {
-  font-size: 12px;
-  padding: 5px 0;
-  position: relative;
-  top: -6px;
-  color: inherit;
-}
-
-.ril__caption .caption .textlink a {
-  color: inherit;
-}
-
-.ril__caption .caption .textlink a:after,
-.ril__caption .caption .textlink a+span:after {
-  display: none;
-}
-
-.ril__caption .caption .textlink a+span {
-  background: initial;
-  position: absolute;
+#case-studies span.textlink a:after {
   bottom: 0;
-  left: 0;
-  top: auto;
-  height: 1px;
-  width: 100%;
 }
 
-.ril__caption .caption .textlink:hover a {
-  top: 6px;
+#case-studies span.textlink:hover a:after {
+  bottom: 50%;
 }
 
-.ril__caption .caption .textlink:hover a+span {
-  bottom: 6px;
-  top: auto !important;
+@media screen and (min-width: 1400px) {
+  #case-studies h1 {
+    font-size: 200px;
+  }
 }
 
-#work .mobile-modal {
-  position: absolute;
-  top: -375px;
-  left: 0;
-  z-index: 999;
-  background: white;
-  height: 100vh;
-  width: 100%;
+@media screen and (max-width: 1024px) {
+  #case-studies .block.solo.full span {
+    flex: 0 auto;
+  }
 }
 
-#work .mobile-modal .photo {
-  position: relative;
-  top: 50px;
-}
+@media screen and (max-width: 860px) {
+  #case-studies span {
+    font-size: 22px;
+    line-height: 32px;
+  }
 
-#work .mobile-modal .close-container {
-  width: 100%;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  right: 0;
-  margin: 0 !important;
-  background: linear-gradient(180deg, #f5f5f1, #f5f5f1 50%, rgba(245, 245, 241, 0.5) 60%, rgba(255, 245, 241, 0.1) 85%, rgba(255, 245, 241, 0),
-      rgba(255, 245, 241, 0));
-  height: 215px;
-}
+  #case-studies span.textlink {
+    top: -4px;
+  }
 
-#work .mobile-modal .close-container .close {
-  cursor: url("http://localhost:8000/cursor-blur.png") 8.5 8.5, pointer !important;
-  display: block;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  right: 25px;
-  top: 47px;
-}
-
-#work .mobile-modal .close:before,
-#work .mobile-modal .close:after {
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 2px;
-  background: #000000;
-  position: absolute;
-  z-index: 9999;
-  top: 12px;
-  right: 0;
-}
-
-#work .mobile-modal .close:before {
-  -webkit-transform: rotate(25deg);
-  -moz-transform: rotate(25deg);
-  -o-transform: rotate(25deg);
-  transform: rotate(25deg);
-}
-
-#work .mobile-modal .close:after {
-  -webkit-transform: rotate(-25deg);
-  -moz-transform: rotate(-25deg);
-  -o-transform: rotate(-25deg);
-  transform: rotate(-25deg);
-}
-
-#work .mobile-modal .wrapper {
-  padding: 100px 25px;
-}
-
-#work .mobile-modal .wrapper>* {
-  margin: 0;
-}
-
-.ReactModal__Body--open #nav-container {
-  opacity: 0;
-}
-
-#work .slick-initialized .slick-slide,
-#work .mobile-modal a {
-  width: 100% !important;
-  height: auto;
-  margin: 25px 0;
-  display: block;
-}
-
-#work .mobile-modal .spacer {
-  margin: 0;
-  height: 50px;
-  display: block;
+  @supports (display: -ms-grid) or (display: grid) {
+    #case-studies .flex.grid {
+      grid-gap: 30px;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-  #work {
-    padding: 325px 0 100px;
+  @supports (display: -ms-grid) or (display: grid) {
+    #case-studies .flex.grid {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .ReactModalPortal {
-    display: none !important;
+  #case-studies {
+    padding: 300px 0 100px;
   }
 
-  #work h1 {
-    top: 200px;
+  #case-studies h1 {
+    top: 185px;
   }
 
-  #work p {
-    color: #000000;
-    padding-top: 15px;
-    margin: 0;
-    text-align: center;
+  #case-studies .gatsby-image-wrapper {
+    margin-bottom: 15px;
   }
 
-  .ril__caption .caption {
-    align-items: center;
-    /* bottom: 30px; */
+  #case-studies .block {
+    padding: 50px 0 !important;
   }
 
-  .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
-    transform: none !important;
+  #case-studies .block .wrapper {
+    padding: 0;
   }
 
-  .ril__closeButton {
-    right: 30px;
-    top: 45px;
-    width: 30px;
-    background-size: 70px !important;
+  #case-studies .flex.grid.two .grid-item:first-child {
+    padding-bottom: 50px !important;
   }
 
-  #work>.wrapper {
-    padding: 0 25px;
+  #case-studies .grid-item {
+    margin: 0 !important;
+    position: static;
   }
 
-  .masonry-grid {
-    margin-left: -25px;
-    /* gutter size offset */
+  #case-studies span a {
+    top: -3px;
   }
 
-  .masonry-grid_column {
-    padding-left: 25px;
-    /* gutter size */
-    background-clip: padding-box;
+  #case-studies span.textlink a::after {
+    bottom: -8px;
   }
 
-  .masonry-grid-item {
-    padding: 12.5px 0;
-  }
 }

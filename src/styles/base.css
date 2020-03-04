@@ -441,6 +441,10 @@ p.large {
   align-items: center;
 }
 
+.align-start {
+  align-items: flex-start;
+}
+
 .align-end {
   align-items: flex-end;
 }
@@ -584,7 +588,7 @@ textarea {
 
 a.btn {
   display: block;
-  cursor: pointer;
+  cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
   background: #000;
   color: white;
   border: none;
@@ -617,7 +621,7 @@ a.btn:hover {
   transition: 1.25s ease-in;
   animation: pageLoading;
   animation-duration: 1.25s;
-  animation-delay: 2.25s;
+  animation-delay: 1.25s;
   animation-fill-mode: forwards;
 }
 
@@ -837,7 +841,7 @@ h1.big.visible {
   }
 
   #interview .field input[type="text"] {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   #interview .cols .col {
@@ -846,7 +850,7 @@ h1.big.visible {
   }
 
   #interview .slider .display {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   #interview .nav {

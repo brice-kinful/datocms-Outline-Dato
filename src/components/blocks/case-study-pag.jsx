@@ -44,7 +44,7 @@ const CaseStudiesPagination = props => {
               <AniLink
                 preventScrollJump
                 fade
-                to={`/case-studies/${slug}`}
+                to={`/work/${slug}`}
                 className="next"
               >
                 Next
@@ -54,7 +54,7 @@ const CaseStudiesPagination = props => {
               <AniLink
                 preventScrollJump
                 fade
-                to={`/case-studies/${slug}`}
+                to={`/work/${slug}`}
                 className="next"
               >
                 {thumbnail && <Img fluid={thumbnail} className="next-thumb" />}

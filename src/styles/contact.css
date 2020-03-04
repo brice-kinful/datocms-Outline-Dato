@@ -36,7 +36,7 @@
 
 #contact .main .bottom p,
 #contact .main .bottom a {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 33px;
   padding: 0;
   margin: 0;
@@ -108,7 +108,7 @@
 @media screen and (min-width: 769px) {
 
   #contact .main .textlink {
-    font-size: 18px;
+    font-size: 20px;
     top: 3px;
   }
 

@@ -43,7 +43,7 @@ exports.createPages = ({
         node: work
       }) => {
         createPage({
-          path: `/case-studies/${work.slug}`,
+          path: `/work/${work.slug}`,
           component: path.resolve(`./src/templates/case-study.jsx`),
           context: {
             slug: work.slug

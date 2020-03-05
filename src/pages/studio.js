@@ -5,6 +5,8 @@ import Img from "gatsby-image";
 import Layout from "../components/layout";
 import parse from "html-react-parser";
 
+import { isSafari } from "react-device-detect";
+
 import "../styles/studio.css";
 
 class StudioPage extends Component {
@@ -62,7 +64,7 @@ class StudioPage extends Component {
   componentDidMount() {
     // console.log(this.props.data);
     this.setState({ prevScrollpos: window.pageYOffset });
-    window.addEventListener("scroll", this.handleScroll);
+    !isSafari && window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
   }

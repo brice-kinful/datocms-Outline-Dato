@@ -8,6 +8,8 @@ import Lightbox from "react-image-lightbox";
 import { genericHashLink } from "react-router-hash-link";
 import GatsbyLink from "gatsby-link";
 
+import { isSafari } from "react-device-detect";
+
 import "react-image-lightbox/style.css";
 import "../styles/more.css";
 
@@ -84,7 +86,7 @@ class WorkPage extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    !isSafari && window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;

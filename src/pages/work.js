@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
+import AniLink from "../components/transitions/AniLink";
 import Layout from "../components/layout";
 import BlurredImage from "../components/blocks/blurred-image";
 
+import { isSafari } from "react-device-detect";
+
 import "../styles/grid.css";
 import "../styles/work.css";
-import AniLink from "../components/transitions/AniLink";
 
 class CaseStudiesPage extends Component {
   constructor(props) {
@@ -65,7 +67,7 @@ class CaseStudiesPage extends Component {
       prevScrollpos: window.pageYOffset,
       display: !this.state.display
     });
-    window.addEventListener("scroll", this.handleScroll);
+    !isSafari && window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
   }

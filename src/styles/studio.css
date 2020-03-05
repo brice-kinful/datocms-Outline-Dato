@@ -111,6 +111,19 @@
   }
 }
 
+@media screen and (min-width: 769px) {
+  .safari #studio h1.big {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute;
+    top: 0;
+    /* left: -60px; */
+    width: 100%;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   #studio>* {
     padding-bottom: 50px;

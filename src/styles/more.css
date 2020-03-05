@@ -14,7 +14,6 @@
 #work h1 {
   position: fixed;
   top: 50%;
-  height: 100vh;
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
   z-index: 99;
@@ -307,6 +306,18 @@
   margin: 0;
   height: 50px;
   display: block;
+}
+
+@media screen and (min-width: 769px) {
+  .safari #work h1.big {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute;
+    /* left: -60px; */
+    width: 100%;
+    transform: translate3d(0, -99%, 0);
+  }
+
 }
 
 @media screen and (max-width: 768px) {

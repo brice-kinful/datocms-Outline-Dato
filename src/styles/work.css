@@ -12,14 +12,8 @@
   height: 100vh;
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
-  z-index: 99;
+  z-index: 9;
   pointer-events: none;
-}
-
-#case-studies h1.visible {
-  top: 50%;
-  -webkit-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0);
 }
 
 #case-studies .title-container img {
@@ -154,6 +148,18 @@
     #case-studies .flex.grid {
       grid-gap: 30px;
     }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .safari #case-studies h1.big {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute;
+    /* left: -60px; */
+    width: 100%;
+    top: 0;
+    transform: translate3d(0, -10%, 0);
   }
 }
 

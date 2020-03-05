@@ -292,7 +292,7 @@ h1.big {
   visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
-  will-change: transform;
+  will-change: scroll-position, opacity;
 }
 
 h1.big.visible {

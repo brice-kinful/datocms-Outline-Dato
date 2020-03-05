@@ -289,6 +289,8 @@ h1.big {
   transition: 0.75s;
   opacity: 0;
   visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 
 h1.big.visible {

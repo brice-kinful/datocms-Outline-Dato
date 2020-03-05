@@ -13,23 +13,19 @@
 
 #work h1 {
   position: fixed;
-  z-index: 1;
   top: 50%;
-  height: auto;
-  transform: translateY(-50%);
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  z-index: 99;
 }
 
 #work>.wrapper {
   padding: 0 60px;
 }
 
-/* New masonry */
-
 .masonry-grid {
   display: -webkit-box;
-  /* Not needed if autoprefixing */
   display: -ms-flexbox;
-  /* Not needed if autoprefixing */
   display: flex;
   margin-left: -60px;
   /* gutter size offset */
@@ -40,13 +36,6 @@
   padding-left: 60px;
   /* gutter size */
   background-clip: padding-box;
-}
-
-/* [END] New masonry */
-
-.masonry-grid-sizer,
-.masonry-grid-item {
-  /* width: 20%; */
 }
 
 .masonry-grid-item {

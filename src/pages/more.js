@@ -48,7 +48,7 @@ class WorkPage extends Component {
       prevScrollpos: currentScrollPos,
       isHeadlineVisible: true
     });
-    if (currentScrollPos > 2) {
+    if (currentScrollPos > 25) {
       this.setState({
         isHeadlineVisible: false
       });

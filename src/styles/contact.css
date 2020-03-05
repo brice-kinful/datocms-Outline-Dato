@@ -112,6 +112,10 @@
     top: 3px;
   }
 
+  .safari #contact .main .textlink {
+    top: -10px;
+  }
+
   #contact .main a:hover {
     /* opacity: .55; */
     border-color: transparent;

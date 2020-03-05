@@ -3,11 +3,11 @@
   /* 30 pixels accounts for the padding on top and bottom of the masonry items */
 }
 
-#work > * {
+#work>* {
   padding-bottom: 200px;
 }
 
-#work > *:last-child {
+#work>*:last-child {
   padding-bottom: 0;
 }
 
@@ -24,7 +24,7 @@
   top: 50%;
 }
 
-#work > .wrapper {
+#work>.wrapper {
   padding: 0 60px;
 }
 
@@ -194,11 +194,11 @@
 }
 
 .ril__caption .caption .textlink a:after,
-.ril__caption .caption .textlink a + span:after {
+.ril__caption .caption .textlink a+span:after {
   display: none;
 }
 
-.ril__caption .caption .textlink a + span {
+.ril__caption .caption .textlink a+span {
   background: initial;
   position: absolute;
   bottom: 0;
@@ -212,7 +212,7 @@
   top: 4px !important;
 }
 
-.ril__caption .caption .textlink:hover a + span {
+.ril__caption .caption .textlink:hover a+span {
   bottom: 6px;
   top: auto !important;
 }
@@ -239,15 +239,13 @@
   top: 0;
   right: 0;
   margin: 0 !important;
-  background: linear-gradient(
-    180deg,
-    #f5f5f1,
-    #f5f5f1 50%,
-    rgba(245, 245, 241, 0.5) 60%,
-    rgba(255, 245, 241, 0.1) 85%,
-    rgba(255, 245, 241, 0),
-    rgba(255, 245, 241, 0)
-  );
+  background: linear-gradient(180deg,
+      #f5f5f1,
+      #f5f5f1 50%,
+      rgba(245, 245, 241, 0.5) 60%,
+      rgba(255, 245, 241, 0.1) 85%,
+      rgba(255, 245, 241, 0),
+      rgba(255, 245, 241, 0));
   height: 215px;
 }
 
@@ -292,7 +290,7 @@
   padding: 100px 25px;
 }
 
-#work .mobile-modal .wrapper > * {
+#work .mobile-modal .wrapper>* {
   margin: 0;
 }
 
@@ -327,7 +325,7 @@
     position: absolute;
     /* left: -60px; */
     width: 100%;
-    transform: translate3d(0, -99%, 0);
+    transform: translate3d(0, -40%, 0);
   }
 }
 
@@ -344,6 +342,12 @@
     top: 200px;
   }
 
+  .safari #work h1.big {
+    top: -160px !important;
+    position: absolute;
+    transform: none;
+  }
+
   #work p {
     color: #000000;
     padding-top: 15px;
@@ -356,10 +360,7 @@
     /* bottom: 30px; */
   }
 
-  .ril-toolbar-left
-    .ril-toolbar__item__child.ril__toolbarItemChild
-    .caption
-    span {
+  .ril-toolbar-left .ril-toolbar__item__child.ril__toolbarItemChild .caption span {
     transform: none !important;
   }
 
@@ -370,7 +371,7 @@
     background-size: 70px !important;
   }
 
-  #work > .wrapper {
+  #work>.wrapper {
     padding: 0 25px;
   }
 

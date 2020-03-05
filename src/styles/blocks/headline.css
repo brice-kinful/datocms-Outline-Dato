@@ -20,6 +20,10 @@
     top: 0;
 }
 
+.safari .headline .textlink {
+    top: -10px;
+}
+
 @media screen and (max-width: 1024px) {
     .headline p {
         font-size: 36px;

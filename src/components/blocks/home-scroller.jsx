@@ -67,7 +67,7 @@ class HomeScroller extends Component {
             bounds
             onResize={contentRect => {
               this.setState({ dimensions: contentRect.bounds });
-              console.log(contentRect.bounds);
+              // console.log(contentRect.bounds);
             }}
           >
             {({ measureRef }) => {

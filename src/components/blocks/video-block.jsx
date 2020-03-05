@@ -18,7 +18,11 @@ class Video extends Component {
         }${content.setTopPaddingToZero ? " no-pad-top" : ""}`}
         style={{ backgroundColor: content.backgroundColor?.hex }}
       >
-        <div className="wrapper centertext skinny">
+        <div
+          className={`wrapper centertext${
+            content.fullWidth ? " full" : " skinny"
+          }`}
+        >
           <div className={`player-wrapper blur ${enterCount > 0 && "loaded"}`}>
             <ReactPlayer
               url={content.vimeoVideo?.url}

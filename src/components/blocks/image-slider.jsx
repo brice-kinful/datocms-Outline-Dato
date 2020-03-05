@@ -31,7 +31,7 @@ class Images extends Component {
       customPaging: i => <span>{i + 1}</span>
     };
 
-    console.log(content);
+    // console.log(content);
 
     return (
       <div

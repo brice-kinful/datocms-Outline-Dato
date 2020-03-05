@@ -44,7 +44,7 @@
 
 .accordion.ui .textlink {
     pointer-events: initial;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .block.accordion-block .textlink {
@@ -91,7 +91,7 @@
 
     .accordion.ui .textlink {
         pointer-events: initial;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 22px;
         position: absolute;
         bottom: -45px;

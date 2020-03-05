@@ -63,6 +63,12 @@ body.frozen .footer-container {
   padding-top: 0 !important;
 }
 
+.block .wrapper.full {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+
 .block .narrow {
   max-width: 1000px;
 }

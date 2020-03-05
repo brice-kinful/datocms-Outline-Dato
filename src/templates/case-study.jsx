@@ -331,6 +331,7 @@ export const query = graphql`
           doubleBottomPadding
         }
         ... on DatoCmsVideoBlock {
+          fullWidth
           backgroundColor {
             hex
           }

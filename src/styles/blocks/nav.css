@@ -329,7 +329,7 @@ body.nav-open #nav-container:after {
   }
 
   #nav li:not(.email) a {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 40px;
   }
 

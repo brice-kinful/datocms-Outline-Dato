@@ -77,55 +77,55 @@ body.ready #preload {
 body.loading #preload .images .gatsby-image-wrapper:nth-child(2) {
   z-index: -2;
   opacity: 0;
-  animation-delay: 3.5s;
+  animation-delay: 2.5s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(3) {
   z-index: -3;
   opacity: 0;
-  animation-delay: 3.75s;
+  animation-delay: 2.75s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(4) {
   z-index: -4;
   opacity: 0;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(5) {
   z-index: -5;
   opacity: 0;
-  animation-delay: 4.25s;
+  animation-delay: 3.25s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(6) {
   z-index: -6;
   opacity: 0;
-  animation-delay: 4.5s;
+  animation-delay: 3.5s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(7) {
   z-index: -7;
   opacity: 0;
-  animation-delay: 4.75s;
+  animation-delay: 3.75s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(8) {
   z-index: -8;
   opacity: 0;
-  animation-delay: 5s;
+  animation-delay: 4s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(9) {
   z-index: -9;
   opacity: 0;
-  animation-delay: 5.25s;
+  animation-delay: 4.25s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper:nth-child(10) {
   z-index: -10;
   opacity: 0;
-  animation-delay: 5.5s;
+  animation-delay: 4.5s;
 }
 
 body.loading #preload .images .gatsby-image-wrapper {

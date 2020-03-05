@@ -91,11 +91,11 @@
 .safari #scroller ul {
   -webkit-animation: marqueeSafari 30s linear infinite;
   animation: marqueeSafari 30s linear infinite;
-  width: 200% !important;
+  width: 300% !important;
 }
 
 .safari #scroller ul li {
-  width: 400px;
+  width: 650px;
 }
 
 /* @keyframes marquee {
@@ -139,7 +139,8 @@
   }
 
   100% {
-    left: -100%;
+    /* half of the scroll <ul> width */
+    left: -150%;
   }
 }
 
@@ -149,7 +150,8 @@
   }
 
   100% {
-    left: -100%;
+    /* half of the scroll <ul> width */
+    left: -150%;
   }
 }
 
@@ -168,6 +170,7 @@
 }
 
 .safari #scroller ul span {
+  /* 100% divided by the number of spans. in our case 2. */
   width: 50% !important;
 }
 

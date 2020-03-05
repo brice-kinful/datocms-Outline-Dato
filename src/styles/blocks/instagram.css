@@ -12,11 +12,11 @@
 
 #instagram p,
 #instagram a {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
-#instagram p + a {
+#instagram p+a {
   align-self: flex-start;
 }
 
@@ -32,9 +32,7 @@
   display: block;
   max-width: 224px;
   margin: 0 auto;
-  background: radial-gradient(farthest-side, black 95%, transparent 100%)
-    calc(var(--x) - 0.25em) calc(var(--y) - 0.25em) / 0.5em 0.5em fixed
-    no-repeat;
+  background: radial-gradient(farthest-side, black 95%, transparent 100%) calc(var(--x) - 0.25em) calc(var(--y) - 0.25em) / 0.5em 0.5em fixed no-repeat;
   background-color: white;
   position: absolute;
   width: 100%;
@@ -74,6 +72,7 @@
 }
 
 @media screen and (max-width: 1024px) {
+
   /* instagram */
   #instagram {
     /* padding: 80px 0; */
@@ -110,6 +109,7 @@
 }
 
 @media screen and (max-width: 480px) {
+
   /* instagram */
   #instagram {
     padding: 80px 0;
@@ -120,5 +120,4 @@
   }
 }
 
-@media screen and (max-height: 768px) {
-}
+@media screen and (max-height: 768px) {}

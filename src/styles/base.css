@@ -133,7 +133,7 @@ body.loading:not(.ready) #footer .logo {
 body {
   /* font-family: 'SaolDisplay Light', serif; */
   font-family: "Styrene Light";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   font-style: normal;
   letter-spacing: 0.02em;
@@ -315,7 +315,7 @@ h6 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -841,7 +841,7 @@ h1.big.visible {
   }
 
   #interview .field input[type="text"] {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #interview .cols .col {
@@ -850,7 +850,7 @@ h1.big.visible {
   }
 
   #interview .slider .display {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #interview .nav {

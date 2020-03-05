@@ -36,7 +36,7 @@ class PreloaderImage extends Component {
       setTimeout(() => {
         document.body.classList.remove("freeze");
         document.body.classList.add("ready");
-      }, 6000);
+      }, 5000);
     }
   };
 
@@ -46,7 +46,7 @@ class PreloaderImage extends Component {
     return (
       <Img
         fluid={src}
-        fadeIn="false"
+        fadeIn={false}
         loading="eager"
         onLoad={this.loadImage}
         className={`${loaded ? "loaded" : ""}`}

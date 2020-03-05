@@ -32,7 +32,7 @@ class WorkPage extends Component {
 
   //update colors
   updateColors = (bgColor, textColor) => {
-    console.log("updating colors");
+    // console.log("updating colors");
     this.setState({
       lightboxBgColor: bgColor,
       lightboxTextColor: textColor
@@ -226,10 +226,14 @@ class WorkPage extends Component {
                       ></div>
                     </div>
                     {masonryImages.map((item, index) => {
-                      console.log(item);
+                      // console.log(item);
                       return (
-                        <div id={`photo-${index}`} className="photo">
-                          <span class="spacer"></span>
+                        <div
+                          id={`photo-${index}`}
+                          key={index}
+                          className="photo"
+                        >
+                          <span className="spacer"></span>
 
                           <BlurredImage
                             src={item.fluid}
@@ -281,7 +285,7 @@ class WorkPage extends Component {
                     key={index}
                     onClick={() => {
                       this.setState({ isOpen: true, photoIndex: index });
-                      console.log(index);
+                      // console.log(index);
                     }}
                   >
                     <HashLink to={`/more#photo-${index}`}>

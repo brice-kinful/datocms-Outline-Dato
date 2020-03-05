@@ -279,7 +279,6 @@ h1.big {
   font-size: 15vw;
   position: absolute;
   width: 100vw;
-  height: 100%;
   left: 0;
   right: 0;
   margin: auto;
@@ -287,12 +286,19 @@ h1.big {
   align-items: center;
   justify-content: center;
   z-index: 9;
+  -webkit-transition: 0.75s;
   transition: 0.75s;
   opacity: 0;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   will-change: scroll-position, opacity;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 h1.big.visible {
@@ -437,7 +443,7 @@ p.large {
   -webkit-box-direction: normal;
 }
 
-.flex>img {
+.flex > img {
   align-self: center;
 }
 
@@ -647,7 +653,7 @@ a.btn:hover {
   }
 }
 
-.page>.wrapper {
+.page > .wrapper {
   position: relative;
   z-index: 9;
   background: #f5f5f1;
@@ -684,11 +690,11 @@ h1.big.visible {
   padding-bottom: 0;
 }
 
-.page#default .content>* {
+.page#default .content > * {
   margin-bottom: 30px;
 }
 
-.page#default .content>*:last-child {
+.page#default .content > *:last-child {
   margin-bottom: 0;
 }
 
@@ -877,7 +883,6 @@ h1.big.visible {
 }
 
 @media screen and (max-width: 480px) {
-
   /* pre-project interview */
   #interview label {
     font-size: 12px;

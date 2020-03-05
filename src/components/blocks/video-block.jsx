@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactPlayer from "react-player/lib/players/Vimeo";
+import ReactPlayer from "react-player";
 import handleViewport from "react-in-viewport";
 
 class Video extends Component {
@@ -9,6 +9,7 @@ class Video extends Component {
   }
   render() {
     const { content, enterCount } = this.props;
+    console.log(content);
     return (
       <div
         className={`block video-block${
@@ -25,22 +26,14 @@ class Video extends Component {
         >
           <div className={`player-wrapper blur ${enterCount > 0 && "loaded"}`}>
             <ReactPlayer
-              url={content.vimeoVideo?.url}
+              url={content.vimeoDirectUrl}
               className="react-player"
               playing
               loop
+              muted
               playsinline
               width="100%"
               height="100%"
-              config={{
-                vimeo: {
-                  playerOptions: {
-                    background: true,
-                    autoplay: true,
-                    autopause: false
-                  }
-                }
-              }}
             />
           </div>
         </div>

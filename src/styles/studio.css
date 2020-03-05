@@ -3,21 +3,21 @@
   padding: 50vh 0 200px;
 }
 
-#studio>* {
+#studio > * {
   padding-bottom: 200px;
 }
 
-#studio>*:last-child {
+#studio > *:last-child {
   padding-bottom: 0;
 }
 
 #studio h1 {
   position: fixed;
   top: 50%;
-  height: 100vh;
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
   z-index: 99;
+  width: 45vw;
 }
 
 #studio h1.visible {
@@ -30,7 +30,7 @@
   line-height: 45px;
 }
 
-#studio .three-fourths> :last-child {
+#studio .three-fourths > :last-child {
   margin: 0;
 }
 
@@ -86,8 +86,14 @@
   top: 3px;
 }
 
+@media screen and (min-width: 1200px) {
+  #studio h1 {
+    width: 568px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
-  #studio>* {
+  #studio > * {
     padding-bottom: 75px;
   }
 
@@ -123,9 +129,8 @@
   }
 }
 
-
 @media screen and (max-width: 768px) {
-  #studio>* {
+  #studio > * {
     padding-bottom: 50px;
   }
 
@@ -149,7 +154,7 @@
     flex-wrap: wrap;
   }
 
-  #studio .flex>* {
+  #studio .flex > * {
     width: 100%;
   }
 
@@ -193,4 +198,5 @@
   }
 }
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+}

@@ -340,11 +340,6 @@ export const query = graphql`
           setBottomPaddingToZero
           doubleBottomPadding
           vimeoDirectUrl
-          vimeoVideo {
-            provider
-            providerUid
-            url
-          }
         }
       }
     }

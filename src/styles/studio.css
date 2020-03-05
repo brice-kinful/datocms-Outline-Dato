@@ -14,9 +14,16 @@
 #studio h1 {
   position: fixed;
   top: 50%;
+  height: 100vh;
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
   z-index: 99;
+}
+
+#studio h1.visible {
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
 }
 
 #studio .title {

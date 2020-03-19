@@ -18,6 +18,7 @@
   transform: translate3d(0, -50%, 0);
   z-index: 99;
   width: 45vw;
+  -webkit-backface-visibility: hidden;
 }
 
 #studio h1.visible {
@@ -122,15 +123,15 @@
 }
 
 @media screen and (min-width: 769px) {
-  .safari #studio h1.big {
+  /* .safari #studio h1.big {
     opacity: 1 !important;
     visibility: visible !important;
     position: absolute;
-    top: 0;
-    /* left: -60px; */
-    width: 100%;
+    top: 0; */
+  /* left: -60px; */
+  /* width: 100%;
     transform: translate3d(0, -50%, 0);
-  }
+  } */
 }
 
 @media screen and (max-width: 768px) {
@@ -150,11 +151,11 @@
     top: 200px;
   }
 
-  .safari #studio h1.big {
+  /* .safari #studio h1.big {
     top: -180px !important;
     position: absolute;
     transform: none;
-  }
+  } */
 
   #studio .title {
     font-size: 14px;

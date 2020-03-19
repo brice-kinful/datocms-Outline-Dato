@@ -64,7 +64,7 @@ class StudioPage extends Component {
   componentDidMount() {
     // console.log(this.props.data);
     this.setState({ prevScrollpos: window.pageYOffset });
-    !isSafari && window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
   }

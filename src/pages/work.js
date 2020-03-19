@@ -67,7 +67,7 @@ class CaseStudiesPage extends Component {
       prevScrollpos: window.pageYOffset,
       display: !this.state.display
     });
-    !isSafari && window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
   }

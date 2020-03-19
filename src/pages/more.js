@@ -86,7 +86,7 @@ class WorkPage extends Component {
   };
 
   componentDidMount() {
-    !isSafari && window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;

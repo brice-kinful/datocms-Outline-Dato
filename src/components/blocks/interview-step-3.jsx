@@ -5,7 +5,7 @@ const InterviewStepThree = props => {
   return (
     <>
       <fieldset>
-        <p className={`large centertext`}>
+        <p className={`large centertext saol_standard`}>
           What types of services are you looking for?
         </p>
         <div className="field label">

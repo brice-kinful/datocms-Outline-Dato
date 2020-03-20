@@ -28,18 +28,26 @@ class HomeCapabilities extends Component {
         <div className={`wrapper skinny`}>
           <Img fluid={featuredImage[0].image?.fluid} />
           <div className="content flex">
-            <div className="one-third title">{words[0].title}</div>
+            <div className="one-third title uppercase">{words[0].title}</div>
             <div className="one-third">
               <ul>
                 {wordsLeft.map((word, index) => {
-                  return <li key={index}>{word.props.children}</li>;
+                  return (
+                    <li key={index} className="saol_standard">
+                      {word.props.children}
+                    </li>
+                  );
                 })}
               </ul>
             </div>
             <div className="one-third">
               <ul>
                 {wordsRight.map((word, index) => {
-                  return <li key={index}>{word.props.children}</li>;
+                  return (
+                    <li key={index} className="saol_standard">
+                      {word.props.children}
+                    </li>
+                  );
                 })}
               </ul>
             </div>

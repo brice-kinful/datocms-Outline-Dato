@@ -10,20 +10,8 @@ class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMenuOpen: false
+      // isMenuOpen: false
     };
-  }
-
-  componentDidMount() {
-    document.body.classList.remove("nav-open");
-    this.setState(state => ({
-      isMenuOpen: false
-    }));
-    window.addEventListener("scroll", this.closeMenu);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.closeMenu);
   }
 
   openMenu = e => {
@@ -48,11 +36,23 @@ class Navigation extends Component {
     }));
   };
 
+  componentDidMount() {
+    document.body.classList.remove("nav-open");
+    this.setState(state => ({
+      isMenuOpen: false
+    }));
+    window.addEventListener("scroll", this.closeMenu);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.closeMenu);
+  }
+
   render() {
     const isMenuOpen = this.state.isMenuOpen;
     const { menuItems, isFooterInView } = this.props;
     return (
-      <div id="nav-container">
+      <div id="nav-container" className="flex align-center space-between">
         <ReactCSSTransitionGroup
           //transitioned in css with .logo-enter.logo-enter-active
           // and .logo-leave.logo-leave-active
@@ -72,6 +72,25 @@ class Navigation extends Component {
           </div>
         </ReactCSSTransitionGroup>
 
+        <div id="nav" className="hide_768">
+          <ul className="flex">
+            {menuItems.map(item => {
+              const name = item.menuItemText;
+              const url = item.menuItemPage.slug;
+
+              return (
+                <React.Fragment key={name}>
+                  <li className="uppercase">
+                    <AniLink preventScrollJump fade to={`/${url}`}>
+                      {name}
+                    </AniLink>
+                  </li>
+                </React.Fragment>
+              );
+            })}
+          </ul>
+        </div>
+
         <ReactCSSTransitionGroup
           //transitioned in css with .nav-open-enter.nav-open-enter-active
           // and .nav-open-leave.nav-open-leave-active
@@ -80,38 +99,32 @@ class Navigation extends Component {
           transitionLeaveTimeout={300}
         >
           {isMenuOpen && (
-            <div id="nav">
-              <div className={`wrapper`}>
-                <ul className="flex">
-                  {menuItems.map(item => {
-                    const name = item.menuItemText;
-                    const url = item.menuItemPage.slug;
+            <div id="nav" className="show_768">
+              <ul className="flex">
+                {menuItems.map(item => {
+                  const name = item.menuItemText;
+                  const url = item.menuItemPage.slug;
 
-                    return (
-                      <React.Fragment key={name}>
-                        <li>
-                          <AniLink preventScrollJump fade to={`/${url}`}>
-                            {name}
-                          </AniLink>
-                        </li>
-                      </React.Fragment>
-                    );
-                  })}
-                  <li
-                    className="show_768 textlink email"
-                    style={{ marginTop: "25px" }}
-                  >
-                    <a href="mailto:hello@weareoutline.com" className="">
-                      hello@weareoutline.com
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                  return (
+                    <React.Fragment key={name}>
+                      <li className="uppercase">
+                        <AniLink preventScrollJump fade to={`/${url}`}>
+                          {name}
+                        </AniLink>
+                      </li>
+                    </React.Fragment>
+                  );
+                })}
+                <li className="textlink email" style={{ marginTop: "25px" }}>
+                  <a href="mailto:hello@weareoutline.com" className="">
+                    hello@weareoutline.com
+                  </a>
+                </li>
+              </ul>
             </div>
           )}
         </ReactCSSTransitionGroup>
-
-        <div className={`scheme-black`}>
+        <div className={`scheme-black show_768`}>
           <div
             id="toggle_menu"
             className={`toggle_menu`}
@@ -124,7 +137,6 @@ class Navigation extends Component {
             <div className={`label`}>Menu</div>
           </div>
         </div>
-        <div id="cursor"></div>
       </div>
     );
   }

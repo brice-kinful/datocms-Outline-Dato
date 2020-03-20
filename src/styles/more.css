@@ -1,3 +1,9 @@
+.safari .nav-container {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
 #work {
   padding: calc(50vh - 30px) 0 200px;
   /* 30 pixels accounts for the padding on top and bottom of the masonry items */
@@ -95,6 +101,7 @@
   background: none !important;
   width: 40px;
   position: absolute;
+  z-index: 9999;
   top: 68px;
   right: 60px;
   opacity: 1 !important;
@@ -180,10 +187,10 @@
 
 .ril__caption .caption .title {
   margin-right: 15px;
+  font-size: 16px;
 }
 
 .ril__caption .caption .textlink {
-  font-size: 12px;
   padding: 5px 0;
   position: relative;
   top: -5px;
@@ -192,6 +199,7 @@
 
 .ril__caption .caption .textlink a {
   color: inherit;
+  font-size: 12px;
 }
 
 .ril__caption .caption .textlink a:after,
@@ -214,7 +222,7 @@
 }
 
 .ril__caption .caption .textlink:hover a+span {
-  bottom: 6px;
+  bottom: 9px;
   top: auto !important;
 }
 
@@ -297,6 +305,7 @@
 
 .ReactModal__Body--open #nav-container {
   opacity: 0;
+  visibility: hidden;
 }
 
 #work .slick-initialized .slick-slide,
@@ -389,5 +398,9 @@
 
   .masonry-grid-item {
     padding: 12.5px 0;
+  }
+
+  #work .mobile-modal .photo .textlink {
+    display: inline-block !important;
   }
 }

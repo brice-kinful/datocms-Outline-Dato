@@ -58,8 +58,8 @@ class HomeScroller extends Component {
         >
           {/* <div id="cursor"></div> */}
           {/* <div className="wrapper skinny title-container"> */}
-          <h1 className={`big title${imgViz ? " visible" : ""}`}>
-            Case Studies
+          <h1 className={`big title saol_standard${imgViz ? " visible" : ""}`}>
+            Work
           </h1>
           {/* </div> */}
 

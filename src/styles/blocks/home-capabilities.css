@@ -8,7 +8,7 @@
 }
 
 .content .title {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 33px;
     flex: 0 0 29%;
 }
@@ -18,7 +18,7 @@
 }
 
 .content li {
-    font-size: 28px;
+    font-size: 36px;
     line-height: 1;
     list-style: none;
     margin-bottom: 20px;

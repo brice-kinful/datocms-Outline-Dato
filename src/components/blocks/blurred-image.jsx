@@ -17,6 +17,7 @@ class Image extends Component {
         fluid={src}
         fadeIn={false}
         loading={"eager"}
+        critical
         className={`blur ${enterCount > 0 && "loaded"}`}
         style={customWidth && { maxWidth: `${customWidth}px` }}
       />

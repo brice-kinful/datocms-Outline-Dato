@@ -84,8 +84,8 @@
 
     .accordion.ui .title,
     .accordion.ui .content p {
-        font-size: 22px;
-        line-height: 32px;
+        font-size: 30px;
+        line-height: 40px;
         position: relative;
     }
 

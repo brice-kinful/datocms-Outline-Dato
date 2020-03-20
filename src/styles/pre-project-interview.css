@@ -433,3 +433,26 @@ input.required+span {
     border-color: #000;
     margin-top: -9px
 }
+
+@media screen and (max-width: 768px) {
+    #interview .nav {
+        z-index: 99999;
+    }
+
+    #interview .pagetitle {
+        top: 120px;
+        right: 25px;
+        font-size: 14px;
+    }
+
+    #interview label {
+        font-size: 14px;
+    }
+
+    #interview .slider .display {
+        top: -9px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {}

@@ -131,7 +131,7 @@ class WorkPage extends Component {
                   preventScrollJump
                   to={`/case-studies/${image.customData["button-url"]}`}
                   fade
-                  className=""
+                  className="uppercase"
                   style={{}}
                 >
                   {image.customData["button-title"]
@@ -152,7 +152,7 @@ class WorkPage extends Component {
           <div className="wrapper" style={{ zIndex: 99 }}>
             <div className="title-container wrapper">
               <h1
-                className={`big centertext ${
+                className={`big saol_standard centertext ${
                   isHeadlineVisible ? "visible" : ""
                 }`}
               >
@@ -228,7 +228,10 @@ class WorkPage extends Component {
                     <div className="close-container white-bg">
                       <div
                         className="close"
-                        onClick={() => this.setState({ isOpen: false })}
+                        onClick={() => {
+                          this.setState({ isOpen: false });
+                          console.log("clicked");
+                        }}
                       ></div>
                     </div>
                     {masonryImages.map((item, index) => {

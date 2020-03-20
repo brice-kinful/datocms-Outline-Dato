@@ -92,7 +92,11 @@ class CaseStudiesPage extends Component {
             className={`wrapper skinny title-container`}
             style={{ zIndex: 999 }}
           >
-            <h1 className={`big title${isHeadlineVisible ? " visible" : ""}`}>
+            <h1
+              className={`big title saol_standard${
+                isHeadlineVisible ? " visible" : ""
+              }`}
+            >
               Work
             </h1>
           </div>
@@ -126,12 +130,15 @@ class CaseStudiesPage extends Component {
                               block.leftProjectNarrowExcerpt ? "narrow" : ""
                             }`}
                           >
-                            <span>{block.leftProject?.excerpt}</span>
+                            <span className="saol_standard">
+                              {block.leftProject?.excerpt}
+                            </span>
                             <span className="textlink">
                               <AniLink
                                 fade
                                 to={`/work/${block.leftProject?.slug}`}
                                 preventScrollJump
+                                className="uppercase"
                               >
                                 {block.leftProject?.title}
                               </AniLink>
@@ -157,12 +164,15 @@ class CaseStudiesPage extends Component {
                               block.rightProjectNarrowExcerpt ? "narrow" : ""
                             }`}
                           >
-                            <span>{block.rightProject?.excerpt}</span>
+                            <span className="saol_standard">
+                              {block.rightProject?.excerpt}
+                            </span>
                             <span className="textlink">
                               <AniLink
                                 fade
                                 to={`/work/${block.rightProject?.slug}`}
                                 preventScrollJump
+                                className="uppercase"
                               >
                                 {block.rightProject?.title}
                               </AniLink>
@@ -202,12 +212,15 @@ class CaseStudiesPage extends Component {
                               block.projectNarrowExcerpt ? "narrow" : ""
                             }`}
                           >
-                            <span>{block.project?.excerpt}</span>
+                            <span className="saol_standard">
+                              {block.project?.excerpt}
+                            </span>
                             <span className="textlink">
                               <AniLink
                                 fade
                                 to={`/work/${block.project?.slug}`}
                                 preventScrollJump
+                                className="uppercase"
                               >
                                 {block.project?.title}
                               </AniLink>

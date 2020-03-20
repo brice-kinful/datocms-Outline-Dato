@@ -47,7 +47,7 @@ class Preloader extends Component {
     return (
       <>
         <div id="preload">
-          <div id="loading-white-screen"></div>
+          <div id="loading-white-screen" className="white-bg"></div>
           <SVG src="/logo.svg" className="logo" />
           {/* <h1 className="centertext">Outline</h1> */}
           <div className={`images ${nums[images.length - 1]}`}>

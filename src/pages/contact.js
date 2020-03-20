@@ -80,7 +80,7 @@ class ContactPage extends Component {
         <div className="page" id="contact">
           <div className="main flex wrapper skinny">
             <h1
-              className={`big centertext show_768 ${
+              className={`big centertext saol_standard show_768 ${
                 isHeadlineVisible ? "visible" : ""
               }`}
             >
@@ -89,12 +89,13 @@ class ContactPage extends Component {
             <div className="three-fourths text">
               <div className="inner flex hide_768">
                 <p>
-                  <span>{contact.headline}</span>
+                  <span className="saol_standard">{contact.headline}</span>
                   <span className="textlink">
                     <AniLink
                       preventScrollJump
                       to={`/${contact.ctaButtonUrl.slug}`}
                       fade
+                      className="uppercase"
                     >
                       {contact.ctaButtonText}
                     </AniLink>

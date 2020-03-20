@@ -62,7 +62,7 @@ class IndexPage extends Component {
       <Layout>
         <Preloader images={heroImages[0]} />
         <div id="home" className="page">
-          <div className="flex align-center justify-center" id="feature">
+          <div className="flex align-center" id="feature">
             <Headline content={headline[0]} />
           </div>
           <HomeScroller projects={data.datoCmsHome.scrollerCaseStudies} />

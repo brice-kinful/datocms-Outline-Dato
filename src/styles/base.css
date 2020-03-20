@@ -66,6 +66,17 @@ SaolDisplay LightItalic
   font-stretch: normal;
 }
 
+@font-face {
+  font-family: "Saol Standard";
+  src: url("/SaolStandard-Thin.eot");
+  src: url("/SaolStandard-Thin.eot") format("embedded-opentype"),
+    url("/SaolStandard-Thin.woff2") format("woff2"),
+    url("/SaolStandard-Thin.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
 .styrene_light {
   font-family: "Styrene Light";
   font-style: normal;
@@ -99,6 +110,13 @@ SaolDisplay LightItalic
   font-style: normal;
 }
 
+.saol_standard {
+  font-family: "Saol Standard", serif !important;
+  font-weight: normal !important;
+  font-style: normal;
+  letter-spacing: .005em;
+}
+
 .black-bg {
   background: #000000;
   color: #ffffff;
@@ -109,10 +127,6 @@ SaolDisplay LightItalic
 .white-bg {
   background: #f5f5f1;
   color: #f5f5f1;
-}
-
-body.loading:not(.ready) #footer .logo {
-  fill: #f5f5f1;
 }
 
 * {
@@ -349,6 +363,8 @@ p.large {
 
 .uppercase {
   text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: .075em;
 }
 
 .centertext {
@@ -443,7 +459,7 @@ p.large {
   -webkit-box-direction: normal;
 }
 
-.flex > img {
+.flex>img {
   align-self: center;
 }
 
@@ -653,7 +669,7 @@ a.btn:hover {
   }
 }
 
-.page > .wrapper {
+.page>.wrapper {
   position: relative;
   z-index: 9;
   background: #f5f5f1;
@@ -690,11 +706,11 @@ h1.big.visible {
   padding-bottom: 0;
 }
 
-.page#default .content > * {
+.page#default .content>* {
   margin-bottom: 30px;
 }
 
-.page#default .content > *:last-child {
+.page#default .content>*:last-child {
   margin-bottom: 0;
 }
 
@@ -883,6 +899,7 @@ h1.big.visible {
 }
 
 @media screen and (max-width: 480px) {
+
   /* pre-project interview */
   #interview label {
     font-size: 12px;

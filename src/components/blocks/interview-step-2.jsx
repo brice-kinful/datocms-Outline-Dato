@@ -35,7 +35,7 @@ const InterviewStepTwo = props => {
   return (
     <>
       <fieldset>
-        <p className={`large centertext`}>
+        <p className={`large centertext saol_standard`}>
           Nice to meet you {props.values.first_name}! Now let’s hear about your
           project:
         </p>

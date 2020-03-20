@@ -13,6 +13,10 @@
     padding: 0;
 }
 
+#home #feature .wrapper {
+    max-width: 1040px;
+}
+
 #home #feature .headline {
     /* padding-top: 15vw;
     padding-bottom: 15vw; */

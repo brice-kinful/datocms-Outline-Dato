@@ -9,7 +9,9 @@ const InterviewStepFive = props => {
   return (
     <>
       <fieldset>
-        <p className={`large centertext`}>Anything else you want to share?</p>
+        <p className={`large centertext saol_standard`}>
+          Anything else you want to share?
+        </p>
         <div className={`field label`}>
           <label htmlFor="comments">
             Other important tidbits we should know:

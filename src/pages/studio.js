@@ -86,15 +86,19 @@ class StudioPage extends Component {
         <div className="page" id="studio">
           <div className="hero wrapper skinny" style={{ zIndex: 99 }}>
             <h1
-              className={`big centertext ${isHeadlineVisible ? "visible" : ""}`}
+              className={`big centertext saol_standard ${
+                isHeadlineVisible ? "visible" : ""
+              }`}
             >
               Studio
             </h1>
             <Img fluid={hero.heroImage.fluid} />
             <div className="flex">
-              <div className="one-fourth title">{hero.title}</div>
+              <div className="one-fourth title uppercase">{hero.title}</div>
               <div className="three-fourths">
-                <div className="large">{parse(hero.headline)}</div>
+                <div className="large saol_standard">
+                  {parse(hero.headline)}
+                </div>
                 {parse(hero.copy)}
               </div>
             </div>
@@ -104,7 +108,7 @@ class StudioPage extends Component {
               <Img fluid={capabilities.image.fluid} />
             </div>
             <div className="text">
-              <p>{capabilities.title}</p>
+              <p className="uppercase">{capabilities.title}</p>
               {parse(capabilities.list)}
             </div>
           </div>
@@ -121,12 +125,15 @@ class StudioPage extends Component {
           </div>
           <div className="cta wrapper skinny flex">
             <p>
-              <span>{this.props.data.datoCmsStudioPage.aboutCtaHeadline}</span>
+              <span className="saol_standard">
+                {this.props.data.datoCmsStudioPage.aboutCtaHeadline}
+              </span>
               <span className="textlink">
                 <AniLink
                   to={`/${this.props.data.datoCmsStudioPage.aboutCtaButtonUrl.slug}`}
                   fade
                   preventScrollJump
+                  className="uppercase"
                 >
                   {this.props.data.datoCmsStudioPage.aboutCtaButtonText}
                 </AniLink>

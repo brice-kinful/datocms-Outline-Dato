@@ -41,24 +41,24 @@ class HeadlineAccordion extends Component {
         <div className={`wrapper skinny`}>
           <Accordion>
             <Accordion.Title active={activeIndex === 0} index={0} className="">
-              <span>{content.headline}</span>
+              <span className="saol_standard">{content.headline}</span>
               <span
                 name="dropdown"
                 onClick={this.handleClick}
                 className="textlink"
               >
-                <span>{this.state.btn}</span>
+                <span className="uppercase">{this.state.btn}</span>
               </span>
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 0}>
               <p className="">
-                <span>{content.extendedText}</span>
+                <span className="saol_standard">{content.extendedText}</span>
                 <span
                   name="dropdown"
                   className="styrene_light textlink"
                   onClick={this.handleClick}
                 >
-                  <span>{this.state.btn}</span>
+                  <span className="uppercase">{this.state.btn}</span>
                 </span>
               </p>
             </Accordion.Content>

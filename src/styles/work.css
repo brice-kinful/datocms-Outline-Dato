@@ -1,3 +1,9 @@
+.safari .nav-container {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
 #case-studies {
   padding: 125px 0 200px;
   /* overflow: hidden; */
@@ -96,14 +102,14 @@
 }
 
 #case-studies span {
-  font-size: 28px;
-  line-height: 38px;
+  font-size: 36px;
+  line-height: 46px;
   margin-right: 20px;
 }
 
 #case-studies span a {
-  font-size: 16px;
-  line-height: 26px;
+  /* font-size: 16px;
+  line-height: 26px; */
   position: relative;
   top: 3px;
 }
@@ -138,7 +144,7 @@
 
 @media screen and (max-width: 860px) {
   #case-studies span {
-    font-size: 22px;
+    font-size: 30px;
     line-height: 32px;
   }
 

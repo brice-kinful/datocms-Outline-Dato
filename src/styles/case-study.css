@@ -145,8 +145,8 @@ body.frozen .footer-container {
 .block.url-block a {
   font-size: 8vw;
   line-height: 8vw;
-  font-family: "SaolDisplay Light", serif;
-  font-weight: 400;
+  font-family: "Saol Standard", serif !important;
+  font-weight: normal;
   font-style: normal;
   padding: 15px 0;
   display: inline-block;
@@ -395,8 +395,8 @@ body.frozen .footer-container {
 
 #case-study .related .wrapper a.next {
   font-size: 11.5vw;
-  font-family: "SaolDisplay Light", serif;
-  font-weight: 400;
+  font-family: "Saol Standard", serif !important;
+  font-weight: normal;
   font-style: normal;
   transition: 0.3s;
 }
@@ -567,6 +567,7 @@ body.frozen .footer-container {
   .block.side-by-side.sticky-right .flex .one-half:first-child img,
   .block.side-by-side.sticky-left .flex .one-half:last-child img {
     max-height: 100%;
+    max-width: 100% !important;
   }
 
   .block.side-by-side .grid-item.empty {
@@ -583,7 +584,7 @@ body.frozen .footer-container {
 
   .block.url-block a {
     font-size: 35px;
-    line-height: 0;
+    line-height: 0.5;
   }
 
   #case-study .related p,

@@ -1,3 +1,9 @@
+.safari .nav-container {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
 #studio {
   /* padding: 400px 0 200px; */
   padding: 50vh 0 200px;
@@ -35,9 +41,13 @@
   margin: 0;
 }
 
+#studio .three-fourths p {
+  font-size: 22px;
+}
+
 #studio .large p {
-  font-size: 42px;
-  line-height: 60px;
+  font-size: 64px;
+  line-height: 80px;
 }
 
 #studio .hero .gatsby-image-wrapper {
@@ -57,7 +67,9 @@
 }
 
 #studio .text li {
-  font-size: 28px;
+  font-family: "Saol Standard", serif;
+  letter-spacing: .005em;
+  font-size: 36px;
   line-height: 1;
   list-style: none;
   margin-bottom: 20px;
@@ -68,14 +80,14 @@
 }
 
 #studio .team p {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
 }
 
 #studio .cta p {
   flex: 0 70%;
-  font-size: 42px;
-  line-height: 60px;
+  font-size: 64px;
+  line-height: 80px;
 }
 
 #studio .cta p span:first-child {
@@ -113,7 +125,7 @@
   }
 
   #studio .text li {
-    font-size: 24px;
+    font-size: 30px;
     line-height: 2;
   }
 
@@ -173,13 +185,14 @@
     width: 100%;
   }
 
-  #studio p {
+  #studio p,
+  #studio .three-fourths p {
     font-size: 14px;
   }
 
   #studio .large p,
   #studio .cta p {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   #studio .text {

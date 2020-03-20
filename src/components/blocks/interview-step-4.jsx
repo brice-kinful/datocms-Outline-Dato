@@ -42,7 +42,7 @@ class InterviewStepFour extends Component {
     return (
       <>
         <fieldset>
-          <p className={`large centertext`}>
+          <p className={`large centertext saol_standard`}>
             Do you have an idea of budget and timeline?
           </p>
           <div className={`field label`}>

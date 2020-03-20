@@ -5,7 +5,7 @@ const InterviewStepOne = props => {
   return (
     <>
       <fieldset>
-        <p className={`large centertext`}>
+        <p className={`large centertext saol_standard`}>
           Hi, we’re Outline. Please tell us a bit about yourself:
         </p>
         <div className={`field flex align-center`}>

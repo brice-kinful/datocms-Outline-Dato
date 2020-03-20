@@ -8,15 +8,15 @@ const Headline = props => {
   //   console.log(content);
   return (
     <div className={`headline`}>
-      <div className={`wrapper skinny`}>
+      <div className={`wrapper x_skinny`}>
         <p>
-          <span>{content.text}</span>
+          <span className="saol_standard">{content.text}</span>
           <span className="textlink">
             <AniLink
               preventScrollJump
               to={`/${content.buttonUrl.slug}`}
               fade
-              className={"styrene_light"}
+              className={"styrene_light uppercase"}
             >
               {content.buttonText}
             </AniLink>

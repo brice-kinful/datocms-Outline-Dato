@@ -208,6 +208,7 @@
   #scroller {
     height: 635px;
     margin-bottom: -250px !important;
+    margin-top: 0 !important;
   }
 
   #scroller ul {
@@ -222,6 +223,7 @@
 @media screen and (min-width: 861px) {
   #scroller {
     margin-bottom: -15vw;
+    margin-top: 12vw;
   }
 
   #scroller ul {

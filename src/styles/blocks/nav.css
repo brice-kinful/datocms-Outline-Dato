@@ -142,6 +142,11 @@ body.home #logo {
   left: 0;
 }
 
+#nav-container:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
 #nav-container:after {
   content: "";
   position: fixed;
@@ -151,8 +156,8 @@ body.home #logo {
   top: 0;
   left: 0;
   background: linear-gradient(180deg, #f5f5f1, rgba(245, 245, 241, 0.65) 40%, rgba(245, 245, 241, 0.01) 95%, rgba(255, 245, 241, 0.02) 97%, rgba(245, 245, 241, 0));
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   transition: 0.6s;
 }
 

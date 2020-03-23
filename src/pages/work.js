@@ -3,8 +3,6 @@ import { graphql } from "gatsby";
 import AniLink from "../components/transitions/AniLink";
 import Layout from "../components/layout";
 import BlurredImage from "../components/blocks/blurred-image";
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
 
 import { isSafari } from "react-device-detect";
 

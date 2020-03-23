@@ -64,15 +64,15 @@ class StudioPage extends Component {
   componentDidMount() {
     // console.log(this.props.data);
     this.setState({ prevScrollpos: window.pageYOffset });
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("mousemove", this.handleMouseMove);
-    this.interval = setInterval(() => this.tick(), 1000);
+    // window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("mousemove", this.handleMouseMove);
+    // this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("mousemove", this.handleMouseMove);
-    clearInterval(this.interval);
+    // window.removeEventListener("scroll", this.handleScroll);
+    // window.removeEventListener("mousemove", this.handleMouseMove);
+    // clearInterval(this.interval);
   }
 
   render() {
@@ -93,6 +93,7 @@ class StudioPage extends Component {
               Studio
             </h1> */}
             <Img fluid={hero.heroImage.fluid} />
+            {/* <img src={hero.heroImage.url} alt="" srcset="" /> */}
             <div className="flex">
               <div className="one-fourth title uppercase">{hero.title}</div>
               <div className="three-fourths">

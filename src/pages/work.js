@@ -67,18 +67,18 @@ class CaseStudiesPage extends Component {
       prevScrollpos: window.pageYOffset,
       display: !this.state.display
     });
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("mousemove", this.handleMouseMove);
-    this.interval = setInterval(() => this.tick(), 1000);
+    // window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("mousemove", this.handleMouseMove);
+    // this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
     this.setState({
       display: !this.state.display
     });
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("mousemove", this.handleMouseMove);
-    clearInterval(this.interval);
+    // window.removeEventListener("scroll", this.handleScroll);
+    // window.removeEventListener("mousemove", this.handleMouseMove);
+    // clearInterval(this.interval);
   }
 
   render() {
@@ -120,8 +120,8 @@ class CaseStudiesPage extends Component {
                           >
                             {/* <Img fluid={block.leftProjectImage.fluid} /> */}
                             <BlurredImage
-                              // src={block.leftProjectImage?.fluid}
-                              url={block.leftProjectImage?.url}
+                              src={block.leftProjectImage?.fluid}
+                              // url={block.leftProjectImage?.url}
                               offset={-5}
                             />
                           </AniLink>
@@ -157,7 +157,7 @@ class CaseStudiesPage extends Component {
                             {/* <Img fluid={block.rightProjectImage.fluid} /> */}
                             <BlurredImage
                               src={block.rightProjectImage?.fluid}
-                              url={block.rightProjectImage?.url}
+                              // url={block.rightProjectImage?.url}
                               offset={-5}
                             />
                           </AniLink>
@@ -205,7 +205,7 @@ class CaseStudiesPage extends Component {
                             {/* <Img fluid={block.projectImage?.fluid} /> */}
                             <BlurredImage
                               src={block.projectImage?.fluid}
-                              url={block.projectImage?.url}
+                              // url={block.projectImage?.url}
                               offset={-5}
                             />
                           </AniLink>

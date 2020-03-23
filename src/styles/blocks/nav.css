@@ -140,6 +140,7 @@ body.home #logo {
   z-index: 99999;
   top: 0;
   left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 #nav-container:hover:after {
@@ -167,22 +168,6 @@ body.home #logo {
 } */
 
 #nav {
-  /* display: none; */
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  /* padding: 40px 0; */
-  /* position: fixed; */
-  /* opacity: 0; */
-  top: 32px;
-  right: 0;
-  background: transparent;
-  color: #000000;
-  overflow: auto;
-  z-index: 99999;
-  /* -webkit-transition: background 200ms linear;
-    -moz-transition: background 200ms linear;
-    -o-transition: background 200ms linear; */
   transition: 0.3s;
 }
 
@@ -314,6 +299,7 @@ body.home #logo {
     position: fixed;
     z-index: 99;
     top: 0;
+    right: 0;
     background: linear-gradient(180deg,
         #f5f5f1,
         #f5f5f1 83%,

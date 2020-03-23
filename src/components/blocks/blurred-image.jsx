@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Img from "gatsby-image";
-// import handleViewport from "react-in-viewport";
+import handleViewport from "react-in-viewport";
 
 class Image extends Component {
   constructor(props) {
@@ -31,6 +31,6 @@ class Image extends Component {
   }
 }
 
-// const BlurredImage = handleViewport(Image, { rootMargin: "-1.0px" });
+const BlurredImage = handleViewport(Image, { rootMargin: "-1.0px" });
 
-export default Image;
+export default BlurredImage;

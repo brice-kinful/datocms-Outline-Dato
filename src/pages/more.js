@@ -86,9 +86,9 @@ class WorkPage extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("mousemove", this.handleMouseMove);
-    this.interval = setInterval(() => this.tick(), 1000);
+    // window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("mousemove", this.handleMouseMove);
+    // this.interval = setInterval(() => this.tick(), 1000);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     this.setState({
       images: this.state.images.concat(mosaicImages)
@@ -96,9 +96,9 @@ class WorkPage extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("mousemove", this.handleMouseMove);
-    clearInterval(this.interval);
+    // window.removeEventListener("scroll", this.handleScroll);
+    // window.removeEventListener("mousemove", this.handleMouseMove);
+    // clearInterval(this.interval);
   }
 
   render() {
@@ -245,8 +245,8 @@ class WorkPage extends Component {
                           <span className="spacer"></span>
 
                           <BlurredImage
-                            // src={item.fluid}
-                            url={item.url}
+                            src={item.fluid}
+                            // url={item.url}
                             key={index}
                             offset={-100}
                           />
@@ -300,8 +300,8 @@ class WorkPage extends Component {
                   >
                     <HashLink to={`/more#photo-${index}`}>
                       <BlurredImage
-                        // src={item.fluid}
-                        url={item.url}
+                        src={item.fluid}
+                        // url={item.url}
                         key={index}
                         offset={-100}
                       />

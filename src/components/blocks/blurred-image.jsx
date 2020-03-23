@@ -22,7 +22,7 @@ class Image extends Component {
             fadeIn={false}
             loading={"eager"}
             critical
-            // className={`blur ${enterCount > 0 && "loaded"}`}
+            className={`blur ${enterCount > 0 && "loaded"}`}
             style={customWidth && { maxWidth: `${customWidth}px` }}
           />
         )}
@@ -33,4 +33,4 @@ class Image extends Component {
 
 const BlurredImage = handleViewport(Image, { rootMargin: "-1.0px" });
 
-export default Image;
+export default BlurredImage;

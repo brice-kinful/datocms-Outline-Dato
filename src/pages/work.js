@@ -86,160 +86,157 @@ class CaseStudiesPage extends Component {
     const { isHeadlineVisible, display } = this.state;
 
     return (
-      <Layout>
-        <div className="page" id="case-studies">
-          {/* <div
-            className={`wrapper skinny title-container`}
-            style={{ zIndex: 999 }}
-          >
-            <h1
-              className={`big title saol_standard${
-                isHeadlineVisible ? " visible" : ""
-              }`}
-            >
-              Work
-            </h1>
-          </div> */}
-          <div className="wrapper skinny">
-            {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {
-              switch (block.__typename) {
-                case "DatoCmsSideBySide":
-                  return (
-                    <div
-                      className={`block ${block.leftProjectPositioning} ${block.rightProjectPositioning}`}
-                      key={index}
-                    >
-                      <div className="wrapper flex grid two">
-                        <div
-                          className={`flex column left grid-item one-half ${block.leftProjectPositioning}`}
-                        >
-                          <AniLink
-                            fade
-                            to={`/work/${block.leftProject?.slug}`}
-                            preventScrollJump
+      <>
+        <h1
+          className={`big title saol_standard${
+            isHeadlineVisible ? " visible" : ""
+          }`}
+        >
+          Work
+        </h1>
+        <Layout>
+          <div className="page" id="case-studies">
+            <div className="wrapper skinny">
+              {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {
+                switch (block.__typename) {
+                  case "DatoCmsSideBySide":
+                    return (
+                      <div
+                        className={`block ${block.leftProjectPositioning} ${block.rightProjectPositioning}`}
+                        key={index}
+                      >
+                        <div className="wrapper flex grid two">
+                          <div
+                            className={`flex column left grid-item one-half ${block.leftProjectPositioning}`}
                           >
-                            {/* <Img fluid={block.leftProjectImage.fluid} /> */}
-                            <BlurredImage
-                              src={block.leftProjectImage?.fluid}
-                              // url={block.leftProjectImage?.url}
-                              offset={-5}
-                            />
-                          </AniLink>
+                            <AniLink
+                              fade
+                              to={`/work/${block.leftProject?.slug}`}
+                              preventScrollJump
+                            >
+                              {/* <Img fluid={block.leftProjectImage.fluid} /> */}
+                              <BlurredImage
+                                src={block.leftProjectImage?.fluid}
+                                // url={block.leftProjectImage?.url}
+                                offset={-5}
+                              />
+                            </AniLink>
 
-                          <span
-                            className={`${
-                              block.leftProjectNarrowExcerpt ? "narrow" : ""
-                            }`}
+                            <span
+                              className={`${
+                                block.leftProjectNarrowExcerpt ? "narrow" : ""
+                              }`}
+                            >
+                              <span className="saol_standard">
+                                {block.leftProject?.excerpt}
+                              </span>
+                              <span className="textlink">
+                                <AniLink
+                                  fade
+                                  to={`/work/${block.leftProject?.slug}`}
+                                  preventScrollJump
+                                  className="uppercase"
+                                >
+                                  {block.leftProject?.title}
+                                </AniLink>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            className={`flex column right grid-item one-half ${block.rightProjectPositioning}`}
                           >
-                            <span className="saol_standard">
-                              {block.leftProject?.excerpt}
+                            <AniLink
+                              fade
+                              to={`/work/${block.rightProject?.slug}`}
+                              preventScrollJump
+                            >
+                              {/* <Img fluid={block.rightProjectImage.fluid} /> */}
+                              <BlurredImage
+                                src={block.rightProjectImage?.fluid}
+                                // url={block.rightProjectImage?.url}
+                                offset={-5}
+                              />
+                            </AniLink>
+                            <span
+                              className={`${
+                                block.rightProjectNarrowExcerpt ? "narrow" : ""
+                              }`}
+                            >
+                              <span className="saol_standard">
+                                {block.rightProject?.excerpt}
+                              </span>
+                              <span className="textlink">
+                                <AniLink
+                                  fade
+                                  to={`/work/${block.rightProject?.slug}`}
+                                  preventScrollJump
+                                  className="uppercase"
+                                >
+                                  {block.rightProject?.title}
+                                </AniLink>
+                              </span>
                             </span>
-                            <span className="textlink">
-                              <AniLink
-                                fade
-                                to={`/work/${block.leftProject?.slug}`}
-                                preventScrollJump
-                                className="uppercase"
-                              >
-                                {block.leftProject?.title}
-                              </AniLink>
-                            </span>
-                          </span>
-                        </div>
-                        <div
-                          className={`flex column right grid-item one-half ${block.rightProjectPositioning}`}
-                        >
-                          <AniLink
-                            fade
-                            to={`/work/${block.rightProject?.slug}`}
-                            preventScrollJump
-                          >
-                            {/* <Img fluid={block.rightProjectImage.fluid} /> */}
-                            <BlurredImage
-                              src={block.rightProjectImage?.fluid}
-                              // url={block.rightProjectImage?.url}
-                              offset={-5}
-                            />
-                          </AniLink>
-                          <span
-                            className={`${
-                              block.rightProjectNarrowExcerpt ? "narrow" : ""
-                            }`}
-                          >
-                            <span className="saol_standard">
-                              {block.rightProject?.excerpt}
-                            </span>
-                            <span className="textlink">
-                              <AniLink
-                                fade
-                                to={`/work/${block.rightProject?.slug}`}
-                                preventScrollJump
-                                className="uppercase"
-                              >
-                                {block.rightProject?.title}
-                              </AniLink>
-                            </span>
-                          </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                case "DatoCmsSolo":
-                  return (
-                    <div
-                      className={`block solo ${
-                        !block.narrowWidth ? " full" : ""
-                      }`}
-                    >
+                    );
+                  case "DatoCmsSolo":
+                    return (
                       <div
-                        className={`wrapper${
-                          block.narrowWidth ? " x_skinny" : ""
+                        className={`block solo ${
+                          !block.narrowWidth ? " full" : ""
                         }`}
                       >
-                        <div className="flex wrap">
-                          <AniLink
-                            fade
-                            to={`/work/${block.project?.slug}`}
-                            preventScrollJump
-                          >
-                            {/* <Img fluid={block.projectImage?.fluid} /> */}
-                            <BlurredImage
-                              src={block.projectImage?.fluid}
-                              // url={block.projectImage?.url}
-                              offset={-5}
-                            />
-                          </AniLink>
+                        <div
+                          className={`wrapper${
+                            block.narrowWidth ? " x_skinny" : ""
+                          }`}
+                        >
+                          <div className="flex wrap">
+                            <AniLink
+                              fade
+                              to={`/work/${block.project?.slug}`}
+                              preventScrollJump
+                            >
+                              {/* <Img fluid={block.projectImage?.fluid} /> */}
+                              <BlurredImage
+                                src={block.projectImage?.fluid}
+                                // url={block.projectImage?.url}
+                                offset={-5}
+                              />
+                            </AniLink>
 
-                          <span
-                            className={`${
-                              block.projectNarrowExcerpt ? "narrow" : ""
-                            }`}
-                          >
-                            <span className="saol_standard">
-                              {block.project?.excerpt}
+                            <span
+                              className={`${
+                                block.projectNarrowExcerpt ? "narrow" : ""
+                              }`}
+                            >
+                              <span className="saol_standard">
+                                {block.project?.excerpt}
+                              </span>
+                              <span className="textlink">
+                                <AniLink
+                                  fade
+                                  to={`/work/${block.project?.slug}`}
+                                  preventScrollJump
+                                  className="uppercase"
+                                >
+                                  {block.project?.title}
+                                </AniLink>
+                              </span>
                             </span>
-                            <span className="textlink">
-                              <AniLink
-                                fade
-                                to={`/work/${block.project?.slug}`}
-                                preventScrollJump
-                                className="uppercase"
-                              >
-                                {block.project?.title}
-                              </AniLink>
-                            </span>
-                          </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                default:
-                  break;
-              }
-            })}
+                    );
+                  default:
+                    break;
+                }
+              })}
+            </div>
           </div>
-        </div>
-      </Layout>
+        </Layout>
+      </>
     );
   }
 }

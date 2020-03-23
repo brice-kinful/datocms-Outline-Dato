@@ -147,172 +147,176 @@ class WorkPage extends Component {
     });
 
     return (
-      <Layout>
-        <div className="page" id="work">
-          <div className="wrapper" style={{ zIndex: 99 }}>
-            {/* <div className="title-container wrapper">
-              <h1
-                className={`big saol_standard centertext ${
-                  isHeadlineVisible ? "visible" : ""
-                }`}
-              >
-                More
-              </h1>
-            </div> */}
-
-            {isOpen && (
-              <>
-                <Lightbox
-                  wrapperClassName={`${
-                    lightboxImages[photoIndex].customData["text-color"] === ""
-                      ? "black"
-                      : lightboxImages[photoIndex].customData["text-color"]
-                  }`}
-                  mainSrc={lightboxImages[photoIndex].url}
-                  nextSrc={
-                    lightboxImages[(photoIndex + 1) % lightboxImages.length]
-                  }
-                  imageCaption={titles[photoIndex]}
-                  prevSrc={
-                    lightboxImages[
-                      (photoIndex + lightboxImages.length - 1) %
-                        lightboxImages.length
-                    ]
-                  }
-                  imagePadding={100}
-                  onImageLoad={() => {
-                    const bgColor =
-                      lightboxImages[photoIndex].customData["background-color"];
-                    const textColor =
+      <>
+        <h1
+          className={`big saol_standard centertext ${
+            isHeadlineVisible ? "visible" : ""
+          }`}
+        >
+          More
+        </h1>
+        <Layout>
+          <div className="page" id="work">
+            <div className="wrapper" style={{ zIndex: 99 }}>
+              {isOpen && (
+                <>
+                  <Lightbox
+                    wrapperClassName={`${
                       lightboxImages[photoIndex].customData["text-color"] === ""
                         ? "black"
-                        : lightboxImages[photoIndex].customData["text-color"];
-                    this.updateColors(bgColor, textColor);
-                    this.setState({
-                      imagePadding:
-                        lightboxImages[photoIndex].fluid.height > 600
-                          ? 600
-                          : lightboxImages[photoIndex].fluid.height
-                    });
-                    // console.log(lightboxImages[photoIndex].customData);
-                  }}
-                  onCloseRequest={() => this.setState({ isOpen: false })}
-                  onMovePrevRequest={() =>
-                    this.setState({
-                      photoIndex:
-                        (photoIndex + lightboxImages.length - 1) %
-                        lightboxImages.length
-                    })
-                  }
-                  onMoveNextRequest={() =>
-                    this.setState({
-                      photoIndex: (photoIndex + 1) % lightboxImages.length
-                    })
-                  }
-                  reactModalStyle={{
-                    overlay: {
-                      backgroundColor: `${
-                        lightboxBgColor ? lightboxBgColor : "#F5F5F1"
-                      }`
-                    },
-                    content: {
-                      color: `${
-                        lightboxTextColor ? lightboxTextColor : "#000000"
-                      }`
+                        : lightboxImages[photoIndex].customData["text-color"]
+                    }`}
+                    mainSrc={lightboxImages[photoIndex].url}
+                    nextSrc={
+                      lightboxImages[(photoIndex + 1) % lightboxImages.length]
                     }
-                  }}
-                />
-
-                <div className="mobile-modal">
-                  <div className="wrapper white-bg">
-                    <div className="close-container white-bg">
-                      <div
-                        className="close"
-                        onClick={() => {
-                          this.setState({ isOpen: false });
-                          console.log("clicked");
-                        }}
-                      ></div>
-                    </div>
-                    {masonryImages.map((item, index) => {
-                      // console.log(item);
-                      return (
-                        <div
-                          id={`photo-${index}`}
-                          key={index}
-                          className="photo"
-                        >
-                          <span className="spacer"></span>
-
-                          <BlurredImage
-                            src={item.fluid}
-                            // url={item.url}
-                            key={index}
-                            offset={-100}
-                          />
-                          {item.title && <p>{item.title}</p>}
-                          {item.customData["button-url"] && (
-                            <div className="centertext">
-                              <span
-                                className="textlink"
-                                style={{
-                                  fontSize: "12px",
-                                  display: "inline-block !important",
-                                  marginTop: "-15px",
-                                  padding: 0
-                                }}
-                              >
-                                <AniLink
-                                  preventScrollJump
-                                  to={`/case-studies/${item.customData["button-url"]}`}
-                                  fade
-                                >
-                                  {item.customData["button-title"]
-                                    ? item.customData["button-title"]
-                                    : "See More"}
-                                </AniLink>
-                                <span style={{ background: "#000000" }}></span>
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </>
-            )}
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="masonry-grid"
-              columnClassName="masonry-grid_column"
-            >
-              {masonryImages.map((item, index) => {
-                const slider = this.slider;
-                return (
-                  <div
-                    className="masonry-grid-item"
-                    key={index}
-                    onClick={() => {
-                      this.setState({ isOpen: true, photoIndex: index });
-                      // console.log(index);
+                    imageCaption={titles[photoIndex]}
+                    prevSrc={
+                      lightboxImages[
+                        (photoIndex + lightboxImages.length - 1) %
+                          lightboxImages.length
+                      ]
+                    }
+                    imagePadding={100}
+                    onImageLoad={() => {
+                      const bgColor =
+                        lightboxImages[photoIndex].customData[
+                          "background-color"
+                        ];
+                      const textColor =
+                        lightboxImages[photoIndex].customData["text-color"] ===
+                        ""
+                          ? "black"
+                          : lightboxImages[photoIndex].customData["text-color"];
+                      this.updateColors(bgColor, textColor);
+                      this.setState({
+                        imagePadding:
+                          lightboxImages[photoIndex].fluid.height > 600
+                            ? 600
+                            : lightboxImages[photoIndex].fluid.height
+                      });
+                      // console.log(lightboxImages[photoIndex].customData);
                     }}
-                  >
-                    <HashLink to={`/more#photo-${index}`}>
-                      <BlurredImage
-                        src={item.fluid}
-                        // url={item.url}
-                        key={index}
-                        offset={-100}
-                      />
-                    </HashLink>
+                    onCloseRequest={() => this.setState({ isOpen: false })}
+                    onMovePrevRequest={() =>
+                      this.setState({
+                        photoIndex:
+                          (photoIndex + lightboxImages.length - 1) %
+                          lightboxImages.length
+                      })
+                    }
+                    onMoveNextRequest={() =>
+                      this.setState({
+                        photoIndex: (photoIndex + 1) % lightboxImages.length
+                      })
+                    }
+                    reactModalStyle={{
+                      overlay: {
+                        backgroundColor: `${
+                          lightboxBgColor ? lightboxBgColor : "#F5F5F1"
+                        }`
+                      },
+                      content: {
+                        color: `${
+                          lightboxTextColor ? lightboxTextColor : "#000000"
+                        }`
+                      }
+                    }}
+                  />
+
+                  <div className="mobile-modal">
+                    <div className="wrapper white-bg">
+                      <div className="close-container white-bg">
+                        <div
+                          className="close"
+                          onClick={() => {
+                            this.setState({ isOpen: false });
+                            console.log("clicked");
+                          }}
+                        ></div>
+                      </div>
+                      {masonryImages.map((item, index) => {
+                        // console.log(item);
+                        return (
+                          <div
+                            id={`photo-${index}`}
+                            key={index}
+                            className="photo"
+                          >
+                            <span className="spacer"></span>
+
+                            <BlurredImage
+                              src={item.fluid}
+                              // url={item.url}
+                              key={index}
+                              offset={-100}
+                            />
+                            {item.title && <p>{item.title}</p>}
+                            {item.customData["button-url"] && (
+                              <div className="centertext">
+                                <span
+                                  className="textlink"
+                                  style={{
+                                    fontSize: "12px",
+                                    display: "inline-block !important",
+                                    marginTop: "-15px",
+                                    padding: 0
+                                  }}
+                                >
+                                  <AniLink
+                                    preventScrollJump
+                                    to={`/case-studies/${item.customData["button-url"]}`}
+                                    fade
+                                  >
+                                    {item.customData["button-title"]
+                                      ? item.customData["button-title"]
+                                      : "See More"}
+                                  </AniLink>
+                                  <span
+                                    style={{ background: "#000000" }}
+                                  ></span>
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                );
-              })}
-            </Masonry>
+                </>
+              )}
+              <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className="masonry-grid"
+                columnClassName="masonry-grid_column"
+              >
+                {masonryImages.map((item, index) => {
+                  const slider = this.slider;
+                  return (
+                    <div
+                      className="masonry-grid-item"
+                      key={index}
+                      onClick={() => {
+                        this.setState({ isOpen: true, photoIndex: index });
+                        // console.log(index);
+                      }}
+                    >
+                      <HashLink to={`/more#photo-${index}`}>
+                        <BlurredImage
+                          src={item.fluid}
+                          // url={item.url}
+                          key={index}
+                          offset={-100}
+                        />
+                      </HashLink>
+                    </div>
+                  );
+                })}
+              </Masonry>
+            </div>
           </div>
-        </div>
-      </Layout>
+        </Layout>
+      </>
     );
   }
 }

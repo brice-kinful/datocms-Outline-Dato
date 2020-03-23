@@ -82,67 +82,69 @@ class StudioPage extends Component {
     const { isHeadlineVisible } = this.state;
 
     return (
-      <Layout>
-        <div className="page" id="studio">
-          <div className="hero wrapper skinny" style={{ zIndex: 99 }}>
-            {/* <h1
-              className={`big centertext saol_standard ${
-                isHeadlineVisible ? "visible" : ""
-              }`}
-            >
-              Studio
-            </h1> */}
-            <Img fluid={hero.heroImage.fluid} />
-            {/* <img src={hero.heroImage.url} alt="" srcset="" /> */}
-            <div className="flex">
-              <div className="one-fourth title uppercase">{hero.title}</div>
-              <div className="three-fourths">
-                <div className="large saol_standard">
-                  {parse(hero.headline)}
+      <>
+        <h1
+          className={`big centertext saol_standard ${
+            isHeadlineVisible ? "visible" : ""
+          }`}
+        >
+          Studio
+        </h1>
+        <Layout>
+          <div className="page" id="studio">
+            <div className="hero wrapper skinny" style={{ zIndex: 99 }}>
+              <Img fluid={hero.heroImage.fluid} />
+              {/* <img src={hero.heroImage.url} alt="" srcset="" /> */}
+              <div className="flex">
+                <div className="one-fourth title uppercase">{hero.title}</div>
+                <div className="three-fourths">
+                  <div className="large saol_standard">
+                    {parse(hero.headline)}
+                  </div>
+                  {parse(hero.copy)}
                 </div>
-                {parse(hero.copy)}
               </div>
             </div>
-          </div>
-          <div className="capabilities flex wrapper skinny">
-            <div className="image">
-              <Img fluid={capabilities.image.fluid} />
+            <div className="capabilities flex wrapper skinny">
+              <div className="image">
+                <Img fluid={capabilities.image.fluid} />
+              </div>
+              <div className="text">
+                <p className="uppercase">{capabilities.title}</p>
+                {parse(capabilities.list)}
+              </div>
             </div>
-            <div className="text">
-              <p className="uppercase">{capabilities.title}</p>
-              {parse(capabilities.list)}
+            <div className="team flex grid five wrapper">
+              {team.map((member, index) => {
+                return (
+                  <div className="member grid-item one-fifth" key={index}>
+                    <Img fluid={member.headshot.fluid} />
+                    <p>{member.name}</p>
+                    <p>{member.jobTitle}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="cta wrapper skinny flex">
+              <p>
+                <span className="saol_standard">
+                  {this.props.data.datoCmsStudioPage.aboutCtaHeadline}
+                </span>
+                <span className="textlink">
+                  <AniLink
+                    to={`/${this.props.data.datoCmsStudioPage.aboutCtaButtonUrl.slug}`}
+                    fade
+                    preventScrollJump
+                    className="uppercase"
+                  >
+                    {this.props.data.datoCmsStudioPage.aboutCtaButtonText}
+                  </AniLink>
+                </span>
+              </p>
             </div>
           </div>
-          <div className="team flex grid five wrapper">
-            {team.map((member, index) => {
-              return (
-                <div className="member grid-item one-fifth" key={index}>
-                  <Img fluid={member.headshot.fluid} />
-                  <p>{member.name}</p>
-                  <p>{member.jobTitle}</p>
-                </div>
-              );
-            })}
-          </div>
-          <div className="cta wrapper skinny flex">
-            <p>
-              <span className="saol_standard">
-                {this.props.data.datoCmsStudioPage.aboutCtaHeadline}
-              </span>
-              <span className="textlink">
-                <AniLink
-                  to={`/${this.props.data.datoCmsStudioPage.aboutCtaButtonUrl.slug}`}
-                  fade
-                  preventScrollJump
-                  className="uppercase"
-                >
-                  {this.props.data.datoCmsStudioPage.aboutCtaButtonText}
-                </AniLink>
-              </span>
-            </p>
-          </div>
-        </div>
-      </Layout>
+        </Layout>
+      </>
     );
   }
 }

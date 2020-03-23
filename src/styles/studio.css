@@ -1,9 +1,3 @@
-.safari .nav-container {
-  position: fixed;
-  top: 0;
-  z-index: 99999;
-}
-
 #studio {
   /* padding: 400px 0 200px; */
   padding: 50vh 0 200px;
@@ -17,7 +11,8 @@
   padding-bottom: 0;
 }
 
-#studio h1 {
+#studio h1,
+.safari h1 {
   position: fixed;
   top: 50%;
   -webkit-transform: translate3d(0, -50%, 0);

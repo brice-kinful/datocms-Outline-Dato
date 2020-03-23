@@ -1,9 +1,3 @@
-.safari .nav-container {
-  position: fixed;
-  top: 0;
-  z-index: 99999;
-}
-
 #case-studies {
   padding: 125px 0 200px;
   /* overflow: hidden; */
@@ -18,14 +12,15 @@
   position: sticky;
 } */
 
-#case-studies h1 {
+#case-studies h1,
+.safari h1 {
   position: fixed;
   left: 0;
   right: 0;
   top: 50%;
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
-  z-index: 9;
+  z-index: 99;
   pointer-events: none;
   width: 38vw;
   -webkit-backface-visibility: hidden;

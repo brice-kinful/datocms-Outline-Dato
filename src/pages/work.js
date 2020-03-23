@@ -120,7 +120,8 @@ class CaseStudiesPage extends Component {
                           >
                             {/* <Img fluid={block.leftProjectImage.fluid} /> */}
                             <BlurredImage
-                              src={block.leftProjectImage?.fluid}
+                              // src={block.leftProjectImage?.fluid}
+                              url={block.leftProjectImage?.url}
                               offset={-5}
                             />
                           </AniLink>
@@ -156,6 +157,7 @@ class CaseStudiesPage extends Component {
                             {/* <Img fluid={block.rightProjectImage.fluid} /> */}
                             <BlurredImage
                               src={block.rightProjectImage?.fluid}
+                              url={block.rightProjectImage?.url}
                               offset={-5}
                             />
                           </AniLink>
@@ -203,6 +205,7 @@ class CaseStudiesPage extends Component {
                             {/* <Img fluid={block.projectImage?.fluid} /> */}
                             <BlurredImage
                               src={block.projectImage?.fluid}
+                              url={block.projectImage?.url}
                               offset={-5}
                             />
                           </AniLink>
@@ -260,6 +263,7 @@ export const query = graphql`
           }
           leftProjectNarrowExcerpt
           leftProjectImage {
+            url
             fluid(maxWidth: 860, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid
             }
@@ -272,6 +276,7 @@ export const query = graphql`
           }
           rightProjectNarrowExcerpt
           rightProjectImage {
+            url
             fluid(maxWidth: 860, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid
             }
@@ -286,6 +291,7 @@ export const query = graphql`
           }
           projectNarrowExcerpt
           projectImage {
+            url
             fluid(
               maxWidth: 1920
               imgixParams: { fm: "jpg", auto: "compress" }

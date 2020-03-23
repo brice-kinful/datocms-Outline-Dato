@@ -158,6 +158,7 @@ export const query = graphql`
       slug
       aboutHero {
         heroImage {
+          url
           fluid(maxWidth: 1920, imgixParams: { fm: "jpg", auto: "compress" }) {
             ...GatsbyDatoCmsFluid
           }

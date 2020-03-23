@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Img from "gatsby-image";
-import handleViewport from "react-in-viewport";
+// import handleViewport from "react-in-viewport";
 
 class Image extends Component {
   constructor(props) {
@@ -11,20 +11,26 @@ class Image extends Component {
   }
 
   render() {
-    const { src, customWidth, enterCount } = this.props;
+    const { url, src, customWidth, enterCount } = this.props;
     return (
-      <Img
-        fluid={src}
-        fadeIn={false}
-        loading={"eager"}
-        critical
-        className={`blur ${enterCount > 0 && "loaded"}`}
-        style={customWidth && { maxWidth: `${customWidth}px` }}
-      />
+      <>
+        {url ? (
+          <img src={url} />
+        ) : (
+          <Img
+            fluid={src}
+            fadeIn={false}
+            loading={"eager"}
+            critical
+            className={`blur ${enterCount > 0 && "loaded"}`}
+            style={customWidth && { maxWidth: `${customWidth}px` }}
+          />
+        )}
+      </>
     );
   }
 }
 
-const BlurredImage = handleViewport(Image, { rootMargin: "-1.0px" });
+// const BlurredImage = handleViewport(Image, { rootMargin: "-1.0px" });
 
-export default BlurredImage;
+export default Image;

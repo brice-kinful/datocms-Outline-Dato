@@ -245,7 +245,8 @@ class WorkPage extends Component {
                           <span className="spacer"></span>
 
                           <BlurredImage
-                            src={item.fluid}
+                            // src={item.fluid}
+                            url={item.url}
                             key={index}
                             offset={-100}
                           />
@@ -299,7 +300,8 @@ class WorkPage extends Component {
                   >
                     <HashLink to={`/more#photo-${index}`}>
                       <BlurredImage
-                        src={item.fluid}
+                        // src={item.fluid}
+                        url={item.url}
                         key={index}
                         offset={-100}
                       />

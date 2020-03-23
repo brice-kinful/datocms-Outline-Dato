@@ -114,7 +114,7 @@ SaolDisplay LightItalic
   font-family: "Saol Standard", serif !important;
   font-weight: normal !important;
   font-style: normal;
-  letter-spacing: .005em;
+  letter-spacing: 0.005em;
 }
 
 .black-bg {
@@ -268,7 +268,7 @@ a.line:hover:after {
 }
 
 p.large a.textlink {
-  font-family: "SaolDisplay Light", serif;
+  font-family: "Saol Standard", serif;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -282,7 +282,7 @@ p a.website_link {
 
 h1,
 h2 {
-  font-family: "SaolDisplay Light", serif;
+  font-family: "Saol Standard", serif;
   font-weight: normal;
   font-size: 56px;
   line-height: 1.2;
@@ -290,23 +290,25 @@ h2 {
 }
 
 h1.big {
+  font-family: "Saol Standard", serif;
   font-size: 15vw;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   left: 0;
   right: 0;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9;
-  -webkit-transition: 0.75s;
-  transition: 0.75s;
+  transition: visibility 0.75s linear, opacity 0.75s linear;
   opacity: 0;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
-  will-change: scroll-position, opacity;
+  will-change: opacity;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -364,7 +366,7 @@ p.large {
 .uppercase {
   text-transform: uppercase;
   font-size: 15px;
-  letter-spacing: .075em;
+  letter-spacing: 0.075em;
 }
 
 .centertext {
@@ -459,7 +461,7 @@ p.large {
   -webkit-box-direction: normal;
 }
 
-.flex>img {
+.flex > img {
   align-self: center;
 }
 
@@ -669,15 +671,10 @@ a.btn:hover {
   }
 }
 
-.page>.wrapper {
+.page > .wrapper {
   position: relative;
   z-index: 9;
   background: #f5f5f1;
-}
-
-h1.big.visible {
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .gatsby-image-wrapper.blur,
@@ -706,11 +703,11 @@ h1.big.visible {
   padding-bottom: 0;
 }
 
-.page#default .content>* {
+.page#default .content > * {
   margin-bottom: 30px;
 }
 
-.page#default .content>*:last-child {
+.page#default .content > *:last-child {
   margin-bottom: 0;
 }
 
@@ -899,7 +896,6 @@ h1.big.visible {
 }
 
 @media screen and (max-width: 480px) {
-
   /* pre-project interview */
   #interview label {
     font-size: 12px;

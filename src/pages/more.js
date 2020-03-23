@@ -86,9 +86,9 @@ class WorkPage extends Component {
   };
 
   componentDidMount() {
-    // window.addEventListener("scroll", this.handleScroll);
-    // window.addEventListener("mousemove", this.handleMouseMove);
-    // this.interval = setInterval(() => this.tick(), 1000);
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("mousemove", this.handleMouseMove);
+    this.interval = setInterval(() => this.tick(), 1000);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     this.setState({
       images: this.state.images.concat(mosaicImages)
@@ -152,6 +152,7 @@ class WorkPage extends Component {
           className={`big saol_standard centertext ${
             isHeadlineVisible ? "visible" : ""
           }`}
+          style={{ opacity: 0, visibility: "hidden" }}
         >
           More
         </h1>

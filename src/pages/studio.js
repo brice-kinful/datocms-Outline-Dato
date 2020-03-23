@@ -64,15 +64,15 @@ class StudioPage extends Component {
   componentDidMount() {
     // console.log(this.props.data);
     this.setState({ prevScrollpos: window.pageYOffset });
-    // window.addEventListener("scroll", this.handleScroll);
-    // window.addEventListener("mousemove", this.handleMouseMove);
-    // this.interval = setInterval(() => this.tick(), 1000);
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("mousemove", this.handleMouseMove);
+    this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
-    // window.removeEventListener("scroll", this.handleScroll);
-    // window.removeEventListener("mousemove", this.handleMouseMove);
-    // clearInterval(this.interval);
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    clearInterval(this.interval);
   }
 
   render() {
@@ -87,6 +87,7 @@ class StudioPage extends Component {
           className={`big centertext saol_standard ${
             isHeadlineVisible ? "visible" : ""
           }`}
+          style={{ opacity: 0, visibility: "hidden" }}
         >
           Studio
         </h1>

@@ -3,23 +3,28 @@
   padding: 50vh 0 200px;
 }
 
-#studio>* {
+#studio > * {
   padding-bottom: 200px;
 }
 
-#studio>*:last-child {
+#studio > *:last-child {
   padding-bottom: 0;
 }
 
-#studio h1,
-.safari h1 {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0);
-  z-index: 99;
+h1.big {
   width: 45vw;
-  -webkit-backface-visibility: hidden;
+}
+
+@keyframes loadTitle {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 #studio h1.visible {
@@ -32,7 +37,7 @@
   line-height: 45px;
 }
 
-#studio .three-fourths> :last-child {
+#studio .three-fourths > :last-child {
   margin: 0;
 }
 
@@ -63,7 +68,7 @@
 
 #studio .text li {
   font-family: "Saol Standard", serif;
-  letter-spacing: .005em;
+  letter-spacing: 0.005em;
   font-size: 36px;
   line-height: 1;
   list-style: none;
@@ -105,7 +110,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  #studio>* {
+  #studio > * {
     padding-bottom: 75px;
   }
 
@@ -142,7 +147,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  #studio>* {
+  #studio > * {
     padding-bottom: 50px;
   }
 
@@ -172,7 +177,7 @@
     flex-wrap: wrap;
   }
 
-  #studio .flex>* {
+  #studio .flex > * {
     width: 100%;
   }
 
@@ -217,4 +222,5 @@
   }
 }
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+}

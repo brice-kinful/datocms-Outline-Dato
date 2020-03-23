@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import AniLink from "../components/transitions/AniLink";
 import Layout from "../components/layout";
 import BlurredImage from "../components/blocks/blurred-image";
+import { Controller, Scene } from "react-scrollmagic";
+import { Tween, Timeline } from "react-gsap";
 
 import { isSafari } from "react-device-detect";
 
@@ -67,18 +69,18 @@ class CaseStudiesPage extends Component {
       prevScrollpos: window.pageYOffset,
       display: !this.state.display
     });
-    // window.addEventListener("scroll", this.handleScroll);
-    // window.addEventListener("mousemove", this.handleMouseMove);
-    // this.interval = setInterval(() => this.tick(), 1000);
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("mousemove", this.handleMouseMove);
+    this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
     this.setState({
       display: !this.state.display
     });
-    // window.removeEventListener("scroll", this.handleScroll);
-    // window.removeEventListener("mousemove", this.handleMouseMove);
-    // clearInterval(this.interval);
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    clearInterval(this.interval);
   }
 
   render() {
@@ -91,6 +93,7 @@ class CaseStudiesPage extends Component {
           className={`big title saol_standard${
             isHeadlineVisible ? " visible" : ""
           }`}
+          style={{ opacity: 0, visibility: "hidden" }}
         >
           Work
         </h1>

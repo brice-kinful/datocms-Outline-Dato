@@ -12,18 +12,18 @@
   position: sticky;
 } */
 
-#case-studies h1,
-.safari h1 {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0);
-  z-index: 99;
-  pointer-events: none;
+h1.big {
   width: 38vw;
-  -webkit-backface-visibility: hidden;
+}
+
+@keyframes loadTitle {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 #case-studies .title-container img {
@@ -44,12 +44,12 @@
   align-items: center;
 }
 
-#case-studies .wrapper>* {
+#case-studies .wrapper > * {
   padding-bottom: 200px;
   padding-top: 0;
 }
 
-#case-studies .wrapper>*:last-child {
+#case-studies .wrapper > *:last-child {
   padding-bottom: 0;
 }
 
@@ -61,7 +61,7 @@
   max-width: 485px;
 }
 
-#case-studies .block.solo .flex>* {
+#case-studies .block.solo .flex > * {
   width: 100%;
 }
 

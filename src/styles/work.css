@@ -10,6 +10,14 @@
   position: relative;
 }
 
+/* .safari .tl-edges {
+  overflow: visible;
+}
+
+.safari #nav-container {
+  position: sticky;
+} */
+
 #case-studies h1 {
   position: fixed;
   left: 0;

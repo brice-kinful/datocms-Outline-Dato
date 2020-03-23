@@ -85,13 +85,13 @@ class StudioPage extends Component {
       <Layout>
         <div className="page" id="studio">
           <div className="hero wrapper skinny" style={{ zIndex: 99 }}>
-            <h1
+            {/* <h1
               className={`big centertext saol_standard ${
                 isHeadlineVisible ? "visible" : ""
               }`}
             >
               Studio
-            </h1>
+            </h1> */}
             <Img fluid={hero.heroImage.fluid} />
             <div className="flex">
               <div className="one-fourth title uppercase">{hero.title}</div>

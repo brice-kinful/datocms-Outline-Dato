@@ -88,7 +88,7 @@ class CaseStudiesPage extends Component {
     return (
       <Layout>
         <div className="page" id="case-studies">
-          <div
+          {/* <div
             className={`wrapper skinny title-container`}
             style={{ zIndex: 999 }}
           >
@@ -99,7 +99,7 @@ class CaseStudiesPage extends Component {
             >
               Work
             </h1>
-          </div>
+          </div> */}
           <div className="wrapper skinny">
             {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {
               switch (block.__typename) {

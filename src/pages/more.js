@@ -150,7 +150,7 @@ class WorkPage extends Component {
       <Layout>
         <div className="page" id="work">
           <div className="wrapper" style={{ zIndex: 99 }}>
-            <div className="title-container wrapper">
+            {/* <div className="title-container wrapper">
               <h1
                 className={`big saol_standard centertext ${
                   isHeadlineVisible ? "visible" : ""
@@ -158,7 +158,7 @@ class WorkPage extends Component {
               >
                 More
               </h1>
-            </div>
+            </div> */}
 
             {isOpen && (
               <>

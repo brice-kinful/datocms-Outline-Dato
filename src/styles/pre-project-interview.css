@@ -398,8 +398,8 @@ input.required+span {
 
 #interview .pagetitle {
     position: fixed;
-    top: 60px;
-    right: 150px;
+    top: 120px;
+    right: 60px;
     font-size: 18px;
     z-index: 1
 }

@@ -3,11 +3,11 @@
   padding: 50vh 0 200px;
 }
 
-#studio > * {
+#studio>* {
   padding-bottom: 200px;
 }
 
-#studio > *:last-child {
+#studio>*:last-child {
   padding-bottom: 0;
 }
 
@@ -37,7 +37,7 @@ h1.big {
   line-height: 45px;
 }
 
-#studio .three-fourths > :last-child {
+#studio .three-fourths> :last-child {
   margin: 0;
 }
 
@@ -110,7 +110,7 @@ h1.big {
 }
 
 @media screen and (max-width: 1024px) {
-  #studio > * {
+  #studio>* {
     padding-bottom: 75px;
   }
 
@@ -126,7 +126,7 @@ h1.big {
 
   #studio .text li {
     font-size: 30px;
-    line-height: 2;
+    line-height: 1;
   }
 
   #studio .flex.grid {
@@ -147,7 +147,7 @@ h1.big {
 }
 
 @media screen and (max-width: 768px) {
-  #studio > * {
+  #studio>* {
     padding-bottom: 50px;
   }
 
@@ -177,7 +177,7 @@ h1.big {
     flex-wrap: wrap;
   }
 
-  #studio .flex > * {
+  #studio .flex>* {
     width: 100%;
   }
 
@@ -222,5 +222,4 @@ h1.big {
   }
 }
 
-@media screen and (max-width: 600px) {
-}
+@media screen and (max-width: 600px) {}

@@ -13,7 +13,7 @@ class CaseStudiesPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHeadlineVisible: true,
+      isHeadlineVisible: false,
       seconds: 0,
       prevScrollpos: "",
       display: false
@@ -63,6 +63,11 @@ class CaseStudiesPage extends Component {
   };
 
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }, 1250);
     this.setState({
       prevScrollpos: window.pageYOffset,
       display: !this.state.display
@@ -86,12 +91,11 @@ class CaseStudiesPage extends Component {
     const { isHeadlineVisible, display } = this.state;
 
     return (
-      <>
+      <div className="outer">
         <h1
           className={`big title saol_standard${
             isHeadlineVisible ? " visible" : ""
           }`}
-          style={{ opacity: 0, visibility: "hidden" }}
         >
           Work
         </h1>
@@ -237,7 +241,7 @@ class CaseStudiesPage extends Component {
             </div>
           </div>
         </Layout>
-      </>
+      </div>
     );
   }
 }

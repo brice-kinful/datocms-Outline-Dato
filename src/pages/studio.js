@@ -13,7 +13,7 @@ class StudioPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHeadlineVisible: true,
+      isHeadlineVisible: false,
       seconds: 0,
       prevScrollpos: ""
     };
@@ -63,6 +63,11 @@ class StudioPage extends Component {
 
   componentDidMount() {
     // console.log(this.props.data);
+    setTimeout(() => {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }, 1250);
     this.setState({ prevScrollpos: window.pageYOffset });
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
@@ -82,12 +87,11 @@ class StudioPage extends Component {
     const { isHeadlineVisible } = this.state;
 
     return (
-      <>
+      <div className="outer">
         <h1
           className={`big centertext saol_standard ${
             isHeadlineVisible ? "visible" : ""
           }`}
-          style={{ opacity: 0, visibility: "hidden" }}
         >
           Studio
         </h1>
@@ -145,7 +149,7 @@ class StudioPage extends Component {
             </div>
           </div>
         </Layout>
-      </>
+      </div>
     );
   }
 }

@@ -40,20 +40,22 @@ const Job = ({ data }) => {
   ];
 
   return (
-    <Layout>
-      <HelmetDatoCms seo={job.seoMetaTags}>
-        <title>{`Jobs | ${job.title} | Charleston, SC`}</title>
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgJSONLD)}
-        </script>
-      </HelmetDatoCms>
-      <div className="page" id="default">
-        <div className="wrapper x_skinny content">
-          <h1>{job.title}</h1>
-          {parse(job.content)}
+    <div className="container">
+      <Layout>
+        <HelmetDatoCms seo={job.seoMetaTags}>
+          <title>{`Jobs | ${job.title} | Charleston, SC`}</title>
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgJSONLD)}
+          </script>
+        </HelmetDatoCms>
+        <div className="page" id="default">
+          <div className="wrapper x_skinny content">
+            <h1>{job.title}</h1>
+            {parse(job.content)}
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   );
 };
 

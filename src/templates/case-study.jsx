@@ -43,10 +43,8 @@ class CaseStudy extends Component {
         : activeProjectIndex + 1;
     const { hasHeroImageLoaded } = this.state;
     return (
-      <Layout>
-        <div className="page" id="case-study">
-          <HelmetDatoCms seo={project.seoMetaTags} />
-
+      <>
+        <div className="container" id="case-study">
           <div
             className={`screen flex align-center justify-center wrapper${
               hasHeroImageLoaded ? " hidden" : ""
@@ -62,112 +60,118 @@ class CaseStudy extends Component {
                 : project.title}
             </h1>
           </div>
-          <div className="hero">
-            <Img
-              loading={"eager"}
-              fluid={project.heroImage.fluid}
-              // durationFadeIn={1000}
-              onLoad={() =>
-                setTimeout(() => {
-                  this.setState({ hasHeroImageLoaded: true });
-                  document.body.classList.remove("frozen");
-                }, 4500)
-              }
-            />
-          </div>
+          <Layout>
+            <div className="page">
+              <HelmetDatoCms seo={project.seoMetaTags} />
 
-          {/* Blocks */}
-          {project.blocks.map(({ __typename }, index, item) => {
-            const block = item[index];
-            switch (__typename) {
-              case "DatoCmsDropdownBlock":
-                return (
-                  <React.Fragment key={block.id}>
-                    <HeadlineAccordion content={block} />
-                  </React.Fragment>
-                );
-              case "DatoCmsImageBlock":
-                return (
-                  <div
-                    className={`block${
-                      block.doubleTopPadding ? " pad-top" : ""
-                    }${block.doubleBottomPadding ? " pad-bottom" : ""}${
-                      block.setBottomPaddingToZero ? " no-pad-bottom" : ""
-                    }${block.setTopPaddingToZero ? " no-pad-top" : ""}`}
-                    key={block.id}
-                    style={{ backgroundColor: block.backgroundColor?.hex }}
-                  >
-                    <div
-                      className={`wrapper skinny`}
-                      style={
-                        block.customWidth && {
-                          maxWidth: `${block.customWidth}px`
-                        }
-                      }
-                    >
-                      <BlurredImage src={block.image.fluid} />
-                    </div>
-                  </div>
-                );
-              case "DatoCmsImageSliderBlock":
-                return (
-                  <React.Fragment key={block.id}>
-                    <ImageSlider content={block} />
-                  </React.Fragment>
-                );
-              case "DatoCmsSideBySideBlock":
-                return (
-                  <React.Fragment key={block.id}>
-                    <SideBySide content={block} />
-                  </React.Fragment>
-                );
-              case "DatoCmsFullWidthImageBlock":
-                return (
-                  <div
-                    className={`block full-width-block${
-                      block.doubleTopPadding ? " pad-top" : ""
-                    }${block.doubleBottomPadding ? " pad-bottom" : ""}${
-                      block.setBottomPaddingToZero ? " no-pad-bottom" : ""
-                    }${block.setTopPaddingToZero ? " no-pad-top" : ""}`}
-                    key={block.id}
-                  >
-                    <BlurredImage src={block.image.fluid} />
-                  </div>
-                );
-              case "DatoCmsTextBlock":
-                return (
-                  <React.Fragment key={block.id}>
-                    <TextBlock content={block} />
-                  </React.Fragment>
-                );
-              case "DatoCmsUrlBlock":
-                return (
-                  <React.Fragment key={block.id}>
-                    <UrlBlock content={block} />
-                  </React.Fragment>
-                );
-              case "DatoCmsVideoBlock":
-                return (
-                  <React.Fragment key={block.id}>
-                    <VideoBlock content={block} />
-                  </React.Fragment>
-                );
-              default:
-                break;
-            }
-          })}
+              <div className="hero">
+                <Img
+                  loading={"eager"}
+                  fluid={project.heroImage.fluid}
+                  // durationFadeIn={1000}
+                  onLoad={() =>
+                    setTimeout(() => {
+                      this.setState({ hasHeroImageLoaded: true });
+                      document.body.classList.remove("frozen");
+                    }, 4500)
+                  }
+                />
+              </div>
 
-          <CaseStudiesPagination
-            title={allProjects[nextProject].node.title}
-            slug={allProjects[nextProject].node.slug}
-            thumbnail={allProjects[nextProject].node.thumbnail?.fluid}
-            services={project.services}
-            location={project.location}
-            photography={project.photography}
-            featured={project.projectFeaturedIn}
-          />
+              {/* Blocks */}
+              {project.blocks.map(({ __typename }, index, item) => {
+                const block = item[index];
+                switch (__typename) {
+                  case "DatoCmsDropdownBlock":
+                    return (
+                      <React.Fragment key={block.id}>
+                        <HeadlineAccordion content={block} />
+                      </React.Fragment>
+                    );
+                  case "DatoCmsImageBlock":
+                    return (
+                      <div
+                        className={`block${
+                          block.doubleTopPadding ? " pad-top" : ""
+                        }${block.doubleBottomPadding ? " pad-bottom" : ""}${
+                          block.setBottomPaddingToZero ? " no-pad-bottom" : ""
+                        }${block.setTopPaddingToZero ? " no-pad-top" : ""}`}
+                        key={block.id}
+                        style={{ backgroundColor: block.backgroundColor?.hex }}
+                      >
+                        <div
+                          className={`wrapper skinny`}
+                          style={
+                            block.customWidth && {
+                              maxWidth: `${block.customWidth}px`
+                            }
+                          }
+                        >
+                          <BlurredImage src={block.image.fluid} />
+                        </div>
+                      </div>
+                    );
+                  case "DatoCmsImageSliderBlock":
+                    return (
+                      <React.Fragment key={block.id}>
+                        <ImageSlider content={block} />
+                      </React.Fragment>
+                    );
+                  case "DatoCmsSideBySideBlock":
+                    return (
+                      <React.Fragment key={block.id}>
+                        <SideBySide content={block} />
+                      </React.Fragment>
+                    );
+                  case "DatoCmsFullWidthImageBlock":
+                    return (
+                      <div
+                        className={`block full-width-block${
+                          block.doubleTopPadding ? " pad-top" : ""
+                        }${block.doubleBottomPadding ? " pad-bottom" : ""}${
+                          block.setBottomPaddingToZero ? " no-pad-bottom" : ""
+                        }${block.setTopPaddingToZero ? " no-pad-top" : ""}`}
+                        key={block.id}
+                      >
+                        <BlurredImage src={block.image.fluid} />
+                      </div>
+                    );
+                  case "DatoCmsTextBlock":
+                    return (
+                      <React.Fragment key={block.id}>
+                        <TextBlock content={block} />
+                      </React.Fragment>
+                    );
+                  case "DatoCmsUrlBlock":
+                    return (
+                      <React.Fragment key={block.id}>
+                        <UrlBlock content={block} />
+                      </React.Fragment>
+                    );
+                  case "DatoCmsVideoBlock":
+                    return (
+                      <React.Fragment key={block.id}>
+                        <VideoBlock content={block} />
+                      </React.Fragment>
+                    );
+                  default:
+                    break;
+                }
+              })}
+
+              <CaseStudiesPagination
+                title={allProjects[nextProject].node.title}
+                slug={allProjects[nextProject].node.slug}
+                thumbnail={allProjects[nextProject].node.thumbnail?.fluid}
+                services={project.services}
+                location={project.location}
+                photography={project.photography}
+                featured={project.projectFeaturedIn}
+              />
+            </div>
+          </Layout>
         </div>
-      </Layout>
+      </>
     );
   }
 }

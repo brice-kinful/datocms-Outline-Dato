@@ -76,67 +76,62 @@ class ContactPage extends Component {
     const contact = this.props.data.datoCmsContactPage;
     const { isHeadlineVisible } = this.state;
     return (
-      <Layout>
-        <div className="page" id="contact">
-          <div className="main flex wrapper skinny">
-            <h1
-              className={`big centertext saol_standard show_768 ${
-                isHeadlineVisible ? "visible" : ""
-              }`}
-            >
-              Contact
-            </h1>
-            <div className="three-fourths text">
-              <div className="inner flex hide_768">
-                <p>
-                  <span className="saol_standard">{contact.headline}</span>
-                  <span className="textlink">
+      <div className="container">
+        <Layout>
+          <div className="page" id="contact">
+            <div className="main flex wrapper skinny">
+              <div className="three-fourths text">
+                <div className="inner flex hide_768">
+                  <p>
+                    <span className="saol_standard">{contact.headline}</span>
+                    <span className="textlink">
+                      <AniLink
+                        preventScrollJump
+                        to={`/${contact.ctaButtonUrl.slug}`}
+                        fade
+                        className="uppercase"
+                      >
+                        {contact.ctaButtonText}
+                      </AniLink>
+                    </span>
+                  </p>
+                </div>
+                <div className="flex bottom inner space-between">
+                  <div className="one-half">
                     <AniLink
                       preventScrollJump
-                      to={`/${contact.ctaButtonUrl.slug}`}
+                      to={`/${contact.viewJobsButtonUrl.slug}`}
                       fade
-                      className="uppercase"
+                      className="line hide_768"
+                      style={{ position: "relative" }}
                     >
-                      {contact.ctaButtonText}
+                      {contact.viewJobsButtonText}
                     </AniLink>
-                  </span>
-                </p>
-              </div>
-              <div className="flex bottom inner space-between">
-                <div className="one-half">
-                  <AniLink
-                    preventScrollJump
-                    to={`/${contact.viewJobsButtonUrl.slug}`}
-                    fade
-                    className="line hide_768"
-                    style={{ position: "relative" }}
-                  >
-                    {contact.viewJobsButtonText}
-                  </AniLink>
-                  {parse(contact.leftBlockText)}
-                </div>
-                <div className="one-half flex align-end">
-                  {parse(contact.rightBlockText)}
-                </div>
-                <div className="textlink show_768">
-                  <AniLink
-                    preventScrollJump
-                    to={`/${contact.viewJobsButtonUrl.slug}`}
-                    fade
-                    className=" "
-                    style={{ position: "relative" }}
-                  >
-                    {contact.viewJobsButtonText}
-                  </AniLink>
+                    {parse(contact.leftBlockText)}
+                  </div>
+                  <div className="one-half flex align-end">
+                    {parse(contact.rightBlockText)}
+                  </div>
+                  <div className="textlink show_768">
+                    <AniLink
+                      preventScrollJump
+                      to={`/${contact.viewJobsButtonUrl.slug}`}
+                      fade
+                      className=" "
+                      style={{ position: "relative" }}
+                    >
+                      {contact.viewJobsButtonText}
+                    </AniLink>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="one-fourth">
-              <Img fluid={contact.image.fluid} />
+              <div className="one-fourth">
+                <Img fluid={contact.image.fluid} />
+              </div>
             </div>
           </div>
-        </div>
-      </Layout>
+        </Layout>
+      </div>
     );
   }
 }

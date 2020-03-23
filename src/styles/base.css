@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 /* 
 
 yellow - F7E343 | brown  - 9D6747  -- strategists
@@ -155,6 +157,8 @@ body {
   background: #f5f5f1;
   color: #000000;
   cursor: url(/cursor.svg) 0 0, default;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   /* background: radial-gradient(farthest-side, black 95%, black 100%) calc(var(--x) - .55em) calc(var(--y) - .55em)/.5em .5em fixed no-repeat;
     background-color: white;
@@ -179,12 +183,16 @@ a.line {
   position: relative;
   top: 0;
   overflow: hidden;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
 a.line:after {
   content: "";
   display: inline-block;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   position: absolute;
   height: 1px;
@@ -210,6 +218,8 @@ a.line:hover:after {
   cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
   padding: 5px 0;
   /* border-bottom: 1px solid; */
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -231,6 +241,8 @@ a.line:hover:after {
 .page#default a {
   top: 0;
   position: relative;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -247,6 +259,8 @@ a.line:hover:after {
   content: "";
   display: inline-block;
   position: absolute;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   height: 1px;
   background: black;
@@ -297,12 +311,21 @@ h1.big {
   left: 0;
   right: 0;
   top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  z-index: 9;
+  z-index: 999;
+  -webkit-transition: visibility 0.75s linear, opacity 0.75s linear;
+  -o-transition: visibility 0.75s linear, opacity 0.75s linear;
   transition: visibility 0.75s linear, opacity 0.75s linear;
   opacity: 0;
   visibility: hidden;
@@ -311,7 +334,6 @@ h1.big {
   will-change: opacity;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -461,27 +483,39 @@ p.large {
   -webkit-box-direction: normal;
 }
 
-.flex > img {
+.flex>img {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
 .align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .align-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
 }
 
 .align-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
 }
 
 .justify-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .flex.space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -493,6 +527,7 @@ p.large {
 }
 
 .flex.wrap {
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -528,15 +563,17 @@ p.large {
 .vertical-text__inner {
   display: inline-block;
   white-space: nowrap;
+  -webkit-transform: translateX(5px) rotate(0deg);
+  -ms-transform: translateX(5px) rotate(0deg);
   transform: translateX(5px) rotate(0deg);
   -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   -ms-transform: none;
   -ms-transform-origin: none;
   -ms-writing-mode: tb-rl;
-  *writing-mode: tb-rl;
+  *-webkit-writing-mode: tb-rl;
+  writing-mode: tb-rl;
 }
 
 .vertical-text__inner:before {
@@ -547,12 +584,10 @@ p.large {
 
 .vertical-text__inner.reverse {
   -webkit-transform-origin: 100% 100%;
-  -moz-transform-origin: 100% 100%;
-  -o-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
   -webkit-transform: rotate(270deg) translateX(100%);
-  -moz-transform: rotate(270deg) translateX(100%);
-  -o-transform: rotate(270deg) translateX(100%);
+  -ms-transform: rotate(270deg) translateX(100%);
   transform: rotate(270deg) translateX(100%);
 }
 
@@ -563,6 +598,7 @@ p.large {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 5vmin;
@@ -629,7 +665,6 @@ a.btn {
   color: #fff;
   line-height: 60px;
   -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
@@ -640,16 +675,24 @@ a.btn:hover {
 }
 
 .container {
-  /* background: #f5f5f1; */
   min-height: 100vh;
+}
+
+.container,
+.outer #nav-container {
+  /* background: #f5f5f1; */
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 1.25s ease-in;
   -o-transition: 1.25s ease-in;
   transition: 1.25s ease-in;
+  -webkit-animation: pageLoading;
   animation: pageLoading;
+  -webkit-animation-duration: 1.25s;
   animation-duration: 1.25s;
+  -webkit-animation-delay: 1.25s;
   animation-delay: 1.25s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
@@ -657,6 +700,18 @@ a.btn:hover {
   background: #f5f5f1;
   min-height: 100vh;
   width: 100%;
+}
+
+@-webkit-keyframes pageLoading {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes pageLoading {
@@ -671,7 +726,31 @@ a.btn:hover {
   }
 }
 
-.page > .wrapper {
+@-webkit-keyframes safariLoader {
+  0% {
+    opacity: 1;
+    /* visibility: hidden; */
+  }
+
+  100% {
+    opacity: 0;
+    /* visibility: visible; */
+  }
+}
+
+@keyframes safariLoader {
+  0% {
+    opacity: 1;
+    /* visibility: hidden; */
+  }
+
+  100% {
+    opacity: 0;
+    /* visibility: visible; */
+  }
+}
+
+.page>.wrapper {
   position: relative;
   z-index: 9;
   background: #f5f5f1;
@@ -683,7 +762,11 @@ a.btn:hover {
   -webkit-filter: blur(15px);
   filter: blur(15px);
   transition: -webkit-filter 0.75s, opacity 0.75s;
+  -webkit-transition: opacity 0.75s, -webkit-filter 0.75s;
+  transition: opacity 0.75s, -webkit-filter 0.75s;
+  -o-transition: filter 0.75s, opacity 0.75s;
   transition: filter 0.75s, opacity 0.75s;
+  transition: filter 0.75s, opacity 0.75s, -webkit-filter 0.75s;
   transition: filter 0.75s, -webkit-filter 0.75s, opacity 0.75s;
 }
 
@@ -703,11 +786,11 @@ a.btn:hover {
   padding-bottom: 0;
 }
 
-.page#default .content > * {
+.page#default .content>* {
   margin-bottom: 30px;
 }
 
-.page#default .content > *:last-child {
+.page#default .content>*:last-child {
   margin-bottom: 0;
 }
 
@@ -752,6 +835,8 @@ a.btn:hover {
   }
 
   h1.big {
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
     transform: none !important;
     top: 150px !important;
   }
@@ -896,6 +981,7 @@ a.btn:hover {
 }
 
 @media screen and (max-width: 480px) {
+
   /* pre-project interview */
   #interview label {
     font-size: 12px;

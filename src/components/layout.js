@@ -130,6 +130,7 @@ class Layout extends Component {
                 favicon={data.datoCmsSite.faviconMetaTags}
                 seo={data.datoCmsHome.seoMetaTags}
               />
+              {/* <div className="safari-loader"></div> */}
               <Measure
                 bounds
                 onResize={contentRect => {

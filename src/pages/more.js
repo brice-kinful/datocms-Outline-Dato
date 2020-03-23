@@ -27,7 +27,7 @@ class WorkPage extends Component {
       isOpen: false,
       lightboxBgColor: "",
       lightboxTextColor: "",
-      isHeadlineVisible: true,
+      isHeadlineVisible: false,
       prevScrollpos: ""
     };
   }
@@ -86,6 +86,11 @@ class WorkPage extends Component {
   };
 
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isHeadlineVisible: true
+      });
+    }, 1250);
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
     this.interval = setInterval(() => this.tick(), 1000);
@@ -96,9 +101,9 @@ class WorkPage extends Component {
   }
 
   componentWillUnmount() {
-    // window.removeEventListener("scroll", this.handleScroll);
-    // window.removeEventListener("mousemove", this.handleMouseMove);
-    // clearInterval(this.interval);
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    clearInterval(this.interval);
   }
 
   render() {
@@ -147,12 +152,11 @@ class WorkPage extends Component {
     });
 
     return (
-      <>
+      <div className="outer">
         <h1
           className={`big saol_standard centertext ${
             isHeadlineVisible ? "visible" : ""
           }`}
-          style={{ opacity: 0, visibility: "hidden" }}
         >
           More
         </h1>
@@ -317,7 +321,7 @@ class WorkPage extends Component {
             </div>
           </div>
         </Layout>
-      </>
+      </div>
     );
   }
 }

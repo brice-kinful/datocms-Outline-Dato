@@ -59,20 +59,22 @@ class IndexPage extends Component {
       return item.__typename === "DatoCmsHeroImage";
     });
     return (
-      <Layout>
-        <Preloader images={heroImages[0]} />
-        <div id="home" className="page">
-          <div className="flex align-center" id="feature">
-            <Headline content={headline[0]} />
+      <div className="container">
+        <Layout>
+          <Preloader images={heroImages[0]} />
+          <div id="home" className="page">
+            <div className="flex align-center" id="feature">
+              <Headline content={headline[0]} />
+            </div>
+            <HomeScroller projects={data.datoCmsHome.scrollerCaseStudies} />
+            <HomeCapabilities content={data.datoCmsHome.capabilities} />
+            <Instagram
+              grams={this.state.grams[0]}
+              handle={insta[0].node.handle}
+            />
           </div>
-          <HomeScroller projects={data.datoCmsHome.scrollerCaseStudies} />
-          <HomeCapabilities content={data.datoCmsHome.capabilities} />
-          <Instagram
-            grams={this.state.grams[0]}
-            handle={insta[0].node.handle}
-          />
-        </div>
-      </Layout>
+        </Layout>
+      </div>
     );
   }
 }

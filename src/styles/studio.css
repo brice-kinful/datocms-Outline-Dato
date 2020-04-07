@@ -95,7 +95,7 @@ h1.big {
 }
 
 #studio .cta .textlink {
-  font-size: 18px;
+  font-size: 16px;
   top: 3px;
 }
 
@@ -186,6 +186,7 @@ h1.big {
   }
 
   #studio p,
+  #studio .team p,
   #studio .three-fourths p {
     font-size: 14px;
   }

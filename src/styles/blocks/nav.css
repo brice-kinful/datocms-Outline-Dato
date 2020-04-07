@@ -33,7 +33,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #000000;
   opacity: 1;
   -webkit-transform: rotate(0deg);
@@ -323,7 +323,7 @@ body.home #logo {
   }
 
   #nav li:not(.email) a {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 35px;
   }
 
@@ -340,6 +340,8 @@ body.home #logo {
   #logo a svg {
     width: 40px;
     /* height: 28px; */
+    position: relative;
+    z-index: 9999;
   }
 
   @supports ((display: -ms-grid) or (display: grid)) {

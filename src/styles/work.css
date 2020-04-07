@@ -1,5 +1,6 @@
 #case-studies {
-  padding: 125px 0 200px;
+  /* padding: 125px 0 200px; */
+  padding: 50vh 0 200px;
   /* overflow: hidden; */
   position: relative;
 }
@@ -44,12 +45,12 @@ h1.big {
   align-items: center;
 }
 
-#case-studies .wrapper > * {
+#case-studies .wrapper>* {
   padding-bottom: 200px;
   padding-top: 0;
 }
 
-#case-studies .wrapper > *:last-child {
+#case-studies .wrapper>*:last-child {
   padding-bottom: 0;
 }
 
@@ -61,7 +62,7 @@ h1.big {
   max-width: 485px;
 }
 
-#case-studies .block.solo .flex > * {
+#case-studies .block.solo .flex>* {
   width: 100%;
 }
 
@@ -148,7 +149,7 @@ h1.big {
 @media screen and (max-width: 860px) {
   #case-studies span {
     font-size: 30px;
-    line-height: 32px;
+    line-height: 40px;
   }
 
   #case-studies span.textlink {

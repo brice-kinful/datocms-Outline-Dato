@@ -37,8 +37,8 @@
 }
 
 #interview p {
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 #interview .step {
@@ -131,7 +131,7 @@ input.required+span {
 #interview .field input[type=text] {
     width: calc(100% - 3px);
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 16px;
     height: 46px;
     text-indent: 15px;
     font-family: inherit;
@@ -167,7 +167,7 @@ input.required+span {
     height: 165px;
     margin-top: 20px;
     resize: none;
-    font-size: 18px;
+    font-size: 16px;
     font-family: inherit;
 }
 
@@ -274,26 +274,29 @@ input.required+span {
 
 #interview .slider .display {
     position: absolute;
-    top: -20px;
+    top: -9px;
     right: 0;
-    font-size: 24px
+    font-size: 16px;
 }
 
 #interview .btn,
 #interview input[type=submit] {
     display: block;
-    cursor: url(/cursor-blur.png) 8.5 8.5, pointer !important;
+    cursor: url(http://localhost:8000/cursor-blur.png) 8.5 8.5, pointer !important;
     width: 100%;
     background: #000;
     border: 1px solid transparent;
     font-family: "Styrene Light";
+    font-family: "Styrene A Web", sans-serif;
     font-weight: 400;
     font-style: normal;
     letter-spacing: .02em;
-    font-size: 16px;
+    font-size: 14px;
+    text-transform: uppercase;
     color: #fff;
     line-height: 60px;
-    transition: all .2s linear
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
 }
 
 #interview .btn:hover,
@@ -350,7 +353,8 @@ input.required+span {
     text-transform: initial;
     letter-spacing: .02em;
     width: auto;
-    font-family: "Styrene Light";
+    font-family: "Styrene A Web", sans-serif;
+    font-size: 14px;
     font-weight: normal;
     font-style: normal;
     padding: 8px 0;
@@ -398,16 +402,23 @@ input.required+span {
 
 #interview .pagetitle {
     position: fixed;
-    top: 120px;
-    right: 60px;
-    font-size: 18px;
-    z-index: 1
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    font-size: 16px;
+    z-index: 1;
+    height: 120px;
+    padding-top: 30px;
+    right: 0;
+    margin: auto;
+    text-align: center;
 }
 
 #interview .pagetitle .pagination {
-    text-align: right;
-    font-size: 13px;
-    margin-top: 10px
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    font-family: "Styrene A Web", sans-serif;
 }
 
 #interview .input-range {

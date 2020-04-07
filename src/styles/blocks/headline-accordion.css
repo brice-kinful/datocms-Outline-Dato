@@ -13,8 +13,8 @@
 .accordion.ui .content p {
     font-weight: normal;
     font-style: normal;
-    font-size: 42px;
-    line-height: 60px;
+    font-size: 64px;
+    line-height: 80px;
 }
 
 .accordion.ui .content.active {
@@ -26,8 +26,8 @@
 
 .accordion.ui .title {
     pointer-events: none;
-    font-size: 42px;
-    line-height: 60px;
+    font-size: 64px;
+    line-height: 80px;
 }
 
 .accordion.ui .title.active span.textlink {
@@ -44,7 +44,7 @@
 
 .accordion.ui .textlink {
     pointer-events: initial;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .block.accordion-block .textlink {
@@ -91,7 +91,7 @@
 
     .accordion.ui .textlink {
         pointer-events: initial;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 22px;
         position: absolute;
         bottom: -45px;

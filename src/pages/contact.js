@@ -13,7 +13,7 @@ class ContactPage extends Component {
     this.state = {
       isHeadlineVisible: true,
       seconds: 0,
-      prevScrollpos: ""
+      prevScrollpos: "",
     };
   }
 
@@ -22,31 +22,31 @@ class ContactPage extends Component {
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
-      isHeadlineVisible: true
+      isHeadlineVisible: true,
     });
     if (currentScrollPos > 25) {
       this.setState({
-        isHeadlineVisible: false
+        isHeadlineVisible: false,
       });
       clearInterval(this.interval);
       this.interval = setInterval(() => this.tick(), 1000);
-      this.setState(state => ({
-        seconds: 0
+      this.setState((state) => ({
+        seconds: 0,
       }));
     } else {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }
   };
 
   tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
+    this.setState((state) => ({
+      seconds: state.seconds + 1,
     }));
     if (this.state.seconds > 15) {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }
   }
@@ -54,8 +54,8 @@ class ContactPage extends Component {
   handleMouseMove = () => {
     clearInterval(this.interval);
     this.interval = setInterval(() => this.tick(), 1000);
-    this.setState(state => ({
-      seconds: 0
+    this.setState((state) => ({
+      seconds: 0,
     }));
   };
 
@@ -76,62 +76,60 @@ class ContactPage extends Component {
     const contact = this.props.data.datoCmsContactPage;
     const { isHeadlineVisible } = this.state;
     return (
-      <div className="container">
-        <Layout>
-          <div className="page" id="contact">
-            <div className="main flex wrapper skinny">
-              <div className="three-fourths text">
-                <div className="inner flex hide_768">
-                  <p>
-                    <span className="saol_standard">{contact.headline}</span>
-                    <span className="textlink">
-                      <AniLink
-                        preventScrollJump
-                        to={`/${contact.ctaButtonUrl.slug}`}
-                        fade
-                        className="uppercase"
-                      >
-                        {contact.ctaButtonText}
-                      </AniLink>
-                    </span>
-                  </p>
-                </div>
-                <div className="flex bottom inner space-between">
-                  <div className="one-half">
+      <Layout>
+        <div className="page" id="contact">
+          <div className="main flex wrapper skinny">
+            <div className="three-fourths text">
+              <div className="inner flex">
+                <p>
+                  <span className="saol_standard">{contact.headline}</span>
+                  <span className="textlink">
                     <AniLink
                       preventScrollJump
-                      to={`/${contact.viewJobsButtonUrl.slug}`}
+                      to={`/${contact.ctaButtonUrl.slug}`}
                       fade
-                      className="line hide_768"
-                      style={{ position: "relative" }}
+                      className="uppercase"
                     >
-                      {contact.viewJobsButtonText}
+                      {contact.ctaButtonText}
                     </AniLink>
-                    {parse(contact.leftBlockText)}
-                  </div>
-                  <div className="one-half flex align-end">
-                    {parse(contact.rightBlockText)}
-                  </div>
-                  <div className="textlink show_768">
-                    <AniLink
-                      preventScrollJump
-                      to={`/${contact.viewJobsButtonUrl.slug}`}
-                      fade
-                      className=" "
-                      style={{ position: "relative" }}
-                    >
-                      {contact.viewJobsButtonText}
-                    </AniLink>
-                  </div>
-                </div>
+                  </span>
+                </p>
               </div>
-              <div className="one-fourth">
-                <Img fluid={contact.image.fluid} />
+              <div className="flex bottom inner space-between">
+                <div className="one-half">
+                  <AniLink
+                    preventScrollJump
+                    to={`/${contact.viewJobsButtonUrl.slug}`}
+                    fade
+                    className="line hide_768"
+                    style={{ position: "relative" }}
+                  >
+                    {contact.viewJobsButtonText}
+                  </AniLink>
+                  {parse(contact.leftBlockText)}
+                </div>
+                <div className="one-half flex align-end">
+                  {parse(contact.rightBlockText)}
+                </div>
+                <div className="textlink show_768">
+                  <AniLink
+                    preventScrollJump
+                    to={`/${contact.viewJobsButtonUrl.slug}`}
+                    fade
+                    className=" "
+                    style={{ position: "relative" }}
+                  >
+                    {contact.viewJobsButtonText}
+                  </AniLink>
+                </div>
               </div>
             </div>
+            <div className="one-fourth">
+              <Img fluid={contact.image.fluid} />
+            </div>
           </div>
-        </Layout>
-      </div>
+        </div>
+      </Layout>
     );
   }
 }

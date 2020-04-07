@@ -13,7 +13,7 @@ import { isSafari } from "react-device-detect";
 import "react-image-lightbox/style.css";
 import "../styles/more.css";
 
-const HashLink = props => genericHashLink(props, GatsbyLink);
+const HashLink = (props) => genericHashLink(props, GatsbyLink);
 
 class WorkPage extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class WorkPage extends Component {
       lightboxBgColor: "",
       lightboxTextColor: "",
       isHeadlineVisible: false,
-      prevScrollpos: ""
+      prevScrollpos: "",
     };
   }
 
@@ -37,7 +37,7 @@ class WorkPage extends Component {
     // console.log("updating colors");
     this.setState({
       lightboxBgColor: bgColor,
-      lightboxTextColor: textColor
+      lightboxTextColor: textColor,
     });
   };
 
@@ -48,31 +48,31 @@ class WorkPage extends Component {
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
-      isHeadlineVisible: true
+      isHeadlineVisible: true,
     });
     if (currentScrollPos > 25) {
       this.setState({
-        isHeadlineVisible: false
+        isHeadlineVisible: false,
       });
       clearInterval(this.interval);
       this.interval = setInterval(() => this.tick(), 1000);
-      this.setState(state => ({
-        seconds: 0
+      this.setState((state) => ({
+        seconds: 0,
       }));
     } else {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }
   };
 
   tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
+    this.setState((state) => ({
+      seconds: state.seconds + 1,
     }));
     if (this.state.seconds > 15) {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }
   }
@@ -80,15 +80,15 @@ class WorkPage extends Component {
   handleMouseMove = () => {
     clearInterval(this.interval);
     this.interval = setInterval(() => this.tick(), 1000);
-    this.setState(state => ({
-      seconds: 0
+    this.setState((state) => ({
+      seconds: 0,
     }));
   };
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }, 1250);
     window.addEventListener("scroll", this.handleScroll);
@@ -96,7 +96,7 @@ class WorkPage extends Component {
     this.interval = setInterval(() => this.tick(), 1000);
     const mosaicImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     this.setState({
-      images: this.state.images.concat(mosaicImages)
+      images: this.state.images.concat(mosaicImages),
     });
   }
 
@@ -114,14 +114,14 @@ class WorkPage extends Component {
       imagePadding,
       isHeadlineVisible,
       lightboxBgColor,
-      lightboxTextColor
+      lightboxTextColor,
     } = this.state;
     let titles = [];
     const lightboxImages = images;
     const masonryImages = this.props.data.datoCmsWorkPage.workMosaicImages;
     const breakpointColumnsObj = {
       default: 5,
-      1024: 4
+      1024: 4,
     };
 
     masonryImages.map((image, index) => {
@@ -182,7 +182,7 @@ class WorkPage extends Component {
                           lightboxImages.length
                       ]
                     }
-                    imagePadding={100}
+                    imagePadding={150}
                     onImageLoad={() => {
                       const bgColor =
                         lightboxImages[photoIndex].customData[
@@ -198,7 +198,7 @@ class WorkPage extends Component {
                         imagePadding:
                           lightboxImages[photoIndex].fluid.height > 600
                             ? 600
-                            : lightboxImages[photoIndex].fluid.height
+                            : lightboxImages[photoIndex].fluid.height,
                       });
                       // console.log(lightboxImages[photoIndex].customData);
                     }}
@@ -207,25 +207,25 @@ class WorkPage extends Component {
                       this.setState({
                         photoIndex:
                           (photoIndex + lightboxImages.length - 1) %
-                          lightboxImages.length
+                          lightboxImages.length,
                       })
                     }
                     onMoveNextRequest={() =>
                       this.setState({
-                        photoIndex: (photoIndex + 1) % lightboxImages.length
+                        photoIndex: (photoIndex + 1) % lightboxImages.length,
                       })
                     }
                     reactModalStyle={{
                       overlay: {
                         backgroundColor: `${
                           lightboxBgColor ? lightboxBgColor : "#F5F5F1"
-                        }`
+                        }`,
                       },
                       content: {
                         color: `${
                           lightboxTextColor ? lightboxTextColor : "#000000"
-                        }`
-                      }
+                        }`,
+                      },
                     }}
                   />
 
@@ -265,7 +265,7 @@ class WorkPage extends Component {
                                     fontSize: "12px",
                                     display: "inline-block !important",
                                     marginTop: "-15px",
-                                    padding: 0
+                                    padding: 0,
                                   }}
                                 >
                                   <AniLink

@@ -9,13 +9,11 @@ import "../styles/pre-project-interview.css";
 const PreProjectInterview = ({ data }) => {
   emailjs.init(process.env.GATSBY_EMAILJS_USER_ID);
   return (
-    <div className="container">
-      <Layout>
-        <div id="interview" className="page flex align-center justify-center">
-          <InterviewForm />
-        </div>
-      </Layout>
-    </div>
+    <Layout>
+      <div id="interview" className="page flex align-center justify-center">
+        <InterviewForm />
+      </div>
+    </Layout>
   );
 };
 

@@ -108,7 +108,7 @@
 @media screen and (min-width: 769px) {
 
   #contact .main .textlink {
-    font-size: 18px;
+    font-size: 16px;
     top: 3px;
   }
 
@@ -148,7 +148,7 @@
 
 @media screen and (max-width: 768px) {
   #contact {
-    padding: 325px 0 100px;
+    padding: 120px 0 100px;
   }
 
   #contact .main .three-fourths {

@@ -25,7 +25,7 @@ const validationSchema = Yup.object().shape({
       [
         "I'm starting something new",
         "I'm reconsidering something",
-        "I'm taking something to the next level"
+        "I'm taking something to the next level",
       ],
       "Invalid Project Type"
     )
@@ -33,7 +33,7 @@ const validationSchema = Yup.object().shape({
   budget_min: Yup.string().required("Required"),
   budget_max: Yup.string().required("Required"),
   timeline_min: Yup.string().required("Required"),
-  timeline_max: Yup.string().required("Required")
+  timeline_max: Yup.string().required("Required"),
 });
 
 const InterviewForm = () => {
@@ -44,16 +44,18 @@ const InterviewForm = () => {
     setStep(step - 1);
   };
 
-  const encode = data => {
+  const encode = (data) => {
     return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
       .join("&");
   };
 
   return (
     <>
       <div className={`pagetitle`}>
-        Pre-Project Interview
+        {/* Pre-Project Interview */}
         <div className={`pagination uppercase`}>
           <span className={`current`}>{step}</span> / 5
         </div>
@@ -61,9 +63,9 @@ const InterviewForm = () => {
       <div className={`wrapper xx_skinny`}>
         {formStatus === "finished" ? (
           <div className="thanks">
-            <p className="large centertext">
-              Thank you for your submission! We will be in touch with you
-              shortly.
+            <p className="large centertext saol_standard">
+              Thank you for your interest in working with us. We will be in
+              touch soon.
             </p>
           </div>
         ) : (
@@ -95,19 +97,19 @@ const InterviewForm = () => {
                 timeline_min: 6,
                 timeline_max: 12,
                 comments: "",
-                how_hear: ""
+                how_hear: "",
               }}
               validationSchema={validationSchema}
               onSubmit={(values, { setSubmitting, resetForm, setStatus }) => {
                 fetch("/?no-cache=1", {
                   method: "POST",
                   headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
+                    "Content-Type": "application/x-www-form-urlencoded",
                   },
                   body: encode({
                     "form-name": "interview-form",
-                    ...values
-                  })
+                    ...values,
+                  }),
                 })
                   .then(() => {
                     setSubmitting(false);
@@ -118,17 +120,17 @@ const InterviewForm = () => {
                     emailjs
                       .send("gmail", "interview_template_step_final", values)
                       .then(
-                        result => {
+                        (result) => {
                           // console.log(`Final form submitted`);
                           setStatus({ success: true });
                           setFormStatus("finished");
                         },
-                        error => {
+                        (error) => {
                           console.log(error.text);
                         }
                       );
                   })
-                  .catch(error => {
+                  .catch((error) => {
                     console.log("Error: Please Try Again!");
                     setSubmitting(false);
                   });
@@ -140,7 +142,7 @@ const InterviewForm = () => {
                 values,
                 setFieldValue,
                 handleSubmit,
-                handleReset
+                handleReset,
               }) => {
                 const incrementStep = () => {
                   // console.log("Updated values Below:");
@@ -164,10 +166,10 @@ const InterviewForm = () => {
                     emailjs
                       .send("gmail", "interview_template_step_1", values)
                       .then(
-                        result => {
+                        (result) => {
                           // console.log(`Email submitted for step 1`);
                         },
-                        error => {
+                        (error) => {
                           console.log(error.text);
                         }
                       );

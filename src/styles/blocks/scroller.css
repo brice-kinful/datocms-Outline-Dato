@@ -208,22 +208,22 @@
   #scroller {
     height: 635px;
     margin-bottom: -250px !important;
-    margin-top: 0 !important;
+    margin-top: 50px !important;
   }
 
   #scroller ul {
-    margin-top: -250px !important;
+    margin-top: -200px !important;
   }
 
   #scroller li {
-    width: 475px;
+    width: 375px;
   }
 }
 
 @media screen and (min-width: 861px) {
   #scroller {
     margin-bottom: -15vw;
-    margin-top: 12vw;
+    margin-top: calc(12vw + 50px);
   }
 
   #scroller ul {
@@ -281,7 +281,7 @@
     margin: 0 auto 40px;
     padding: 0 12.5px;
     width: 100%;
-    max-width: 455px;
+    max-width: 375px;
   }
 }
 

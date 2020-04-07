@@ -10,6 +10,7 @@ body.frozen .footer-container {
   z-index: 0;
 } */
 
+
 #case-study {
   padding: 0;
   /* background: white; */
@@ -31,19 +32,22 @@ body.frozen .footer-container {
   z-index: 99999999;
   animation: none !important;
   opacity: 1;
-  visibility: visible;
+  /* visibility: visible; */
   transition: 2s;
-  /* transition-delay: .s; */
   background-color: white;
 }
 
 #case-study h1.big {
   width: calc(100vw - 120px);
+  -webkit-transition: 1.5s ease-in;
+  -o-transition: 1.5s ease-in;
+  transition: 1.5s ease-in;
 }
 
 #case-study .screen.hidden {
   opacity: 0;
   visibility: hidden;
+
 }
 
 #case-study .hero,

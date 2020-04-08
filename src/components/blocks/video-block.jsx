@@ -9,7 +9,7 @@ class Video extends Component {
   }
   render() {
     const { content, enterCount } = this.props;
-    console.log(content);
+    // console.log(content);
     return (
       <div
         className={`block video-block${

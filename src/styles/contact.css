@@ -151,6 +151,11 @@
     padding: 120px 0 100px;
   }
 
+  #contact .main p {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
   #contact .main .three-fourths {
     width: 100%;
   }

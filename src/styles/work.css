@@ -94,11 +94,12 @@ h1.big {
 
 #case-studies .gatsby-image-wrapper {
   margin-bottom: 40px;
+  transition: -webkit-filter .33s ease-in, opacity .5s ease-in;
+  -webkit-transition: opacity .5s ease-in, -webkit-filter .33s ease-in;
+  -o-transition: filter .33s ease-in, opacity .5s ease-in;
 }
 
-#case-studies .gatsby-image-wrapper.loaded {
-  transition: filter 0.5s;
-}
+#case-studies .gatsby-image-wrapper.loaded {}
 
 #case-studies .gatsby-image-wrapper:hover {
   -webkit-filter: blur(4px);

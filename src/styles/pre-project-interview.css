@@ -93,6 +93,20 @@
     border: 0;
 }
 
+#interview .field .col label {
+    position: absolute;
+    left: 0;
+    top: 21px;
+    pointer-events: none;
+    transform-origin: 0;
+    transition: .3s;
+}
+
+#interview .field .col input:focus+label,
+#interview .field .col label.slideUp {
+    transform: translateY(-27px) scale(0.8);
+}
+
 input.required+span {
     font-size: 10px;
     color: #ff3d29;
@@ -103,7 +117,9 @@ input.required+span {
 
 #interview .field .col {
     /* width: 25% */
-    flex: 0 auto;
+    flex: 1;
+    position: relative;
+
 }
 
 #interview .field .col.four {
@@ -129,16 +145,19 @@ input.required+span {
 #interview .field input[type=email],
 #interview .field input[type=tel],
 #interview .field input[type=text] {
-    width: calc(100% - 3px);
-    margin-top: 15px;
+    width: 100%;
+    /* margin-top: 15px; */
     font-size: 16px;
-    height: 46px;
-    text-indent: 15px;
+    /* height: 46px; */
+    height: auto;
+    /* text-indent: 15px; */
     font-family: inherit;
     border: 0;
     margin-right: 0;
     margin-left: auto;
     box-shadow: none;
+    background: transparent;
+    padding: 20px 0 10px;
 }
 
 #interview .field input[type=text]::placeholder,
@@ -180,7 +199,7 @@ input.required+span {
 #interview .field input[type=tel]:focus,
 #interview .field input[type=text]:focus,
 #interview .field textarea:focus {
-    background: #fff
+    /* background: #fff */
 }
 
 #interview .checks,
@@ -190,7 +209,8 @@ input.required+span {
 
 #interview .checks .field,
 #interview .radios .field {
-    margin-left: 34px
+    margin-left: 34px;
+    /* margin-top: 5px; */
 }
 
 #interview .check,
@@ -201,7 +221,7 @@ input.required+span {
     /* font-family: Styrene A Web, sans-serif; */
     font-weight: 400;
     font-style: normal;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: .06em
 }
 
@@ -287,11 +307,10 @@ input.required+span {
     background: #000;
     border: 1px solid transparent;
     font-family: "Styrene Light";
-    font-family: "Styrene A Web", sans-serif;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: .02em;
     font-size: 14px;
+    letter-spacing: 0.075em;
     text-transform: uppercase;
     color: #fff;
     line-height: 60px;
@@ -353,7 +372,7 @@ input.required+span {
     text-transform: initial;
     letter-spacing: .02em;
     width: auto;
-    font-family: "Styrene A Web", sans-serif;
+    font-family: "Styrene Light";
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -418,7 +437,12 @@ input.required+span {
     text-align: center;
     font-size: 14px;
     margin-top: 10px;
-    font-family: "Styrene A Web", sans-serif;
+    font-family: "Styrene Light";
+    transition: .3s;
+}
+
+#interview .pagetitle .pagination.finished {
+    opacity: 0;
 }
 
 #interview .input-range {

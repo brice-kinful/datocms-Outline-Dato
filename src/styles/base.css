@@ -760,9 +760,9 @@ a.btn:hover {
   opacity: 0;
   -webkit-filter: blur(15px);
   filter: blur(15px);
-  transition: -webkit-filter 0.75, opacity 0.5s;
-  -webkit-transition: opacity 0.5s, -webkit-filter 0.75;
-  -o-transition: filter 0.75, opacity 0.5s;
+  transition: -webkit-filter .33s ease-in, opacity .5s ease-in;
+  -webkit-transition: opacity .5s ease-in, -webkit-filter .33s ease-in;
+  -o-transition: filter .33s ease-in, opacity .5s ease-in;
 }
 
 .gatsby-image-wrapper.blur.loaded,

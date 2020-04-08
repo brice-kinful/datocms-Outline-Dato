@@ -8,8 +8,6 @@ import Lightbox from "react-image-lightbox";
 import { genericHashLink } from "react-router-hash-link";
 import GatsbyLink from "gatsby-link";
 
-import { isSafari } from "react-device-detect";
-
 import "react-image-lightbox/style.css";
 import "../styles/more.css";
 

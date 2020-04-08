@@ -1,7 +1,7 @@
 import React from "react";
 import { Field } from "formik";
 
-const InterviewStepOne = props => {
+const InterviewStepOne = (props) => {
   return (
     <>
       <fieldset>
@@ -10,10 +10,17 @@ const InterviewStepOne = props => {
         </p>
         <div className={`field flex align-center`}>
           <div className={`col`}>
-            <label htmlFor="first_name">First Name*</label>
-          </div>
-          <div className={`col four`}>
             <Field name="first_name" type="text" />
+            <label
+              htmlFor="first_name"
+              className={`${
+                props.values.first_name !== "" && props.touched.first_name
+                  ? "slideUp"
+                  : ""
+              }`}
+            >
+              First Name*
+            </label>
           </div>
           {props.touched.first_name && props.errors.first_name ? (
             <label className={`error`}>{props.errors.first_name}</label>
@@ -21,10 +28,17 @@ const InterviewStepOne = props => {
         </div>
         <div className={`field flex align-center`}>
           <div className={`col`}>
-            <label htmlFor="last_name">Last Name*</label>
-          </div>
-          <div className={`col four`}>
             <Field name="last_name" type="text" />
+            <label
+              htmlFor="last_name"
+              className={`${
+                props.values.last_name !== "" && props.touched.last_name
+                  ? "slideUp"
+                  : ""
+              }`}
+            >
+              Last Name*
+            </label>
           </div>
           {props.touched.last_name && props.errors.last_name ? (
             <label className={`error`}>{props.errors.last_name}</label>
@@ -32,10 +46,17 @@ const InterviewStepOne = props => {
         </div>
         <div className={`field flex align-center`}>
           <div className={`col`}>
-            <label htmlFor="email">Email*</label>
-          </div>
-          <div className={`col four`}>
             <Field name="email" type="email" />
+            <label
+              htmlFor="email"
+              className={`${
+                props.values.email !== "" && props.touched.email
+                  ? "slideUp"
+                  : ""
+              }`}
+            >
+              Email*
+            </label>
           </div>
           {props.touched.email && props.errors.email ? (
             <label className={`error`}>{props.errors.email}</label>
@@ -43,21 +64,35 @@ const InterviewStepOne = props => {
         </div>
         <div className={`field flex align-center`}>
           <div className={`col`}>
-            <label htmlFor="phone">Phone*</label>
-          </div>
-          <div className={`col four`}>
             <Field name="phone" type="tel" />
+            <label
+              htmlFor="phone"
+              className={`${
+                props.values.phone !== "" && props.touched.phone
+                  ? "slideUp"
+                  : ""
+              }`}
+            >
+              Phone*
+            </label>
           </div>
           {props.touched.phone && props.errors.phone ? (
             <label className={`error`}>{props.errors.phone}</label>
           ) : null}
         </div>
         <div className={`field flex align-center`}>
-          <div className={`col`}>
-            <label htmlFor="company">Company*</label>
-          </div>
           <div className={`col four`}>
             <Field name="company" type="text" />
+            <label
+              htmlFor="company"
+              className={`${
+                props.values.company !== "" && props.touched.company
+                  ? "slideUp"
+                  : ""
+              }`}
+            >
+              Company*
+            </label>
           </div>
           {props.touched.company && props.errors.company ? (
             <label className={`error`}>{props.errors.company}</label>
@@ -65,10 +100,17 @@ const InterviewStepOne = props => {
         </div>
         <div className={`field flex align-center`}>
           <div className={`col`}>
-            <label htmlFor="website">Website</label>
-          </div>
-          <div className={`col four`}>
             <Field name="website" type="text" />
+            <label
+              htmlFor="website"
+              className={`${
+                props.values.website !== "" && props.touched.website
+                  ? "slideUp"
+                  : ""
+              }`}
+            >
+              Website
+            </label>
           </div>
           {props.touched.website && props.errors.website ? (
             <label className={`error`}>{props.errors.website}</label>

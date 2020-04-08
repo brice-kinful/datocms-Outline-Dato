@@ -56,7 +56,11 @@ const InterviewForm = () => {
     <>
       <div className={`pagetitle`}>
         {/* Pre-Project Interview */}
-        <div className={`pagination uppercase`}>
+        <div
+          className={`pagination uppercase ${
+            formStatus != "" ? "finished" : ""
+          }`}
+        >
           <span className={`current`}>{step}</span> / 5
         </div>
       </div>

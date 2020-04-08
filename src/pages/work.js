@@ -16,7 +16,7 @@ class CaseStudiesPage extends Component {
       isHeadlineVisible: false,
       seconds: 0,
       prevScrollpos: "",
-      display: false
+      display: false,
     };
   }
 
@@ -25,31 +25,31 @@ class CaseStudiesPage extends Component {
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
-      isHeadlineVisible: true
+      isHeadlineVisible: true,
     });
     if (currentScrollPos > 60) {
       this.setState({
-        isHeadlineVisible: false
+        isHeadlineVisible: false,
       });
       clearInterval(this.interval);
       this.interval = setInterval(() => this.tick(), 1000);
-      this.setState(state => ({
-        seconds: 0
+      this.setState((state) => ({
+        seconds: 0,
       }));
     } else {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }
   };
 
   tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
+    this.setState((state) => ({
+      seconds: state.seconds + 1,
     }));
     if (this.state.seconds > 15) {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }
   }
@@ -57,20 +57,20 @@ class CaseStudiesPage extends Component {
   handleMouseMove = () => {
     clearInterval(this.interval);
     this.interval = setInterval(() => this.tick(), 1000);
-    this.setState(state => ({
-      seconds: 0
+    this.setState((state) => ({
+      seconds: 0,
     }));
   };
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        isHeadlineVisible: true
+        isHeadlineVisible: true,
       });
     }, 1250);
     this.setState({
       prevScrollpos: window.pageYOffset,
-      display: !this.state.display
+      display: !this.state.display,
     });
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
@@ -79,7 +79,7 @@ class CaseStudiesPage extends Component {
 
   componentWillUnmount() {
     this.setState({
-      display: !this.state.display
+      display: !this.state.display,
     });
     window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener("mousemove", this.handleMouseMove);
@@ -114,73 +114,153 @@ class CaseStudiesPage extends Component {
                           <div
                             className={`flex column left grid-item one-half ${block.leftProjectPositioning}`}
                           >
-                            <AniLink
-                              fade
-                              to={`/work/${block.leftProject?.slug}`}
-                              preventScrollJump
-                            >
-                              {/* <Img fluid={block.leftProjectImage.fluid} /> */}
-                              <BlurredImage
-                                src={block.leftProjectImage?.fluid}
-                                // url={block.leftProjectImage?.url}
-                                offset={-5}
-                              />
-                            </AniLink>
-
-                            <span
-                              className={`${
-                                block.leftProjectNarrowExcerpt ? "narrow" : ""
-                              }`}
-                            >
-                              <span className="saol_standard">
-                                {block.leftProject?.excerpt}
-                              </span>
-                              <span className="textlink">
+                            {block.leftComingSoonProject ? (
+                              <>
+                                <a
+                                  href={block.leftComingSoonUrl}
+                                  target="_blank"
+                                >
+                                  {/* <Img fluid={block.projectImage?.fluid} /> */}
+                                  <BlurredImage
+                                    src={block.leftProjectImage?.fluid}
+                                    // url={block.leftProjectImage?.url}
+                                    offset={-5}
+                                  />
+                                </a>
+                                <span
+                                  className={`${
+                                    block.leftProjectNarrowExcerpt
+                                      ? "narrow"
+                                      : ""
+                                  }`}
+                                >
+                                  <span className="saol_standard">
+                                    {block.leftComingSoonExcerpt}
+                                  </span>
+                                  <span className="textlink">
+                                    <a
+                                      href={block.leftComingSoonUrl}
+                                      target="_blank"
+                                      className="uppercase"
+                                    >
+                                      {block.leftComingSoonTitle}
+                                    </a>
+                                  </span>
+                                </span>
+                              </>
+                            ) : (
+                              <>
                                 <AniLink
                                   fade
                                   to={`/work/${block.leftProject?.slug}`}
                                   preventScrollJump
-                                  className="uppercase"
                                 >
-                                  {block.leftProject?.title}
+                                  {/* <Img fluid={block.leftProjectImage.fluid} /> */}
+                                  <BlurredImage
+                                    src={block.leftProjectImage?.fluid}
+                                    // url={block.leftProjectImage?.url}
+                                    offset={-5}
+                                  />
                                 </AniLink>
-                              </span>
-                            </span>
+
+                                <span
+                                  className={`${
+                                    block.leftProjectNarrowExcerpt
+                                      ? "narrow"
+                                      : ""
+                                  }`}
+                                >
+                                  <span className="saol_standard">
+                                    {block.leftProject?.excerpt}
+                                  </span>
+                                  <span className="textlink">
+                                    <AniLink
+                                      fade
+                                      to={`/work/${block.leftProject?.slug}`}
+                                      preventScrollJump
+                                      className="uppercase"
+                                    >
+                                      {block.leftProject?.title}
+                                    </AniLink>
+                                  </span>
+                                </span>
+                              </>
+                            )}
                           </div>
                           <div
                             className={`flex column right grid-item one-half ${block.rightProjectPositioning}`}
                           >
-                            <AniLink
-                              fade
-                              to={`/work/${block.rightProject?.slug}`}
-                              preventScrollJump
-                            >
-                              {/* <Img fluid={block.rightProjectImage.fluid} /> */}
-                              <BlurredImage
-                                src={block.rightProjectImage?.fluid}
-                                // url={block.rightProjectImage?.url}
-                                offset={-5}
-                              />
-                            </AniLink>
-                            <span
-                              className={`${
-                                block.rightProjectNarrowExcerpt ? "narrow" : ""
-                              }`}
-                            >
-                              <span className="saol_standard">
-                                {block.rightProject?.excerpt}
-                              </span>
-                              <span className="textlink">
+                            {block.rightComingSoonProject ? (
+                              <>
+                                <a
+                                  href={block.rightComingSoonUrl}
+                                  target="_blank"
+                                >
+                                  {/* <Img fluid={block.projectImage?.fluid} /> */}
+                                  <BlurredImage
+                                    src={block.rightProjectImage?.fluid}
+                                    // url={block.leftProjectImage?.url}
+                                    offset={-5}
+                                  />
+                                </a>
+                                <span
+                                  className={`${
+                                    block.rightProjectNarrowExcerpt
+                                      ? "narrow"
+                                      : ""
+                                  }`}
+                                >
+                                  <span className="saol_standard">
+                                    {block.rightComingSoonExcerpt}
+                                  </span>
+                                  <span className="textlink">
+                                    <a
+                                      href={block.rightComingSoonUrl}
+                                      target="_blank"
+                                      className="uppercase"
+                                    >
+                                      {block.rightComingSoonTitle}
+                                    </a>
+                                  </span>
+                                </span>
+                              </>
+                            ) : (
+                              <>
                                 <AniLink
                                   fade
                                   to={`/work/${block.rightProject?.slug}`}
                                   preventScrollJump
-                                  className="uppercase"
                                 >
-                                  {block.rightProject?.title}
+                                  {/* <Img fluid={block.rightProjectImage.fluid} /> */}
+                                  <BlurredImage
+                                    src={block.rightProjectImage?.fluid}
+                                    // url={block.rightProjectImage?.url}
+                                    offset={-5}
+                                  />
                                 </AniLink>
-                              </span>
-                            </span>
+                                <span
+                                  className={`${
+                                    block.rightProjectNarrowExcerpt
+                                      ? "narrow"
+                                      : ""
+                                  }`}
+                                >
+                                  <span className="saol_standard">
+                                    {block.rightProject?.excerpt}
+                                  </span>
+                                  <span className="textlink">
+                                    <AniLink
+                                      fade
+                                      to={`/work/${block.rightProject?.slug}`}
+                                      preventScrollJump
+                                      className="uppercase"
+                                    >
+                                      {block.rightProject?.title}
+                                    </AniLink>
+                                  </span>
+                                </span>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -198,38 +278,72 @@ class CaseStudiesPage extends Component {
                           }`}
                         >
                           <div className="flex wrap">
-                            <AniLink
-                              fade
-                              to={`/work/${block.project?.slug}`}
-                              preventScrollJump
-                            >
-                              {/* <Img fluid={block.projectImage?.fluid} /> */}
-                              <BlurredImage
-                                src={block.projectImage?.fluid}
-                                // url={block.projectImage?.url}
-                                offset={-5}
-                              />
-                            </AniLink>
+                            {block.comingSoonProject ? (
+                              <>
+                                <a href={block.comingSoonUrl} target="_blank">
+                                  {/* <Img fluid={block.projectImage?.fluid} /> */}
+                                  <BlurredImage
+                                    src={block.projectImage?.fluid}
+                                    // url={block.projectImage?.url}
+                                    offset={-5}
+                                  />
+                                </a>
 
-                            <span
-                              className={`${
-                                block.projectNarrowExcerpt ? "narrow" : ""
-                              }`}
-                            >
-                              <span className="saol_standard">
-                                {block.project?.excerpt}
-                              </span>
-                              <span className="textlink">
+                                <span
+                                  className={`${
+                                    block.projectNarrowExcerpt ? "narrow" : ""
+                                  }`}
+                                >
+                                  <span className="saol_standard">
+                                    {block.comingSoonExcerpt}
+                                  </span>
+                                  <span className="textlink">
+                                    <a
+                                      href={block.comingSoonUrl}
+                                      target="_blank"
+                                      className="uppercase"
+                                    >
+                                      {block.comingSoonTitle}
+                                    </a>
+                                  </span>
+                                </span>
+                              </>
+                            ) : (
+                              <>
                                 <AniLink
                                   fade
                                   to={`/work/${block.project?.slug}`}
                                   preventScrollJump
-                                  className="uppercase"
                                 >
-                                  {block.project?.title}
+                                  {/* <Img fluid={block.projectImage?.fluid} /> */}
+                                  <BlurredImage
+                                    src={block.projectImage?.fluid}
+                                    // url={block.projectImage?.url}
+                                    offset={-5}
+                                  />
                                 </AniLink>
-                              </span>
-                            </span>
+
+                                <span
+                                  className={`${
+                                    block.projectNarrowExcerpt ? "narrow" : ""
+                                  }`}
+                                >
+                                  <span className="saol_standard">
+                                    {block.project?.excerpt}
+                                  </span>
+                                  <span className="textlink">
+                                    <AniLink
+                                      fade
+                                      to={`/work/${block.project?.slug}`}
+                                      preventScrollJump
+                                      className="uppercase"
+                                    >
+                                      {block.project?.title}
+                                    </AniLink>
+                                  </span>
+                                </span>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -270,6 +384,10 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid
             }
           }
+          leftComingSoonProject
+          leftComingSoonTitle
+          leftComingSoonUrl
+          leftComingSoonExcerpt
           leftProjectPositioning
           rightProject {
             title
@@ -283,6 +401,10 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid
             }
           }
+          rightComingSoonProject
+          rightComingSoonTitle
+          rightComingSoonUrl
+          rightComingSoonExcerpt
           rightProjectPositioning
         }
         ... on DatoCmsSolo {
@@ -301,6 +423,10 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid
             }
           }
+          comingSoonProject
+          comingSoonTitle
+          comingSoonUrl
+          comingSoonExcerpt
           narrowWidth
         }
       }

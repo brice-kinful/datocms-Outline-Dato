@@ -15,8 +15,8 @@ class HomeScroller extends Component {
       imgViz: false,
       dimensions: {
         height: 550,
-        width: 2000
-      }
+        width: 2000,
+      },
     };
   }
 
@@ -28,7 +28,7 @@ class HomeScroller extends Component {
 
   render() {
     const { projects } = this.props;
-    const { imgViz, dimensions } = this.state;
+    const { imgViz } = this.state;
     const scrollerWidth = this.state.dimensions.width;
 
     const settings = {
@@ -39,12 +39,12 @@ class HomeScroller extends Component {
       centerMode: true,
       centerPadding: "25%",
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
     };
 
     return (
       <VizSensor
-        onChange={isVisible => {
+        onChange={(isVisible) => {
           this.setState({ imgViz: isVisible });
         }}
         offset={{ bottom: -200 }}
@@ -65,7 +65,7 @@ class HomeScroller extends Component {
 
           <Measure
             bounds
-            onResize={contentRect => {
+            onResize={(contentRect) => {
               this.setState({ dimensions: contentRect.bounds });
               // console.log(contentRect.bounds);
             }}
@@ -78,7 +78,7 @@ class HomeScroller extends Component {
                   style={{ width: scrollerWidth }}
                 >
                   <span className={`flex`} ref={measureRef}>
-                    {projects.map(project => {
+                    {projects.map((project) => {
                       return (
                         <li className={`slide`} key={project.slug}>
                           <AniLink
@@ -101,7 +101,7 @@ class HomeScroller extends Component {
                   </span>
 
                   <span className={`flex`}>
-                    {projects.map(project => {
+                    {projects.map((project) => {
                       return (
                         <li className={`slide`} key={`${project.slug}-x2`}>
                           <AniLink
@@ -128,7 +128,7 @@ class HomeScroller extends Component {
           </Measure>
 
           <Slider {...settings} className="show_768">
-            {projects.map(project => {
+            {projects.map((project) => {
               return (
                 <div className={`slide`} key={`${project.slug}-mobile`}>
                   <img src={project.scrollerThumbnail?.url} alt="" />

@@ -222,6 +222,7 @@ body.home #logo {
   -moz-opacity: 1;
   opacity: 1;
   filter: alpha(opacity=100);
+  display: inline-block;
 }
 
 #nav .title li a:hover {

@@ -7,25 +7,19 @@ class PreloaderImage extends Component {
     this.state = {
       loaded: false,
       waitTime: 300,
-      firstImageReady: false
+      firstImageReady: false,
     };
   }
 
   componentDidMount() {
-    const { wait, currentImage } = this.props;
+    const { wait } = this.props;
     this.setState({
-      waitTime: 1200 + wait
+      waitTime: 1200 + wait,
     });
   }
 
   loadImage = () => {
-    const { waitTime } = this.state;
-    const {
-      currentImage,
-      totalImages,
-      imageLoaded,
-      allImagesReady
-    } = this.props;
+    const { currentImage, totalImages, imageLoaded } = this.props;
 
     imageLoaded();
 

@@ -23,7 +23,7 @@ class Layout extends Component {
 
   // scroll
   checkFooterScroll = () => {
-    const { pageHeight, loaded } = this.state;
+    const { pageHeight } = this.state;
     const currentScrollPos = window.pageYOffset;
     if (currentScrollPos > pageHeight - 1400) {
       //load footer
@@ -47,7 +47,7 @@ class Layout extends Component {
   componentDidMount() {
     //safari check
     const ua = navigator.userAgent.toLowerCase();
-    if (ua.indexOf("safari") != -1) {
+    if (ua.indexOf("safari") !== -1) {
       if (ua.indexOf("chrome") > -1) {
         document.body.classList.remove("safari");
       } else {
@@ -123,7 +123,6 @@ class Layout extends Component {
           }
         `}
         render={(data) => {
-          const { loaded } = this.state;
           return (
             <>
               <HelmetDatoCms

@@ -7,10 +7,6 @@ gsap.registerPlugin(TimelineMax);
 const fade = ({ exit: { length }, node, direction }) => {
   const duration = direction === "out" ? length + length / 4 : length;
   const opacity = direction === "in" ? 1 : 0;
-  const scrollTop =
-    (document.scrollingElement && document.scrollingElement.scrollTop) ||
-    document.body.scrollTop ||
-    window.pageYOffset;
 
   const holdPosition =
     direction === "out"
@@ -39,11 +35,11 @@ export default function Fade({
     <TransitionLink
       exit={{
         length: length,
-        trigger: ({ exit, node }) => fade({ exit, node, direction: "out" })
+        trigger: ({ exit, node }) => fade({ exit, node, direction: "out" }),
       }}
       entry={{
         length: 0,
-        trigger: ({ exit, node }) => fade({ exit, node, direction: "in" })
+        trigger: ({ exit, node }) => fade({ exit, node, direction: "in" }),
       }}
       {...props}
     >

@@ -14,11 +14,11 @@ class Navigation extends Component {
     };
   }
 
-  openMenu = e => {
+  openMenu = (e) => {
     e.preventDefault();
     // console.log('clicked')
-    this.setState(state => ({
-      isMenuOpen: !state.isMenuOpen
+    this.setState((state) => ({
+      isMenuOpen: !state.isMenuOpen,
     }));
     if (this.state.isMenuOpen) {
       document.body.classList.remove("nav-open");
@@ -27,19 +27,19 @@ class Navigation extends Component {
     }
   };
 
-  closeMenu = e => {
+  closeMenu = (e) => {
     if (this.state.isMenuOpen) {
       document.body.classList.remove("nav-open");
     }
-    this.setState(state => ({
-      isMenuOpen: false
+    this.setState((state) => ({
+      isMenuOpen: false,
     }));
   };
 
   componentDidMount() {
     document.body.classList.remove("nav-open");
-    this.setState(state => ({
-      isMenuOpen: false
+    this.setState((state) => ({
+      isMenuOpen: false,
     }));
     window.addEventListener("scroll", this.closeMenu);
   }
@@ -74,14 +74,19 @@ class Navigation extends Component {
 
         <div id="nav" className="hide_768">
           <ul className="flex">
-            {menuItems.map(item => {
+            {menuItems.map((item) => {
               const name = item.menuItemText;
               const url = item.menuItemPage.slug;
 
               return (
                 <React.Fragment key={name}>
                   <li className="uppercase">
-                    <AniLink preventScrollJump fade to={`/${url}`}>
+                    <AniLink
+                      preventScrollJump
+                      fade
+                      to={`/${url}`}
+                      className="line"
+                    >
                       {name}
                     </AniLink>
                   </li>
@@ -101,7 +106,7 @@ class Navigation extends Component {
           {isMenuOpen && (
             <div id="nav" className="show_768">
               <ul className="flex">
-                {menuItems.map(item => {
+                {menuItems.map((item) => {
                   const name = item.menuItemText;
                   const url = item.menuItemPage.slug;
 

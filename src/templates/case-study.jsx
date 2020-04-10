@@ -49,11 +49,11 @@ class CaseStudy extends Component {
             className={`screen flex align-center justify-center wrapper${
               hasHeroImageLoaded ? " hidden" : ""
             }`}
-            style={{ backgroundColor: project.brandColor.hex }}
+            style={{ backgroundColor: project.brandColor?.hex }}
           >
             <h1
               className={`big${hasHeroImageLoaded ? "" : " visible"}`}
-              style={{ color: project.preloaderScreenTitleColor.hex }}
+              style={{ color: project.preloaderScreenTitleColor?.hex }}
             >
               {project.preloaderScreenTitle
                 ? project.preloaderScreenTitle
@@ -65,7 +65,7 @@ class CaseStudy extends Component {
               <SEO
                 title={`${project.title} | Work`}
                 pathname={`/work/${project.slug}`}
-                description={project.seoMetaTags.description}
+                description={project.seoMetaTags?.description}
               />
 
               <div className="hero">

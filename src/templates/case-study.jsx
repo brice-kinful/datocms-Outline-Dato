@@ -71,7 +71,7 @@ class CaseStudy extends Component {
               <div className="hero">
                 <Img
                   loading={"eager"}
-                  fluid={project.heroImage.fluid}
+                  fluid={project.heroImage?.fluid}
                   // durationFadeIn={1000}
                   onLoad={() =>
                     setTimeout(() => {
@@ -111,7 +111,7 @@ class CaseStudy extends Component {
                             }
                           }
                         >
-                          <BlurredImage src={block.image.fluid} />
+                          <BlurredImage src={block.image?.fluid} />
                         </div>
                       </div>
                     );
@@ -137,7 +137,7 @@ class CaseStudy extends Component {
                         }${block.setTopPaddingToZero ? " no-pad-top" : ""}`}
                         key={block.id}
                       >
-                        <BlurredImage src={block.image.fluid} />
+                        <BlurredImage src={block.image?.fluid} />
                       </div>
                     );
                   case "DatoCmsTextBlock":

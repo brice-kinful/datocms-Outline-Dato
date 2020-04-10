@@ -290,8 +290,8 @@ class CaseStudiesPage extends Component {
                                 <a href={block.comingSoonUrl} target="_blank">
                                   {/* <Img fluid={block.projectImage?.fluid} /> */}
                                   <BlurredImage
-                                    src={block.projectImage?.fluid}
-                                    // url={block.projectImage?.url}
+                                    // src={block.projectImage?.fluid}
+                                    url={block.projectImage?.url}
                                     offset={-5}
                                   />
                                 </a>
@@ -324,8 +324,8 @@ class CaseStudiesPage extends Component {
                                 >
                                   {/* <Img fluid={block.projectImage?.fluid} /> */}
                                   <BlurredImage
-                                    src={block.projectImage?.fluid}
-                                    // url={block.projectImage?.url}
+                                    // src={block.projectImage?.fluid}
+                                    url={block.projectImage?.url}
                                     offset={-5}
                                   />
                                 </AniLink>

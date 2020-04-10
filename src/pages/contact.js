@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SEO from "../components/blocks/SEO";
 import { graphql } from "gatsby";
 import AniLink from "../components/transitions/AniLink";
 import Img from "gatsby-image";
@@ -13,7 +14,7 @@ class ContactPage extends Component {
     this.state = {
       isHeadlineVisible: true,
       seconds: 0,
-      prevScrollpos: "",
+      prevScrollpos: ""
     };
   }
 
@@ -22,31 +23,31 @@ class ContactPage extends Component {
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
-      isHeadlineVisible: true,
+      isHeadlineVisible: true
     });
     if (currentScrollPos > 25) {
       this.setState({
-        isHeadlineVisible: false,
+        isHeadlineVisible: false
       });
       clearInterval(this.interval);
       this.interval = setInterval(() => this.tick(), 1000);
-      this.setState((state) => ({
-        seconds: 0,
+      this.setState(state => ({
+        seconds: 0
       }));
     } else {
       this.setState({
-        isHeadlineVisible: true,
+        isHeadlineVisible: true
       });
     }
   };
 
   tick() {
-    this.setState((state) => ({
-      seconds: state.seconds + 1,
+    this.setState(state => ({
+      seconds: state.seconds + 1
     }));
     if (this.state.seconds > 15) {
       this.setState({
-        isHeadlineVisible: true,
+        isHeadlineVisible: true
       });
     }
   }
@@ -54,8 +55,8 @@ class ContactPage extends Component {
   handleMouseMove = () => {
     clearInterval(this.interval);
     this.interval = setInterval(() => this.tick(), 1000);
-    this.setState((state) => ({
-      seconds: 0,
+    this.setState(state => ({
+      seconds: 0
     }));
   };
 
@@ -77,6 +78,11 @@ class ContactPage extends Component {
     const { isHeadlineVisible } = this.state;
     return (
       <Layout>
+        <SEO
+          title={`${contact.title}`}
+          pathname={`/contact`}
+          description={contact.seoMetaTags.description}
+        />
         <div className="page" id="contact">
           <div className="main flex wrapper skinny">
             <div className="three-fourths text">

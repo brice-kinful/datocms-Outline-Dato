@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import SEO from "../components/blocks/SEO";
 import parse from "html-react-parser";
 import AniLink from "../components/transitions/AniLink";
 
@@ -9,6 +10,11 @@ const JobsPage = ({ data }) => {
   const jobs = data.allDatoCmsJob.edges;
   return (
     <Layout>
+      <SEO
+        title={`${content.title}`}
+        pathname={`/jobs`}
+        description={content.seoMetaTags.description}
+      />
       <div className="page" id="default">
         <div className="wrapper x_skinny content">
           <h1>{content.headline}</h1>

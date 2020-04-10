@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import AniLink from "../components/transitions/AniLink";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
+import SEO from "../components/blocks/SEO";
 import parse from "html-react-parser";
 
 import { isSafari } from "react-device-detect";
@@ -81,6 +82,7 @@ class StudioPage extends Component {
   }
 
   render() {
+    const studio = this.props.data.datoCmsStudioPage;
     const hero = this.props.data.datoCmsStudioPage.aboutHero[0];
     const capabilities = this.props.data.datoCmsStudioPage.aboutCapabilities[0];
     const team = this.props.data.datoCmsStudioPage.team;
@@ -96,6 +98,11 @@ class StudioPage extends Component {
           Studio
         </h1>
         <Layout>
+          <SEO
+            title={`${studio.title}`}
+            pathname={`/studio`}
+            description={studio.seoMetaTags.description}
+          />
           <div className="page" id="studio">
             <div className="hero wrapper skinny" style={{ zIndex: 99 }}>
               <Img fluid={hero.heroImage.fluid} />

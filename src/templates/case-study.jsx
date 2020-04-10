@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { HelmetDatoCms } from "gatsby-source-datocms";
+import SEO from "../components/blocks/SEO";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
@@ -62,7 +62,11 @@ class CaseStudy extends Component {
           </div>
           <Layout>
             <div className="page">
-              <HelmetDatoCms seo={project.seoMetaTags} />
+              <SEO
+                title={`${project.title} | Work`}
+                pathname={`/work/${project.slug}`}
+                description={project.seoMetaTags.description}
+              />
 
               <div className="hero">
                 <Img

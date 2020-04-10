@@ -43,7 +43,7 @@ const Job = ({ data }) => {
     <div className="container">
       <Layout>
         <HelmetDatoCms seo={job.seoMetaTags}>
-          <title>{`Jobs | ${job.title} | Charleston, SC`}</title>
+          <title>{`${job.title} | Jobs | Outline | Charleston, SC`}</title>
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgJSONLD)}
           </script>

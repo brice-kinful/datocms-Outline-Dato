@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import AniLink from "../components/transitions/AniLink";
 import Layout from "../components/layout";
+import SEO from "../components/blocks/SEO";
 import BlurredImage from "../components/blocks/blurred-image";
 
 import { isSafari } from "react-device-detect";
@@ -16,7 +17,7 @@ class CaseStudiesPage extends Component {
       isHeadlineVisible: false,
       seconds: 0,
       prevScrollpos: "",
-      display: false,
+      display: false
     };
   }
 
@@ -25,31 +26,31 @@ class CaseStudiesPage extends Component {
     const currentScrollPos = window.pageYOffset;
     this.setState({
       prevScrollpos: currentScrollPos,
-      isHeadlineVisible: true,
+      isHeadlineVisible: true
     });
     if (currentScrollPos > 60) {
       this.setState({
-        isHeadlineVisible: false,
+        isHeadlineVisible: false
       });
       clearInterval(this.interval);
       this.interval = setInterval(() => this.tick(), 1000);
-      this.setState((state) => ({
-        seconds: 0,
+      this.setState(state => ({
+        seconds: 0
       }));
     } else {
       this.setState({
-        isHeadlineVisible: true,
+        isHeadlineVisible: true
       });
     }
   };
 
   tick() {
-    this.setState((state) => ({
-      seconds: state.seconds + 1,
+    this.setState(state => ({
+      seconds: state.seconds + 1
     }));
     if (this.state.seconds > 15) {
       this.setState({
-        isHeadlineVisible: true,
+        isHeadlineVisible: true
       });
     }
   }
@@ -57,20 +58,20 @@ class CaseStudiesPage extends Component {
   handleMouseMove = () => {
     clearInterval(this.interval);
     this.interval = setInterval(() => this.tick(), 1000);
-    this.setState((state) => ({
-      seconds: 0,
+    this.setState(state => ({
+      seconds: 0
     }));
   };
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        isHeadlineVisible: true,
+        isHeadlineVisible: true
       });
     }, 1250);
     this.setState({
       prevScrollpos: window.pageYOffset,
-      display: !this.state.display,
+      display: !this.state.display
     });
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousemove", this.handleMouseMove);
@@ -79,7 +80,7 @@ class CaseStudiesPage extends Component {
 
   componentWillUnmount() {
     this.setState({
-      display: !this.state.display,
+      display: !this.state.display
     });
     window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener("mousemove", this.handleMouseMove);
@@ -88,6 +89,7 @@ class CaseStudiesPage extends Component {
 
   render() {
     const { data } = this.props;
+    const work = data.datoCmsCaseStudiesPage;
     const { isHeadlineVisible, display } = this.state;
 
     return (
@@ -100,6 +102,11 @@ class CaseStudiesPage extends Component {
           Work
         </h1>
         <Layout>
+          <SEO
+            title={`${work.title}`}
+            pathname={`/work`}
+            description={work.seoMetaTags.description}
+          />
           <div className="page" id="case-studies">
             <div className="wrapper skinny">
               {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {

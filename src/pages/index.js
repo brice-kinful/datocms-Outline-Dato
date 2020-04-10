@@ -15,7 +15,7 @@ class IndexPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      grams: [],
+      grams: []
     };
   }
 
@@ -30,15 +30,15 @@ class IndexPage extends Component {
       /<script type="text\/javascript">window\._sharedData = (.*);<\/script>/
     );
 
-    const fetchInstagramPhotos = async (accountUrl) => {
+    const fetchInstagramPhotos = async accountUrl => {
       const response = await axios.get(accountUrl);
       const json = JSON.parse(response.data.match(instagramRegExp)[1]);
       const edges = json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(
         0,
         5
       );
-      this.setState((prevState) => ({
-        grams: [...prevState.grams, edges],
+      this.setState(prevState => ({
+        grams: [...prevState.grams, edges]
       }));
     };
     fetchInstagramPhotos(`https://www.instagram.com/${handle}/`);
@@ -52,10 +52,10 @@ class IndexPage extends Component {
     const insta = data.allDatoCmsSocialProfile.edges.filter(({ node }) => {
       return node.profileType === "Instagram";
     });
-    const headline = data.datoCmsHome.hero.filter((item) => {
+    const headline = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeadline";
     });
-    const heroImages = data.datoCmsHome.hero.filter((item) => {
+    const heroImages = data.datoCmsHome.hero.filter(item => {
       return item.__typename === "DatoCmsHeroImage";
     });
     return (

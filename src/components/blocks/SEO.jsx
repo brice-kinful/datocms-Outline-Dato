@@ -30,47 +30,8 @@ const SEO = ({
         title: title || defaultTitle,
         description: description || defaultDescription,
         image: `${siteUrl}${image || defaultImage}`,
-        url: `${siteUrl}${pathname || "/"}`,
-        type: pathname.includes("jobs") ? "JobPosting" : "WebSite"
+        url: `${siteUrl}${pathname || "/"}`
       };
-
-      const schemaOrgJSONLD = [
-        pathname.includes("jobs")
-          ? {
-              "@context": "http://schema.org",
-              "@type": "JobPosting",
-              url: seo.url,
-              title: title,
-              description: description,
-              datePosted: datePosted,
-              validThrough: validThrough,
-              employmentType: "Full-time",
-              hiringOrganization: {
-                "@type": "Organization",
-                name: "Outline",
-                sameAs: siteUrl,
-                logo: `${siteUrl}/hiringOrganizationlogo.jpg`
-              },
-              jobLocation: {
-                "@type": "Place",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: "4412 Spruill Ave",
-                  addressLocality: ", North Charleston",
-                  addressRegion: "SC",
-                  postalCode: "29405",
-                  addressCountry: "US"
-                }
-              }
-            }
-          : {
-              "@context": "http://schema.org",
-              "@type": "WebSite",
-              url: seo.url,
-              name: "Outline",
-              description: seo.description
-            }
-      ];
 
       return (
         <>
@@ -79,10 +40,6 @@ const SEO = ({
             titleTemplate={homePath == "/" ? "" : titleTemplate}
           >
             <meta name="description" content={seo.description} />
-
-            <script type="application/ld+json">
-              {JSON.stringify(schemaOrgJSONLD)}
-            </script>
 
             <meta name="image" content={seo.image} />
             {seo.url && <meta property="og:url" content={seo.url} />}

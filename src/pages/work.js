@@ -129,8 +129,8 @@ class CaseStudiesPage extends Component {
                                 >
                                   {/* <Img fluid={block.projectImage?.fluid} /> */}
                                   <BlurredImage
-                                    src={block.leftProjectImage?.fluid}
-                                    // url={block.leftProjectImage?.url}
+                                    // src={block.leftProjectImage?.fluid}
+                                    url={block.leftProjectImage?.url}
                                     offset={-5}
                                   />
                                 </a>
@@ -164,8 +164,8 @@ class CaseStudiesPage extends Component {
                                 >
                                   {/* <Img fluid={block.leftProjectImage.fluid} /> */}
                                   <BlurredImage
-                                    src={block.leftProjectImage?.fluid}
-                                    // url={block.leftProjectImage?.url}
+                                    // src={block.leftProjectImage?.fluid}
+                                    url={block.leftProjectImage?.url}
                                     offset={-5}
                                   />
                                 </AniLink>
@@ -205,8 +205,8 @@ class CaseStudiesPage extends Component {
                                 >
                                   {/* <Img fluid={block.projectImage?.fluid} /> */}
                                   <BlurredImage
-                                    src={block.rightProjectImage?.fluid}
-                                    // url={block.leftProjectImage?.url}
+                                    // src={block.rightProjectImage?.fluid}
+                                    url={block.leftProjectImage?.url}
                                     offset={-5}
                                   />
                                 </a>
@@ -240,8 +240,8 @@ class CaseStudiesPage extends Component {
                                 >
                                   {/* <Img fluid={block.rightProjectImage.fluid} /> */}
                                   <BlurredImage
-                                    src={block.rightProjectImage?.fluid}
-                                    // url={block.rightProjectImage?.url}
+                                    // src={block.rightProjectImage?.fluid}
+                                    url={block.rightProjectImage?.url}
                                     offset={-5}
                                   />
                                 </AniLink>

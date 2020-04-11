@@ -78,11 +78,7 @@ class ContactPage extends Component {
     const { isHeadlineVisible } = this.state;
     return (
       <Layout>
-        <SEO
-          title={`${contact.title}`}
-          pathname={`/contact`}
-          description={contact.seoMetaTags.description}
-        />
+        <SEO title={`${contact.title}`} />
         <div className="page" id="contact">
           <div className="main flex wrapper skinny">
             <div className="three-fourths text">

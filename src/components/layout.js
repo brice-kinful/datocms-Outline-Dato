@@ -17,7 +17,7 @@ class Layout extends Component {
       windowTopPos: 0,
       pageHeight: 1000,
       location: "",
-      loaded: false,
+      loaded: false
     };
   }
 
@@ -28,16 +28,16 @@ class Layout extends Component {
     if (currentScrollPos > pageHeight - 1400) {
       //load footer
       this.setState({
-        loaded: true,
+        loaded: true
       });
     }
     if (currentScrollPos < pageHeight - 650) {
       this.setState({
-        isFooterInView: false,
+        isFooterInView: false
       });
     } else {
       this.setState({
-        isFooterInView: true,
+        isFooterInView: true
       });
     }
     // console.log(currentScrollPos);
@@ -61,14 +61,14 @@ class Layout extends Component {
     this.setState({
       windowTopPos: window.pageYOffset,
       location: this.props.location,
-      loaded: false,
+      loaded: false
     });
     window.addEventListener("scroll", this.checkFooterScroll);
   }
 
   componentWillUnmount() {
     this.setState({
-      loaded: false,
+      loaded: false
     });
     // document.getElementsByClassName("page").classList.add("transitioning");
     window.removeEventListener("scroll", this.checkFooterScroll);
@@ -122,7 +122,7 @@ class Layout extends Component {
             }
           }
         `}
-        render={(data) => {
+        render={data => {
           return (
             <>
               <HelmetDatoCms
@@ -132,7 +132,7 @@ class Layout extends Component {
               {/* <div className="safari-loader"></div> */}
               <Measure
                 bounds
-                onResize={(contentRect) => {
+                onResize={contentRect => {
                   this.setState({ pageHeight: contentRect.bounds.height });
                 }}
               >

@@ -161,11 +161,7 @@ class WorkPage extends Component {
           More
         </h1>
         <Layout>
-          <SEO
-            title={`${morePage.title}`}
-            pathname={`/more`}
-            description={morePage.seoMetaTags.description}
-          />
+          <SEO title={`${morePage.title}`} />
           <div className="page" id="work">
             <div className="wrapper" style={{ zIndex: 99 }}>
               {isOpen && (

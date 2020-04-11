@@ -102,11 +102,7 @@ class CaseStudiesPage extends Component {
           Work
         </h1>
         <Layout>
-          <SEO
-            title={`${work.title}`}
-            pathname={`/work`}
-            description={work.seoMetaTags.description}
-          />
+          <SEO title={`${work.title}`} />
           <div className="page" id="case-studies">
             <div className="wrapper skinny">
               {data.datoCmsCaseStudiesPage.blocks.map((block, index) => {

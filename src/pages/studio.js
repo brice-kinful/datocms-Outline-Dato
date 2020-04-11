@@ -97,12 +97,8 @@ class StudioPage extends Component {
         >
           Studio
         </h1>
+        <SEO title={`${studio.title}`} />
         <Layout>
-          <SEO
-            title={`${studio.title}`}
-            pathname={`/studio`}
-            description={studio.seoMetaTags.description}
-          />
           <div className="page" id="studio">
             <div className="hero wrapper skinny" style={{ zIndex: 99 }}>
               <Img fluid={hero.heroImage.fluid} />

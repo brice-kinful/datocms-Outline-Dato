@@ -10,11 +10,7 @@ const JobsPage = ({ data }) => {
   const jobs = data.allDatoCmsJob.edges;
   return (
     <Layout>
-      <SEO
-        title={`${content.title}`}
-        pathname={`/jobs`}
-        description={content.seoMetaTags.description}
-      />
+      <SEO title={`${content.title}`} />
       <div className="page" id="default">
         <div className="wrapper x_skinny content">
           <h1>{content.headline}</h1>

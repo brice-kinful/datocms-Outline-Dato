@@ -62,11 +62,7 @@ class CaseStudy extends Component {
           </div>
           <Layout>
             <div className="page">
-              <SEO
-                title={`${project.title} | Work`}
-                pathname={`/work/${project.slug}`}
-                description={project.seoMetaTags?.description}
-              />
+              <SEO title={`${project.title} | Work`} />
 
               <div className="hero">
                 <Img

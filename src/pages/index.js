@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import axios from "axios";
+import SEO from "../components/blocks/SEO";
 import Layout from "../components/layout";
 import Preloader from "../components/blocks/preloader";
 import Headline from "../components/blocks/headline";
@@ -60,6 +61,7 @@ class IndexPage extends Component {
     });
     return (
       <Layout>
+        <SEO />
         <Preloader images={heroImages[0]} />
         <div id="home" className="page">
           <div className="flex align-center" id="feature">

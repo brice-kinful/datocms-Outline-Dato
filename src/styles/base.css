@@ -802,7 +802,11 @@ a.btn:hover {
 }
 
 .page.wrong_turn {
-  padding-top: 200px;
+  padding: 50vh 0 200px;
+}
+
+.page.wrong_turn .wrapper {
+  transform: translate3d(0, -50%, 0);
 }
 
 .page.wrong_turn h1 {

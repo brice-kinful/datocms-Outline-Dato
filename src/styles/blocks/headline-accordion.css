@@ -2,7 +2,12 @@
     padding: 245px 0 100px;
 }
 
+.block.accordion-block>.wrapper {
+    transition: height 0.4s linear 0s;
+}
+
 .accordion.ui .content {
+    display: inline;
     opacity: 0;
     padding: 0;
     visibility: hidden;
@@ -22,6 +27,7 @@
     visibility: visible;
     height: auto;
     max-height: 2400px;
+    /* margin-left: -69.9px; */
 }
 
 .accordion.ui .title {
@@ -30,14 +36,14 @@
     line-height: 80px;
 }
 
-.accordion.ui .title.active span.textlink {
+.accordion.ui .title.active>span.textlink {
     opacity: 0;
     visibility: hidden;
+    position: absolute;
 }
 
-.accordion.ui .title span:first-child,
-.accordion.ui .content span:first-child {
-    margin-right: 25px;
+.accordion.ui .content span span:last-child {
+    margin-left: 15px;
     /* padding-bottom: 10px; */
     /* top: -10px; */
 }
@@ -49,6 +55,8 @@
 
 .block.accordion-block .textlink {
     top: 3px;
+    left: 0;
+    transition: none;
 }
 
 .block .accordion.ui .textlink span::after {
@@ -93,9 +101,10 @@
         pointer-events: initial;
         font-size: 16px;
         line-height: 22px;
-        position: absolute;
-        bottom: -45px;
+        /* position: absolute;
+        bottom: -45px; */
         top: auto;
         left: 0;
+        display: inline-block !important;
     }
 }

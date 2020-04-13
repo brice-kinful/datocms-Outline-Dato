@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Accordion } from "semantic-ui-react";
+import Measure from "react-measure";
 
 import "../../styles/blocks/headline-accordion.css";
 
@@ -7,12 +8,23 @@ class HeadlineAccordion extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      titleHeight: 250,
+      accordionHeight: 1500,
       activeIndex: -1,
       btn: this.props.content?.dropdownText
         ? this.props.content.dropdownText
         : "More"
     };
   }
+
+  refGetHeight = el => {
+    if (el) {
+      console.log(el.getBoundingClientRect().height);
+      this.setState({
+        titleHeight: el.getBoundingClientRect().height
+      });
+    }
+  };
 
   handleClick = (e, titleProps) => {
     const index = 0;
@@ -33,37 +45,69 @@ class HeadlineAccordion extends Component {
   };
 
   render() {
-    const { activeIndex } = this.state;
+    const { activeIndex, titleHeight, accordionHeight } = this.state;
     const { content } = this.props;
 
     return (
       <div className={`block accordion-block`}>
-        <div className={`wrapper skinny`}>
-          <Accordion>
-            <Accordion.Title active={activeIndex === 0} index={0} className="">
-              <span className="saol_standard">{content.headline}</span>
-              <span
-                name="dropdown"
-                onClick={this.handleClick}
-                className="textlink"
+        <Measure
+          bounds
+          onResize={contentRect => {
+            this.setState({
+              accordionHeight: contentRect.bounds.height
+            });
+          }}
+        >
+          {({ measureRef }) => {
+            return (
+              <div
+                className={`wrapper skinny`}
+                style={{
+                  height: activeIndex === -1 ? titleHeight : accordionHeight
+                }}
               >
-                <span className="uppercase">{this.state.btn}</span>
-              </span>
-            </Accordion.Title>
-            <Accordion.Content active={activeIndex === 0}>
-              <p className="">
-                <span className="saol_standard">{content.extendedText}</span>
-                <span
-                  name="dropdown"
-                  className="styrene_light textlink"
-                  onClick={this.handleClick}
-                >
-                  <span className="uppercase">{this.state.btn}</span>
-                </span>
-              </p>
-            </Accordion.Content>
-          </Accordion>
-        </div>
+                <Accordion>
+                  <div ref={measureRef}>
+                    <Accordion.Title
+                      active={activeIndex === 0}
+                      index={0}
+                      className=""
+                    >
+                      <span
+                        className="saol_standard"
+                        ref={this.refGetHeight}
+                        style={{ marginRight: "15px" }}
+                      >
+                        {content.headline}
+                      </span>
+                      <span
+                        name="dropdown"
+                        onClick={this.handleClick}
+                        className="textlink"
+                      >
+                        <span className="uppercase">{this.state.btn}</span>
+                      </span>
+                      <Accordion.Content active={activeIndex === 0}>
+                        <span className="">
+                          <span className="saol_standard">
+                            {content.extendedText}
+                          </span>
+                          <span
+                            name="dropdown"
+                            className="styrene_light textlink"
+                            onClick={this.handleClick}
+                          >
+                            <span className="uppercase">{this.state.btn}</span>
+                          </span>
+                        </span>
+                      </Accordion.Content>
+                    </Accordion.Title>
+                  </div>
+                </Accordion>
+              </div>
+            );
+          }}
+        </Measure>
       </div>
     );
   }

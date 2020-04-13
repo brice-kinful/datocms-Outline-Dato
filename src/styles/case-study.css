@@ -42,6 +42,7 @@ body.frozen .footer-container {
   -webkit-transition: 1.5s ease-in;
   -o-transition: 1.5s ease-in;
   transition: 1.5s ease-in;
+  text-align: center;
 }
 
 #case-study .screen.hidden {
@@ -97,6 +98,7 @@ body.frozen .footer-container {
 .block .flex img {
   width: 100%;
 }
+
 
 @supports (display: -ms-grid) or (display: grid) {
   .block .flex.grid.full {
@@ -627,5 +629,17 @@ body.frozen .footer-container {
 
   #case-study .related .wrapper a.next {
     font-size: 18vw;
+  }
+
+  .block.side-by-side .flex.grid.two>* {
+    width: 100%;
+    position: static;
+  }
+
+  @supports (display: -ms-grid) or (display: grid) {
+
+    .block.side-by-side .flex.grid.two {
+      grid-template-columns: 1fr;
+    }
   }
 }

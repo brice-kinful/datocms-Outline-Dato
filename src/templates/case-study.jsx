@@ -33,7 +33,10 @@ class CaseStudy extends Component {
 
   render() {
     const project = this.props.data.datoCmsCaseStudy;
-    const allProjects = this.props.data.allDatoCmsCaseStudy.edges;
+    const allProjects = this.props.data.allDatoCmsCaseStudy.edges.filter(
+      ({ node }) => !node.hidden
+    );
+    // const allProjects = this.props.data.allDatoCmsCaseStudy.edges;
     const activeProjectIndex = allProjects.findIndex(
       ({ node }) => node.slug === project.slug
     );
@@ -42,6 +45,7 @@ class CaseStudy extends Component {
         ? 0
         : activeProjectIndex + 1;
     const { hasHeroImageLoaded } = this.state;
+    console.log(allProjects);
     return (
       <>
         <div className="container" id="case-study">
@@ -73,7 +77,7 @@ class CaseStudy extends Component {
                     setTimeout(() => {
                       this.setState({ hasHeroImageLoaded: true });
                       document.body.classList.remove("frozen");
-                    }, 4500)
+                    }, 2500)
                   }
                 />
               </div>
@@ -352,6 +356,7 @@ export const query = graphql`
         node {
           title
           slug
+          hidden
           thumbnail {
             fluid(maxWidth: 320, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid

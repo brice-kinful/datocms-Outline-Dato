@@ -42,7 +42,7 @@ h1.big {
 }
 
 #case-studies .flex.grid.two {
-  align-items: center;
+  align-items: flex-start;
 }
 
 #case-studies .wrapper>* {

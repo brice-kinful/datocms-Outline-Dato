@@ -149,7 +149,7 @@ SaolDisplay LightItalic
 body {
   /* font-family: 'SaolDisplay Light', serif; */
   font-family: "Styrene Light";
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   font-style: normal;
   letter-spacing: 0.02em;
@@ -363,7 +363,7 @@ h6 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -645,7 +645,7 @@ textarea {
 }
 
 textarea {
-  padding: 16px;
+  padding: 14px;
   line-height: 1.2;
   border: 1px solid #000;
 }
@@ -791,7 +791,7 @@ a.btn:hover {
 
 .page#default .content ul li {
   list-style: disc;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 15px;
 }
 
@@ -933,7 +933,7 @@ a.btn:hover {
   .interview .pagetitle {
     top: 30px;
     right: 30px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
   }
 
@@ -958,7 +958,7 @@ a.btn:hover {
   }
 
   #interview .field input[type="text"] {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #interview .cols .col {
@@ -967,7 +967,7 @@ a.btn:hover {
   }
 
   #interview .slider .display {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #interview .nav {

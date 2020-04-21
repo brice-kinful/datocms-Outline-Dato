@@ -215,7 +215,7 @@ body.home #logo {
 }
 
 #nav li a {
-  /* font-size: 16px;
+  /* font-size: 14px;
   line-height: 1.6; */
   /* color: #fbf8f5; */
   -webkit-opacity: 1;
@@ -272,7 +272,7 @@ body.home #logo {
 
 #nav .item img {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 /* Mobile */

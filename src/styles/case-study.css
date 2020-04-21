@@ -358,7 +358,7 @@ body.frozen .footer-container {
 
 #case-study .related p,
 #case-study .related span {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   margin: 0;
 }
@@ -398,7 +398,7 @@ body.frozen .footer-container {
 }
 
 #case-study .related ul li {
-  font-size: 16px;
+  font-size: 14px;
   justify-content: space-between;
   padding-bottom: 6px;
 }
@@ -598,6 +598,10 @@ body.frozen .footer-container {
 
   .block .grid-item.down {
     margin: 0;
+  }
+
+  .block.image-slider .caption {
+    left: 25px;
   }
 
   .block.url-block a {

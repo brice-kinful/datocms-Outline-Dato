@@ -167,7 +167,7 @@ h1.big {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   height: 100%;
   display: flex;
@@ -182,7 +182,7 @@ h1.big {
   margin-bottom: 0;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   padding: 0;
   line-height: 1;
   transform: translateY(-100%) !important;
@@ -190,7 +190,7 @@ h1.big {
 
 .ril__caption .caption .title {
   margin-right: 15px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .ril__caption .caption .textlink {

@@ -50,7 +50,7 @@
 
 .accordion.ui .textlink {
     pointer-events: initial;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .block.accordion-block .textlink {
@@ -87,7 +87,7 @@
 @media screen and (max-width: 768px) {
 
     .block.accordion-block {
-        padding: 150px 0;
+        padding: 75px 0;
     }
 
     .accordion.ui .title,
@@ -99,7 +99,7 @@
 
     .accordion.ui .textlink {
         pointer-events: initial;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 22px;
         /* position: absolute;
         bottom: -45px; */

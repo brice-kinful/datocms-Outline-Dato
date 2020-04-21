@@ -64,7 +64,7 @@ const InterviewForm = () => {
           <span className={`current`}>{step}</span> / 5
         </div>
       </div>
-      <div className={`wrapper xx_skinny`}>
+      <div className={`wrapper xx_skinny`} style={{ position: "static" }}>
         {formStatus === "finished" ? (
           <div className="thanks">
             <p className="large centertext saol_standard">
@@ -210,6 +210,7 @@ const InterviewForm = () => {
                       onReset={handleReset}
                       data-netlify="true"
                       data-netlify-honeypot="botfield"
+                      style={{ position: "static" }}
                     >
                       <input
                         type="hidden"

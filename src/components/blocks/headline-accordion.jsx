@@ -13,15 +13,15 @@ class HeadlineAccordion extends Component {
       activeIndex: -1,
       btn: this.props.content?.dropdownText
         ? this.props.content.dropdownText
-        : "More"
+        : "More",
     };
   }
 
-  refGetHeight = el => {
+  refGetHeight = (el) => {
     if (el) {
       console.log(el.getBoundingClientRect().height);
       this.setState({
-        titleHeight: el.getBoundingClientRect().height
+        titleHeight: el.getBoundingClientRect().height,
       });
     }
   };
@@ -40,7 +40,7 @@ class HeadlineAccordion extends Component {
 
     this.setState({
       activeIndex: newIndex,
-      btn: updatedBtnText
+      btn: updatedBtnText,
     });
   };
 
@@ -52,9 +52,9 @@ class HeadlineAccordion extends Component {
       <div className={`block accordion-block`}>
         <Measure
           bounds
-          onResize={contentRect => {
+          onResize={(contentRect) => {
             this.setState({
-              accordionHeight: contentRect.bounds.height
+              accordionHeight: contentRect.bounds.height,
             });
           }}
         >
@@ -63,7 +63,7 @@ class HeadlineAccordion extends Component {
               <div
                 className={`wrapper skinny`}
                 style={{
-                  height: activeIndex === -1 ? titleHeight : accordionHeight
+                  height: activeIndex === -1 ? titleHeight : accordionHeight,
                 }}
               >
                 <Accordion>
@@ -80,27 +80,33 @@ class HeadlineAccordion extends Component {
                       >
                         {content.headline}
                       </span>
-                      <span
-                        name="dropdown"
-                        onClick={this.handleClick}
-                        className="textlink"
-                      >
-                        <span className="uppercase">{this.state.btn}</span>
-                      </span>
-                      <Accordion.Content active={activeIndex === 0}>
-                        <span className="">
-                          <span className="saol_standard">
-                            {content.extendedText}
-                          </span>
+                      {content.dropdownText !== "" && this.state.btn !== "" ? (
+                        <>
                           <span
                             name="dropdown"
-                            className="styrene_light textlink"
                             onClick={this.handleClick}
+                            className="textlink"
                           >
                             <span className="uppercase">{this.state.btn}</span>
                           </span>
-                        </span>
-                      </Accordion.Content>
+                          <Accordion.Content active={activeIndex === 0}>
+                            <span className="">
+                              <span className="saol_standard">
+                                {content.extendedText}
+                              </span>
+                              <span
+                                name="dropdown"
+                                className="styrene_light textlink"
+                                onClick={this.handleClick}
+                              >
+                                <span className="uppercase">
+                                  {this.state.btn}
+                                </span>
+                              </span>
+                            </span>
+                          </Accordion.Content>
+                        </>
+                      ) : null}
                     </Accordion.Title>
                   </div>
                 </Accordion>

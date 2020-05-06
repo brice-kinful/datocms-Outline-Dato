@@ -6,13 +6,13 @@ module.exports = {
   siteMetadata: {
     title: "Outline | Branding | Web Design | Charleston, SC",
     titleTemplate: "%s | Outline | Charleston, SC",
-    description:
-      "Outline is your partner in exploring, designing and elevating your brand. We focus on naming, branding, narratives, web design and development.",
-    siteUrl: "https://nifty-lovelace-0b9de5.netlify.com",
+    description: "Outline is your partner in exploring, designing and elevating your brand. We focus on naming, branding, narratives, web design and development.",
+    siteUrl: "https://weareoutline.com",
     image: "/og-image.jpg", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     "gatsby-plugin-eslint",
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,

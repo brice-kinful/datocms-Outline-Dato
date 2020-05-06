@@ -12,13 +12,13 @@ const SEO = ({ title, description, image, article }) => {
     titleTemplate,
     defaultDescription,
     siteUrl,
-    defaultImage
+    defaultImage,
   } = site.siteMetadata;
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`
+    url: `${siteUrl}${pathname}`,
   };
   const schemaOrgWebPage = {
     "@context": "https://schema.org",
@@ -29,11 +29,14 @@ const SEO = ({ title, description, image, article }) => {
     description: defaultDescription,
     image: {
       "@type": "ImageObject",
-      url: seo.image
-    }
+      url: seo.image,
+    },
   };
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    <Helmet
+      title={seo.title}
+      titleTemplate={pathname == "/" ? "" : titleTemplate}
+    >
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
@@ -60,13 +63,13 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  article: PropTypes.bool
+  article: PropTypes.bool,
 };
 SEO.defaultProps = {
   title: null,
   description: null,
   image: null,
-  article: false
+  article: false,
 };
 const query = graphql`
   query SEO {

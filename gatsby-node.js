@@ -33,6 +33,9 @@ exports.createPages = ({
           edges {
             node {
               title
+              model {
+                draftModeActive
+              }
               jobSlug
             }
           }

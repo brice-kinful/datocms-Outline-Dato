@@ -23,7 +23,7 @@ const Job = ({ data }) => {
         "@type": "Organization",
         name: siteName,
         sameAs: siteUrl,
-        logo: `${siteUrl}/hiringOrganizationlogo.jpg`
+        logo: `${siteUrl}/hiringOrganizationlogo.jpg`,
       },
       jobLocation: {
         "@type": "Place",
@@ -33,10 +33,10 @@ const Job = ({ data }) => {
           addressLocality: ", North Charleston",
           addressRegion: "SC",
           postalCode: "29405",
-          addressCountry: "US"
-        }
-      }
-    }
+          addressCountry: "US",
+        },
+      },
+    },
   ];
 
   return (
@@ -44,9 +44,11 @@ const Job = ({ data }) => {
       <Layout>
         <HelmetDatoCms seo={job.seoMetaTags}>
           <title>{`${job.title} | Jobs | Outline | Charleston, SC`}</title>
-          <script type="application/ld+json">
-            {JSON.stringify(schemaOrgJSONLD)}
-          </script>
+          {!job.model.draftModeActive && (
+            <script type="application/ld+json">
+              {JSON.stringify(schemaOrgJSONLD)}
+            </script>
+          )}
         </HelmetDatoCms>
         <div className="page" id="default">
           <div className="wrapper x_skinny content">
@@ -81,6 +83,9 @@ export const query = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
+      model {
+        draftModeActive
+      }
       jobSlug
       jobShortDescription
       address {

@@ -17,17 +17,23 @@ const JobsPage = ({ data }) => {
           {parse(content.intro)}
           {jobs.map(({ node }) => {
             return (
-              <>
-                <h2>{node.title}</h2>
-                <p style={{ marginBottom: "5px" }}>
-                  {node.jobShortDescription}
-                </p>
-                <span className="textlink">
-                  <AniLink preventScrollJump fade to={`/jobs/${node.jobSlug}`}>
-                    Read More
-                  </AniLink>
-                </span>
-              </>
+              !node.model.draftModeActive && (
+                <>
+                  <h2>{node.title}</h2>
+                  <p style={{ marginBottom: "5px" }}>
+                    {node.jobShortDescription}
+                  </p>
+                  <span className="textlink">
+                    <AniLink
+                      preventScrollJump
+                      fade
+                      to={`/jobs/${node.jobSlug}`}
+                    >
+                      Read More
+                    </AniLink>
+                  </span>
+                </>
+              )
             );
           })}
         </div>
@@ -53,6 +59,9 @@ export const query = graphql`
       edges {
         node {
           title
+          model {
+            draftModeActive
+          }
           jobSlug
           jobShortDescription
         }

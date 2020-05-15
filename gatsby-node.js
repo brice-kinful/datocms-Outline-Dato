@@ -56,13 +56,14 @@ exports.createPages = ({
       result.data.allDatoCmsJob.edges.map(({
         node: job
       }) => {
-        createPage({
-          path: `/jobs/${job.jobSlug}`,
-          component: path.resolve(`./src/templates/job.jsx`),
-          context: {
-            slug: job.jobSlug
-          }
-        });
+        !job.model.draftModeActive &&
+          createPage({
+            path: `/jobs/${job.jobSlug}`,
+            component: path.resolve(`./src/templates/job.jsx`),
+            context: {
+              slug: job.jobSlug
+            }
+          });
       });
       resolve();
     });

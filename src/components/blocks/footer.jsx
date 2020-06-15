@@ -9,13 +9,13 @@ class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      el: ""
+      el: "",
     };
   }
 
   componentDidMount() {
     this.setState({
-      el: document.getElementsByClassName("page")
+      el: document.getElementsByClassName("page"),
     });
   }
 
@@ -26,7 +26,7 @@ class Footer extends Component {
     return (
       <Measure
         bounds
-        onResize={contentRect => {
+        onResize={(contentRect) => {
           pageStyle &&
             (pageStyle.style.marginBottom = contentRect.bounds.height + "px");
         }}
@@ -53,7 +53,7 @@ class Footer extends Component {
                   </div>
                   <div>
                     <a
-                      href="https://www.pinterest.com/we.are.outline"
+                      href="https://www.pinterest.com/weareoutline"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="line"

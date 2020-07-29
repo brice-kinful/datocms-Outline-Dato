@@ -85,16 +85,17 @@ class ContactPage extends Component {
               <div className="inner flex">
                 <p>
                   <span className="saol_standard">{contact.headline}</span>
-                  <span className="textlink">
-                    <AniLink
-                      preventScrollJump
-                      to={`/${contact.ctaButtonUrl.slug}`}
-                      fade
-                      className="uppercase"
-                    >
-                      {contact.ctaButtonText}
-                    </AniLink>
-                  </span>
+                  {contact.ctaButtonUrl && (
+                    <span className="textlink">
+                      <AniLink
+                        preventScrollJump
+                        to={`/${contact.ctaButtonUrl.slug}`}
+                        fade
+                        className="uppercase">
+                        {contact.ctaButtonText}
+                      </AniLink>
+                    </span>
+                  )}
                 </p>
               </div>
               <div className="flex bottom inner space-between">
@@ -105,8 +106,7 @@ class ContactPage extends Component {
                       to={`/${contact.viewJobsButtonUrl.slug}`}
                       fade
                       className="line hide_768"
-                      style={{ position: "relative" }}
-                    >
+                      style={{ position: "relative" }}>
                       {contact.viewJobsButtonText}
                     </AniLink>
                   )}
@@ -122,8 +122,7 @@ class ContactPage extends Component {
                       to={`/${contact.viewJobsButtonUrl.slug}`}
                       fade
                       className=" "
-                      style={{ position: "relative" }}
-                    >
+                      style={{ position: "relative" }}>
                       {contact.viewJobsButtonText}
                     </AniLink>
                   </div>

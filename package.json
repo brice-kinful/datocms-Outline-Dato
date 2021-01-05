@@ -5,7 +5,7 @@
   "author": "Stefano Verna <s.verna@datocms.com>",
   "dependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.8.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.1.0",
     "emailjs-com": "^2.4.1",
     "formik": "^2.1.2",

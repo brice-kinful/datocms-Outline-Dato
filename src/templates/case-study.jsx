@@ -45,7 +45,7 @@ class CaseStudy extends Component {
         ? 0
         : activeProjectIndex + 1;
     const { hasHeroImageLoaded } = this.state;
-    console.log(allProjects);
+    // console.log(allProjects);
     return (
       <>
         <div className="container" id="case-study">

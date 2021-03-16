@@ -17,7 +17,7 @@ const JobsPage = ({ data }) => {
           {parse(content.intro)}
           {jobs.map(({ node }) => {
             return (
-              !node.model.draftModeActive && (
+              node.meta.status === 'published' && (
                 <>
                   <h2>{node.title}</h2>
                   <p style={{ marginBottom: "5px" }}>
@@ -59,8 +59,8 @@ export const query = graphql`
       edges {
         node {
           title
-          model {
-            draftModeActive
+          meta {
+            status
           }
           jobSlug
           jobShortDescription

@@ -44,7 +44,7 @@ const Job = ({ data }) => {
       <Layout>
         <HelmetDatoCms seo={job.seoMetaTags}>
           <title>{`${job.title} | Jobs | Outline | Charleston, SC`}</title>
-          {!job.model.draftModeActive && (
+          {job.meta.status === 'published' && (
             <script type="application/ld+json">
               {JSON.stringify(schemaOrgJSONLD)}
             </script>
@@ -83,8 +83,8 @@ export const query = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
-      model {
-        draftModeActive
+      meta {
+        status
       }
       jobSlug
       jobShortDescription

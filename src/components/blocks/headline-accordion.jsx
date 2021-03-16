@@ -19,7 +19,7 @@ class HeadlineAccordion extends Component {
 
   refGetHeight = (el) => {
     if (el) {
-      console.log(el.getBoundingClientRect().height);
+      // console.log(el.getBoundingClientRect().height);
       this.setState({
         titleHeight: el.getBoundingClientRect().height,
       });

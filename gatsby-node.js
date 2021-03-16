@@ -33,8 +33,8 @@ exports.createPages = ({
           edges {
             node {
               title
-              model {
-                draftModeActive
+              meta {
+                status
               }
               jobSlug
             }
@@ -56,7 +56,7 @@ exports.createPages = ({
       result.data.allDatoCmsJob.edges.map(({
         node: job
       }) => {
-        !job.model.draftModeActive &&
+        job.meta.status === 'published' &&
           createPage({
             path: `/jobs/${job.jobSlug}`,
             component: path.resolve(`./src/templates/job.jsx`),
